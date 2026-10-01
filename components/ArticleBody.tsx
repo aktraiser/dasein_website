@@ -747,6 +747,57 @@ function GatewaysDiagram({ lang }: { lang: Locale }) {
   );
 }
 
+type Stage = { title: string; nodes: string[]; tags: string[] };
+const PIPELINE: Record<Locale, { label: string; stages: Stage[] }> = {
+  fr: {
+    label: "Le pipeline Weak Signal : collecter, indexer, analyser, distribuer",
+    stages: [
+      { title: "Collecter", nodes: ["Feedly"], tags: ["Verticale", "Flux"] },
+      { title: "Indexer", nodes: ["Agent", "AI Search"], tags: ["Extraction", "Indexation"] },
+      { title: "Analyser", nodes: ["Agents"], tags: ["Enrichissement", "Évaluation"] },
+      { title: "Distribuer", nodes: ["Warehouse", "Excel"], tags: ["Consolidation", "Validation"] },
+    ],
+  },
+  en: {
+    label: "The Weak Signal pipeline: collect, index, analyse, distribute",
+    stages: [
+      { title: "Collect", nodes: ["Feedly"], tags: ["Vertical", "Feed"] },
+      { title: "Index", nodes: ["Agent", "AI Search"], tags: ["Extraction", "Indexing"] },
+      { title: "Analyse", nodes: ["Agents"], tags: ["Enrichment", "Evaluation"] },
+      { title: "Distribute", nodes: ["Warehouse", "Excel"], tags: ["Consolidation", "Approval"] },
+    ],
+  },
+};
+
+/** Four stages on one line: what runs at each step and what it produces. */
+function PipelineDiagram({ lang }: { lang: Locale }) {
+  const t = PIPELINE[lang];
+  return (
+    <figure className="adiag pldiag" aria-label={t.label}>
+      <ol className="pldiag__stages">
+        {t.stages.map((stage, i) => (
+          <li key={stage.title} className="pldiag__stage">
+            <span className="pldiag__num">{String(i + 1).padStart(2, "0")}</span>
+            <strong>{stage.title}</strong>
+            <div className="pldiag__nodes">
+              {stage.nodes.map((node) => (
+                <span key={node} className="pldiag__node">
+                  {node}
+                </span>
+              ))}
+            </div>
+            <div className="pldiag__tags">
+              {stage.tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </figure>
+  );
+}
+
 const imageExists = (src: string) => fs.existsSync(path.join(process.cwd(), "public", src));
 
 /** Rendered as a plain call, in reading order, so glossary terms are marked on first use. */
@@ -761,6 +812,75 @@ function renderBlock(block: Block, lang: Locale, seen: GlossarySeen) {
       );
     case "p":
       return <p className="article__p">{g(block.text)}</p>;
+    case "h3":
+      return <h3 className="article__h3">{block.text}</h3>;
+    case "note":
+      return <p className="article__note">{block.text}</p>;
+    case "quote":
+      return (
+        <figure className="article__quote">
+          <blockquote>{block.text}</blockquote>
+          <figcaption>{block.cite}</figcaption>
+        </figure>
+      );
+    case "stats":
+      return (
+        <dl className="article__stats">
+          {block.items.map((item) => (
+            <div key={item.value}>
+              <dt>{item.value}</dt>
+              <dd>{item.label}</dd>
+            </div>
+          ))}
+        </dl>
+      );
+    case "compare":
+      return (
+        <figure className="article__compare">
+          <div className="article__compare-cols">
+            {block.columns.map((column) => (
+              <div key={column.title} className="article__compare-col">
+                <p className="article__compare-title">{column.title}</p>
+                <dl>
+                  {column.items.map((item) => (
+                    <div key={item.label}>
+                      <dt>{item.value}</dt>
+                      <dd>{item.label}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
+          </div>
+          {block.caption && <figcaption>{block.caption}</figcaption>}
+        </figure>
+      );
+    case "timeline":
+      return (
+        <ol className="article__timeline">
+          {block.items.map((item) => (
+            <li key={item.place}>
+              <div className="article__timeline-head">
+                <strong>{item.place}</strong>
+                <span>{item.date}</span>
+                {item.tag && <em>{item.tag}</em>}
+              </div>
+              <div className="article__timeline-body">
+                {item.text.map((paragraph) => (
+                  <p key={paragraph}>{g(paragraph)}</p>
+                ))}
+              </div>
+            </li>
+          ))}
+        </ol>
+      );
+    case "box":
+      return (
+        <aside className="article__box">
+          <p className="article__box-title">{block.title}</p>
+          <p>{g(block.text)}</p>
+        </aside>
+      );
     case "list":
       return (
         <ul className="article__list">
@@ -824,6 +944,7 @@ function renderBlock(block: Block, lang: Locale, seen: GlossarySeen) {
               ))}
             </tbody>
           </table>
+          {block.caption && <p className="article__table-caption">{block.caption}</p>}
         </div>
       );
     case "figure":
@@ -837,17 +958,28 @@ function renderBlock(block: Block, lang: Locale, seen: GlossarySeen) {
       );
     case "callout":
       return <p className="article__callout">{g(block.text)}</p>;
-    case "related":
-      return (
-        <Link href={`/${lang}${block.href}`} className="article__related">
+    case "related": {
+      const content = (
+        <>
           <span className="article__related-label">{block.label}</span>
           <strong>{block.title}</strong>
           <span>{block.text}</span>
           <span className="article__related-arrow" aria-hidden="true">
-            →
+            {/^https?:/.test(block.href) ? "↗" : "→"}
           </span>
+        </>
+      );
+      // External links open in a new tab; site paths get the locale prefix.
+      return /^https?:/.test(block.href) ? (
+        <a href={block.href} className="article__related" target="_blank" rel="noopener noreferrer">
+          {content}
+        </a>
+      ) : (
+        <Link href={`/${lang}${block.href}`} className="article__related">
+          {content}
         </Link>
       );
+    }
     case "diagram":
       if (block.variant === "mcp") return <McpDiagram lang={lang} />;
       if (block.variant === "patterns") return <PatternsDiagram lang={lang} />;
@@ -858,6 +990,7 @@ function renderBlock(block: Block, lang: Locale, seen: GlossarySeen) {
       if (block.variant === "usecases") return <UseCasesDiagram lang={lang} />;
       if (block.variant === "auth") return <AuthDiagram lang={lang} />;
       if (block.variant === "gateways") return <GatewaysDiagram lang={lang} />;
+      if (block.variant === "pipeline") return <PipelineDiagram lang={lang} />;
       return <Diagram lang={lang} />;
   }
 }
@@ -894,11 +1027,15 @@ export function ArticleBody({ article, lang }: { article: Article; lang: Locale 
           <p className="article__summary-label">{article.sourcesLabel}</p>
           <ul>
             {article.sources.map((source) => (
-              <li key={source.url}>
-                <a href={source.url} target="_blank" rel="noopener noreferrer">
-                  {source.label} <span aria-hidden="true">↗</span>
-                  <span className="sr-only">{lang === "fr" ? " (nouvel onglet)" : " (opens in a new tab)"}</span>
-                </a>
+              <li key={source.label}>
+                {source.url ? (
+                  <a href={source.url} target="_blank" rel="noopener noreferrer">
+                    {source.label} <span aria-hidden="true">↗</span>
+                    <span className="sr-only">{lang === "fr" ? " (nouvel onglet)" : " (opens in a new tab)"}</span>
+                  </a>
+                ) : (
+                  source.label
+                )}
               </li>
             ))}
           </ul>

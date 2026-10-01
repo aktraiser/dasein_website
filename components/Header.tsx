@@ -2,16 +2,14 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
+import { Fragment, useEffect, useLayoutEffect, useRef, useState, type CSSProperties, type KeyboardEvent } from "react";
 import type { Dictionary } from "@/content/dictionaries";
-import { tracks } from "@/content/lab";
-import { cases } from "@/content/work";
 import { locales, type Locale } from "@/lib/i18n";
 import { Wordmark } from "./Wordmark";
 
 type Labels = Dictionary["nav"];
 type Menu = Dictionary["navMenu"];
-type Key = "expertise" | "work" | "lab" | "about";
+type Key = "expertise" | "about";
 type Entry = { label: string; href: string };
 
 const CLOSE_DELAY = 160;
@@ -33,19 +31,7 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
 
   // Lists built from the content files, so the menu follows the site.
   const panels: Record<Key, { href: string; label: string; explore: string; main: Entry[]; sideTitle: string; side: Entry[] }> = {
-    expertise: { href: "/expertise", label: labels.expertise, ...menu.expertise },
-    work: {
-      href: "/work",
-      label: labels.work,
-      ...menu.work,
-      main: cases.filter((c) => c.featured).map((c) => ({ label: c.content[lang].title, href: `/work#${c.slug}` })),
-    },
-    lab: {
-      href: "/lab",
-      label: labels.lab,
-      ...menu.lab,
-      main: tracks.map((t) => ({ label: t.content[lang].name, href: `/lab#${t.id}` })),
-    },
+    expertise: { href: "/#verticals", label: labels.expertise, ...menu.expertise },
     about: { href: "/about", label: labels.about, ...menu.about },
   };
   const keys = Object.keys(panels) as Key[];
@@ -108,21 +94,36 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
           <div className="header__left">
             <Wordmark lang={lang} />
             <nav className="nav" aria-label="Main" data-active={open !== null}>
-              {keys.map((key) => (
-                <div key={key} className="nav__item" onPointerEnter={() => show(key)}>
-                  <Link
-                    href={path(panels[key].href)}
-                    className="nav__link"
-                    aria-current={isCurrent(panels[key].href) ? "page" : undefined}
-                    aria-expanded={open === key}
-                    aria-controls={`mega-${key}`}
-                    data-on={open === key}
-                    onKeyDown={onNavKey(key)}
-                    onClick={closeAll}
-                  >
-                    {panels[key].label}
-                  </Link>
-                </div>
+              {keys.map((key, i) => (
+                <Fragment key={key}>
+                  <div className="nav__item" onPointerEnter={() => show(key)}>
+                    <Link
+                      href={path(panels[key].href)}
+                      className="nav__link"
+                      aria-current={isCurrent(panels[key].href) ? "page" : undefined}
+                      aria-expanded={open === key}
+                      aria-controls={`mega-${key}`}
+                      data-on={open === key}
+                      onKeyDown={onNavKey(key)}
+                      onClick={closeAll}
+                    >
+                      {panels[key].label}
+                    </Link>
+                  </div>
+                  {/* "Articles" is a plain link (no panel), last in the bar. */}
+                  {i === keys.length - 1 && (
+                    <div className="nav__item" onPointerEnter={() => hide()}>
+                      <Link
+                        href={path("/articles")}
+                        className="nav__link"
+                        aria-current={isCurrent("/articles") ? "page" : undefined}
+                        onClick={closeAll}
+                      >
+                        {labels.articles}
+                      </Link>
+                    </div>
+                  )}
+                </Fragment>
               ))}
             </nav>
           </div>
@@ -221,6 +222,9 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
               {panels[key].label}
             </Link>
           ))}
+          <Link href={path("/articles")} aria-current={isCurrent("/articles") ? "page" : undefined} onClick={closeAll}>
+            {labels.articles}
+          </Link>
           <Link href={path("/contact")} onClick={closeAll}>
             {labels.contact}
           </Link>

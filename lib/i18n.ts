@@ -16,18 +16,21 @@ export const verticalSlugs = ["user-augmentation", "business-applications", "ai-
 export type VerticalSlug = (typeof verticalSlugs)[number];
 
 /** Standalone articles, under /articles/<slug>. */
-export const articleSlugs = ["mcp"] as const;
+export const articleSlugs = [
+  "le-megawatt-et-le-degre",
+  "weak-signal-l-acoustics",
+  "phaseone10841",
+  "mcp",
+] as const;
 
 /** Site routes, without locale prefix. Used by navigation, sitemap and hreflang. */
 export const routes = [
   "",
-  "/expertise",
   ...verticalSlugs.map((slug) => `/expertise/${slug}` as const),
-  "/work",
-  "/lab",
   "/about",
   "/contact",
   "/glossary",
+  "/articles",
   ...articleSlugs.map((slug) => `/articles/${slug}` as const),
 ] as const;
 export type Route = (typeof routes)[number];

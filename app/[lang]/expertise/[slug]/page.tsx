@@ -43,7 +43,7 @@ export default async function VerticalPage({ params }: PageProps<"/[lang]/expert
       <section className="page-hero vp-hero">
         <div className="container">
           <p className="eyebrow">
-            <Link href={`/${lang}/expertise`}>{t.back}</Link>
+            <Link href={`/${lang}#verticals`}>{t.back}</Link>
             <span aria-hidden="true">/</span>
             {String(index + 1).padStart(2, "0")} · {item.audience}
           </p>

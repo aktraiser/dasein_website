@@ -12,7 +12,8 @@ const matchers = Object.fromEntries(
       .sort((a, b) => b.form.length - a.form.length);
     const lookup = new Map(forms.map(({ form, id }) => [form.toLowerCase(), id]));
     const pattern = new RegExp(
-      `(?<![\\p{L}\\p{N}])(${forms.map(({ form }) => escape(form)).join("|")})(?![\\p{L}\\p{N}])`,
+      // Not inside a word, and not a path segment such as "/api/" or "/mcp".
+      `(?<![\\p{L}\\p{N}/])(${forms.map(({ form }) => escape(form)).join("|")})(?![\\p{L}\\p{N}]|/[\\p{L}\\p{N}])`,
       "giu",
     );
     return [lang, { pattern, lookup }];

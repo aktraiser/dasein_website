@@ -8,8 +8,7 @@ const en = {
 
   nav: {
     expertise: "Expertise",
-    work: "Work",
-    lab: "Lab",
+    articles: "Articles",
     about: "About",
     contact: "Contact",
     cta: "Start a project",
@@ -30,23 +29,6 @@ const en = {
       sideTitle: "Approach",
       side: [
         { label: "Three verticals", href: "/#verticals" },
-        { label: "All expertise", href: "/expertise" },
-      ],
-    },
-    work: {
-      explore: "Explore work",
-      sideTitle: "Resources",
-      side: [
-        { label: "All cases", href: "/work" },
-        { label: "Start a project", href: "/contact" },
-      ],
-    },
-    lab: {
-      explore: "Explore the lab",
-      sideTitle: "Lab",
-      side: [
-        { label: "Research tracks", href: "/lab#tracks" },
-        { label: "Log", href: "/lab#log" },
       ],
     },
     about: {
@@ -59,9 +41,7 @@ const en = {
       ],
       sideTitle: "Company",
       side: [
-        { label: "Expertise", href: "/expertise" },
-        { label: "Work", href: "/work" },
-        { label: "Lab", href: "/lab" },
+        { label: "Expertise", href: "/#verticals" },
       ],
     },
   },
@@ -75,7 +55,7 @@ const en = {
     lead: "Dasein designs and industrialises the data foundations and AI systems that turn an organisation’s data, knowledge and existing tools into systems able to understand, reason and act.",
     chain: ["Data", "Knowledge", "Intelligence", "Action"],
     primary: "Start a project",
-    secondary: "Explore the lab",
+    secondary: "Read our articles",
     intro: "Introducing Dasein",
     introRight: "Data & AI engineering",
     inboxTitle: "inbox.app",
@@ -127,7 +107,7 @@ const en = {
 
   featured: {
     label: "Featured",
-    kinds: { article: "Article", announcement: "Announcement", case: "Case study", lab: "Lab" },
+    kinds: { article: "Article", announcement: "Announcement", case: "Case study" },
   },
 
   statement: {
@@ -220,7 +200,7 @@ const en = {
     title: "AI governance plays out across three verticals.",
     intro:
       "An assistant that summarises a document and an agent that acts in an ERP don’t call for the same rules. We organise agentic AI in two verticals — end users and business teams — built on a common IT platform that governs every agent.",
-    buildsLabel: "What we build",
+    buildsLabel: "What we put in place",
     controlLabel: "Control",
     levels: ["Light", "Reinforced", "Strict"],
     // Used on the Work page to label each case's autonomy.
@@ -239,7 +219,7 @@ const en = {
       controlLabel: "Governance",
       casesLabel: "Related work",
       next: "Next vertical",
-      more: "Learn more",
+      more: "Read the article",
     },
     items: [
       {
@@ -247,16 +227,16 @@ const en = {
         slug: "user-augmentation",
         audience: "End users",
         name: "User Augmentation",
-        purpose: "AI at the service of every employee.",
+        purpose: "Agents for every employee, with their own rights.",
         lead: "Give every employee useful agents that are simple to create and act with their own rights.",
         problem:
           "Employees already use AI, often through consumer tools, outside any framework. Data leaves the company, usage isn’t measured, and assistants aren’t connected to any of your tools.",
         builds: [
-          { name: "User front end", text: "A single entry point for employees, inside the tools they already use." },
-          { name: "Simple agent builder", text: "Teams create their own assistants from approved templates, without development." },
-          { name: "Connectors", text: "Access to the company’s documents, tickets, messaging and reference data." },
-          { name: "Machine-to-machine connections", text: "Agents talk to applications through APIs, with no manual steps." },
-          { name: "Identity propagation", text: "The agent acts with the user’s identity and rights: it only sees what that person may see." },
+          { name: "Choosing and integrating the AI front end", text: "A market front end, sovereign or open source, integrated with your tools." },
+          { name: "Declarative agents", text: "Agents described in YAML: reviewed, versioned, approved before publishing." },
+          { name: "Governed MCP connections", text: "A catalogue of approved MCP servers, opened by group." },
+          { name: "Identity propagation", text: "The agent acts with the user’s rights, nothing more." },
+          { name: "Shared skills and prompts", text: "Reusable know-how, managed as a library." },
         ],
         useCases: [
           "Incident summaries and resolution notes",
@@ -264,7 +244,7 @@ const en = {
           "Search across technical documentation",
           "First drafts: minutes, knowledge base articles",
         ],
-        control: "Agents act with the user’s own identity and rights; the person approves.",
+        control: "The agent acts with the user’s own identity and rights; the person approves.",
         controlPoints: [
           "Company-approved tools instead of consumer tools",
           "Classified data: what may and may not be exposed",
@@ -278,16 +258,16 @@ const en = {
         slug: "business-applications",
         audience: "Business teams",
         name: "Business Applications",
-        purpose: "AI that acts inside business processes.",
+        purpose: "Agents that work inside your processes, under control.",
         lead: "Agents that work inside your processes and help you decide — under control.",
         problem:
           "Recurring processes — tickets, invoices, FinOps recommendations, audits — take up a lot of time on repetitive work, and the data needed to decide stays locked in warehouses and applications.",
         builds: [
-          { name: "Autonomous agents", text: "Agents that chain several steps of a process: read, analyse, prepare, update." },
-          { name: "Talk to my data", text: "Query Snowflake, Databricks or business applications in plain language, with each person’s rights." },
-          { name: "Decision support", text: "Reasoned, sourced recommendations, ready for an expert to approve." },
-          { name: "Isolated runtimes", text: "Each agent runs in an isolated environment, limited to its scope." },
-          { name: "Business connectors", text: "ERP, CRM, ITSM, finance tools: agents act in the applications you already run." },
+          { name: "Main agent and subagents", text: "An agent that plans and delegates, rather than one that does everything." },
+          { name: "Talk to my data", text: "Query your data in everyday language, with each person’s rights." },
+          { name: "Decision support", text: "Sourced recommendations, approved by an expert." },
+          { name: "Control middleware", text: "Human approval, caps, data masking, plugged into the agent loop." },
+          { name: "Isolated runtimes", text: "Each agent in its own environment, limited to its scope." },
         ],
         useCases: [
           "FinOps recommendations and remediation follow-up",
@@ -295,7 +275,7 @@ const en = {
           "Security audit reports before go-live",
           "ITSM ticket automation",
         ],
-        control: "Isolated runtimes, scoped rights, human approval at the key steps.",
+        control: "Rights limited per agent, isolated runtimes, human approval before any write.",
         controlPoints: [
           "Access rights limited to each agent’s scope",
           "Validated, versioned sources",
@@ -309,15 +289,15 @@ const en = {
         slug: "ai-platform",
         audience: "IT & platform",
         name: "AI Platform",
-        purpose: "The common foundation for every agent.",
+        purpose: "The shared foundation that connects, secures and observes every agent.",
         lead: "The common foundation that connects, secures and observes all your agents.",
         problem:
           "Without a common foundation, every team builds its agents on its own: scattered API keys, tools exposed without control, no view of access, cost or errors. Scaling up becomes a risk.",
         builds: [
-          { name: "Gateway for all agents", text: "A single path to models and tools: routing, quotas, filtering, logging." },
-          { name: "Registry — agents, skills, prompts, tools", text: "The versioned catalogue of everything your agents use, MCP servers included." },
-          { name: "Observability & audit", text: "Every run is traced: sources, tool calls, versions, approvals, cost." },
-          { name: "Coding agents & CI/CD", text: "Agents inside the software toolchain — tests, documentation, migrations — reviewed before merge." },
+          { name: "LLM, MCP and agent gateways", text: "One checkpoint per type of flow, each with its own rules." },
+          { name: "Catalogue of agents, tools and skills", text: "What is approved, reusable by every team." },
+          { name: "Observability, evaluation and cost", text: "Every run traced, measured and attributed to a team." },
+          { name: "Standards and centre of excellence", text: "Shared rules and approved models, for a federated model." },
         ],
         useCases: [
           "Group-wide agentic platform",
@@ -325,7 +305,7 @@ const en = {
           "Catalogue of agents and MCP servers",
           "Assisted application migration",
         ],
-        control: "One control point: identities, access, traces and versions of every agent.",
+        control: "One control point for every team: identities, access, cost, traces and versions.",
         controlPoints: [
           "One control point for every agent",
           "Each agent has its own identity and revocable rights",
@@ -487,154 +467,50 @@ const en = {
     ],
   },
 
-  workTeaser: {
-    index: "05",
-    label: "Work",
-    title: "Problems we know how to solve.",
-    link: "All cases",
-  },
-
-  labTeaser: {
-    index: "06",
-    label: "Lab",
-    title: "Engineering + Research.",
-    text: "Dasein does not only integrate. We experiment with new forms of intelligent systems — multi-agent systems, agent memory, runtimes and interaction protocols — and bring what works back into production.",
-    link: "Enter the lab",
-  },
-
-  expertise: {
-    indexTitle: "Three verticals. One engineering standard.",
-    indexIntro:
-      "We work where AI has to work for real: with employees, inside business processes, and on the foundation that governs every agent.",
-    foundationsLabel: "What we build on",
-    foundationsTitle: "Four technical foundations.",
-    more: "Learn more",
-    label: "Expertise",
-    title: "Data, knowledge, intelligence and action — as one system.",
-    intro:
-      "We work across the whole chain, and on making it run in the real technology environment of the enterprise: cloud, data platforms, models, business applications, APIs and existing information systems.",
-    domains: [
-      {
-        id: "data-knowledge",
-        name: "Data & Knowledge",
-        summary:
-          "Corpus, data engineering, pipelines, historisation, storage, search, vectorisation, RAG and knowledge systems.",
-        text: "We build the foundations needed to exploit data, then turn data and documents into knowledge that AI systems can use — so models and agents work from the company’s real knowledge rather than from general knowledge alone.",
-        groups: [
-          {
-            name: "Foundations",
-            items: ["Collection & ingestion", "Data engineering", "Pipelines", "Structuring & transformation", "Historisation", "Storage & exposure", "Streaming & events"],
-          },
-          {
-            name: "Stores",
-            items: ["Data lakes", "Data warehouses", "Lakehouses", "Relational databases", "Document databases", "Distributed databases", "Vector databases"],
-          },
-          {
-            name: "Knowledge",
-            items: ["Corpus building", "Document processing", "Metadata", "Indexing", "Embeddings", "Semantic search", "RAG", "Knowledge bases", "Context & memory"],
-          },
-        ],
-        stack: ["Snowflake", "Databricks", "Cassandra", "Microsoft Fabric", "PostgreSQL", "pgvector", "Qdrant"],
-      },
-      {
-        id: "ai-models",
-        name: "AI & Models",
-        summary:
-          "LLM, RAG, context engineering, specialised models, model serving and generative AI systems.",
-        text: "Our approach is deliberately multi-model and multi-provider. We design architectures able to integrate different models and providers depending on performance, security, sovereignty, cost and business needs — including open models deployed on private infrastructure when the context requires it.",
-        groups: [
-          {
-            name: "Capabilities",
-            items: ["LLM", "RAG", "Specialised models", "Context engineering", "Reasoning", "Model serving", "Evaluation", "Generative AI applications"],
-          },
-        ],
-        stack: ["Mistral AI", "OpenAI", "Anthropic", "Google", "Microsoft", "IBM", "Open models"],
-      },
-      {
-        id: "agents-automation",
-        name: "Agents & Automation",
-        summary:
-          "AI agents, multi-agent systems, orchestration, MCP, tools, skills, memory and connection to the information system.",
-        text: "We build systems that do not only produce information but interact with their environment. The goal is not an AI isolated from the information system, but an intelligence able to understand and use existing systems — in a controlled way.",
-        groups: [
-          {
-            name: "Agentic systems",
-            items: ["AI agents", "Multi-agent systems", "Orchestration", "Agentic workflows", "Skills", "Tools", "MCP", "Memory", "State management", "Human-in-the-loop"],
-          },
-          {
-            name: "Connected to",
-            items: ["ServiceNow", "Snowflake", "Databricks", "ERP", "CRM", "ITSM", "Internal APIs", "Databases", "Document tools", "Business platforms"],
-          },
-        ],
-        stack: [],
-      },
-      {
-        id: "ai-infrastructure",
-        name: "AI Infrastructure",
-        summary:
-          "Runtimes, gateways, registries, cloud, security, identity, observability and governance.",
-        text: "We industrialise the infrastructure these systems need in production, adapted to the company’s existing environment rather than imposing a single stack.",
-        groups: [
-          {
-            name: "Platform",
-            items: ["AI / LLM gateways", "Agent gateways", "Agent runtimes", "Model serving", "Registries — agents, skills, prompts, tools", "MCP servers"],
-          },
-          {
-            name: "Control",
-            items: ["Security", "Identity", "Permissions", "Observability", "Evaluation", "Traceability", "Governance"],
-          },
-          {
-            name: "Environments",
-            items: ["AWS Bedrock / AgentCore", "Azure AI Foundry / AKS / APIM", "Google Cloud Vertex AI", "IBM watsonx", "Kubernetes / OpenShift", "Private infrastructure"],
-          },
-        ],
-        stack: ["AWS", "Microsoft Azure", "Google Cloud Platform", "IBM"],
-      },
-    ],
-    approach: {
-      title: "Our approach",
-      text: "We do not build chatbots in isolation. We build the Data + AI systems that let artificial intelligence work inside the real environment of the enterprise — coherent, secure and ready to be industrialised.",
-      points: [
-        { name: "Multi-model", text: "No dependency on a single model or provider." },
-        { name: "Multi-cloud", text: "Architectures that fit the cloud you already run." },
-        { name: "Production-first", text: "Security, identity, observability and governance from day one." },
-      ],
-    },
-  },
-
-  work: {
-    label: "Work",
-    title: "Problems we know how to solve.",
-    intro:
-      "Concrete problems met in the field. Many of our missions are confidential, so cases are described by the problem and the system we built rather than by client name.",
-    problem: "Problem",
-    build: "What we build",
-    stack: "Typical stack",
-    confidential: "Anonymised",
-    verticalLabel: "Vertical",
-    patternLabel: "Autonomy",
-    crossCutting: "Cross-cutting",
-  },
-
-  lab: {
-    label: "Lab",
-    title: "Engineering + Research.",
-    intro:
-      "The lab is a core part of Dasein. We experiment with new forms of intelligent systems, and bring what holds up back into the systems we build for clients.",
-    tracksTitle: "Research tracks",
-    logTitle: "Log",
-    logEmpty:
-      "Experiments, demos, technical publications and open-source projects will be published here.",
-    status: { active: "Active", exploring: "Exploring" },
-  },
-
   about: {
     label: "About",
-    title: "AI is becoming a new layer of the information system.",
-    paragraphs: [
-      "We do not see artificial intelligence as an isolated product. It is gradually becoming a new layer of the information system.",
-      "To really work inside a company, it must be able to access data, understand context, keep a memory, use tools, interact with existing systems and act within a secure framework.",
-      "Dasein works precisely at this intersection.",
+    visionLabel: "Our vision",
+    title: "AI is not a product. It is a new layer of the information system, and it has to be governed.",
+    lead: "To work inside a company, AI must access data, understand context, use tools, act in existing systems, and stay under control. Dasein works at that intersection.",
+    beliefsLabel: "What we believe",
+    beliefs: [
+      {
+        title: "AI is becoming a layer of the information system.",
+        text: "Not one more tool next to the others: a layer that reads your data, uses your applications and acts in your processes. It deserves the same engineering standards as the rest of the system.",
+      },
+      {
+        title: "Value lies in governance, not in the front end.",
+        text: "You can buy the chat interface. What makes the difference is what sits behind it: who can do what, with which data, at what cost, and with what trace.",
+        link: { label: "User Augmentation", href: "/expertise/user-augmentation" },
+      },
+      {
+        title: "An agent always acts with someone’s rights.",
+        text: "Propagated identity, delegated rights, human approval before writing: an agent must never see or do more than the person it works for.",
+        link: { label: "MCP", href: "/articles/mcp" },
+      },
+      {
+        title: "One shared foundation rather than a hundred isolated projects.",
+        text: "Gateways, catalogue, observability, standards: pooled once, they let every team move fast without reinventing security.",
+        link: { label: "AI Platform", href: "/expertise/ai-platform" },
+      },
+      {
+        title: "The simplest thing that works.",
+        text: "A workflow before an agent, one agent before several. Add complexity when the problem demands it, not because the technology allows it.",
+        link: { label: "Business Applications", href: "/expertise/business-applications" },
+      },
+      {
+        title: "AI has a physical weight.",
+        text: "Behind every model there are megawatts, heat and water. Picking the right model, measuring, and sizing to the real need are part of the engineering job.",
+        link: { label: "The megawatt and the degree", href: "/articles/le-megawatt-et-le-degre" },
+      },
+    ],
+    beliefMore: "Read:",
+    roleLabel: "Our role",
+    roleTitle: "We help put things in place. Your teams stay in charge.",
+    role: [
+      { title: "Frame", text: "Choose the use cases worth the effort, the level of control each needs and the architecture that carries them." },
+      { title: "Build", text: "Put the agents, the foundation and the governance in place with your teams, in your environments and with your tools." },
+      { title: "Hand over", text: "Document, explain, train: our articles and glossary follow the same rule, sources, limits, no jargon." },
     ],
     intersection: ["Data", "Software", "AI", "Infrastructure"],
     nameTitle: "Why “Dasein”",
@@ -643,25 +519,28 @@ const en = {
     audienceTitle: "Who we work with",
     audienceText:
       "Large groups with complex data and cloud ecosystems, and technology companies accelerating the construction of their AI infrastructure and products.",
+    clients: [
+      { name: "TF1", logo: "tf1.svg" },
+      { name: "Safran", logo: "safran.svg" },
+      { name: "Icade", logo: "icade.jpg" },
+      { name: "L-Acoustics", logo: "l-acoustics.svg" },
+    ],
     audience: [
-      "CTO",
-      "CIO",
-      "Chief Data Officer",
-      "Chief AI Officer",
-      "Data & AI leads",
-      "Architecture leads",
-      "Engineering teams",
-      "Cloud teams",
-      "Data teams",
-      "Innovation teams",
-      "Business units running structural AI projects",
+      {
+        title: "Leadership",
+        items: ["Executive committees", "Management committees", "CTOs", "IT departments and information systems"],
+      },
+      {
+        title: "Teams",
+        items: ["Product", "Data center", "Network", "Cloud", "Data", "Cybersecurity"],
+      },
     ],
   },
 
   contact: {
     label: "Contact",
-    title: "Tell us what you’re building.",
-    intro: "A few lines are enough. We’ll get back to you quickly.",
+    title: "Let’s talk about your project.",
+    intro: "A few lines are enough: your context, the systems involved, what you want to achieve. We will get back to you quickly.",
     name: "Name",
     company: "Company",
     email: "Email",
@@ -677,6 +556,13 @@ const en = {
   articlesPage: {
     label: "Articles",
     readingTime: "min read",
+    title: "Understanding enterprise AI, without the jargon.",
+    intro:
+      "In-depth, sourced articles on how to put agents to work inside a company: what changes, what gets stuck, and how to govern it.",
+    read: "Read the article",
+    glossaryTitle: "Lost on a word?",
+    glossaryText: "Every technical and business term used in these articles is explained simply in the glossary.",
+    glossaryLink: "Open the glossary",
   },
 
   glossary: {

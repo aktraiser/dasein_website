@@ -26,9 +26,18 @@ export default async function Image({ params }: { params: Promise<{ lang: string
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 16, fontSize: 32 }}>
-          <div style={{ display: "flex", width: 28, height: 28, border: "2px solid #0e0f11", position: "relative" }}>
-            <div style={{ position: "absolute", left: 13, top: 13, width: 8, height: 8, background: "#0e0f11" }} />
-          </div>
+          <svg width="40" height="40" viewBox="0 0 32 32">
+            <defs>
+              <clipPath id="c">
+                <rect width="32" height="32" />
+              </clipPath>
+            </defs>
+            <g clipPath="url(#c)">
+              <rect width="32" height="32" fill="#0e0f11" />
+              <path fill="#f1f0ea" fillRule="evenodd" d="M17.1087 2.62611L17.1087 2.62614L17.1086 2.6261L13.8565 5.87829L13.8565 5.87832L6.18411 13.5507L9.4363 16.8029L9.43644 16.8027L15.1623 22.5286L18.4145 19.2764L12.6886 13.5506L17.1087 9.1305L31.9267 23.9485L35.1789 20.6963L20.3609 5.87832L20.3609 5.87829L17.1087 2.62611Z" />
+              <path fill="#f1f0ea" fillRule="evenodd" d="M15.07 29.9948L15.0701 29.9947L18.3223 26.7425L25.9946 19.0702L22.7424 15.818L22.7423 15.8181L17.0165 10.0922L13.7643 13.3444L19.4902 19.0703L15.0701 23.4903L0.252062 8.6723L-3.00012 11.9245L11.8179 26.7425L11.8179 26.7426L15.07 29.9948Z" />
+            </g>
+          </svg>
           dasein
         </div>
         <div style={{ display: "flex", fontSize: 64, lineHeight: 1.05, letterSpacing: -2, maxWidth: 1000, fontFamily: "sans-serif" }}>

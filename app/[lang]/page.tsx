@@ -43,7 +43,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               <Link href={`/${lang}/contact`} className="biglink">
                 {hero.primary}
               </Link>
-              <Link href={`/${lang}/lab`} className="biglink">
+              <Link href={`/${lang}/articles`} className="biglink">
                 {hero.secondary}
               </Link>
             </p>

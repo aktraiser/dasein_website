@@ -15,7 +15,7 @@ export function OfferMap({ data, lang }: { data: Dictionary["offer"]; lang: Loca
 
       <div className="offer__row">
         <span className="offer__axis">{data.axes.support}</span>
-        <Link href={`/${lang}/expertise`} className="offer__support">
+        <Link href={`/${lang}/about#role`} className="offer__support">
           <strong>{data.support.title}</strong>
           <span>{data.support.items.join(" | ")}</span>
         </Link>

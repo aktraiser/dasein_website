@@ -10,10 +10,9 @@ import { Mark } from "./Wordmark";
  */
 export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
   const links = [
-    { href: `/${lang}/expertise`, label: dict.nav.expertise },
-    { href: `/${lang}/work`, label: dict.nav.work },
-    { href: `/${lang}/lab`, label: dict.nav.lab },
+    { href: `/${lang}#verticals`, label: dict.nav.expertise },
     { href: `/${lang}/about`, label: dict.nav.about },
+    { href: `/${lang}/articles`, label: dict.nav.articles },
     { href: `/${lang}/contact`, label: dict.nav.contact },
     { href: `/${lang}/glossary`, label: dict.glossary.label },
   ];

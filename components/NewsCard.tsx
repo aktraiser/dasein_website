@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { NewsItem, NewsVisual } from "@/content/news";
 import type { Locale } from "@/lib/i18n";
-import { McpCover } from "./covers/McpCover";
+import { Cover } from "./covers";
 import { FloatingChips } from "./FloatingChips";
 import { DitherField } from "./os/DitherField";
 
@@ -10,10 +10,16 @@ const CHECK = "M14.6 20.2l3.9 3.9 7.2-7.6";
 
 function Visual({ visual, lang }: { visual: NewsVisual; lang: Locale }) {
   switch (visual) {
+    case "energy":
+    case "weak-signal":
+    case "phaseone":
     case "mcp":
+    case "platform":
+    case "business":
+    case "user-augmentation":
       return (
-        <div className="card__media card__media--ink">
-          <McpCover lang={lang} />
+        <div className="card__media">
+          <Cover cover={visual} lang={lang} />
         </div>
       );
     case "chips":

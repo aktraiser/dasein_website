@@ -392,7 +392,7 @@ export const glossary: GlossaryEntry[] = [
     fr: {
       name: "Registry",
       def: "Le catalogue central et versionné de tout ce que les agents utilisent : agents, skills, prompts, outils et serveurs MCP.",
-      match: ["registry", "registre"],
+      match: ["registry"],
     },
     en: {
       name: "Registry",
@@ -1035,6 +1035,578 @@ export const glossary: GlossaryEntry[] = [
       name: "Interface contract",
       def: "The stable commitment between the platform and applications: what is offered, how to call it, with which guarantees, without exposing internals.",
       match: ["interface contract"],
+    },
+  },
+  {
+    id: "data-center",
+    fr: {
+      name: "Data center",
+      def: "Un bâtiment qui héberge des serveurs, du stockage et du réseau, alimenté en électricité et refroidi en continu, jour et nuit.",
+      match: ["data centers", "data center"],
+    },
+    en: {
+      name: "Data center",
+      def: "A building that hosts servers, storage and networking, powered and cooled continuously, day and night.",
+      match: ["data centers", "data center"],
+    },
+  },
+  {
+    id: "megawatt",
+    fr: {
+      name: "Mégawatt (MW)",
+      def: "Une unité de puissance : ce qu’il faut fournir à chaque instant. 1 MW = 1 000 kW. À ne pas confondre avec le mégawattheure, qui mesure une quantité d’énergie consommée dans le temps.",
+      match: ["mégawatts", "mégawatt"],
+    },
+    en: {
+      name: "Megawatt (MW)",
+      def: "A unit of power: what must be supplied at every instant. 1 MW = 1,000 kW. Not to be confused with the megawatt-hour, which measures an amount of energy used over time.",
+      match: ["megawatts", "megawatt"],
+    },
+  },
+  {
+    id: "watt-hour",
+    fr: {
+      name: "Wattheure (Wh, kWh, TWh)",
+      def: "Une unité d’énergie : une puissance maintenue pendant une durée. 1 kWh = 1 000 W pendant une heure ; 1 TWh = un milliard de kWh.",
+      match: ["kilowattheures", "kilowattheure", "wattheures", "wattheure"],
+    },
+    en: {
+      name: "Watt-hour (Wh, kWh, TWh)",
+      def: "A unit of energy: a power sustained over time. 1 kWh = 1,000 W for one hour; 1 TWh = a billion kWh.",
+      match: ["kilowatt-hours", "kilowatt-hour", "watt-hours", "watt-hour"],
+    },
+  },
+  {
+    id: "pue",
+    fr: {
+      name: "PUE",
+      def: "Power Usage Effectiveness : l’énergie totale d’un data center divisée par celle qui arrive aux serveurs. 1,0 serait parfait ; 1,5 veut dire 50 % d’énergie en plus pour le refroidissement et les pertes.",
+      match: ["PUE"],
+    },
+    en: {
+      name: "PUE",
+      def: "Power Usage Effectiveness: a data center’s total energy divided by the energy reaching the servers. 1.0 would be perfect; 1.5 means 50% extra energy for cooling and losses.",
+      match: ["PUE"],
+    },
+  },
+  {
+    id: "wue",
+    fr: {
+      name: "WUE",
+      def: "Water Usage Effectiveness : les litres d’eau consommés par kilowattheure informatique.",
+      match: ["WUE"],
+    },
+    en: {
+      name: "WUE",
+      def: "Water Usage Effectiveness: litres of water consumed per IT kilowatt-hour.",
+      match: ["WUE"],
+    },
+  },
+  {
+    id: "rack",
+    fr: {
+      name: "Rack",
+      def: "L’armoire normalisée qui accueille les serveurs : 60 cm de large, environ deux mètres de haut. Sa puissance se mesure en kilowatts.",
+      match: ["racks", "rack"],
+    },
+    en: {
+      name: "Rack",
+      def: "The standard cabinet that holds servers: 60 cm wide, about two metres tall. Its power is measured in kilowatts.",
+      match: ["racks", "rack"],
+    },
+  },
+  {
+    id: "gpu",
+    fr: {
+      name: "GPU",
+      def: "Processeur graphique : la puce de calcul massivement parallèle utilisée pour entraîner et faire tourner les modèles d’IA. C’est elle qui consomme et chauffe le plus.",
+      match: ["GPU"],
+    },
+    en: {
+      name: "GPU",
+      def: "Graphics processing unit: the massively parallel chip used to train and run AI models. It is what draws and heats the most.",
+      match: ["GPUs", "GPU"],
+    },
+  },
+  {
+    id: "free-cooling",
+    fr: {
+      name: "Free cooling",
+      def: "Refroidir un data center avec l’air extérieur plutôt qu’avec une machine frigorifique. Possible seulement quand il fait assez frais et sec.",
+      match: ["free cooling"],
+    },
+    en: {
+      name: "Free cooling",
+      def: "Cooling a data center with outside air rather than a refrigeration machine. Only possible when it is cool and dry enough.",
+      match: ["free cooling", "free-cooling"],
+    },
+  },
+  {
+    id: "liquid-cooling",
+    fr: {
+      name: "Refroidissement liquide",
+      def: "Évacuer la chaleur des puces avec un liquide plutôt qu’avec de l’air : plaques froides sur les puces (direct-to-chip) ou serveurs plongés dans un fluide (immersion).",
+      match: ["refroidissement liquide", "direct-to-chip"],
+    },
+    en: {
+      name: "Liquid cooling",
+      def: "Removing chip heat with a liquid rather than air: cold plates on the chips (direct-to-chip) or servers immersed in a fluid (immersion).",
+      match: ["liquid cooling", "liquid-cooling", "direct-to-chip"],
+    },
+  },
+  {
+    id: "dry-cooler",
+    fr: {
+      name: "Aérorefroidisseur (dry cooler)",
+      def: "Un échangeur qui refroidit un liquide avec l’air extérieur, sans évaporer d’eau. Il consomme un peu plus d’électricité qu’une tour évaporative.",
+      match: ["aérorefroidisseurs", "aérorefroidisseur", "dry cooler"],
+    },
+    en: {
+      name: "Dry cooler",
+      def: "A heat exchanger that cools a liquid with outside air, without evaporating water. It uses a bit more electricity than an evaporative tower.",
+      match: ["dry coolers", "dry cooler"],
+    },
+  },
+  {
+    id: "cdu",
+    fr: {
+      name: "CDU",
+      def: "Coolant Distribution Unit : l’unité qui sépare et échange la chaleur entre la boucle de liquide des puces et la boucle d’eau du bâtiment.",
+      match: ["CDU"],
+    },
+    en: {
+      name: "CDU",
+      def: "Coolant Distribution Unit: the unit that separates and exchanges heat between the chips’ liquid loop and the building’s water loop.",
+      match: ["CDU"],
+    },
+  },
+  {
+    id: "generator",
+    fr: {
+      name: "Groupe électrogène",
+      def: "Un moteur, souvent diesel, qui produit de l’électricité de secours en cas de coupure du réseau. Sa puissance thermique dépasse sa puissance électrique.",
+      match: ["groupes électrogènes", "groupe électrogène"],
+    },
+    en: {
+      name: "Backup generator",
+      def: "An engine, often diesel, that produces emergency electricity when the grid fails. Its thermal power exceeds its electrical output.",
+      match: ["backup generators", "backup generator", "generators"],
+    },
+  },
+  {
+    id: "waste-heat",
+    fr: {
+      name: "Chaleur fatale",
+      def: "La chaleur produite par une activité et rejetée sans être utilisée. Celle des data centers peut chauffer des logements.",
+      match: ["chaleur fatale"],
+    },
+    en: {
+      name: "Waste heat",
+      def: "Heat produced by an activity and released without being used. Data-center heat can warm homes.",
+      match: ["waste heat"],
+    },
+  },
+  {
+    id: "hyperscale",
+    fr: {
+      name: "Hyperscale",
+      def: "Les très grands data centers des géants du cloud (AWS, Microsoft, Google, Meta), qui se comptent en dizaines ou centaines de mégawatts.",
+      match: ["hyperscale"],
+    },
+    en: {
+      name: "Hyperscale",
+      def: "The very large data centers of cloud giants (AWS, Microsoft, Google, Meta), sized in tens or hundreds of megawatts.",
+      match: ["hyperscale"],
+    },
+  },
+  {
+    id: "queue",
+    fr: {
+      name: "File d’attente de raccordement",
+      def: "La liste des projets (centrales, stockage, gros consommateurs) qui attendent d’être raccordés au réseau de transport d’électricité.",
+      match: ["file d’attente"],
+    },
+    en: {
+      name: "Interconnection queue",
+      def: "The list of projects (power plants, storage, large consumers) waiting to be connected to the transmission grid.",
+      match: ["queue"],
+    },
+  },
+  {
+    id: "behind-the-meter",
+    fr: {
+      name: "Derrière le compteur",
+      def: "Une production d’électricité installée sur le site du consommateur, hors réseau public : turbines, moteurs, piles à combustible.",
+      match: ["derrière le compteur"],
+    },
+    en: {
+      name: "Behind the meter",
+      def: "Electricity generation installed on the consumer’s own site, off the public grid: turbines, engines, fuel cells.",
+      match: ["behind-the-meter", "behind the meter"],
+    },
+  },
+  {
+    id: "combined-cycle",
+    fr: {
+      name: "Cycle combiné",
+      def: "Une centrale à gaz qui récupère la chaleur de ses turbines pour produire davantage d’électricité. C’est la technologie gaz la plus efficace.",
+      match: ["cycle combiné"],
+    },
+    en: {
+      name: "Combined cycle",
+      def: "A gas plant that recovers heat from its turbines to produce more electricity. It is the most efficient gas technology.",
+      match: ["combined-cycle", "combined cycle"],
+    },
+  },
+  {
+    id: "pjm",
+    fr: {
+      name: "PJM",
+      def: "Le plus grand gestionnaire de réseau et marché d’électricité des États-Unis (Virginie et douze autres États). Ses enchères de capacité paient la puissance disponible aux heures de pointe.",
+      match: ["PJM"],
+    },
+    en: {
+      name: "PJM",
+      def: "The largest grid operator and electricity market in the United States (Virginia and twelve other states). Its capacity auctions pay for power available at peak times.",
+      match: ["PJM"],
+    },
+  },
+  {
+    id: "jevons",
+    fr: {
+      name: "Paradoxe de Jevons",
+      def: "Quand une ressource devient plus efficace à utiliser, on l’utilise davantage, et la consommation totale peut augmenter.",
+      match: ["paradoxe de Jevons"],
+    },
+    en: {
+      name: "Jevons paradox",
+      def: "When a resource becomes more efficient to use, people use more of it, and total consumption can rise.",
+      match: ["Jevons paradox"],
+    },
+  },
+  {
+    id: "impact-assessment",
+    fr: {
+      name: "Étude d’impact",
+      def: "Le dossier qui évalue les effets d’un projet sur l’environnement (eau, air, bruit, biodiversité), obligatoire au-delà de certains seuils.",
+      match: ["étude d’impact environnemental", "étude d’impact"],
+    },
+    en: {
+      name: "Impact assessment",
+      def: "The file that assesses a project’s effects on the environment (water, air, noise, biodiversity), mandatory above certain thresholds.",
+      match: ["environmental impact assessment", "impact assessment"],
+    },
+  },
+  {
+    id: "refere",
+    fr: {
+      name: "Juge des référés",
+      def: "Le juge qui statue en urgence, par exemple pour suspendre une décision en attendant le jugement sur le fond.",
+      match: ["juge des référés"],
+    },
+    en: {
+      name: "Urgent-procedure judge",
+      def: "The judge who rules urgently, for example to suspend a decision pending a ruling on the merits.",
+      match: ["urgent applications", "urgent-procedure judge"],
+    },
+  },
+  {
+    id: "icpe",
+    fr: {
+      name: "Installation classée",
+      def: "Une installation industrielle qui présente des risques ou des nuisances et qui est soumise à une réglementation environnementale renforcée (ICPE en France).",
+      match: ["installation classée"],
+    },
+    en: {
+      name: "Classified installation",
+      def: "An industrial facility that presents risks or nuisances and is subject to stricter environmental rules (ICPE in France).",
+      match: ["classified installation"],
+    },
+  },
+  {
+    id: "dew-point",
+    fr: {
+      name: "Point de rosée",
+      def: "La température à laquelle l’humidité de l’air se condense. Plus il est haut, plus l’air est humide et difficile à utiliser pour refroidir.",
+      match: ["point de rosée"],
+    },
+    en: {
+      name: "Dew point",
+      def: "The temperature at which moisture in the air condenses. The higher it is, the more humid the air and the harder it is to use for cooling.",
+      match: ["dew point"],
+    },
+  },
+  {
+    id: "heat-island",
+    fr: {
+      name: "Îlot de chaleur urbain",
+      def: "Une zone bâtie plus chaude que la campagne alentour, parce que le béton et les activités humaines stockent et rejettent de la chaleur.",
+      match: ["îlots de chaleur urbains", "îlot de chaleur urbain"],
+    },
+    en: {
+      name: "Urban heat island",
+      def: "A built-up area warmer than the surrounding countryside, because concrete and human activity store and release heat.",
+      match: ["urban heat islands", "urban heat island"],
+    },
+  },
+  {
+    id: "preprint",
+    fr: {
+      name: "Preprint",
+      def: "Un article scientifique publié avant d’avoir été relu par des pairs. Ses résultats sont à prendre avec prudence.",
+      match: ["preprint"],
+    },
+    en: {
+      name: "Preprint",
+      def: "A scientific paper published before peer review. Its results should be read with caution.",
+      match: ["preprint"],
+    },
+  },
+  {
+    id: "llms-txt",
+    fr: {
+      name: "llms.txt",
+      def: "Un fichier placé à la racine d’un site, qui en donne la carte en une page pour les modèles de langage : ce qu’il contient et où le lire.",
+      match: ["llms.txt"],
+    },
+    en: {
+      name: "llms.txt",
+      def: "A file at the root of a website that gives language models a one-page map of it: what it contains and where to read it.",
+      match: ["llms.txt"],
+    },
+  },
+  {
+    id: "idempotency",
+    fr: {
+      name: "Clé d’idempotence",
+      def: "Un identifiant joint à une requête d’écriture : si la même requête est envoyée deux fois, elle ne produit qu’un seul effet, sans doublon.",
+      match: ["clé d’idempotence", "idempotente", "idempotentes"],
+    },
+    en: {
+      name: "Idempotency key",
+      def: "An identifier attached to a write request: if the same request is sent twice, it has a single effect, with no duplicate.",
+      match: ["idempotency key", "idempotent"],
+    },
+  },
+  {
+    id: "microvm",
+    fr: {
+      name: "MicroVM",
+      def: "Une machine virtuelle très légère, qui démarre en une fraction de seconde et isole un programme du reste du serveur (Firecracker, par exemple).",
+      match: ["microVMs", "microVM"],
+    },
+    en: {
+      name: "MicroVM",
+      def: "A very lightweight virtual machine that starts in a fraction of a second and isolates a program from the rest of the server (Firecracker, for example).",
+      match: ["microVMs", "microVM"],
+    },
+  },
+  {
+    id: "sandbox",
+    fr: {
+      name: "Sandbox",
+      def: "Un environnement isolé où l’on exécute du code sans risque pour le reste du système : ce qui s’y passe ne peut pas en sortir.",
+      match: ["sandbox"],
+    },
+    en: {
+      name: "Sandbox",
+      def: "An isolated environment where code runs without risk to the rest of the system: what happens inside cannot get out.",
+      match: ["sandbox"],
+    },
+  },
+  {
+    id: "csrf",
+    fr: {
+      name: "CSRF",
+      def: "Une attaque qui pousse un navigateur à envoyer une requête à l’insu de l’utilisateur. Un jeton CSRF dans chaque formulaire l’empêche.",
+      match: ["CSRF"],
+    },
+    en: {
+      name: "CSRF",
+      def: "An attack that makes a browser send a request without the user knowing. A CSRF token in each form prevents it.",
+      match: ["CSRF"],
+    },
+  },
+  {
+    id: "json",
+    fr: {
+      name: "JSON",
+      def: "Un format de texte simple pour échanger des données structurées entre programmes.",
+      match: ["JSON"],
+    },
+    en: {
+      name: "JSON",
+      def: "A simple text format for exchanging structured data between programs.",
+      match: ["JSON"],
+    },
+  },
+  {
+    id: "markdown",
+    fr: {
+      name: "Markdown",
+      def: "Un format de texte lisible tel quel, avec une syntaxe légère pour les titres, listes et liens. Idéal pour les humains comme pour les modèles.",
+      match: ["Markdown"],
+    },
+    en: {
+      name: "Markdown",
+      def: "A text format readable as is, with a light syntax for headings, lists and links. Ideal for humans and models alike.",
+      match: ["Markdown"],
+    },
+  },
+  {
+    id: "shell",
+    fr: {
+      name: "Shell",
+      def: "L’interface en ligne de commande d’un système : on y tape des commandes pour lire des fichiers, lancer des programmes, etc.",
+      match: ["shell"],
+    },
+    en: {
+      name: "Shell",
+      def: "A system’s command-line interface: you type commands to read files, run programs and so on.",
+      match: ["shell"],
+    },
+  },
+  {
+    id: "veille",
+    fr: {
+      name: "Veille",
+      def: "Le suivi régulier de l’actualité d’un marché pour repérer des projets, des concurrents ou des tendances.",
+      match: ["veille"],
+    },
+    en: {
+      name: "Market monitoring",
+      def: "Regularly following the news of a market to spot projects, competitors or trends.",
+      match: ["market monitoring"],
+    },
+  },
+  {
+    id: "scoring",
+    fr: {
+      name: "Scoring",
+      def: "Attribuer une note à un élément selon des critères définis, pour le classer ou décider s’il mérite d’être traité.",
+      match: ["scoring"],
+    },
+    en: {
+      name: "Scoring",
+      def: "Giving an item a score against defined criteria, to rank it or decide whether it deserves attention.",
+      match: ["scoring"],
+    },
+  },
+  {
+    id: "false-positive",
+    fr: {
+      name: "Faux positif",
+      def: "Un résultat signalé à tort comme pertinent : ici, un article remonté comme opportunité alors qu’il n’en est pas une.",
+      match: ["faux positifs", "faux positif"],
+    },
+    en: {
+      name: "False positive",
+      def: "A result wrongly flagged as relevant: here, an article raised as an opportunity when it is not one.",
+      match: ["false positives", "false positive"],
+    },
+  },
+  {
+    id: "dedup",
+    fr: {
+      name: "Déduplication",
+      def: "Repérer et écarter les doublons, par exemple deux articles qui parlent du même projet.",
+      match: ["déduplication", "dédupliquées"],
+    },
+    en: {
+      name: "Deduplication",
+      def: "Spotting and removing duplicates, for example two articles about the same project.",
+      match: ["deduplication", "deduplicated"],
+    },
+  },
+  {
+    id: "semantic-similarity",
+    fr: {
+      name: "Similarité sémantique",
+      def: "Une mesure de proximité de sens entre deux textes, même quand ils n’emploient pas les mêmes mots.",
+      match: ["similarité sémantique"],
+    },
+    en: {
+      name: "Semantic similarity",
+      def: "A measure of how close two texts are in meaning, even when they use different words.",
+      match: ["semantic similarity"],
+    },
+  },
+  {
+    id: "lakehouse",
+    fr: {
+      name: "Lakehouse",
+      def: "Un espace de stockage qui garde les données brutes en grand volume tout en permettant de les interroger comme une base.",
+      match: ["Lakehouse"],
+    },
+    en: {
+      name: "Lakehouse",
+      def: "A storage space that keeps large volumes of raw data while letting you query it like a database.",
+      match: ["Lakehouse"],
+    },
+  },
+  {
+    id: "warehouse",
+    fr: {
+      name: "Entrepôt de données",
+      def: "Une base organisée pour l’analyse : des données nettoyées, reliées et prêtes pour les tableaux de bord.",
+      match: ["entrepôt de données", "Warehouse"],
+    },
+    en: {
+      name: "Data warehouse",
+      def: "A database organised for analysis: cleaned, linked data ready for dashboards.",
+      match: ["data warehouse", "Warehouse"],
+    },
+  },
+  {
+    id: "fabric",
+    fr: {
+      name: "Microsoft Fabric",
+      def: "La plateforme data de Microsoft qui réunit stockage, transformation, analyse et tableaux de bord Power BI.",
+      match: ["Microsoft Fabric"],
+    },
+    en: {
+      name: "Microsoft Fabric",
+      def: "Microsoft’s data platform bringing together storage, transformation, analysis and Power BI dashboards.",
+      match: ["Microsoft Fabric"],
+    },
+  },
+  {
+    id: "power-bi",
+    fr: {
+      name: "Power BI",
+      def: "L’outil de tableaux de bord et de visualisation de données de Microsoft.",
+      match: ["Power BI"],
+    },
+    en: {
+      name: "Power BI",
+      def: "Microsoft’s dashboard and data visualisation tool.",
+      match: ["Power BI"],
+    },
+  },
+  {
+    id: "azure-functions",
+    fr: {
+      name: "Azure Functions",
+      def: "Un service de Microsoft Azure qui exécute du code à la demande, sans gérer de serveur.",
+      match: ["Azure Functions"],
+    },
+    en: {
+      name: "Azure Functions",
+      def: "A Microsoft Azure service that runs code on demand, without managing servers.",
+      match: ["Azure Functions"],
+    },
+  },
+  {
+    id: "ai-search",
+    fr: {
+      name: "Azure AI Search",
+      def: "Le moteur de recherche de Microsoft Azure, qui indexe des documents pour les retrouver par mots-clés ou par sens.",
+      match: ["Azure AI Search"],
+    },
+    en: {
+      name: "Azure AI Search",
+      def: "Microsoft Azure’s search engine, which indexes documents so they can be found by keyword or by meaning.",
+      match: ["Azure AI Search"],
     },
   },
 ];
