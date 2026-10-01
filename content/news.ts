@@ -101,14 +101,4 @@ export const news: NewsItem[] = [
       fr: { title: "Donner des agents à chaque collaborateur, sans perdre le contrôle", meta: "User Augmentation" },
     },
   },
-  {
-    slug: "three-verticals",
-    kind: "article",
-    visual: "chips",
-    href: "/#verticals",
-    content: {
-      en: { title: "Three verticals for agentic AI", meta: "End users, business, IT" },
-      fr: { title: "Trois verticales pour l’IA agentique", meta: "Utilisateurs, métiers, IT" },
-    },
-  },
 ];

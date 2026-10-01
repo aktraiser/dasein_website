@@ -5,7 +5,7 @@ const fr: Dictionary = {
     siteName: "Dasein",
     title: "Dasein — Ingénierie Data & IA",
     description:
-      "Dasein conçoit et industrialise les fondations data et les systèmes IA qui permettent aux entreprises de transformer leurs données, leurs connaissances et leurs outils en systèmes capables de comprendre, raisonner et agir.",
+      "Dasein aide les entreprises à mettre l’IA au travail : agents, plateformes et gouvernance, sur des fondations data solides.",
   },
 
   nav: {

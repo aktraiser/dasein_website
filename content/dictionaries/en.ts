@@ -3,7 +3,7 @@ const en = {
     siteName: "Dasein",
     title: "Dasein — Data & AI Engineering",
     description:
-      "Dasein engineers the data foundations and AI systems that let enterprises turn their data, knowledge and existing tools into systems that understand, reason and act.",
+      "Dasein helps companies put AI to work: agents, platforms and governance, built on solid data foundations.",
   },
 
   nav: {

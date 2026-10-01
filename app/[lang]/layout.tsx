@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { TermPopovers } from "@/components/TermPopovers";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { jsonLdScript } from "@/lib/jsonld";
 import { getDictionary } from "@/content/dictionaries";
 import { alternatesFor, hasLocale, locales, siteUrl } from "@/lib/i18n";
 import "../globals.css";
@@ -54,16 +55,24 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     "@type": "Organization",
     name: "Dasein",
     url: siteUrl,
+    logo: `${siteUrl}/brand/dasein-512.png`,
     description: dict.meta.description,
     knowsAbout: ["Data engineering", "Artificial intelligence", "LLM", "RAG", "AI agents", "MCP", "AI infrastructure"],
   };
 
+  // Tells search engines the site's name (shown above results, like "OpenAI").
+  const website = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Dasein",
+    alternateName: dict.meta.title,
+    url: `${siteUrl}/${lang}`,
+    inLanguage: lang,
+    publisher: { "@type": "Organization", name: "Dasein", url: siteUrl },
+  };
+
   return (
-    <html lang={lang} className={`${sans.variable} ${mono.variable} ${serif.variable}`} data-scroll-behavior="smooth" suppressHydrationWarning>
-      <head>
-        {/* data-js: lets CSS hide reveal-on-scroll content only when JS runs */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.dataset.js=''" }} />
-      </head>
+    <html lang={lang} className={`${sans.variable} ${mono.variable} ${serif.variable}`} data-scroll-behavior="smooth">
       <body>
         <a href="#main" className="skip-link">
           {dict.nav.skip}
@@ -74,7 +83,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         <TermPopovers />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
+          dangerouslySetInnerHTML={jsonLdScript([organization, website])}
         />
       </body>
     </html>

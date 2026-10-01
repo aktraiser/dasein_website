@@ -36,12 +36,6 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         <p>{dict.footer.tagline}</p>
       </div>
 
-      <p className="footer__chain">
-        <span aria-hidden="true" />
-        {dict.hero.chain.join(" → ")}
-        <span aria-hidden="true" />
-      </p>
-
       <p className="footer__small">
         <span>
           © {new Date().getFullYear()} Dasein. {dict.footer.rights}

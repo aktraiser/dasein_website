@@ -21,11 +21,14 @@ export type ArticleEntry = {
   cover: ArticleCover;
   topic: Record<Locale, string>;
   title: Record<Locale, string>;
+  /** Publication date (ISO), for structured data and the sitemap. */
+  date: string;
 };
 
 export const articleIndex: ArticleEntry[] = [
   {
     slug: "le-megawatt-et-le-degre",
+    date: "2026-09-24",
     href: "/articles/le-megawatt-et-le-degre",
     cover: "energy",
     topic: { fr: "Énergie et infrastructure", en: "Energy and infrastructure" },
@@ -36,6 +39,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "weak-signal-l-acoustics",
+    date: "2026-10-01",
     href: "/articles/weak-signal-l-acoustics",
     cover: "weak-signal",
     topic: { fr: "Retour d’expérience", en: "Case study" },
@@ -46,6 +50,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "phaseone10841",
+    date: "2026-10-01",
     href: "/articles/phaseone10841",
     cover: "phaseone",
     topic: { fr: "Retour d’expérience", en: "Case study" },
@@ -56,6 +61,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "mcp",
+    date: "2026-10-01",
     href: "/articles/mcp",
     cover: "mcp",
     topic: { fr: "AI Platform", en: "AI Platform" },
@@ -66,6 +72,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "ai-platform",
+    date: "2026-10-01",
     href: "/expertise/ai-platform",
     cover: "platform",
     topic: { fr: "AI Platform", en: "AI Platform" },
@@ -76,6 +83,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "business-applications",
+    date: "2026-10-01",
     href: "/expertise/business-applications",
     cover: "business",
     topic: { fr: "Business Applications", en: "Business Applications" },
@@ -86,6 +94,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "user-augmentation",
+    date: "2026-10-01",
     href: "/expertise/user-augmentation",
     cover: "user-augmentation",
     topic: { fr: "User Augmentation", en: "User Augmentation" },

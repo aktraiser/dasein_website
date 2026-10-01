@@ -3,9 +3,11 @@ import { notFound } from "next/navigation";
 import { ArticleBody } from "@/components/ArticleBody";
 import { glossText, newGlossarySeen } from "@/components/Glossed";
 import { Reveal } from "@/components/Reveal";
+import { articleIndex } from "@/content/articleIndex";
 import { articles } from "@/content/articles";
 import { getDictionary } from "@/content/dictionaries";
 import { hasLocale, verticalSlugs, type Route } from "@/lib/i18n";
+import { articleJsonLd, jsonLdScript } from "@/lib/jsonld";
 import { pageMetadata } from "@/lib/metadata";
 
 export const dynamicParams = false;
@@ -20,7 +22,16 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/expertise/
   const { verticals } = await getDictionary(lang);
   const item = verticals.items.find((v) => v.slug === slug);
   if (!item) return {};
-  return pageMetadata(lang, `/expertise/${slug}` as Route, item.name, item.lead);
+  // With an article, the page is the article: its title and lead describe it best.
+  const article = articles[slug]?.[lang];
+  const entry = articleIndex.find((e) => e.slug === slug);
+  return article
+    ? pageMetadata(lang, `/expertise/${slug}` as Route, article.title, article.lead, {
+        type: "article",
+        publishedTime: entry?.date,
+        section: item.name,
+      })
+    : pageMetadata(lang, `/expertise/${slug}` as Route, item.name, item.lead);
 }
 
 export default async function VerticalPage({ params }: PageProps<"/[lang]/expertise/[slug]">) {
@@ -35,11 +46,24 @@ export default async function VerticalPage({ params }: PageProps<"/[lang]/expert
   const t = verticals.page;
   // A vertical can carry a long-form article that replaces the standard sections.
   const article = articles[item.slug]?.[lang];
+  const date = articleIndex.find((e) => e.slug === item.slug)?.date;
+  const jsonLd =
+    article && date
+      ? articleJsonLd({
+          lang,
+          path: `/expertise/${item.slug}`,
+          article,
+          date,
+          section: { label: t.back, path: "#verticals" },
+          sectionLabel: item.name,
+        })
+      : null;
   const seen = newGlossarySeen();
   const g = (text: string) => glossText(text, lang, seen);
 
   return (
     <>
+      {jsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(jsonLd)} />}
       <section className="page-hero vp-hero">
         <div className="container">
           <p className="eyebrow">
