@@ -1,0 +1,62 @@
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ArticleBody } from "@/components/ArticleBody";
+import { McpCover } from "@/components/covers/McpCover";
+import { standaloneArticles } from "@/content/articles";
+import { getDictionary } from "@/content/dictionaries";
+import { articleSlugs, hasLocale, type Route } from "@/lib/i18n";
+import { pageMetadata } from "@/lib/metadata";
+
+export const dynamicParams = false;
+
+/** Illustrated cover shown under the title, per article. */
+const covers: Record<string, typeof McpCover> = { mcp: McpCover };
+
+export function generateStaticParams() {
+  return articleSlugs.map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({ params }: PageProps<"/[lang]/articles/[slug]">) {
+  const { lang, slug } = await params;
+  if (!hasLocale(lang)) return {};
+  const article = standaloneArticles[slug]?.[lang];
+  if (!article) return {};
+  return pageMetadata(lang, `/articles/${slug}` as Route, article.title, article.lead);
+}
+
+export default async function ArticlePage({ params }: PageProps<"/[lang]/articles/[slug]">) {
+  const { lang, slug } = await params;
+  if (!hasLocale(lang)) notFound();
+  const article = standaloneArticles[slug]?.[lang];
+  if (!article) notFound();
+  const { expertise, articlesPage } = await getDictionary(lang);
+  const Cover = covers[slug];
+
+  return (
+    <>
+      <section className="page-hero vp-hero">
+        <div className="container">
+          <p className="eyebrow">
+            <Link href={`/${lang}/expertise`}>{expertise.label}</Link>
+            <span aria-hidden="true">/</span>
+            {articlesPage.label}
+          </p>
+          <h1 className="display display--serif vp-hero__title vp-hero__title--article">{article.title}</h1>
+          <p className="lead vp-hero__lead">{article.lead}</p>
+          <p className="vp-hero__level">
+            <span className="vp-hero__updated">{article.updated}</span>
+          </p>
+          {Cover && (
+            <div className="article-cover">
+              <Cover lang={lang} />
+            </div>
+          )}
+        </div>
+      </section>
+
+      <div className="container vp">
+        <ArticleBody article={article} lang={lang} />
+      </div>
+    </>
+  );
+}
