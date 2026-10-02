@@ -30,6 +30,7 @@ export const routes = [
   "/about",
   "/contact",
   "/glossary",
+  "/legal",
   "/articles",
   ...articleSlugs.map((slug) => `/articles/${slug}` as const),
 ] as const;

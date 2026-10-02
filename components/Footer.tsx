@@ -40,6 +40,7 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         <span>
           © {new Date().getFullYear()} Dasein. {dict.footer.rights}
         </span>
+        <Link href={`/${lang}/legal`}>{dict.footer.legal}</Link>
         <LangLinks lang={lang} />
       </p>
 

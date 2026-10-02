@@ -575,6 +575,7 @@ const en = {
   footer: {
     tagline: "Data & AI engineering.",
     rights: "All rights reserved.",
+    legal: "Legal notice",
     made: "Designed & engineered by Dasein.",
   },
 };

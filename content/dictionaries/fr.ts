@@ -577,6 +577,7 @@ const fr: Dictionary = {
   footer: {
     tagline: "Ingénierie Data & IA.",
     rights: "Tous droits réservés.",
+    legal: "Mentions légales",
     made: "Conçu et développé par Dasein.",
   },
 };
