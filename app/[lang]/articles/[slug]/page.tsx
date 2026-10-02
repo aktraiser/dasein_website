@@ -24,6 +24,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/articles/[
   return pageMetadata(lang, `/articles/${slug}` as Route, article.title, article.lead, {
     type: "article",
     publishedTime: entry?.date,
+        seoTitle: entry?.seoTitle?.[lang],
     section: entry?.topic[lang],
   });
 }

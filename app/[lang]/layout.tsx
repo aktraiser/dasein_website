@@ -1,18 +1,13 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
 import { notFound } from "next/navigation";
 import { TermPopovers } from "@/components/TermPopovers";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { fontVariables } from "@/lib/fonts";
 import { jsonLdScript } from "@/lib/jsonld";
 import { getDictionary } from "@/content/dictionaries";
 import { alternatesFor, hasLocale, locales, siteUrl } from "@/lib/i18n";
 import "../globals.css";
-
-const sans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const mono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-// Refined Garamond for the hero headline.
-const serif = Cormorant_Garamond({ variable: "--font-serif", subsets: ["latin"], weight: ["400", "500"] });
 
 export const dynamicParams = false;
 
@@ -72,7 +67,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
   };
 
   return (
-    <html lang={lang} className={`${sans.variable} ${mono.variable} ${serif.variable}`} data-scroll-behavior="smooth">
+    <html lang={lang} className={fontVariables} data-scroll-behavior="smooth">
       <body>
         <a href="#main" className="skip-link">
           {dict.nav.skip}

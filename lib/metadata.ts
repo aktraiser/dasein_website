@@ -6,7 +6,16 @@ type Options = {
   type?: "website" | "article";
   publishedTime?: string;
   section?: string;
+  /** Short title for the tab and search results; `title` stays the one shown when shared. */
+  seoTitle?: string;
 };
+
+/** Search engines cut descriptions around 160 characters: stop at a word before that. */
+function clip(text: string, max = 158) {
+  if (text.length <= max) return text;
+  const cut = text.slice(0, max);
+  return `${cut.slice(0, cut.lastIndexOf(" ")).replace(/[\s,;:.–—-]+$/, "")}…`;
+}
 
 /**
  * Title, description, canonical + hreflang, and a complete Open Graph block.
@@ -33,8 +42,8 @@ export function pageMetadata(
   // pages fall back to the site-wide one (it is not inherited once openGraph is set).
   const siteImage = [{ url: `/${lang}/opengraph-image`, width: 1200, height: 630, alt: "Dasein" }];
   return {
-    title,
-    description,
+    title: options.seoTitle ?? title,
+    description: clip(description),
     alternates,
     openGraph:
       options.type === "article"

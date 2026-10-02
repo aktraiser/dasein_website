@@ -5896,6 +5896,29 @@ button:hover .arrow {
   line-height: 1.55;
 }
 
+/* Global 404 */
+.notfound {
+  display: grid;
+  align-content: center;
+  justify-items: start;
+  gap: 24px;
+  min-height: 100vh;
+  padding: 48px var(--gutter);
+}
+.notfound h1 {
+  display: grid;
+  gap: 0.15em;
+}
+.notfound h1 span:last-child {
+  color: var(--muted);
+}
+.notfound__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
 /* Legal notice */
 .legal {
   padding-bottom: clamp(72px, 10vw, 140px);

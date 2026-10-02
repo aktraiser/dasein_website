@@ -23,6 +23,8 @@ export type ArticleEntry = {
   kind: "article" | "case";
   topic: Record<Locale, string>;
   title: Record<Locale, string>;
+  /** Short title for the browser tab and search results (under ~50 characters). */
+  seoTitle?: Record<Locale, string>;
   /** Publication date (ISO), for structured data and the sitemap. */
   date: string;
 };
@@ -42,6 +44,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "weak-signal-l-acoustics",
+    seoTitle: { fr: "Weak Signal avec L-Acoustics : retour d’expérience", en: "Weak Signal with L-Acoustics: a case study" },
     date: "2026-10-01",
     href: "/articles/weak-signal-l-acoustics",
     cover: "weak-signal",
@@ -54,6 +57,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "phaseone10841",
+    seoTitle: { fr: "PHASEONE10841 : un site pour humains et agents", en: "PHASEONE10841: a site for humans and agents" },
     date: "2026-10-01",
     href: "/articles/phaseone10841",
     cover: "phaseone",
@@ -66,6 +70,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "mcp",
+    seoTitle: { fr: "MCP : le protocole et ses limites", en: "MCP: the protocol and its limits" },
     date: "2026-10-01",
     href: "/articles/mcp",
     cover: "mcp",
@@ -78,6 +83,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "ai-platform",
+    seoTitle: { fr: "AI Platform : le socle commun des agents", en: "AI Platform: the shared foundation for agents" },
     date: "2026-10-01",
     href: "/expertise/ai-platform",
     cover: "platform",
@@ -90,6 +96,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "business-applications",
+    seoTitle: { fr: "Business Applications : agents et processus", en: "Business Applications: agents in your processes" },
     date: "2026-10-01",
     href: "/expertise/business-applications",
     cover: "business",
@@ -102,6 +109,7 @@ export const articleIndex: ArticleEntry[] = [
   },
   {
     slug: "user-augmentation",
+    seoTitle: { fr: "User Augmentation : un agent par collaborateur", en: "User Augmentation: agents for every employee" },
     date: "2026-10-01",
     href: "/expertise/user-augmentation",
     cover: "user-augmentation",
