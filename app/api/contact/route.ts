@@ -29,7 +29,33 @@ function parse(body: unknown): Payload | null {
 const escape = (value: string) =>
   value.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
 
+// At most 5 messages per address every 10 minutes. Kept in memory: enough for the
+// single server process the site runs on, and it resets on each deploy.
+const WINDOW_MS = 10 * 60 * 1000;
+const MAX_PER_WINDOW = 5;
+const hits = new Map<string, number[]>();
+
+function limited(request: Request) {
+  const ip = request.headers.get("x-forwarded-for")?.split(",")[0].trim() || "unknown";
+  const now = Date.now();
+  const recent = (hits.get(ip) ?? []).filter((time) => now - time < WINDOW_MS);
+  if (recent.length >= MAX_PER_WINDOW) {
+    hits.set(ip, recent);
+    return true;
+  }
+  hits.set(ip, [...recent, now]);
+  // Forget addresses that have gone quiet, so the map cannot grow without bound.
+  if (hits.size > 5000) {
+    for (const [key, times] of hits) if (times.every((time) => now - time >= WINDOW_MS)) hits.delete(key);
+  }
+  return false;
+}
+
 export async function POST(request: Request) {
+  if (limited(request)) {
+    return Response.json({ ok: false }, { status: 429, headers: { "Retry-After": "600" } });
+  }
+
   let body: unknown;
   try {
     body = await request.json();
