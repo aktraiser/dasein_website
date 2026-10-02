@@ -18,7 +18,12 @@ void main() { gl_Position = vec4(p, 0.0, 1.0); }
 `;
 
 const FRAG = `
+// Phones often run mediump at 16 bits, which flattens the noise: ask for highp when there is.
+#ifdef GL_FRAGMENT_PRECISION_HIGH
+precision highp float;
+#else
 precision mediump float;
+#endif
 uniform vec2 uRes;
 uniform float uTime;
 uniform vec2 uMouse;
@@ -44,7 +49,8 @@ float bayer8(vec2 a) { return bayer4(0.5 * a) * 0.25 + bayer2(a); }
 
 // Cloud noise at a point (domain-warped fbm).
 float cloudNoise(vec2 frag, float t) {
-  vec2 uv = frag / uRes.y * 1.5;
+  // On a tall, narrow canvas the clouds are sized on the width, so several fit across.
+  vec2 uv = frag / min(uRes.y, uRes.x * 1.1) * 1.5;
   vec2 q = vec2(fbm(uv + vec2(t, 0.0)), fbm(uv + vec2(-t, 3.1)));
   return fbm(uv * 1.2 + q * 1.7 + vec2(t * 1.6, t * 0.3));
 }
@@ -66,13 +72,18 @@ void main() {
     float d = cloudNoise(frag, t);
     // Keep a clear patch of sky behind the headline in the middle.
     float center = 1.0 - smoothstep(0.1, 0.5, length((c - vec2(0.5, 0.5)) * vec2(1.0, 1.25)));
-    float v = d + frame * 0.45 - 0.1 - center * 0.4 - hole;
+    // Wide screens keep clouds on the sides and a clear middle. In portrait the text
+    // fills the width, so clouds drift across the whole sky instead, a little thinner.
+    float wide = smoothstep(0.6, 1.0, uRes.x / uRes.y);
+    float v = d + frame * mix(0.12, 0.45, wide) - mix(0.03, 0.1, wide) - center * mix(0.06, 0.4, wide) - hole;
     // Shading only where the noise itself thickens upward: the underside of a cloud.
     float dAbove = cloudNoise(frag + vec2(0.0, uRes.y * 0.025), t);
     float underside = smoothstep(0.02, 0.09, dAbove - d);
     vec3 col = uA;
     if (smoothstep(0.5, 0.64, v) > b) col = uB;
     float shade = underside * smoothstep(0.46, 0.56, v) * (1.0 - smoothstep(0.62, 0.72, v));
+    // Less ink behind the headline in portrait, where it sits over the clouds.
+    shade *= mix((1.0 - center) * 0.6, 1.0, wide);
     if (shade * 0.9 > b) col = uC;
     // Dithered fade into the page at the bottom.
     if (smoothstep(0.0, 0.3, c.y) < b) col = uB;
