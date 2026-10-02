@@ -524,7 +524,7 @@ const en = {
       { name: "TF1", logo: "tf1.svg" },
       { name: "Safran", logo: "safran.svg" },
       { name: "Icade", logo: "icade.jpg" },
-      { name: "L-Acoustics", logo: "l-acoustics.svg" },
+      { name: "L-Acoustics", logo: "l-acoustics-stacked.svg" },
     ],
     audience: [
       {
@@ -556,6 +556,7 @@ const en = {
 
   articlesPage: {
     label: "Articles",
+    rubrics: { article: "In-depth articles", case: "Case studies" },
     readingTime: "min read",
     title: "Understanding enterprise AI, without the jargon.",
     intro:

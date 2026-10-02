@@ -19,6 +19,8 @@ export type ArticleEntry = {
   /** Path without the locale. */
   href: string;
   cover: ArticleCover;
+  /** Rubric on the /articles page: in-depth article or case study. */
+  kind: "article" | "case";
   topic: Record<Locale, string>;
   title: Record<Locale, string>;
   /** Publication date (ISO), for structured data and the sitemap. */
@@ -31,6 +33,7 @@ export const articleIndex: ArticleEntry[] = [
     date: "2026-09-24",
     href: "/articles/le-megawatt-et-le-degre",
     cover: "energy",
+    kind: "article",
     topic: { fr: "Énergie et infrastructure", en: "Energy and infrastructure" },
     title: {
       fr: "Le mégawatt et le degré",
@@ -42,6 +45,7 @@ export const articleIndex: ArticleEntry[] = [
     date: "2026-10-01",
     href: "/articles/weak-signal-l-acoustics",
     cover: "weak-signal",
+    kind: "case",
     topic: { fr: "Retour d’expérience", en: "Case study" },
     title: {
       fr: "Weak Signal : repérer les opportunités avant les concurrents, avec L-Acoustics",
@@ -53,6 +57,7 @@ export const articleIndex: ArticleEntry[] = [
     date: "2026-10-01",
     href: "/articles/phaseone10841",
     cover: "phaseone",
+    kind: "case",
     topic: { fr: "Retour d’expérience", en: "Case study" },
     title: {
       fr: "Un site pour les humains et pour les agents : ce que nous avons appris avec PHASEONE10841",
@@ -64,6 +69,7 @@ export const articleIndex: ArticleEntry[] = [
     date: "2026-10-01",
     href: "/articles/mcp",
     cover: "mcp",
+    kind: "article",
     topic: { fr: "AI Platform", en: "AI Platform" },
     title: {
       fr: "MCP : le protocole, ses limites, et ce qu’il faut autour",
@@ -75,6 +81,7 @@ export const articleIndex: ArticleEntry[] = [
     date: "2026-10-01",
     href: "/expertise/ai-platform",
     cover: "platform",
+    kind: "article",
     topic: { fr: "AI Platform", en: "AI Platform" },
     title: {
       fr: "Le socle commun qui permet à chaque équipe de construire ses agents",
@@ -86,6 +93,7 @@ export const articleIndex: ArticleEntry[] = [
     date: "2026-10-01",
     href: "/expertise/business-applications",
     cover: "business",
+    kind: "article",
     topic: { fr: "Business Applications", en: "Business Applications" },
     title: {
       fr: "Des agents qui travaillent dans vos processus, sous contrôle",
@@ -97,6 +105,7 @@ export const articleIndex: ArticleEntry[] = [
     date: "2026-10-01",
     href: "/expertise/user-augmentation",
     cover: "user-augmentation",
+    kind: "article",
     topic: { fr: "User Augmentation", en: "User Augmentation" },
     title: {
       fr: "Donner des agents à chaque collaborateur, sans perdre le contrôle",

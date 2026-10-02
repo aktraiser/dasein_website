@@ -5441,6 +5441,26 @@ button:hover .arrow {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+.articles__rubric {
+  display: grid;
+  gap: clamp(28px, 4vw, 44px);
+}
+.articles__rubric-title {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.4vw, 46px);
+  font-weight: 400;
+  line-height: 1;
+}
+.articles__rubric-title span {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--muted);
+}
 .articles__glossary {
   display: grid;
   gap: 20px;

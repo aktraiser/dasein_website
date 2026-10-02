@@ -526,7 +526,7 @@ const fr: Dictionary = {
       { name: "TF1", logo: "tf1.svg" },
       { name: "Safran", logo: "safran.svg" },
       { name: "Icade", logo: "icade.jpg" },
-      { name: "L-Acoustics", logo: "l-acoustics.svg" },
+      { name: "L-Acoustics", logo: "l-acoustics-stacked.svg" },
     ],
     audience: [
       {
@@ -558,6 +558,7 @@ const fr: Dictionary = {
 
   articlesPage: {
     label: "Articles",
+    rubrics: { article: "Articles de fond", case: "Retours d’expérience" },
     readingTime: "min de lecture",
     title: "Comprendre l’IA en entreprise, sans jargon.",
     intro:
