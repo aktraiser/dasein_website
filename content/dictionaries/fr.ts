@@ -184,6 +184,7 @@ const fr: Dictionary = {
   offer: {
     caption:
       "Schéma de l’offre Dasein : l’accompagnement en haut ; au centre, User Augmentation et Business Applications autour de l’AI Platform, avec la gouvernance en son cœur ; en bas, les modes de déploiement.",
+    audience: { left: "Personnes", core: "IT", right: "Processus" },
     axes: { support: "Accompagner", activate: "Activer", govern: "Gouverner", deploy: "Déployer" },
     support: {
       title: "Accompagnement",

@@ -52,22 +52,14 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <CharStrip seed={7} className="hero__strip" />
       </section>
 
-      {/* Featured grid (after openai.com) -------------------------------- */}
-      <section id="featured" className="section featured">
+      {/* The three verticals: the claim, the picture, then the detail ------ */}
+      <section id="verticals" className="section offer-section">
         <div className="container">
-          <p className="eyebrow featured__label">{dict.featured.label}</p>
-          <div className="featured__grid">
-            {/* Left: the featured article (sticky on desktop). Right: the others, scrolling. */}
-            <div className="featured__main">
-              <NewsCard item={mainNews} lang={lang} kindLabel={dict.featured.kinds[mainNews.kind]} main />
-            </div>
-            <div className="featured__side">
-              {sideNews.map((item) => (
-                <NewsCard key={item.slug} item={item} lang={lang} kindLabel={dict.featured.kinds[item.kind]} />
-              ))}
-            </div>
-          </div>
-
+          <SectionHead label={dict.verticals.label} title={dict.verticals.title}>
+            {dict.verticals.intro}
+          </SectionHead>
+          <OfferMap data={dict.offer} lang={lang} />
+          <Verticals data={dict.verticals} lang={lang} />
         </div>
       </section>
 
@@ -90,14 +82,22 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         </div>
       </section>
 
-      {/* Verticals: end users, business, IT ---------------------------- */}
-      <section id="verticals" className="section">
+      {/* Featured grid (after openai.com) -------------------------------- */}
+      <section id="featured" className="section featured">
         <div className="container">
-          <SectionHead label={dict.verticals.label} title={dict.verticals.title}>
-            {dict.verticals.intro}
-          </SectionHead>
-          <OfferMap data={dict.offer} lang={lang} />
-          <Verticals data={dict.verticals} lang={lang} />
+          <p className="eyebrow featured__label">{dict.featured.label}</p>
+          <div className="featured__grid">
+            {/* Left: the featured article (sticky on desktop). Right: the others, scrolling. */}
+            <div className="featured__main">
+              <NewsCard item={mainNews} lang={lang} kindLabel={dict.featured.kinds[mainNews.kind]} main />
+            </div>
+            <div className="featured__side">
+              {sideNews.map((item) => (
+                <NewsCard key={item.slug} item={item} lang={lang} kindLabel={dict.featured.kinds[item.kind]} />
+              ))}
+            </div>
+          </div>
+
         </div>
       </section>
 

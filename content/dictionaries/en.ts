@@ -182,6 +182,7 @@ const en = {
   offer: {
     caption:
       "Dasein’s offer: support on top; in the middle, User Augmentation and Business Applications around the AI Platform, with governance at its core; deployment options at the bottom.",
+    audience: { left: "People", core: "IT", right: "Processes" },
     axes: { support: "Support", activate: "Activate", govern: "Govern", deploy: "Deploy" },
     support: {
       title: "Support",

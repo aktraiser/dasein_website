@@ -218,15 +218,30 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
       {mobile && (
         <nav id="mobile-nav" className="mobile-nav" aria-label="Main">
           {keys.map((key) => (
-            <Link key={key} href={path(panels[key].href)} aria-current={isCurrent(panels[key].href) ? "page" : undefined} onClick={closeAll}>
-              {panels[key].label}
-            </Link>
+            <Fragment key={key}>
+              <Link href={path(panels[key].href)} aria-current={isCurrent(panels[key].href) ? "page" : undefined} onClick={closeAll}>
+                {panels[key].label}
+              </Link>
+              {/* The verticals, reachable on mobile too (the desktop panel lists them) */}
+              {key === "expertise" && (
+                <ul className="mobile-nav__sub">
+                  {panels.expertise.main.map((entry) => (
+                    <li key={entry.href}>
+                      <Link
+                        href={path(entry.href)}
+                        aria-current={isCurrent(entry.href) ? "page" : undefined}
+                        onClick={closeAll}
+                      >
+                        {entry.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </Fragment>
           ))}
           <Link href={path("/articles")} aria-current={isCurrent("/articles") ? "page" : undefined} onClick={closeAll}>
             {labels.articles}
-          </Link>
-          <Link href={path("/contact")} onClick={closeAll}>
-            {labels.contact}
           </Link>
           <Link href={path("/contact")} className="pill pill--ink mobile-nav__cta" onClick={closeAll}>
             {labels.cta} <span aria-hidden="true">↗</span>
