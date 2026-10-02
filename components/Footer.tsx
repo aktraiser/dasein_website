@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { Dictionary } from "@/content/dictionaries";
-import type { Locale } from "@/lib/i18n";
+import { linkedinUrl, type Locale } from "@/lib/i18n";
 import { LangLinks } from "./LangLinks";
 import { Mark } from "./Wordmark";
 
@@ -42,6 +42,10 @@ export function Footer({ lang, dict }: { lang: Locale; dict: Dictionary }) {
         </span>
         <Link href={`/${lang}/legal`}>{dict.footer.legal}</Link>
         <a href={`/${lang}/feed.xml`}>RSS</a>
+        <a href={linkedinUrl} target="_blank" rel="noopener noreferrer">
+          LinkedIn <span aria-hidden="true">↗</span>
+          <span className="sr-only">{lang === "fr" ? " (nouvel onglet)" : " (opens in a new tab)"}</span>
+        </a>
         <LangLinks lang={lang} />
       </p>
 

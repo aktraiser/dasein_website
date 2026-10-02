@@ -6,7 +6,7 @@ import { Header } from "@/components/Header";
 import { fontVariables } from "@/lib/fonts";
 import { jsonLdScript } from "@/lib/jsonld";
 import { getDictionary } from "@/content/dictionaries";
-import { alternatesFor, hasLocale, locales, siteUrl } from "@/lib/i18n";
+import { alternatesFor, hasLocale, linkedinUrl, locales, siteUrl } from "@/lib/i18n";
 import "../globals.css";
 
 export const dynamicParams = false;
@@ -52,6 +52,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
     url: siteUrl,
     logo: `${siteUrl}/brand/dasein-512.png`,
     description: dict.meta.description,
+    sameAs: [linkedinUrl],
     knowsAbout: ["Data engineering", "Artificial intelligence", "LLM", "RAG", "AI agents", "MCP", "AI infrastructure"],
   };
 

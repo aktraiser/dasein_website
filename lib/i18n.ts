@@ -11,6 +11,9 @@ export const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
 ).replace(/\/$/, "");
 
+/** Company page on LinkedIn (footer link and structured data). */
+export const linkedinUrl = "https://www.linkedin.com/company/dasein-ai/";
+
 /** One page per vertical, under /expertise/<slug>. */
 export const verticalSlugs = ["user-augmentation", "business-applications", "ai-platform"] as const;
 export type VerticalSlug = (typeof verticalSlugs)[number];
