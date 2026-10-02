@@ -39,7 +39,7 @@ export type Route = (typeof routes)[number];
 export const localizedPath = (locale: Locale, route: string = "") =>
   `/${locale}${route}`;
 
-/** Canonical + hreflang alternates for a route. */
+/** Canonical + hreflang alternates for a route, and the RSS feed of the language. */
 export function alternatesFor(locale: Locale, route: Route) {
   return {
     canonical: `${siteUrl}${localizedPath(locale, route)}`,
@@ -48,5 +48,6 @@ export function alternatesFor(locale: Locale, route: Route) {
       fr: `${siteUrl}${localizedPath("fr", route)}`,
       "x-default": `${siteUrl}${localizedPath(defaultLocale, route)}`,
     },
+    types: { "application/rss+xml": `${siteUrl}/${locale}/feed.xml` },
   };
 }

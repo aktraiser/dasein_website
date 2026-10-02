@@ -1,3 +1,4 @@
+import { ArticleEnd } from "./ArticleEnd";
 import Link from "next/link";
 import fs from "node:fs";
 import path from "node:path";
@@ -996,7 +997,7 @@ function renderBlock(block: Block, lang: Locale, seen: GlossarySeen) {
 }
 
 /** Article layout: sticky table of contents on the left, the text on the right. */
-export function ArticleBody({ article, lang }: { article: Article; lang: Locale }) {
+export function ArticleBody({ article, lang, path }: { article: Article; lang: Locale; path: string }) {
   const seen = newGlossarySeen();
   const headings = article.blocks.filter((b): b is Extract<Block, { type: "h" }> => b.type === "h");
   return (
@@ -1040,6 +1041,7 @@ export function ArticleBody({ article, lang }: { article: Article; lang: Locale 
             ))}
           </ul>
         </section>
+        <ArticleEnd lang={lang} path={path} />
       </div>
     </div>
   );

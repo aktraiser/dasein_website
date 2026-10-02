@@ -89,7 +89,7 @@ export default async function VerticalPage({ params }: PageProps<"/[lang]/expert
 
       <div className="container vp">
         {article ? (
-          <ArticleBody article={article} lang={lang} />
+          <ArticleBody article={article} lang={lang} path={`/expertise/${item.slug}`} />
         ) : (
           <>
             <Reveal as="section" className="vp__row">

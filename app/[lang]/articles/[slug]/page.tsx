@@ -71,7 +71,7 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/article
       </section>
 
       <div className="container vp">
-        <ArticleBody article={article} lang={lang} />
+        <ArticleBody article={article} lang={lang} path={`/articles/${slug}`} />
       </div>
     </>
   );
