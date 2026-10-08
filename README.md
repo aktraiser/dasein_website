@@ -28,7 +28,7 @@ npm run build
 Copy `.env.example` to `.env.local` and fill in:
 
 - `NEXT_PUBLIC_SITE_URL` — production URL, used for canonical, hreflang, sitemap and Open Graph.
-- `RESEND_API_KEY`, `CONTACT_TO`, `CONTACT_FROM` — contact form delivery. Without them, messages are only logged in development, and the endpoint returns 503 in production.
+- `SMTP_USER`, `SMTP_PASS`, `CONTACT_TO` — contact form delivery through the site's mailbox (SMTP, Hostinger by default; `CONTACT_FROM`, `SMTP_HOST` and `SMTP_PORT` are optional). Without them, messages are only logged in development, and the endpoint returns 503 in production.
 
 ## Deploy
 

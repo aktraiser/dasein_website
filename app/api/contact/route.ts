@@ -1,11 +1,16 @@
+import nodemailer from "nodemailer";
+
 /**
  * Contact form endpoint.
  *
- * Sends the message by email through Resend (https://resend.com) when these
+ * Sends the message by email through the site's own mailbox (SMTP) when these
  * environment variables are set:
- *   RESEND_API_KEY   — Resend API key
- *   CONTACT_TO       — address that receives the messages
- *   CONTACT_FROM     — verified sender, e.g. "Dasein <website@your-domain>"
+ *   SMTP_USER      — mailbox login, e.g. "contact@your-domain"
+ *   SMTP_PASS      — mailbox password
+ *   CONTACT_TO     — address that receives the messages
+ *   CONTACT_FROM   — optional sender, e.g. "Dasein <contact@your-domain>" (defaults to SMTP_USER)
+ *   SMTP_HOST      — optional, defaults to smtp.hostinger.com
+ *   SMTP_PORT      — optional, defaults to 465 (implicit TLS)
  * Without them, messages are only logged (useful in development).
  */
 
@@ -69,9 +74,9 @@ export async function POST(request: Request) {
   const payload = parse(body);
   if (!payload) return Response.json({ ok: false }, { status: 400 });
 
-  const { RESEND_API_KEY, CONTACT_TO, CONTACT_FROM } = process.env;
+  const { SMTP_USER, SMTP_PASS, CONTACT_TO, CONTACT_FROM, SMTP_HOST, SMTP_PORT } = process.env;
 
-  if (!RESEND_API_KEY || !CONTACT_TO || !CONTACT_FROM) {
+  if (!SMTP_USER || !SMTP_PASS || !CONTACT_TO) {
     if (process.env.NODE_ENV === "production") {
       console.error("[contact] email delivery is not configured");
       return Response.json({ ok: false }, { status: 503 });
@@ -80,24 +85,26 @@ export async function POST(request: Request) {
     return Response.json({ ok: true });
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: CONTACT_FROM,
+  const port = Number(SMTP_PORT) || 465;
+  const transport = nodemailer.createTransport({
+    host: SMTP_HOST || "smtp.hostinger.com",
+    port,
+    secure: port === 465,
+    auth: { user: SMTP_USER, pass: SMTP_PASS },
+  });
+
+  try {
+    await transport.sendMail({
+      from: CONTACT_FROM || SMTP_USER,
       to: CONTACT_TO,
-      reply_to: payload.email,
+      replyTo: payload.email,
       subject: `New project — ${payload.company} (${payload.name})`,
       text: `${payload.name} — ${payload.company}\n${payload.email}\n\n${payload.project}`,
       html: `<p><strong>${escape(payload.name)}</strong> — ${escape(payload.company)}<br>${escape(payload.email)}</p><p style="white-space:pre-wrap">${escape(payload.project)}</p>`,
-    }),
-  });
-
-  if (!response.ok) {
-    console.error("[contact] Resend error", response.status, await response.text());
+    });
+  } catch (error) {
+    // Never log the credentials: only the reason reported by the mail server.
+    console.error("[contact] SMTP error", error instanceof Error ? error.message : error);
     return Response.json({ ok: false }, { status: 502 });
   }
 

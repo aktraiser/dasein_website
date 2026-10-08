@@ -65,7 +65,7 @@ export const legal: Record<Locale, Legal> = {
         title: "Données personnelles",
         paragraphs: [
           "Les seules données personnelles que nous collectons sont celles que vous saisissez dans le formulaire de contact : nom, société, adresse e-mail et description de votre projet. Elles servent uniquement à répondre à votre demande, sur le fondement de notre intérêt légitime à traiter les demandes qui nous sont adressées.",
-          "Ces données sont transmises par e-mail à l’équipe Dasein par l’intermédiaire de notre prestataire d’envoi, Resend (États-Unis), dans le cadre des clauses contractuelles types de la Commission européenne. Elles ne sont ni vendues, ni cédées, ni utilisées à des fins de prospection par des tiers.",
+          "Ces données sont transmises par e-mail à l’équipe Dasein par la messagerie de notre hébergeur, Hostinger. Elles ne sont ni vendues, ni cédées, ni utilisées à des fins de prospection par des tiers.",
           "Nous les conservons le temps de l’échange, et au plus trois ans après notre dernier contact.",
           `Vous disposez d’un droit d’accès, de rectification, d’effacement, de limitation et d’opposition. Pour l’exercer, écrivez à ${c.email}. Vous pouvez aussi introduire une réclamation auprès de la CNIL (cnil.fr).`,
         ],
@@ -129,7 +129,7 @@ export const legal: Record<Locale, Legal> = {
         title: "Personal data",
         paragraphs: [
           "The only personal data we collect is what you enter in the contact form: name, company, email address and a description of your project. It is used solely to answer your request, on the basis of our legitimate interest in handling the requests sent to us.",
-          "This data is sent by email to the Dasein team through our delivery provider, Resend (United States), under the European Commission’s standard contractual clauses. It is never sold, shared or used by third parties for marketing.",
+          "This data is sent by email to the Dasein team through the mail service of our hosting provider, Hostinger. It is never sold, shared or used by third parties for marketing.",
           "We keep it for the duration of the exchange, and no longer than three years after our last contact.",
           `You have the right to access, rectify, erase, restrict and object to the processing of your data. To exercise it, write to ${c.email}. You may also lodge a complaint with the French data protection authority, the CNIL (cnil.fr).`,
         ],
