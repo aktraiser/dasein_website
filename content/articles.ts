@@ -608,10 +608,6 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           type: "callout",
           text: "Les équipes passaient leurs journées à lire, trier, qualifier. Pendant ce temps, les opportunités refroidissaient et les concurrents concluaient. Le paradoxe : plus on investissait dans une veille manuelle, moins elle rapportait.",
         },
-        {
-          type: "p",
-          text: "Le constat partagé au démarrage était sévère : selon l’estimation retenue lors du cadrage du projet, plus de 70 % des opportunités passaient inaperçues avec une veille manuelle.",
-        },
         { type: "h", id: "frictions", text: "2. Trois points de friction" },
         {
           type: "p",
@@ -782,10 +778,6 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         {
           type: "callout",
           text: "The teams spent their days reading, sorting, qualifying. Meanwhile opportunities went cold and competitors closed. The paradox: the more was invested in manual monitoring, the less it paid off.",
-        },
-        {
-          type: "p",
-          text: "The assessment shared at the start was harsh: according to the estimate used when the project was scoped, more than 70% of opportunities went unnoticed with manual monitoring.",
         },
         { type: "h", id: "frictions", text: "2. Three friction points" },
         {
