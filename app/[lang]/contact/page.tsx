@@ -25,7 +25,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
           <p className="lead">{contact.intro}</p>
         </div>
         <div className="contact__card">
-          <ContactForm labels={contact} />
+          <ContactForm labels={contact} lang={lang} />
         </div>
       </div>
     </section>

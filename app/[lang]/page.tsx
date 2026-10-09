@@ -7,6 +7,7 @@ import { DitherField } from "@/components/os/DitherField";
 import { Reveal } from "@/components/Reveal";
 import { OfferMap } from "@/components/OfferMap";
 import { SectionHead } from "@/components/SectionHead";
+import { SentDialog } from "@/components/SentDialog";
 import { Verticals } from "@/components/Verticals";
 import { getDictionary } from "@/content/dictionaries";
 import { news } from "@/content/news";
@@ -22,6 +23,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
+      <SentDialog title={dict.contact.sentTitle} text={dict.contact.sentText} close={dict.contact.sentClose} />
       {/* Hero ------------------------------------------------------------ */}
       <section className="hero">
         <div className="hero__sky">

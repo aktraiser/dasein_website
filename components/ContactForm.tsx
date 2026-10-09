@@ -1,11 +1,14 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import type { Dictionary } from "@/content/dictionaries";
+import type { Locale } from "@/lib/i18n";
 
 type Status = "idle" | "sending" | "success" | "error" | "invalid";
 
-export function ContactForm({ labels }: { labels: Dictionary["contact"] }) {
+export function ContactForm({ labels, lang }: { labels: Dictionary["contact"]; lang: Locale }) {
+  const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
 
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
@@ -28,6 +31,8 @@ export function ContactForm({ labels }: { labels: Dictionary["contact"] }) {
       if (!response.ok) throw new Error(String(response.status));
       form.reset();
       setStatus("success");
+      // Back to the home page, which thanks the visitor in a dialog.
+      router.push(`/${lang}?sent=1`);
     } catch {
       setStatus("error");
     }
