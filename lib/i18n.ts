@@ -43,7 +43,10 @@ export type Route = (typeof routes)[number];
 export const localizedPath = (locale: Locale, route: string = "") =>
   `/${locale}${route}`;
 
-/** Canonical + hreflang alternates for a route, and the RSS feed of the language. */
+/** Routes that also exist as Markdown, at the same address followed by ".md". */
+const hasMarkdown = (route: string) => /^\/(articles|expertise)\/.|^\/glossary$/.test(route);
+
+/** Canonical + hreflang alternates for a route, the RSS feed of the language, and its Markdown version. */
 export function alternatesFor(locale: Locale, route: Route) {
   return {
     canonical: `${siteUrl}${localizedPath(locale, route)}`,
@@ -52,6 +55,9 @@ export function alternatesFor(locale: Locale, route: Route) {
       fr: `${siteUrl}${localizedPath("fr", route)}`,
       "x-default": `${siteUrl}${localizedPath(defaultLocale, route)}`,
     },
-    types: { "application/rss+xml": `${siteUrl}/${locale}/feed.xml` },
+    types: {
+      "application/rss+xml": `${siteUrl}/${locale}/feed.xml`,
+      ...(hasMarkdown(route) ? { "text/markdown": `${siteUrl}${localizedPath(locale, route)}.md` } : {}),
+    },
   };
 }

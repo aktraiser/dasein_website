@@ -17,6 +17,13 @@ const nextConfig: NextConfig = {
   async headers() {
     return [{ source: "/:path*", headers: securityHeaders }];
   },
+  async rewrites() {
+    return [
+      // Markdown versions for AI agents: "/fr/articles/mcp.md", "/fr/glossary.md".
+      { source: "/:lang(en|fr)/:section(articles|expertise)/:slug([a-z0-9-]+).md", destination: "/:lang/md/:section/:slug" },
+      { source: "/:lang(en|fr)/glossary.md", destination: "/:lang/md/glossary" },
+    ];
+  },
   async redirects() {
     return [
       // One address for the site: www goes to the bare domain.
