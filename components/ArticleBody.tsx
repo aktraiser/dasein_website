@@ -799,6 +799,138 @@ function PipelineDiagram({ lang }: { lang: Locale }) {
   );
 }
 
+const SEMANTIC_CHAIN: Record<Locale, { label: string; steps: [string, string][]; bar: [string, string] }> = {
+  fr: {
+    label: "D’une donnée brute à son sens : donnée, concept, contexte, attributs et relations",
+    steps: [
+      ["Donnée", "ID vidéo 84721"],
+      ["Concept", "Épisode"],
+      ["Contexte", "Rattaché à un programme"],
+      ["Attributs et relations", "Genre : sport · Saison : 2"],
+    ],
+    bar: [
+      "La sémantique : un langage commun",
+      "Elle définit les concepts métier, leurs relations et les règles qui permettent de les interpréter.",
+    ],
+  },
+  en: {
+    label: "From a raw value to its meaning: data, concept, context, attributes and relationships",
+    steps: [
+      ["Data", "Video ID 84721"],
+      ["Concept", "Episode"],
+      ["Context", "Attached to a programme"],
+      ["Attributes and relationships", "Genre: sport · Season: 2"],
+    ],
+    bar: [
+      "Semantics: a common language",
+      "It defines business concepts, their relationships and the rules for interpreting them.",
+    ],
+  },
+};
+
+function SemanticChainDiagram({ lang }: { lang: Locale }) {
+  const t = SEMANTIC_CHAIN[lang];
+  return (
+    <figure className="adiag smdiag" aria-label={t.label}>
+      <ol className="smdiag__chain">
+        {t.steps.map(([name, value]) => (
+          <li key={name}>
+            <small>{name}</small>
+            <strong>{value}</strong>
+          </li>
+        ))}
+      </ol>
+      <p className="smdiag__bar">
+        <strong>{t.bar[0]}</strong>
+        <span>{t.bar[1]}</span>
+      </p>
+    </figure>
+  );
+}
+
+type SemanticSide = { title: string; items: string[] };
+const SEMANTIC_HOUSE: Record<
+  Locale,
+  { label: string; gov: [string, string]; business: SemanticSide; tech: SemanticSide; core: [string, string]; base: [string, string] }
+> = {
+  fr: {
+    label:
+      "Métiers et équipes tech alimentent le socle sémantique partagé ; la plateforme agentique le rend utilisable, sous la gouvernance data et IA",
+    gov: [
+      "Gouvernance data et IA",
+      "Règles communes et responsabilités · Qualité et cycle de vie de la donnée · Accès et conformité",
+    ],
+    business: {
+      title: "Les métiers",
+      items: ["Définir les concepts", "Aligner indicateurs et vocabulaire", "Exprimer besoins et règles métier"],
+    },
+    tech: {
+      title: "Les équipes tech",
+      items: ["Fiabiliser les données", "Structurer le référentiel sémantique", "Intégrer, sécuriser, tracer"],
+    },
+    core: ["Plateforme agentique", "Rend la connaissance interrogeable et actionnable, avec des droits et des garde-fous"],
+    base: ["Socle sémantique partagé", "Concepts · Définitions · Relations · Règles métier"],
+  },
+  en: {
+    label:
+      "Business and tech teams feed the shared semantic foundation; the agentic platform makes it usable, under data and AI governance",
+    gov: [
+      "Data and AI governance",
+      "Common rules and responsibilities · Data quality and lifecycle · Access and compliance",
+    ],
+    business: {
+      title: "Business teams",
+      items: ["Define the concepts", "Align metrics and vocabulary", "Express needs and business rules"],
+    },
+    tech: {
+      title: "Tech teams",
+      items: ["Make data reliable", "Structure the semantic repository", "Integrate, secure, trace"],
+    },
+    core: ["Agentic platform", "Makes knowledge queryable and actionable, with rights and guardrails"],
+    base: ["Shared semantic foundation", "Concepts · Definitions · Relationships · Business rules"],
+  },
+};
+
+function SemanticHouseDiagram({ lang }: { lang: Locale }) {
+  const t = SEMANTIC_HOUSE[lang];
+  const side = (data: SemanticSide) => (
+    <div className="shdiag__side">
+      <strong>{data.title}</strong>
+      <ul>
+        {data.items.map((item) => (
+          <li key={item}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  );
+  return (
+    <figure className="adiag shdiag" aria-label={t.label}>
+      <p className="shdiag__gov">
+        <strong>{t.gov[0]}</strong>
+        <span>{t.gov[1]}</span>
+      </p>
+      <div className="shdiag__mid">
+        {side(t.business)}
+        <span className="shdiag__link" aria-hidden="true">
+          ⇄
+        </span>
+        <p className="shdiag__core">
+          <strong>{t.core[0]}</strong>
+          <span>{t.core[1]}</span>
+        </p>
+        <span className="shdiag__link" aria-hidden="true">
+          ⇄
+        </span>
+        {side(t.tech)}
+      </div>
+      <p className="shdiag__base">
+        <strong>{t.base[0]}</strong>
+        <span>{t.base[1]}</span>
+      </p>
+    </figure>
+  );
+}
+
 const imageExists = (src: string) => fs.existsSync(path.join(process.cwd(), "public", src));
 
 /** Rendered as a plain call, in reading order, so glossary terms are marked on first use. */
@@ -992,6 +1124,8 @@ function renderBlock(block: Block, lang: Locale, seen: GlossarySeen) {
       if (block.variant === "auth") return <AuthDiagram lang={lang} />;
       if (block.variant === "gateways") return <GatewaysDiagram lang={lang} />;
       if (block.variant === "pipeline") return <PipelineDiagram lang={lang} />;
+      if (block.variant === "semantic-chain") return <SemanticChainDiagram lang={lang} />;
+      if (block.variant === "semantic-house") return <SemanticHouseDiagram lang={lang} />;
       return <Diagram lang={lang} />;
   }
 }

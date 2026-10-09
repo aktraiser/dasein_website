@@ -10,6 +10,7 @@ export type ArticleCover =
   | "weak-signal"
   | "phaseone"
   | "mcp"
+  | "semantic"
   | "platform"
   | "business"
   | "user-augmentation";
@@ -66,6 +67,19 @@ export const articleIndex: ArticleEntry[] = [
     title: {
       fr: "Un site pour les humains et pour les agents : ce que nous avons appris avec PHASEONE10841",
       en: "A site for humans and for agents: what we learned building PHASEONE10841",
+    },
+  },
+  {
+    slug: "couche-semantique",
+    seoTitle: { fr: "Sémantique : relier données et agents IA", en: "Semantics: connecting data and AI agents" },
+    date: "2026-10-09",
+    href: "/articles/couche-semantique",
+    cover: "semantic",
+    kind: "article",
+    topic: { fr: "Data et sémantique", en: "Data and semantics" },
+    title: {
+      fr: "La sémantique : le pont entre vos données et vos agents",
+      en: "Semantics: the bridge between your data and your agents",
     },
   },
   {

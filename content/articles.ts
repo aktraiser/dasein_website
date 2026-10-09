@@ -37,7 +37,8 @@ export type Block =
    * "hooks": where middleware plugs into the agent loop; "platform": the AI Platform blocks and
    * the three ways teams use it; "federated": platform team vs application teams;
    * "usecases": the three families of use cases; "auth": user → gateways → MCP identity chain;
-   * "gateways": LLM, MCP and agent gateways; "pipeline": the Weak Signal pipeline.
+   * "gateways": LLM, MCP and agent gateways; "pipeline": the Weak Signal pipeline;
+   * "semantic-chain": from a raw value to its meaning; "semantic-house": who builds the semantic foundation.
    */
   | {
       type: "diagram";
@@ -52,7 +53,9 @@ export type Block =
         | "usecases"
         | "auth"
         | "gateways"
-        | "pipeline";
+        | "pipeline"
+        | "semantic-chain"
+        | "semantic-house";
     };
 
 export type Article = {
@@ -218,6 +221,364 @@ const PLATFORM_SOURCES = [
 
 /** Articles that stand on their own, published under /articles/<slug>. */
 export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>> = {
+  "couche-semantique": {
+    fr: {
+      title: "La sémantique : le pont entre vos données et vos agents",
+      lead: "Un agent branché sur des données sans définitions partagées devine le sens, et se trompe avec aplomb. La sémantique relie les fondations data à l’IA agentique : un langage commun, tenu par les métiers et la tech, que les agents peuvent interroger.",
+      updated: "Mis à jour le 9 octobre 2026",
+      summaryLabel: "En bref",
+      summary: [
+        "Une donnée brute ne porte pas son sens : c’est la sémantique qui dit ce qu’elle représente, à quoi elle se rattache et comment l’interpréter.",
+        "Tant que des humains lisaient les tableaux de bord, ce sens vivait dans leur tête. Un agent, lui, ne connaît que ce qui est écrit.",
+        "Dasein aide à mettre en place ce socle sémantique avec les métiers et les équipes tech, en partant des outils que vous avez déjà.",
+      ],
+      blocks: [
+        { type: "h", id: "sens", text: "1. Une donnée ne dit rien toute seule" },
+        {
+          type: "p",
+          text: "Prenez une ligne dans une table d’un groupe média : « ID vidéo 84721 ». Pour la machine, c’est un nombre. Pour le métier, c’est un épisode, rattaché à un programme, classé dans le genre sport, saison 2. Tout ce qui sépare le nombre de sa signification, c’est la sémantique.",
+        },
+        { type: "diagram", variant: "semantic-chain" },
+        {
+          type: "p",
+          text: "La sémantique est un langage commun : elle définit les concepts métier, les relations entre eux et les règles qui permettent de les interpréter. Son but est simple à énoncer et difficile à tenir : qu’un même mot garde le même sens entre les métiers, les données, les outils et les modèles d’IA.",
+        },
+        {
+          type: "callout",
+          text: "La donnée dit ce qui est stocké. La sémantique dit ce que cela veut dire. Un agent a besoin des deux.",
+        },
+
+        { type: "h", id: "agents", text: "2. Ce que les agents changent" },
+        {
+          type: "p",
+          text: "Jusqu’ici, le sens vivait surtout dans la tête des gens. L’analyste savait que le « chiffre d’affaires » du tableau de bord excluait les avoirs, que deux tables ne se joignaient pas n’importe comment, qu’un « client actif » n’avait pas la même définition au marketing et à la finance. Ce savoir n’était écrit nulle part, et cela suffisait.",
+        },
+        {
+          type: "p",
+          text: "Un agent ne dispose pas de ce savoir. Il lit des noms de colonnes, des descriptions quand il y en a, et il comble les trous avec ce qui lui semble plausible. Le résultat est une réponse bien rédigée, chiffrée, et fausse.",
+        },
+        {
+          type: "table",
+          head: ["Ce qui manque", "Ce qui arrive avec un agent"],
+          rows: [
+            ["Une définition partagée", "« Client actif » est calculé d’une façon pour le marketing, d’une autre pour la finance : l’agent en choisit une sans le dire."],
+            ["Un calcul de référence", "Deux questions proches donnent deux chiffres d’affaires différents, parce que l’agent a reconstruit le calcul à chaque fois."],
+            ["Les relations entre objets", "L’agent joint deux tables sur la mauvaise clé et compte certaines lignes deux fois."],
+            ["Les règles métier", "Une exclusion connue de tous (tests internes, filiales cédées, périodes gelées) n’est pas appliquée."],
+            ["Le niveau de sensibilité", "Une donnée confidentielle est traitée comme les autres, faute d’être marquée comme telle."],
+          ],
+        },
+        {
+          type: "p",
+          text: "Aucun de ces problèmes n’est nouveau. Ce qui est nouveau, c’est qu’ils ne sont plus rattrapés par un humain qui connaît le contexte. Plus vous donnez d’autonomie aux agents, plus le sens doit être écrit quelque part où ils peuvent le lire.",
+        },
+
+        { type: "h", id: "socle", text: "3. Ce que contient un socle sémantique" },
+        {
+          type: "defs",
+          items: [
+            { term: "Concepts", text: "Les objets dont parle l’entreprise : client, contrat, épisode, commande, site, incident." },
+            { term: "Définitions", text: "Ce que chaque concept recouvre exactement, et ce qu’il ne recouvre pas." },
+            { term: "Relations", text: "Comment les concepts se tiennent : un épisode appartient à un programme, un contrat lie un client à une offre." },
+            { term: "Règles métier", text: "Les conditions et exclusions qui s’appliquent : périmètre, dates d’effet, cas particuliers." },
+            { term: "Indicateurs", text: "Les calculs de référence, écrits une seule fois : chiffre d’affaires, audience, taux de résolution." },
+          ],
+        },
+        {
+          type: "p",
+          text: "Ce socle peut prendre plusieurs formes, de la plus légère à la plus riche. Elles ne s’excluent pas : on commence en général par la première et on ajoute les suivantes là où le besoin le justifie.",
+        },
+        {
+          type: "table",
+          head: ["Forme", "Ce que c’est", "Ce que cela apporte aux agents"],
+          rows: [
+            ["Glossaire métier", "La liste des termes de l’entreprise et de leur définition, validée par les métiers.", "Un vocabulaire sans ambiguïté pour comprendre la question posée."],
+            ["Couche sémantique", "Les indicateurs et les dimensions définis une fois, au-dessus des tables.", "Des chiffres identiques quel que soit l’outil ou l’agent qui les demande."],
+            ["Ontologie et graphe de connaissances", "Les concepts, leurs relations et leurs règles, décrits de façon exploitable par une machine.", "La capacité de raisonner de proche en proche : de l’épisode au programme, du programme au contrat."],
+          ],
+        },
+
+        { type: "h", id: "roles", text: "4. Qui fait quoi : métiers, tech et gouvernance" },
+        {
+          type: "p",
+          text: "La sémantique n’est pas un projet que l’équipe data peut mener seule. Les métiers savent ce que les mots veulent dire ; la tech sait où sont les données et comment les rendre fiables. Le socle sémantique est l’endroit où les deux se rejoignent, et la plateforme agentique est ce qui le rend utilisable au quotidien.",
+        },
+        { type: "diagram", variant: "semantic-house" },
+        {
+          type: "defs",
+          items: [
+            { term: "Les métiers", text: "Ils définissent les concepts, alignent les indicateurs et le vocabulaire, et expriment leurs besoins et leurs règles." },
+            { term: "Les équipes tech", text: "Elles fiabilisent les données, structurent le référentiel sémantique, l’intègrent aux outils, le sécurisent et tracent son usage." },
+            { term: "La plateforme agentique", text: "Elle rend la connaissance interrogeable et actionnable par les agents, avec des droits et des garde-fous." },
+            { term: "La gouvernance data et IA", text: "Elle fixe les règles communes et les responsabilités, suit la qualité et le cycle de vie des données, cadre les accès et la conformité." },
+          ],
+        },
+        {
+          type: "callout",
+          text: "Un socle sémantique est d’abord un accord entre personnes sur le sens des mots. L’outil vient après.",
+        },
+
+        { type: "h", id: "usages", text: "5. Comment les agents s’en servent" },
+        {
+          type: "list",
+          items: [
+            "Interroger les données : au lieu d’écrire une requête en devinant les tables, l’agent demande un indicateur défini (« audience par programme, saison 2 ») et la couche sémantique produit le calcul de référence.",
+            "Chercher dans les documents : les concepts servent d’étiquettes communes, ce qui permet de retrouver tous les contenus liés à un programme, un client ou un contrat, quel que soit le vocabulaire employé.",
+            "Agir dans un processus : les règles métier deviennent des contrôles que l’agent doit respecter avant de créer, modifier ou valider.",
+            "Travailler à plusieurs agents : un vocabulaire commun évite que deux agents se transmettent le même mot avec deux sens différents.",
+            "Respecter les droits : la sensibilité est portée par le concept, pas par chaque table ; les accès se décident une fois et s’appliquent partout.",
+          ],
+        },
+        {
+          type: "p",
+          text: "Concrètement, le socle sémantique est exposé aux agents comme n’importe quel autre système : par un serveur MCP, derrière la gateway, avec les mêmes droits et la même traçabilité que le reste de la plateforme.",
+        },
+        {
+          type: "related",
+          href: "/articles/mcp",
+          label: "À lire aussi",
+          title: "MCP : le protocole, ses limites, et ce qu’il faut autour",
+          text: "Comment les agents se branchent sur vos systèmes, et ce que le protocole ne fait pas à votre place.",
+        },
+
+        { type: "h", id: "existant", text: "6. Ce que vous avez déjà" },
+        {
+          type: "p",
+          text: "Personne ne part de zéro. Une partie du sens est déjà écrite, dispersée dans des outils qui ne se parlent pas. Le travail consiste moins à créer qu’à rassembler, arbitrer et rendre lisible par les agents.",
+        },
+        {
+          type: "list",
+          items: [
+            "Les modèles sémantiques de vos outils de BI, où des indicateurs sont déjà définis.",
+            "Les couches de métriques de la plateforme data : dbt, Snowflake, Databricks ou Microsoft Fabric en proposent toutes une.",
+            "Le catalogue de données et ses métadonnées, quand il est tenu à jour.",
+            "Les référentiels de l’entreprise : clients, produits, organisation, contrats.",
+            "Les glossaires et documents de cadrage rédigés par les métiers, souvent oubliés dans un espace partagé.",
+          ],
+        },
+        {
+          type: "p",
+          text: "Côté standards, les langages du W3C (OWL pour les ontologies, SKOS pour les vocabulaires) existent depuis longtemps. Plus récemment, plusieurs éditeurs de la data ont lancé l’initiative Open Semantic Interchange pour qu’une même définition puisse circuler d’un outil à l’autre. Le sujet n’est plus de savoir si une couche sémantique est nécessaire, mais d’éviter d’en avoir cinq qui se contredisent.",
+        },
+        {
+          type: "note",
+          text: "Cet article ne recommande aucun produit. Le bon choix dépend de la plateforme data déjà en place et de la maturité des équipes.",
+        },
+
+        { type: "h", id: "demarrer", text: "7. Par où commencer" },
+        {
+          type: "list",
+          items: [
+            "Choisir un domaine et un cas d’usage précis, pas « toute l’entreprise » : par exemple les questions d’audience, ou le suivi des contrats.",
+            "Lister la vingtaine de concepts et d’indicateurs que ce cas d’usage mobilise.",
+            "Les définir avec les métiers concernés, et trancher les désaccords : c’est l’étape la plus longue et la plus utile.",
+            "Les écrire dans l’outil que vous avez déjà, plutôt que d’en acheter un nouveau.",
+            "Les exposer à un agent, puis le tester sur un jeu de questions dont on connaît la bonne réponse.",
+            "Mesurer, corriger, puis étendre au domaine suivant.",
+          ],
+        },
+        {
+          type: "callout",
+          text: "Dasein aide à mettre en place ce socle : nous animons le travail de définition avec les métiers, nous l’inscrivons dans votre plateforme data et nous le rendons accessible aux agents, sous gouvernance.",
+        },
+        {
+          type: "related",
+          href: "/expertise/ai-platform",
+          label: "À lire aussi",
+          title: "AI Platform : le socle commun des agents",
+          text: "La plateforme qui rend cette connaissance interrogeable et actionnable, avec des droits et des garde-fous.",
+        },
+      ],
+      sourcesLabel: "Pour aller plus loin",
+      sources: [
+        { label: "W3C — Web Ontology Language (OWL)", url: "https://www.w3.org/OWL/" },
+        { label: "W3C — Simple Knowledge Organization System (SKOS)", url: "https://www.w3.org/2004/02/skos/" },
+        { label: "dbt — Semantic Layer", url: "https://docs.getdbt.com/docs/use-dbt-semantic-layer/dbt-sl" },
+        { label: "Snowflake — Cortex Analyst et modèles sémantiques", url: "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst" },
+        { label: "Databricks — Metric views", url: "https://docs.databricks.com/aws/en/metric-views/" },
+        { label: "Microsoft — Modèles sémantiques dans Power BI", url: "https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-understand" },
+        { label: "Open Semantic Interchange — initiative inter-éditeurs lancée en 2025" },
+      ],
+    },
+    en: {
+      title: "Semantics: the bridge between your data and your agents",
+      lead: "An agent plugged into data with no shared definitions guesses the meaning, and gets it wrong with confidence. Semantics connects data foundations to agentic AI: a common language, owned by business and tech teams, that agents can query.",
+      updated: "Updated 9 October 2026",
+      summaryLabel: "In short",
+      summary: [
+        "Raw data does not carry its meaning: semantics says what it represents, what it relates to and how to read it.",
+        "As long as people read the dashboards, that meaning lived in their heads. An agent only knows what is written down.",
+        "Dasein helps put this semantic foundation in place with business and tech teams, starting from the tools you already have.",
+      ],
+      blocks: [
+        { type: "h", id: "sens", text: "1. Data says nothing on its own" },
+        {
+          type: "p",
+          text: "Take one row in a media group’s table: “Video ID 84721”. To the machine, it is a number. To the business, it is an episode, attached to a programme, in the sport genre, season 2. Everything that separates the number from what it means is semantics.",
+        },
+        { type: "diagram", variant: "semantic-chain" },
+        {
+          type: "p",
+          text: "Semantics is a common language: it defines business concepts, the relationships between them and the rules for interpreting them. Its goal is easy to state and hard to hold: the same word keeps the same meaning across business teams, data, tools and AI models.",
+        },
+        {
+          type: "callout",
+          text: "Data says what is stored. Semantics says what it means. An agent needs both.",
+        },
+
+        { type: "h", id: "agents", text: "2. What agents change" },
+        {
+          type: "p",
+          text: "Until now, meaning mostly lived in people’s heads. The analyst knew that “revenue” on the dashboard excluded credit notes, that two tables could not be joined just any way, that an “active customer” was not defined the same way in marketing and in finance. That knowledge was written nowhere, and it was enough.",
+        },
+        {
+          type: "p",
+          text: "An agent does not have that knowledge. It reads column names, descriptions when there are any, and fills the gaps with whatever seems plausible. The result is a well-written answer, with figures, that is wrong.",
+        },
+        {
+          type: "table",
+          head: ["What is missing", "What happens with an agent"],
+          rows: [
+            ["A shared definition", "“Active customer” is computed one way for marketing and another for finance: the agent picks one without saying so."],
+            ["A reference calculation", "Two similar questions return two different revenue figures, because the agent rebuilt the calculation each time."],
+            ["Relationships between objects", "The agent joins two tables on the wrong key and counts some rows twice."],
+            ["Business rules", "An exclusion everyone knows about (internal tests, divested subsidiaries, frozen periods) is not applied."],
+            ["The sensitivity level", "Confidential data is handled like any other, because nothing marks it as such."],
+          ],
+        },
+        {
+          type: "p",
+          text: "None of these problems is new. What is new is that a person who knows the context no longer catches them. The more autonomy you give agents, the more the meaning has to be written somewhere they can read it.",
+        },
+
+        { type: "h", id: "socle", text: "3. What a semantic foundation contains" },
+        {
+          type: "defs",
+          items: [
+            { term: "Concepts", text: "The objects the company talks about: customer, contract, episode, order, site, incident." },
+            { term: "Definitions", text: "What each concept covers exactly, and what it does not." },
+            { term: "Relationships", text: "How concepts hold together: an episode belongs to a programme, a contract ties a customer to an offer." },
+            { term: "Business rules", text: "The conditions and exclusions that apply: scope, effective dates, special cases." },
+            { term: "Metrics", text: "The reference calculations, written once: revenue, audience, resolution rate." },
+          ],
+        },
+        {
+          type: "p",
+          text: "This foundation can take several forms, from the lightest to the richest. They are not exclusive: you usually start with the first and add the others where the need justifies it.",
+        },
+        {
+          type: "table",
+          head: ["Form", "What it is", "What it gives agents"],
+          rows: [
+            ["Business glossary", "The list of the company’s terms and their definitions, approved by business teams.", "An unambiguous vocabulary to understand the question asked."],
+            ["Semantic layer", "Metrics and dimensions defined once, on top of the tables.", "The same figures whichever tool or agent asks for them."],
+            ["Ontology and knowledge graph", "Concepts, their relationships and their rules, described in a machine-usable way.", "The ability to reason step by step: from episode to programme, from programme to contract."],
+          ],
+        },
+
+        { type: "h", id: "roles", text: "4. Who does what: business, tech and governance" },
+        {
+          type: "p",
+          text: "Semantics is not a project the data team can run alone. Business teams know what the words mean; tech teams know where the data is and how to make it reliable. The semantic foundation is where the two meet, and the agentic platform is what makes it usable every day.",
+        },
+        { type: "diagram", variant: "semantic-house" },
+        {
+          type: "defs",
+          items: [
+            { term: "Business teams", text: "They define the concepts, align metrics and vocabulary, and express their needs and rules." },
+            { term: "Tech teams", text: "They make data reliable, structure the semantic repository, integrate it into tools, secure it and trace its use." },
+            { term: "The agentic platform", text: "It makes knowledge queryable and actionable by agents, with rights and guardrails." },
+            { term: "Data and AI governance", text: "It sets the common rules and responsibilities, tracks data quality and lifecycle, and frames access and compliance." },
+          ],
+        },
+        {
+          type: "callout",
+          text: "A semantic foundation is first an agreement between people on what words mean. The tool comes second.",
+        },
+
+        { type: "h", id: "usages", text: "5. How agents use it" },
+        {
+          type: "list",
+          items: [
+            "Querying data: instead of writing a query by guessing the tables, the agent asks for a defined metric (“audience by programme, season 2”) and the semantic layer produces the reference calculation.",
+            "Searching documents: concepts act as common labels, so every piece of content linked to a programme, a customer or a contract can be found, whatever wording was used.",
+            "Acting in a process: business rules become checks the agent must pass before creating, changing or approving.",
+            "Working with several agents: a common vocabulary stops two agents passing each other the same word with two meanings.",
+            "Respecting rights: sensitivity is carried by the concept, not by each table; access is decided once and applies everywhere.",
+          ],
+        },
+        {
+          type: "p",
+          text: "In practice, the semantic foundation is exposed to agents like any other system: through an MCP server, behind the gateway, with the same rights and the same traceability as the rest of the platform.",
+        },
+        {
+          type: "related",
+          href: "/articles/mcp",
+          label: "Read next",
+          title: "MCP: the protocol, its limits, and what it needs around it",
+          text: "How agents plug into your systems, and what the protocol does not do for you.",
+        },
+
+        { type: "h", id: "existant", text: "6. What you already have" },
+        {
+          type: "p",
+          text: "Nobody starts from scratch. Part of the meaning is already written, scattered across tools that do not talk to each other. The work is less about creating than about gathering, arbitrating and making it readable by agents.",
+        },
+        {
+          type: "list",
+          items: [
+            "The semantic models of your BI tools, where metrics are already defined.",
+            "The metric layers of the data platform: dbt, Snowflake, Databricks and Microsoft Fabric each offer one.",
+            "The data catalogue and its metadata, when it is kept up to date.",
+            "The company’s reference data: customers, products, organisation, contracts.",
+            "The glossaries and scoping documents written by business teams, often forgotten in a shared drive.",
+          ],
+        },
+        {
+          type: "p",
+          text: "On the standards side, the W3C languages (OWL for ontologies, SKOS for vocabularies) have been around for a long time. More recently, several data vendors launched the Open Semantic Interchange initiative so that one definition can travel from tool to tool. The question is no longer whether a semantic layer is needed, but how to avoid having five that contradict each other.",
+        },
+        {
+          type: "note",
+          text: "This article recommends no product. The right choice depends on the data platform already in place and on the maturity of the teams.",
+        },
+
+        { type: "h", id: "demarrer", text: "7. Where to start" },
+        {
+          type: "list",
+          items: [
+            "Pick one domain and one precise use case, not “the whole company”: audience questions, for example, or contract tracking.",
+            "List the twenty or so concepts and metrics that use case relies on.",
+            "Define them with the business teams involved, and settle the disagreements: this is the longest and most useful step.",
+            "Write them in the tool you already have, rather than buying a new one.",
+            "Expose them to an agent, then test it on a set of questions whose right answer is known.",
+            "Measure, correct, then extend to the next domain.",
+          ],
+        },
+        {
+          type: "callout",
+          text: "Dasein helps put this foundation in place: we run the definition work with business teams, write it into your data platform and make it available to agents, under governance.",
+        },
+        {
+          type: "related",
+          href: "/expertise/ai-platform",
+          label: "Read next",
+          title: "AI Platform: the shared foundation for agents",
+          text: "The platform that makes this knowledge queryable and actionable, with rights and guardrails.",
+        },
+      ],
+      sourcesLabel: "Further reading",
+      sources: [
+        { label: "W3C — Web Ontology Language (OWL)", url: "https://www.w3.org/OWL/" },
+        { label: "W3C — Simple Knowledge Organization System (SKOS)", url: "https://www.w3.org/2004/02/skos/" },
+        { label: "dbt — Semantic Layer", url: "https://docs.getdbt.com/docs/use-dbt-semantic-layer/dbt-sl" },
+        { label: "Snowflake — Cortex Analyst and semantic models", url: "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst" },
+        { label: "Databricks — Metric views", url: "https://docs.databricks.com/aws/en/metric-views/" },
+        { label: "Microsoft — Semantic models in Power BI", url: "https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-understand" },
+        { label: "Open Semantic Interchange — cross-vendor initiative launched in 2025" },
+      ],
+    },
+  },
   "weak-signal-l-acoustics": {
     fr: {
       title: "Weak Signal : repérer les opportunités avant les concurrents, avec L-Acoustics",
@@ -2766,6 +3127,18 @@ export const articles: Partial<Record<string, Record<Locale, Article>>> = {
           ],
         },
 
+        {
+          type: "p",
+          text: "Ces quatre blocs gouvernent les agents. Ce que les agents comprennent de vos données dépend d’un étage situé juste en dessous : le socle sémantique, c’est-à-dire les concepts, définitions et règles métier que la plateforme rend interrogeables.",
+        },
+        {
+          type: "related",
+          href: "/articles/couche-semantique",
+          label: "À lire aussi",
+          title: "La sémantique : le pont entre vos données et vos agents",
+          text: "Pourquoi un agent a besoin d’un langage commun entre métiers et tech, et comment le mettre en place.",
+        },
+
         { type: "h", id: "populations", text: "3. Trois populations, une plateforme" },
         {
           type: "p",
@@ -2925,6 +3298,18 @@ export const articles: Partial<Record<string, Record<Locale, Article>>> = {
             { term: "Model gateway", text: "A single access point to every model, proprietary, open source or customised: routing by need, quotas and cost per team." },
             { term: "Governance and standards", text: "The shared rules: guardrails, usage policies, recommended frameworks and patterns, best practices and reusable assets." },
           ],
+        },
+
+        {
+          type: "p",
+          text: "These four blocks govern the agents. What agents understand about your data depends on a layer just below: the semantic foundation, meaning the concepts, definitions and business rules that the platform makes queryable.",
+        },
+        {
+          type: "related",
+          href: "/articles/couche-semantique",
+          label: "Read next",
+          title: "Semantics: the bridge between your data and your agents",
+          text: "Why an agent needs a common language between business and tech, and how to put it in place.",
         },
 
         { type: "h", id: "populations", text: "3. Three audiences, one platform" },

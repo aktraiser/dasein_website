@@ -62,6 +62,16 @@ export const news: NewsItem[] = [
     },
   },
   {
+    slug: "couche-semantique",
+    kind: "article",
+    visual: "semantic",
+    href: "/articles/couche-semantique",
+    content: {
+      en: { title: "Semantics: the bridge between your data and your agents", meta: "Data and semantics" },
+      fr: { title: "La sémantique : le pont entre vos données et vos agents", meta: "Data et sémantique" },
+    },
+  },
+  {
     slug: "mcp",
     kind: "article",
     visual: "mcp",

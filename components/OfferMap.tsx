@@ -5,7 +5,8 @@ import { Reveal } from "./Reveal";
 
 /**
  * The offer on one picture: support on top, the two verticals on a band with the
- * shared AI Platform (and governance at its core) in the middle, deployment targets below.
+ * shared AI Platform (and governance at its core) in the middle, then the data and
+ * semantic foundation the agents rely on, and deployment targets below.
  * Each block names who it serves (people, IT, processes); flows run through the platform.
  */
 export function OfferMap({ data, lang }: { data: Dictionary["offer"]; lang: Locale }) {
@@ -48,6 +49,14 @@ export function OfferMap({ data, lang }: { data: Dictionary["offer"]; lang: Loca
             <span>{data.right.text}</span>
           </Link>
         </div>
+      </div>
+
+      <div className="offer__row">
+        <span className="offer__axis">{data.axes.ground}</span>
+        <Link href={`/${lang}/articles/couche-semantique`} className="offer__support offer__support--data">
+          <strong>{data.data.title}</strong>
+          <span>{data.data.items.join(" | ")}</span>
+        </Link>
       </div>
 
       <div className="offer__row">

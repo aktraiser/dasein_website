@@ -183,9 +183,9 @@ const fr: Dictionary = {
 
   offer: {
     caption:
-      "Schéma de l’offre Dasein : l’accompagnement en haut ; au centre, User Augmentation et Business Applications autour de l’AI Platform, avec la gouvernance en son cœur ; en bas, les modes de déploiement.",
+      "Schéma de l’offre Dasein : l’accompagnement en haut ; au centre, User Augmentation et Business Applications autour de l’AI Platform, avec la gouvernance en son cœur ; en dessous, le socle data et sémantique ; en bas, les modes de déploiement.",
     audience: { left: "Personnes", core: "IT", right: "Processus" },
-    axes: { support: "Accompagner", activate: "Activer", govern: "Gouverner", deploy: "Déployer" },
+    axes: { support: "Accompagner", activate: "Activer", govern: "Gouverner", ground: "Fonder", deploy: "Déployer" },
     support: {
       title: "Accompagnement",
       items: ["Cadrage des cas d’usage", "Mise en place de la gouvernance", "Montée en compétence des équipes"],
@@ -194,6 +194,10 @@ const fr: Dictionary = {
     right: { name: "Business Applications", text: "Des agents dans les processus métiers" },
     core: { name: "AI Platform", text: "Gateway · Registry · Observabilité" },
     inner: { name: "Gouvernance", text: "Identité · Droits · Audit" },
+    data: {
+      title: "Socle data et sémantique",
+      items: ["Données fiables", "Référentiels", "Sens partagé entre métiers et agents"],
+    },
     infra: ["Cloud public", "Cloud souverain", "On-premise", "Air-gapped"],
   },
 

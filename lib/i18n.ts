@@ -23,6 +23,7 @@ export const articleSlugs = [
   "le-megawatt-et-le-degre",
   "weak-signal-l-acoustics",
   "phaseone10841",
+  "couche-semantique",
   "mcp",
 ] as const;
 

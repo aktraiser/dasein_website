@@ -1609,6 +1609,84 @@ export const glossary: GlossaryEntry[] = [
       match: ["Azure AI Search"],
     },
   },
+  {
+    id: "semantic-layer",
+    fr: {
+      name: "Couche sémantique",
+      def: "L’endroit où les indicateurs et les notions de l’entreprise sont définis une seule fois, au-dessus des tables, pour que tous les outils et tous les agents obtiennent les mêmes réponses.",
+      match: ["couche sémantique", "couches sémantiques", "socle sémantique"],
+    },
+    en: {
+      name: "Semantic layer",
+      def: "The place where the company’s metrics and notions are defined once, on top of the tables, so that every tool and every agent gets the same answers.",
+      match: ["semantic layer", "semantic layers", "semantic foundation"],
+    },
+  },
+  {
+    id: "ontology",
+    fr: {
+      name: "Ontologie",
+      def: "Une description structurée des objets d’un métier, de leurs relations et de leurs règles, écrite pour être lue par une machine.",
+      match: ["ontologies", "ontologie"],
+    },
+    en: {
+      name: "Ontology",
+      def: "A structured description of the objects of a business, their relationships and their rules, written to be read by a machine.",
+      match: ["ontologies", "ontology"],
+    },
+  },
+  {
+    id: "knowledge-graph",
+    fr: {
+      name: "Graphe de connaissances",
+      def: "Une représentation des informations sous forme d’objets reliés entre eux, qui permet de passer de l’un à l’autre : d’un épisode à son programme, d’un client à ses contrats.",
+      match: ["graphe de connaissances", "graphes de connaissances"],
+    },
+    en: {
+      name: "Knowledge graph",
+      def: "A way of representing information as connected objects, so you can move from one to the next: from an episode to its programme, from a customer to their contracts.",
+      match: ["knowledge graph", "knowledge graphs"],
+    },
+  },
+  {
+    id: "reference-data",
+    fr: {
+      name: "Référentiel",
+      def: "La liste de référence d’un type d’objet dans l’entreprise (clients, produits, sites), que tous les systèmes sont censés partager.",
+      match: ["référentiels", "référentiel"],
+    },
+    en: {
+      name: "Reference data",
+      def: "The reference list for one type of object in the company (customers, products, sites), which every system is meant to share.",
+      match: ["reference data"],
+    },
+  },
+  {
+    id: "metadata",
+    fr: {
+      name: "Métadonnées",
+      def: "Les informations qui décrivent une donnée : son nom, son origine, son propriétaire, sa définition, son niveau de sensibilité.",
+      match: ["métadonnées", "métadonnée"],
+    },
+    en: {
+      name: "Metadata",
+      def: "The information that describes a piece of data: its name, origin, owner, definition and sensitivity level.",
+      match: ["metadata"],
+    },
+  },
+  {
+    id: "business-glossary",
+    fr: {
+      name: "Glossaire métier",
+      def: "La liste des termes employés par l’entreprise, avec une définition validée par les équipes qui les utilisent.",
+      match: ["glossaire métier", "glossaires métier"],
+    },
+    en: {
+      name: "Business glossary",
+      def: "The list of terms the company uses, each with a definition approved by the teams that use them.",
+      match: ["business glossary", "business glossaries"],
+    },
+  },
 ];
 
 export const glossaryById = new Map(glossary.map((entry) => [entry.id, entry]));

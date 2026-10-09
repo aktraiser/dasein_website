@@ -181,9 +181,9 @@ const en = {
 
   offer: {
     caption:
-      "Dasein’s offer: support on top; in the middle, User Augmentation and Business Applications around the AI Platform, with governance at its core; deployment options at the bottom.",
+      "Dasein’s offer: support on top; in the middle, User Augmentation and Business Applications around the AI Platform, with governance at its core; below it, the data and semantic foundation; deployment options at the bottom.",
     audience: { left: "People", core: "IT", right: "Processes" },
-    axes: { support: "Support", activate: "Activate", govern: "Govern", deploy: "Deploy" },
+    axes: { support: "Support", activate: "Activate", govern: "Govern", ground: "Ground", deploy: "Deploy" },
     support: {
       title: "Support",
       items: ["Use-case framing", "Setting up governance", "Upskilling teams"],
@@ -192,6 +192,10 @@ const en = {
     right: { name: "Business Applications", text: "Agents inside business processes" },
     core: { name: "AI Platform", text: "Gateway · Registry · Observability" },
     inner: { name: "Governance", text: "Identity · Rights · Audit" },
+    data: {
+      title: "Data and semantic foundation",
+      items: ["Reliable data", "Reference data", "Meaning shared by teams and agents"],
+    },
     infra: ["Public cloud", "Sovereign cloud", "On-premise", "Air-gapped"],
   },
 
