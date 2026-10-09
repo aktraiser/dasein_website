@@ -69,10 +69,11 @@ export function ContactForm({ labels }: { labels: Dictionary["contact"] }) {
         />
       </div>
 
-      {/* Honeypot: hidden from people, filled in by bots */}
+      {/* Honeypot: hidden from people, filled in by bots. Its name must not look like a
+          real field (website, phone, address…), or browser autofill fills it for real visitors. */}
       <div className="form__hp" aria-hidden="true">
-        <label htmlFor="website">Website</label>
-        <input id="website" name="website" tabIndex={-1} autoComplete="off" />
+        <label htmlFor="hp-check">Leave this field empty</label>
+        <input id="hp-check" name="hp_check" tabIndex={-1} autoComplete="off" />
       </div>
 
       <div>

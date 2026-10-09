@@ -69,7 +69,10 @@ export async function POST(request: Request) {
   }
 
   // Honeypot filled in: pretend everything went fine.
-  if ((body as Record<string, unknown>)?.website) return Response.json({ ok: true });
+  if ((body as Record<string, unknown>)?.hp_check) {
+    console.warn("[contact] message dropped: honeypot field was filled in");
+    return Response.json({ ok: true });
+  }
 
   const payload = parse(body);
   if (!payload) return Response.json({ ok: false }, { status: 400 });
