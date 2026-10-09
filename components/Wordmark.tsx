@@ -20,7 +20,7 @@ export function Mark({ className }: { className?: string }) {
 
 export function Wordmark({ lang }: { lang: Locale }) {
   return (
-    <Link href={`/${lang}`} className="wordmark" aria-label="Dasein — home">
+    <Link href={`/${lang}`} className="wordmark" aria-label="Dasein, home">
       <Mark className="wordmark__mark" />
       dasein
     </Link>

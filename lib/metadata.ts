@@ -31,7 +31,7 @@ export function pageMetadata(
 ): Metadata {
   const alternates = alternatesFor(lang, route);
   const common = {
-    title: `${title} — Dasein`,
+    title: `${title} | Dasein`,
     description,
     url: alternates.canonical,
     siteName: "Dasein",

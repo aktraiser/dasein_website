@@ -3,7 +3,7 @@ import type { Dictionary } from "./en";
 const fr: Dictionary = {
   meta: {
     siteName: "Dasein",
-    title: "Dasein — Ingénierie Data & IA",
+    title: "Dasein : Ingénierie Data & IA",
     description:
       "Dasein aide les entreprises à mettre l’IA au travail : agents, plateformes et gouvernance, sur des fondations data solides.",
   },
@@ -115,7 +115,7 @@ const fr: Dictionary = {
   statement: {
     title: "Nous ne nous limitons pas aux chatbots. Nous construisons les systèmes sur lesquels l’IA fonctionne.",
     points: [
-      { name: "Multi-modèles", text: "Mistral, OpenAI, Anthropic, modèles open source — le bon pour chaque contrainte." },
+      { name: "Multi-modèles", text: "Mistral, OpenAI, Anthropic, modèles open source : le bon pour chaque contrainte." },
       { name: "Multi-cloud", text: "AWS, Azure, GCP, IBM ou privé : nous construisons sur ce que vous utilisez déjà." },
       { name: "Production d’abord", text: "Identité, permissions, observabilité et gouvernance dès le premier jour." },
     ],
@@ -129,11 +129,11 @@ const fr: Dictionary = {
     items: [
       {
         name: "Connecter sans exposer",
-        text: "Les agents accèdent aux systèmes via des gateways, des serveurs MCP et des API — jamais avec un accès direct et indifférencié. Chaque appel est filtré, journalisé et révocable.",
+        text: "Les agents accèdent aux systèmes via des gateways, des serveurs MCP et des API, jamais avec un accès direct et indifférencié. Chaque appel est filtré, journalisé et révocable.",
       },
       {
         name: "Gouverner l’autonomie",
-        text: "Chaque agent a sa propre identité et des droits limités — lire, générer, créer, modifier, supprimer — selon la sensibilité des données et les points de validation.",
+        text: "Chaque agent a sa propre identité et des droits limités (lire, générer, créer, modifier, supprimer) selon la sensibilité des données et les points de validation.",
       },
       {
         name: "Observer, tracer, auditer",
@@ -151,7 +151,7 @@ const fr: Dictionary = {
     label: "Méthode",
     title: "De l’expérimentation à la production, étape par étape.",
     intro:
-      "Nous ne partons pas d’une technologie mais d’un portefeuille de cas d’usage — et nous n’industrialisons que ce qui prouve sa valeur.",
+      "Nous ne partons pas d’une technologie mais d’un portefeuille de cas d’usage, et nous n’industrialisons que ce qui prouve sa valeur.",
     deliverablesLabel: "Livrables",
     steps: [
       {
@@ -175,7 +175,7 @@ const fr: Dictionary = {
       {
         file: "04_run.exe",
         name: "Industrialiser & exploiter",
-        text: "Versionnement, observabilité, rollback, maîtrise des coûts — l’AgentOps. Ce qui crée de la valeur passe à l’échelle ; le reste est retiré.",
+        text: "Versionnement, observabilité, rollback, maîtrise des coûts : l’AgentOps. Ce qui crée de la valeur passe à l’échelle ; le reste est retiré.",
         deliverables: ["Catalogue et registries d’agents", "Observabilité & audit", "Pratiques AgentOps"],
       },
     ],
@@ -206,7 +206,7 @@ const fr: Dictionary = {
     label: "IA agentique",
     title: "La gouvernance de l’IA se joue sur trois verticales.",
     intro:
-      "Un assistant qui résume un document et un agent qui agit dans un ERP n’appellent pas les mêmes règles. Nous structurons l’IA agentique en deux verticales — utilisateurs et métiers — posées sur un socle IT commun qui gouverne tous les agents.",
+      "Un assistant qui résume un document et un agent qui agit dans un ERP n’appellent pas les mêmes règles. Nous structurons l’IA agentique en trois verticales : deux tournées vers les usages (utilisateurs et métiers) et une troisième, le socle IT commun, qui gouverne tous les agents.",
     buildsLabel: "Ce que nous mettons en place",
     controlLabel: "Contrôle",
     levels: ["Léger", "Renforcé", "Strict"],
@@ -266,9 +266,9 @@ const fr: Dictionary = {
         audience: "Métiers",
         name: "Business Applications",
         purpose: "Des agents qui travaillent dans vos processus, sous contrôle.",
-        lead: "Des agents qui travaillent dans vos processus et vous aident à décider — sous contrôle.",
+        lead: "Des agents qui travaillent dans vos processus et vous aident à décider, sous contrôle.",
         problem:
-          "Les processus récurrents — tickets, factures, recommandations FinOps, audits — absorbent un temps considérable en tâches répétitives, et la donnée utile pour décider reste enfermée dans les entrepôts et les applications.",
+          "Les processus récurrents (tickets, factures, recommandations FinOps, audits) absorbent un temps considérable en tâches répétitives, et la donnée utile pour décider reste enfermée dans les entrepôts et les applications.",
         builds: [
           { name: "Agent principal et sous-agents", text: "Un agent qui planifie et délègue, plutôt qu’un agent qui fait tout." },
           { name: "Talk to my data", text: "Interroger vos données en langage courant, avec les droits de chacun." },
@@ -329,8 +329,8 @@ const fr: Dictionary = {
     label: "Architecture",
     title: "Une seule chaîne, en production.",
     intro:
-      "Faites défiler pour suivre un incident IT à travers un système Dasein. La donnée entre et devient contexte ; un modèle trouve la cause ; un agent prépare la remédiation ; un humain valide ; l’action s’exécute dans un système réel — et chaque étape est tracée.",
-    traceTitle: "trace — exemple d’exécution",
+      "Faites défiler pour suivre un incident IT à travers un système Dasein. La donnée entre et devient contexte ; un modèle trouve la cause ; un agent prépare la remédiation ; un humain valide ; l’action s’exécute dans un système réel, et chaque étape est tracée.",
+    traceTitle: "trace : exemple d’exécution",
     layers: [
       {
         id: "data",
@@ -349,7 +349,7 @@ const fr: Dictionary = {
         name: "Knowledge",
         stack: ["Corpus", "Search", "Vector", "RAG"],
         title: "La donnée devient connaissance.",
-        text: "Documents et enregistrements deviennent un corpus : analysés, enrichis de métadonnées, découpés, vectorisés et indexés — pour que les modèles travaillent à partir de ce que l’entreprise sait réellement.",
+        text: "Documents et enregistrements deviennent un corpus : analysés, enrichis de métadonnées, découpés, vectorisés et indexés, pour que les modèles travaillent à partir de ce que l’entreprise sait réellement.",
         trace: [
           "index    runbooks + kb_articles  1 184 docs",
           "embed    pgvector.ops_idx  dim=1024",
@@ -361,7 +361,7 @@ const fr: Dictionary = {
         name: "Intelligence",
         stack: ["Mistral", "OpenAI", "Anthropic", "Models"],
         title: "Un modèle raisonne sur le contexte.",
-        text: "Le bon modèle pour la bonne contrainte : performance, souveraineté, coût. Le contexte est construit, pas déversé — et chaque réponse peut être évaluée.",
+        text: "Le bon modèle pour la bonne contrainte : performance, souveraineté, coût. Le contexte est construit, pas déversé, et chaque réponse peut être évaluée.",
         trace: [
           "route    model=mistral-large  reason=sovereignty",
           "context  8 passages + 2 incidents + metrics",
@@ -397,7 +397,7 @@ const fr: Dictionary = {
         name: "Infrastructure",
         stack: ["AWS", "Azure", "GCP", "IBM"],
         title: "Tout est gouverné et observé.",
-        text: "Gateways, runtimes, identité, permissions, observabilité et audit rendent la chaîne sûre à exploiter — sur le cloud que l’entreprise utilise déjà.",
+        text: "Gateways, runtimes, identité, permissions, observabilité et audit rendent la chaîne sûre à exploiter, sur le cloud que l’entreprise utilise déjà.",
         trace: [
           "gateway  llm-gw.eu-west  p95=410ms",
           "otel     span=agent.run  cost=€0.014",
@@ -430,7 +430,7 @@ const fr: Dictionary = {
         name: "Agents & Automation",
         file: "agents.sys",
         keywords: ["Agents", "Multi-agent", "MCP", "Tools", "Skills", "Memory", "Orchestration"],
-        text: "Des agents qui agissent sur le système d’information — avec des outils, une mémoire et l’humain dans la boucle.",
+        text: "Des agents qui agissent sur le système d’information, avec des outils, une mémoire et l’humain dans la boucle.",
       },
       {
         name: "AI Infrastructure",
@@ -522,7 +522,7 @@ const fr: Dictionary = {
     intersection: ["Data", "Software", "AI", "Infrastructure"],
     nameTitle: "Pourquoi « Dasein »",
     nameText:
-      "Dasein — « être-là ». Une intelligence qui n’est pas abstraite mais située : présente dans un environnement, consciente de son contexte, capable d’y agir.",
+      "Dasein : « être-là ». Une intelligence qui n’est pas abstraite mais située : présente dans un environnement, consciente de son contexte, capable d’y agir.",
     audienceTitle: "Avec qui nous travaillons",
     audienceText:
       "De grands groupes disposant d’écosystèmes data et cloud complexes, comme des entreprises technologiques qui accélèrent la construction de leurs infrastructures et produits IA.",
@@ -555,10 +555,7 @@ const fr: Dictionary = {
     projectPlaceholder: "Contexte, systèmes concernés, ce que vous voulez accomplir…",
     submit: "Envoyer",
     sending: "Envoi…",
-    success: "Merci — votre message a bien été envoyé. Nous revenons vers vous très vite.",
-    sentTitle: "Merci, votre message est bien parti.",
-    sentText: "Nous l’avons bien reçu et nous revenons vers vous très vite.",
-    sentClose: "Fermer",
+    success: "Merci, votre message a bien été envoyé. Nous revenons vers vous très vite.",
     error: "Une erreur est survenue. Merci de réessayer dans un instant.",
     invalid: "Merci de remplir tous les champs avec un email valide.",
   },

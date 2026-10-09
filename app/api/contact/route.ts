@@ -101,9 +101,9 @@ export async function POST(request: Request) {
       from: CONTACT_FROM || SMTP_USER,
       to: CONTACT_TO,
       replyTo: payload.email,
-      subject: `New project — ${payload.company} (${payload.name})`,
-      text: `${payload.name} — ${payload.company}\n${payload.email}\n\n${payload.project}`,
-      html: `<p><strong>${escape(payload.name)}</strong> — ${escape(payload.company)}<br>${escape(payload.email)}</p><p style="white-space:pre-wrap">${escape(payload.project)}</p>`,
+      subject: `New project: ${payload.company} (${payload.name})`,
+      text: `${payload.name}, ${payload.company}\n${payload.email}\n\n${payload.project}`,
+      html: `<p><strong>${escape(payload.name)}</strong>, ${escape(payload.company)}<br>${escape(payload.email)}</p><p style="white-space:pre-wrap">${escape(payload.project)}</p>`,
     });
   } catch (error) {
     // Never log the credentials: only the reason reported by the mail server.

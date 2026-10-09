@@ -23,7 +23,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
 
   return (
     <>
-      <SentDialog title={dict.contact.sentTitle} text={dict.contact.sentText} close={dict.contact.sentClose} />
+      <SentDialog lang={lang} />
       {/* Hero ------------------------------------------------------------ */}
       <section className="hero">
         <div className="hero__sky">
@@ -37,7 +37,6 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
             <HeroTitle
               marked={hero.titleMarked}
               contactHref={`/${lang}/contact`}
-              contactLabel={hero.primary}
               labels={hero.chipLabels}
             />
             <p className="lead center">{hero.lead}</p>

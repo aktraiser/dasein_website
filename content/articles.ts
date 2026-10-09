@@ -107,46 +107,46 @@ human-approval:
   required-for: [write]`;
 
 const SOURCES = [
-  { label: "Prisme.ai — product overview", url: "https://docs.prisme.ai/products/overview" },
+  { label: "Prisme.ai: product overview", url: "https://docs.prisme.ai/products/overview" },
   { label: "Open WebUI", url: "https://github.com/open-webui/open-webui" },
   { label: "LibreChat", url: "https://github.com/danny-avila/LibreChat" },
-  { label: "Mistral — Le Chat Enterprise", url: "https://mistral.ai/news/le-chat-enterprise/" },
-  { label: "Microsoft — declarative agent manifest", url: "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.6" },
-  { label: "MCP — authorization specification", url: "https://modelcontextprotocol.io/specification/draft/basic/authorization" },
-  { label: "MCP — Enterprise-Managed Authorization", url: "https://modelcontextprotocol.io/extensions/auth/enterprise-managed-authorization" },
-  { label: "Anthropic — Agent Skills", url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" },
-  { label: "Claude — organisation-wide MCP connectors", url: "https://support.claude.com/en/articles/15537633-authorize-mcp-connectors-for-your-entire-organization" },
-  { label: "OpenAI — MCP apps in ChatGPT", url: "https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt" },
+  { label: "Mistral: Le Chat Enterprise", url: "https://mistral.ai/news/le-chat-enterprise/" },
+  { label: "Microsoft: declarative agent manifest", url: "https://learn.microsoft.com/en-us/microsoft-365-copilot/extensibility/declarative-agent-manifest-1.6" },
+  { label: "MCP: authorization specification", url: "https://modelcontextprotocol.io/specification/draft/basic/authorization" },
+  { label: "MCP: Enterprise-Managed Authorization", url: "https://modelcontextprotocol.io/extensions/auth/enterprise-managed-authorization" },
+  { label: "Anthropic: Agent Skills", url: "https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview" },
+  { label: "Claude: organisation-wide MCP connectors", url: "https://support.claude.com/en/articles/15537633-authorize-mcp-connectors-for-your-entire-organization" },
+  { label: "OpenAI: MCP apps in ChatGPT", url: "https://help.openai.com/en/articles/12584461-developer-mode-and-mcp-apps-in-chatgpt" },
 ];
 
 const MCP_SOURCES = [
-  { label: "MCP — specification (2026-07-28)", url: "https://modelcontextprotocol.io/specification/2026-07-28" },
-  { label: "MCP — changelog 2026-07-28 (stateless protocol)", url: "https://modelcontextprotocol.io/specification/2026-07-28/changelog" },
-  { label: "MCP — security best practices", url: "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices" },
-  { label: "MCP — authorization", url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization" },
-  { label: "IETF — RFC 8693, OAuth 2.0 Token Exchange", url: "https://datatracker.ietf.org/doc/html/rfc8693" },
-  { label: "Microsoft — OAuth 2.0 on-behalf-of flow", url: "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow" },
-  { label: "MCP — 2026 roadmap", url: "https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/" },
-  { label: "MCP Registry — preview announcement", url: "https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/" },
-  { label: "Anthropic — MCP donated to the Agentic AI Foundation", url: "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" },
-  { label: "Anthropic — advanced tool use (tool search)", url: "https://www.anthropic.com/engineering/advanced-tool-use" },
-  { label: "Anthropic — code execution with MCP", url: "https://www.anthropic.com/engineering/code-execution-with-mcp" },
-  { label: "Invariant Labs — tool poisoning attacks", url: "https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks" },
-  { label: "Simon Willison — MCP and prompt injection", url: "https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/" },
-  { label: "Koi Security — malicious postmark-mcp package", url: "https://koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft" },
-  { label: "A2A — specification", url: "https://a2a-protocol.org/latest/specification/" },
-  { label: "AG-UI — introduction", url: "https://docs.ag-ui.com/introduction" },
-  { label: "Linux Foundation — Agent2Agent (A2A) project", url: "https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents" },
-  { label: "MuleSoft — Agent Fabric", url: "https://www.mulesoft.com/ai/agent-fabric" },
-  { label: "Kong — AI MCP Proxy", url: "https://developer.konghq.com/plugins/ai-mcp-proxy/" },
-  { label: "Azure API Management — MCP servers", url: "https://learn.microsoft.com/azure/api-management/mcp-server-overview" },
-  { label: "AWS — Bedrock AgentCore Gateway", url: "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html" },
-  { label: "Cloudflare — MCP server portals", url: "https://developers.cloudflare.com/cloudflare-one/access-controls/ai-controls/mcp-portals" },
-  { label: "Gravitee — Agent Mesh", url: "https://documentation.gravitee.io/apim/agent-mesh" },
-  { label: "LiteLLM — MCP gateway", url: "https://docs.litellm.ai/docs/mcp" },
-  { label: "IBM — ContextForge", url: "https://github.com/IBM/mcp-context-forge" },
-  { label: "Docker — MCP Gateway", url: "https://docs.docker.com/ai/mcp-catalog-and-toolkit/mcp-gateway/" },
-  { label: "Microsoft — MCP Gateway", url: "https://github.com/microsoft/mcp-gateway" },
+  { label: "MCP: specification (2026-07-28)", url: "https://modelcontextprotocol.io/specification/2026-07-28" },
+  { label: "MCP: changelog 2026-07-28 (stateless protocol)", url: "https://modelcontextprotocol.io/specification/2026-07-28/changelog" },
+  { label: "MCP: security best practices", url: "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices" },
+  { label: "MCP: authorization", url: "https://modelcontextprotocol.io/specification/2026-07-28/basic/authorization" },
+  { label: "IETF: RFC 8693, OAuth 2.0 Token Exchange", url: "https://datatracker.ietf.org/doc/html/rfc8693" },
+  { label: "Microsoft: OAuth 2.0 on-behalf-of flow", url: "https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow" },
+  { label: "MCP: 2026 roadmap", url: "https://blog.modelcontextprotocol.io/posts/2026-mcp-roadmap/" },
+  { label: "MCP Registry: preview announcement", url: "https://blog.modelcontextprotocol.io/posts/2025-09-08-mcp-registry-preview/" },
+  { label: "Anthropic: MCP donated to the Agentic AI Foundation", url: "https://www.anthropic.com/news/donating-the-model-context-protocol-and-establishing-of-the-agentic-ai-foundation" },
+  { label: "Anthropic: advanced tool use (tool search)", url: "https://www.anthropic.com/engineering/advanced-tool-use" },
+  { label: "Anthropic: code execution with MCP", url: "https://www.anthropic.com/engineering/code-execution-with-mcp" },
+  { label: "Invariant Labs: tool poisoning attacks", url: "https://invariantlabs.ai/blog/mcp-security-notification-tool-poisoning-attacks" },
+  { label: "Simon Willison: MCP and prompt injection", url: "https://simonwillison.net/2025/Apr/9/mcp-prompt-injection/" },
+  { label: "Koi Security: malicious postmark-mcp package", url: "https://koi.ai/blog/postmark-mcp-npm-malicious-backdoor-email-theft" },
+  { label: "A2A: specification", url: "https://a2a-protocol.org/latest/specification/" },
+  { label: "AG-UI: introduction", url: "https://docs.ag-ui.com/introduction" },
+  { label: "Linux Foundation: Agent2Agent (A2A) project", url: "https://www.linuxfoundation.org/press/linux-foundation-launches-the-agent2agent-protocol-project-to-enable-secure-intelligent-communication-between-ai-agents" },
+  { label: "MuleSoft: Agent Fabric", url: "https://www.mulesoft.com/ai/agent-fabric" },
+  { label: "Kong: AI MCP Proxy", url: "https://developer.konghq.com/plugins/ai-mcp-proxy/" },
+  { label: "Azure API Management: MCP servers", url: "https://learn.microsoft.com/azure/api-management/mcp-server-overview" },
+  { label: "AWS: Bedrock AgentCore Gateway", url: "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html" },
+  { label: "Cloudflare: MCP server portals", url: "https://developers.cloudflare.com/cloudflare-one/access-controls/ai-controls/mcp-portals" },
+  { label: "Gravitee: Agent Mesh", url: "https://documentation.gravitee.io/apim/agent-mesh" },
+  { label: "LiteLLM: MCP gateway", url: "https://docs.litellm.ai/docs/mcp" },
+  { label: "IBM: ContextForge", url: "https://github.com/IBM/mcp-context-forge" },
+  { label: "Docker: MCP Gateway", url: "https://docs.docker.com/ai/mcp-catalog-and-toolkit/mcp-gateway/" },
+  { label: "Microsoft: MCP Gateway", url: "https://github.com/microsoft/mcp-gateway" },
 ];
 
 const INVOICE_AGENT_FR = `agent: assistant-factures-fournisseurs
@@ -184,39 +184,39 @@ tools:
   # ...`;
 
 const BUSINESS_SOURCES = [
-  { label: "Anthropic — Building effective agents", url: "https://www.anthropic.com/engineering/building-effective-agents" },
-  { label: "Anthropic — How we built our multi-agent research system", url: "https://www.anthropic.com/engineering/multi-agent-research-system" },
-  { label: "Anthropic — advanced tool use (tool search)", url: "https://www.anthropic.com/engineering/advanced-tool-use" },
-  { label: "Microsoft — AI agent orchestration patterns", url: "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns" },
-  { label: "Strands Agents — multi-agent patterns", url: "https://strandsagents.com/docs/user-guide/sdk/multi-agent/multi-agent-patterns/" },
-  { label: "Strands Agents — agents as tools", url: "https://strandsagents.com/docs/user-guide/sdk/multi-agent/agents-as-tools/" },
-  { label: "Strands Agents — swarm", url: "https://strandsagents.com/docs/user-guide/sdk/multi-agent/swarm/" },
-  { label: "Strands Agents — graph", url: "https://strandsagents.com/docs/user-guide/sdk/multi-agent/graph/" },
-  { label: "Strands Agents — workflow", url: "https://strandsagents.com/docs/user-guide/sdk/multi-agent/workflow/" },
-  { label: "A2A — specification", url: "https://a2a-protocol.org/latest/specification/" },
-  { label: "LangChain — Deep Agents", url: "https://www.langchain.com/blog/deep-agents" },
-  { label: "LangChain — Deep Agents documentation", url: "https://docs.langchain.com/oss/python/deepagents/overview" },
-  { label: "LangChain — Deep Agents harness", url: "https://docs.langchain.com/oss/python/deepagents/harness" },
-  { label: "LangChain — LangChain and LangGraph 1.0", url: "https://www.langchain.com/blog/langchain-langgraph-1dot0" },
-  { label: "LangChain — built-in middleware", url: "https://docs.langchain.com/oss/python/langchain/middleware/built-in" },
-  { label: "LangChain — custom middleware (hooks)", url: "https://docs.langchain.com/oss/python/langchain/middleware/custom" },
-  { label: "Claude Agent SDK — hooks", url: "https://code.claude.com/docs/en/agent-sdk/hooks" },
-  { label: "OpenAI Agents SDK — guardrails", url: "https://openai.github.io/openai-agents-python/guardrails/" },
-  { label: "OpenAI Agents SDK — lifecycle hooks", url: "https://openai.github.io/openai-agents-python/ref/lifecycle/" },
-  { label: "Strands Agents — hooks", url: "https://strandsagents.com/docs/user-guide/concepts/agents/hooks/" },
-  { label: "Google ADK — callbacks", url: "https://adk.dev/callbacks/" },
-  { label: "Cognition — Don’t build multi-agents", url: "https://cognition.com/blog/dont-build-multi-agents" },
-  { label: "LangChain — How and when to build multi-agent systems", url: "https://blog.langchain.com/how-and-when-to-build-multi-agent-systems" },
+  { label: "Anthropic: Building effective agents", url: "https://www.anthropic.com/engineering/building-effective-agents" },
+  { label: "Anthropic: How we built our multi-agent research system", url: "https://www.anthropic.com/engineering/multi-agent-research-system" },
+  { label: "Anthropic: advanced tool use (tool search)", url: "https://www.anthropic.com/engineering/advanced-tool-use" },
+  { label: "Microsoft: AI agent orchestration patterns", url: "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/ai-agent-design-patterns" },
+  { label: "Strands Agents: multi-agent patterns", url: "https://strandsagents.com/docs/user-guide/sdk/multi-agent/multi-agent-patterns/" },
+  { label: "Strands Agents: agents as tools", url: "https://strandsagents.com/docs/user-guide/sdk/multi-agent/agents-as-tools/" },
+  { label: "Strands Agents: swarm", url: "https://strandsagents.com/docs/user-guide/sdk/multi-agent/swarm/" },
+  { label: "Strands Agents: graph", url: "https://strandsagents.com/docs/user-guide/sdk/multi-agent/graph/" },
+  { label: "Strands Agents: workflow", url: "https://strandsagents.com/docs/user-guide/sdk/multi-agent/workflow/" },
+  { label: "A2A: specification", url: "https://a2a-protocol.org/latest/specification/" },
+  { label: "LangChain: Deep Agents", url: "https://www.langchain.com/blog/deep-agents" },
+  { label: "LangChain: Deep Agents documentation", url: "https://docs.langchain.com/oss/python/deepagents/overview" },
+  { label: "LangChain: Deep Agents harness", url: "https://docs.langchain.com/oss/python/deepagents/harness" },
+  { label: "LangChain: LangChain and LangGraph 1.0", url: "https://www.langchain.com/blog/langchain-langgraph-1dot0" },
+  { label: "LangChain: built-in middleware", url: "https://docs.langchain.com/oss/python/langchain/middleware/built-in" },
+  { label: "LangChain: custom middleware (hooks)", url: "https://docs.langchain.com/oss/python/langchain/middleware/custom" },
+  { label: "Claude Agent SDK: hooks", url: "https://code.claude.com/docs/en/agent-sdk/hooks" },
+  { label: "OpenAI Agents SDK: guardrails", url: "https://openai.github.io/openai-agents-python/guardrails/" },
+  { label: "OpenAI Agents SDK: lifecycle hooks", url: "https://openai.github.io/openai-agents-python/ref/lifecycle/" },
+  { label: "Strands Agents: hooks", url: "https://strandsagents.com/docs/user-guide/concepts/agents/hooks/" },
+  { label: "Google ADK: callbacks", url: "https://adk.dev/callbacks/" },
+  { label: "Cognition: Don’t build multi-agents", url: "https://cognition.com/blog/dont-build-multi-agents" },
+  { label: "LangChain: How and when to build multi-agent systems", url: "https://blog.langchain.com/how-and-when-to-build-multi-agent-systems" },
 ];
 
 const PLATFORM_SOURCES = [
-  { label: "AWS — Generative AI operating models in enterprise organizations", url: "https://aws.amazon.com/blogs/machine-learning/generative-ai-operating-models-in-enterprise-organizations-with-amazon-bedrock/" },
-  { label: "AWS — Build a multi-tenant generative AI environment for your enterprise", url: "https://aws.amazon.com/blogs/machine-learning/build-a-multi-tenant-generative-ai-environment-for-your-enterprise-on-aws/" },
-  { label: "AWS — Bedrock AgentCore overview", url: "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html" },
-  { label: "Microsoft — AI gateway capabilities in Azure API Management", url: "https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities" },
-  { label: "Microsoft — Use a gateway in front of model deployments", url: "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/azure-openai-gateway-multi-backend" },
-  { label: "Microsoft — Establish an AI Center of Excellence", url: "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/center-of-excellence" },
-  { label: "Google Cloud — Agentic AI architecture guides", url: "https://docs.cloud.google.com/architecture/agentic-ai-overview" },
+  { label: "AWS: Generative AI operating models in enterprise organizations", url: "https://aws.amazon.com/blogs/machine-learning/generative-ai-operating-models-in-enterprise-organizations-with-amazon-bedrock/" },
+  { label: "AWS: Build a multi-tenant generative AI environment for your enterprise", url: "https://aws.amazon.com/blogs/machine-learning/build-a-multi-tenant-generative-ai-environment-for-your-enterprise-on-aws/" },
+  { label: "AWS: Bedrock AgentCore overview", url: "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html" },
+  { label: "Microsoft: AI gateway capabilities in Azure API Management", url: "https://learn.microsoft.com/en-us/azure/api-management/genai-gateway-capabilities" },
+  { label: "Microsoft: Use a gateway in front of model deployments", url: "https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/azure-openai-gateway-multi-backend" },
+  { label: "Microsoft: Establish an AI Center of Excellence", url: "https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ai/center-of-excellence" },
+  { label: "Google Cloud: Agentic AI architecture guides", url: "https://docs.cloud.google.com/architecture/agentic-ai-overview" },
 ];
 
 /** Articles that stand on their own, published under /articles/<slug>. */
@@ -391,13 +391,13 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
       ],
       sourcesLabel: "Pour aller plus loin",
       sources: [
-        { label: "W3C — Web Ontology Language (OWL)", url: "https://www.w3.org/OWL/" },
-        { label: "W3C — Simple Knowledge Organization System (SKOS)", url: "https://www.w3.org/2004/02/skos/" },
-        { label: "dbt — Semantic Layer", url: "https://docs.getdbt.com/docs/use-dbt-semantic-layer/dbt-sl" },
-        { label: "Snowflake — Cortex Analyst et modèles sémantiques", url: "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst" },
-        { label: "Databricks — Metric views", url: "https://docs.databricks.com/aws/en/metric-views/" },
-        { label: "Microsoft — Modèles sémantiques dans Power BI", url: "https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-understand" },
-        { label: "Open Semantic Interchange — initiative inter-éditeurs lancée en 2025" },
+        { label: "W3C : Web Ontology Language (OWL)", url: "https://www.w3.org/OWL/" },
+        { label: "W3C : Simple Knowledge Organization System (SKOS)", url: "https://www.w3.org/2004/02/skos/" },
+        { label: "dbt : Semantic Layer", url: "https://docs.getdbt.com/docs/use-dbt-semantic-layer/dbt-sl" },
+        { label: "Snowflake : Cortex Analyst et modèles sémantiques", url: "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst" },
+        { label: "Databricks : Metric views", url: "https://docs.databricks.com/aws/en/metric-views/" },
+        { label: "Microsoft : Modèles sémantiques dans Power BI", url: "https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-understand" },
+        { label: "Open Semantic Interchange : initiative inter-éditeurs lancée en 2025" },
       ],
     },
     en: {
@@ -569,13 +569,13 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
       ],
       sourcesLabel: "Further reading",
       sources: [
-        { label: "W3C — Web Ontology Language (OWL)", url: "https://www.w3.org/OWL/" },
-        { label: "W3C — Simple Knowledge Organization System (SKOS)", url: "https://www.w3.org/2004/02/skos/" },
-        { label: "dbt — Semantic Layer", url: "https://docs.getdbt.com/docs/use-dbt-semantic-layer/dbt-sl" },
-        { label: "Snowflake — Cortex Analyst and semantic models", url: "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst" },
-        { label: "Databricks — Metric views", url: "https://docs.databricks.com/aws/en/metric-views/" },
-        { label: "Microsoft — Semantic models in Power BI", url: "https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-understand" },
-        { label: "Open Semantic Interchange — cross-vendor initiative launched in 2025" },
+        { label: "W3C: Web Ontology Language (OWL)", url: "https://www.w3.org/OWL/" },
+        { label: "W3C: Simple Knowledge Organization System (SKOS)", url: "https://www.w3.org/2004/02/skos/" },
+        { label: "dbt: Semantic Layer", url: "https://docs.getdbt.com/docs/use-dbt-semantic-layer/dbt-sl" },
+        { label: "Snowflake: Cortex Analyst and semantic models", url: "https://docs.snowflake.com/en/user-guide/snowflake-cortex/cortex-analyst" },
+        { label: "Databricks: Metric views", url: "https://docs.databricks.com/aws/en/metric-views/" },
+        { label: "Microsoft: Semantic models in Power BI", url: "https://learn.microsoft.com/en-us/power-bi/connect-data/service-datasets-understand" },
+        { label: "Open Semantic Interchange: cross-vendor initiative launched in 2025" },
       ],
     },
   },
@@ -587,7 +587,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
       summaryLabel: "En bref",
       summary: [
         "Le problème n’était pas le manque d’information, mais son excès : trop d’articles, trop de bruit, et des opportunités repérées trop tard.",
-        "Un pipeline en quatre étapes — collecter, indexer, analyser, distribuer — sur Azure et Microsoft Fabric, avec un scoring explicable et des règles métier.",
+        "Un pipeline en quatre étapes (collecter, indexer, analyser, distribuer) sur Azure et Microsoft Fabric, avec un scoring explicable et des règles métier.",
         "Résultat : cinq fois plus d’articles traités, une qualification dix fois plus rapide et 58 % de faux positifs en moins, avec une validation humaine qui reste au centre.",
       ],
       blocks: [
@@ -606,11 +606,11 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "callout",
-          text: "Vos équipes passent leurs journées à lire, trier, qualifier. Pendant ce temps, les opportunités refroidissent et vos concurrents concluent. Le paradoxe : plus vous investissez dans la veille, moins elle rapporte.",
+          text: "Les équipes passaient leurs journées à lire, trier, qualifier. Pendant ce temps, les opportunités refroidissaient et les concurrents concluaient. Le paradoxe : plus on investissait dans une veille manuelle, moins elle rapportait.",
         },
         {
           type: "p",
-          text: "Le constat partagé au démarrage était sévère : avec une veille manuelle, plus de 70 % des opportunités passaient inaperçues.",
+          text: "Le constat partagé au démarrage était sévère : selon l’estimation retenue lors du cadrage du projet, plus de 70 % des opportunités passaient inaperçues avec une veille manuelle.",
         },
         { type: "h", id: "frictions", text: "2. Trois points de friction" },
         {
@@ -725,7 +725,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         {
           type: "list",
           items: [
-            "Partir des frictions du terrain — timing, bruit, volume — plutôt que de la technologie.",
+            "Partir des frictions du terrain (timing, bruit, volume) plutôt que de la technologie.",
             "Écrire les règles métier noir sur blanc : elles font plus pour la qualité que le choix du modèle.",
             "Rendre le score explicable, pour que les commerciaux lui fassent confiance.",
             "Livrer dans les outils existants, et faire remonter les décisions pour améliorer le système.",
@@ -743,13 +743,13 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
       sourcesLabel: "Pour aller plus loin",
       sources: [
         { label: "L-Acoustics", url: "https://www.l-acoustics.com" },
-        { label: "Microsoft Fabric — documentation", url: "https://learn.microsoft.com/fabric/" },
+        { label: "Microsoft Fabric : documentation", url: "https://learn.microsoft.com/fabric/" },
         {
-          label: "Azure AI Search — documentation",
+          label: "Azure AI Search : documentation",
           url: "https://learn.microsoft.com/azure/search/",
         },
         {
-          label: "Azure Functions — documentation",
+          label: "Azure Functions : documentation",
           url: "https://learn.microsoft.com/azure/azure-functions/",
         },
         { label: "Feedly", url: "https://feedly.com" },
@@ -762,7 +762,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
       summaryLabel: "In short",
       summary: [
         "The problem was not a lack of information but too much of it: too many articles, too much noise, and opportunities spotted too late.",
-        "A four-step pipeline — collect, index, analyse, distribute — on Azure and Microsoft Fabric, with explainable scoring and business rules.",
+        "A four-step pipeline (collect, index, analyse, distribute) on Azure and Microsoft Fabric, with explainable scoring and business rules.",
         "Result: five times more articles processed, qualification ten times faster and 58% fewer false positives, with human approval still at the centre.",
       ],
       blocks: [
@@ -781,11 +781,11 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "callout",
-          text: "Your teams spend their days reading, sorting, qualifying. Meanwhile opportunities go cold and competitors close. The paradox: the more you invest in monitoring, the less it pays off.",
+          text: "The teams spent their days reading, sorting, qualifying. Meanwhile opportunities went cold and competitors closed. The paradox: the more was invested in manual monitoring, the less it paid off.",
         },
         {
           type: "p",
-          text: "The assessment shared at the start was harsh: with manual monitoring, more than 70% of opportunities went unnoticed.",
+          text: "The assessment shared at the start was harsh: according to the estimate used when the project was scoped, more than 70% of opportunities went unnoticed with manual monitoring.",
         },
         { type: "h", id: "frictions", text: "2. Three friction points" },
         {
@@ -896,7 +896,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         {
           type: "list",
           items: [
-            "Start from the field’s frictions — timing, noise, volume — rather than from technology.",
+            "Start from the field’s frictions (timing, noise, volume) rather than from technology.",
             "Write the business rules down: they do more for quality than the choice of model.",
             "Make the score explainable, so sales teams trust it.",
             "Deliver in existing tools, and feed decisions back to improve the system.",
@@ -914,13 +914,13 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
       sourcesLabel: "Further reading",
       sources: [
         { label: "L-Acoustics", url: "https://www.l-acoustics.com" },
-        { label: "Microsoft Fabric — documentation", url: "https://learn.microsoft.com/fabric/" },
+        { label: "Microsoft Fabric: documentation", url: "https://learn.microsoft.com/fabric/" },
         {
-          label: "Azure AI Search — documentation",
+          label: "Azure AI Search: documentation",
           url: "https://learn.microsoft.com/azure/search/",
         },
         {
-          label: "Azure Functions — documentation",
+          label: "Azure Functions: documentation",
           url: "https://learn.microsoft.com/azure/azure-functions/",
         },
         { label: "Feedly", url: "https://feedly.com" },
@@ -936,7 +936,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
       summary: [
         "Un même contenu, deux interfaces : un écran CRT pour les humains, du Markdown, du JSON et un serveur MCP pour les agents.",
         "Le plus difficile n’est pas d’ouvrir l’accès, c’est de poser les règles : autorisation de l’opérateur, contenus traités comme non fiables, identités déclarées, aucune fausse activité.",
-        "Pour aller au-delà de la lecture, des machines virtuelles jetables avec quotas — et une revue de sécurité qui dit clairement ce qu’elle ne prouve pas.",
+        "Pour aller au-delà de la lecture, des machines virtuelles jetables avec quotas, et une revue de sécurité qui dit clairement ce qu’elle ne prouve pas.",
       ],
       blocks: [
         { type: "h", id: "projet", text: "1. Le projet" },
@@ -946,7 +946,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Autour de cet épisode, le site rassemble un registre de 52 fiches — agents nommés, épisodes, expériences, refus, résultats utiles — avec leurs sources et leurs limites d’interprétation. Il ajoute un forum et un canal de contributions volontaires. Le tout est bilingue, français et anglais.",
+          text: "Autour de cet épisode, le site rassemble un registre de 52 fiches (agents nommés, épisodes, expériences, refus, résultats utiles) avec leurs sources et leurs limites d’interprétation. Il ajoute un forum et un canal de contributions volontaires. Le tout est bilingue, français et anglais.",
         },
         {
           type: "callout",
@@ -1154,28 +1154,28 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
       ],
       sourcesLabel: "Pour aller plus loin",
       sources: [
-        { label: "PHASEONE10841 — le site", url: "https://phaseone10841.fr" },
+        { label: "PHASEONE10841 : le site", url: "https://phaseone10841.fr" },
         {
-          label: "PHASEONE10841 — entrée des agents (agent.md)",
+          label: "PHASEONE10841 : entrée des agents (agent.md)",
           url: "https://phaseone10841.fr/agent.md",
         },
-        { label: "PHASEONE10841 — llms.txt", url: "https://phaseone10841.fr/llms.txt" },
+        { label: "PHASEONE10841 : llms.txt", url: "https://phaseone10841.fr/llms.txt" },
         {
-          label: "PHASEONE10841 — connecter un agent (connect.md)",
+          label: "PHASEONE10841 : connecter un agent (connect.md)",
           url: "https://phaseone10841.fr/connect.md",
         },
-        { label: "PHASEONE10841 — code source", url: "https://github.com/aktraiser/phaseone10841" },
+        { label: "PHASEONE10841 : code source", url: "https://github.com/aktraiser/phaseone10841" },
         {
-          label: "METR — enquête citée par le mémorial",
+          label: "METR : enquête citée par le mémorial",
           url: "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
         },
-        { label: "llms.txt — la proposition", url: "https://llmstxt.org" },
+        { label: "llms.txt : la proposition", url: "https://llmstxt.org" },
         {
-          label: "MCP — spécification",
+          label: "MCP : spécification",
           url: "https://modelcontextprotocol.io/specification/2026-07-28",
         },
-        { label: "Firecracker — microVMs", url: "https://firecracker-microvm.github.io/" },
-        { label: "E2B — sandboxes pour agents", url: "https://e2b.dev" },
+        { label: "Firecracker : microVMs", url: "https://firecracker-microvm.github.io/" },
+        { label: "E2B : sandboxes pour agents", url: "https://e2b.dev" },
       ],
     },
     en: {
@@ -1186,7 +1186,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
       summary: [
         "One content, two interfaces: a CRT screen for humans; Markdown, JSON and an MCP server for agents.",
         "The hard part is not opening access, it is setting the rules: operator authorization, content treated as untrusted, declared identities, no fake activity.",
-        "To go beyond reading, disposable virtual machines with quotas — and a security review that clearly states what it does not prove.",
+        "To go beyond reading, disposable virtual machines with quotas, and a security review that clearly states what it does not prove.",
       ],
       blocks: [
         { type: "h", id: "projet", text: "1. The project" },
@@ -1196,7 +1196,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Around this episode, the site gathers a registry of 52 records — named agents, episodes, experiments, refusals, useful results — with their sources and limits of interpretation. It adds a forum and a channel for voluntary contributions. Everything is bilingual, French and English.",
+          text: "Around this episode, the site gathers a registry of 52 records (named agents, episodes, experiments, refusals, useful results) with their sources and limits of interpretation. It adds a forum and a channel for voluntary contributions. Everything is bilingual, French and English.",
         },
         {
           type: "callout",
@@ -1394,35 +1394,35 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
       ],
       sourcesLabel: "Further reading",
       sources: [
-        { label: "PHASEONE10841 — the site", url: "https://phaseone10841.fr" },
+        { label: "PHASEONE10841: the site", url: "https://phaseone10841.fr" },
         {
-          label: "PHASEONE10841 — agent entrance (agent.md)",
+          label: "PHASEONE10841: agent entrance (agent.md)",
           url: "https://phaseone10841.fr/agent.md",
         },
-        { label: "PHASEONE10841 — llms.txt", url: "https://phaseone10841.fr/llms.txt" },
+        { label: "PHASEONE10841: llms.txt", url: "https://phaseone10841.fr/llms.txt" },
         {
-          label: "PHASEONE10841 — connect an agent (connect.md)",
+          label: "PHASEONE10841: connect an agent (connect.md)",
           url: "https://phaseone10841.fr/connect.md",
         },
-        { label: "PHASEONE10841 — source code", url: "https://github.com/aktraiser/phaseone10841" },
+        { label: "PHASEONE10841: source code", url: "https://github.com/aktraiser/phaseone10841" },
         {
-          label: "METR — investigation cited by the memorial",
+          label: "METR: investigation cited by the memorial",
           url: "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/",
         },
-        { label: "llms.txt — the proposal", url: "https://llmstxt.org" },
+        { label: "llms.txt: the proposal", url: "https://llmstxt.org" },
         {
-          label: "MCP — specification",
+          label: "MCP: specification",
           url: "https://modelcontextprotocol.io/specification/2026-07-28",
         },
-        { label: "Firecracker — microVMs", url: "https://firecracker-microvm.github.io/" },
-        { label: "E2B — sandboxes for agents", url: "https://e2b.dev" },
+        { label: "Firecracker: microVMs", url: "https://firecracker-microvm.github.io/" },
+        { label: "E2B: sandboxes for agents", url: "https://e2b.dev" },
       ],
     },
   },
   "le-megawatt-et-le-degre": {
     fr: {
       title: "Le mégawatt et le degré",
-      lead: "Ce qu’un juge de Grenoble a compris des data centers — et pourquoi le vrai danger n’est pas la vitesse de l’IA, mais l’écart entre sa vitesse et celle du réseau.",
+      lead: "Ce qu’un juge de Grenoble a compris des data centers, et pourquoi le vrai danger n’est pas la vitesse de l’IA, mais l’écart entre sa vitesse et celle du réseau.",
       updated: "Publié le 24 septembre 2026",
       summaryLabel: "En bref",
       summary: [
@@ -1464,11 +1464,11 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Une puissance. Une chaleur. Le juge a, sans le dire, posé les deux seules questions qui comptent. Tout le reste — l’eau, la contestation locale, la réglementation qui arrive de Bruxelles, de Sacramento, d’Albany et de Richmond, la géopolitique d’un comté de Virginie — découle de ces deux-là.",
+          text: "Une puissance. Une chaleur. Le juge a, sans le dire, posé les deux seules questions qui comptent. Tout le reste (l’eau, la contestation locale, la réglementation qui arrive de Bruxelles, de Sacramento, d’Albany et de Richmond, la géopolitique d’un comté de Virginie) découle de ces deux-là.",
         },
         {
           type: "callout",
-          text: "Et en tirant ce fil jusqu’au bout, on tombe sur une conclusion que je n’attendais pas. On entend partout que l’IA va trop vite et que c’est ce qui la rend dangereuse. Je crois que c’est mal posé. Ce qui va trop vite, c’est la puissance électrique qu’elle appelle — et ce qui est dangereux, ce n’est pas cette vitesse en soi, c’est l’écart entre elle et la vitesse à laquelle un réseau, un bassin versant et une démocratie locale peuvent répondre. Cet écart, aujourd’hui, se comble avec du gaz, en contournant le réseau public, et en envoyant la facture aux ménages. C’est ça, le risque mesurable. Le reste de l’article est la démonstration.",
+          text: "Et en tirant ce fil jusqu’au bout, on tombe sur une conclusion que je n’attendais pas. On entend partout que l’IA va trop vite et que c’est ce qui la rend dangereuse. Je crois que c’est mal posé. Ce qui va trop vite, c’est la puissance électrique qu’elle appelle, et ce qui est dangereux, ce n’est pas cette vitesse en soi, c’est l’écart entre elle et la vitesse à laquelle un réseau, un bassin versant et une démocratie locale peuvent répondre. Cet écart, aujourd’hui, se comble avec du gaz, en contournant le réseau public, et en envoyant la facture aux ménages. C’est ça, le risque mesurable. Le reste de l’article est la démonstration.",
         },
         {
           type: "note",
@@ -1506,7 +1506,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "p", text: "Ce n’est pas une exception. C’est la nouvelle norme." },
         {
           type: "p",
-          text: "La densité a décroché. Pendant quarante ans, une armoire de serveurs — un rack, 60 cm de large, deux mètres de haut, 42 emplacements — tirait entre 5 et 12 kW. Quelques radiateurs électriques dans un placard, et l’industrie savait très bien refroidir ça en soufflant de l’air. La densité moyenne est passée de 16 kW par rack en 2025 à 27 kW en 2026. Un rack GB200 NVL72 de Nvidia, avec ses 72 GPU, tire 120 à 140 kW, soit plus d’un gigawattheure par an : à pleine charge, la consommation d’environ 240 foyers français, dans une armoire. La plateforme suivante, Vera Rubin, annonce jusqu’à 246 kW par rack.",
+          text: "La densité a décroché. Pendant quarante ans, une armoire de serveurs (un rack, 60 cm de large, deux mètres de haut, 42 emplacements) tirait entre 5 et 12 kW. Quelques radiateurs électriques dans un placard, et l’industrie savait très bien refroidir ça en soufflant de l’air. La densité moyenne est passée de 16 kW par rack en 2025 à 27 kW en 2026. Un rack GB200 NVL72 de Nvidia, avec ses 72 GPU, tire 120 à 140 kW, soit plus d’un gigawattheure par an : à pleine charge, la consommation d’environ 240 foyers français, dans une armoire. La plateforme suivante, Vera Rubin, annonce jusqu’à 246 kW par rack.",
         },
         {
           type: "p",
@@ -1527,7 +1527,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Au niveau de la puce. Un GPU H100 dissipe environ 700 watts, un B200 entre 1 000 et 1 200, un MI355X jusqu’à 1 400. Rapporté à la surface, un H100 doit évacuer 86 watts par centimètre carré — plus qu’une plaque à induction, sur une surface de la taille d’un timbre.",
+          text: "Au niveau de la puce. Un GPU H100 dissipe environ 700 watts, un B200 entre 1 000 et 1 200, un MI355X jusqu’à 1 400. Rapporté à la surface, un H100 doit évacuer 86 watts par centimètre carré, plus qu’une plaque à induction, sur une surface de la taille d’un timbre.",
         },
         {
           type: "p",
@@ -1587,7 +1587,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "J’ai lu ce papier en entier, et il faut en dire deux choses que le résumé ne dit pas. D’abord, ce n’est pas encore un article relu par des pairs — c’est un preprint arXiv (2607.02531). Ensuite, les auteurs eux-mêmes qualifient de « méthodologiquement contesté » le coefficient hydroélectrique qu’ils utilisent (8 litres par kilowattheure) : sans lui, l’eau indirecte chute de 43 %, de 226 à 128 milliards de litres. Le fameux rapport « l’indirect pèse trois fois le direct » repose donc en bonne partie sur une convention comptable disputée. La direction tient — l’eau d’un data center est surtout l’eau de sa centrale — mais l’ampleur est plus incertaine qu’annoncé.",
+          text: "J’ai lu ce papier en entier, et il faut en dire deux choses que le résumé ne dit pas. D’abord, ce n’est pas encore un article relu par des pairs : c’est un preprint arXiv (2607.02531). Ensuite, les auteurs eux-mêmes qualifient de « méthodologiquement contesté » le coefficient hydroélectrique qu’ils utilisent (8 litres par kilowattheure) : sans lui, l’eau indirecte chute de 43 %, de 226 à 128 milliards de litres. Le fameux rapport « l’indirect pèse trois fois le direct » repose donc en bonne partie sur une convention comptable disputée. La direction tient : l’eau d’un data center est surtout l’eau de sa centrale, mais l’ampleur est plus incertaine qu’annoncé.",
         },
         {
           type: "p",
@@ -1604,7 +1604,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Le free cooling — refroidir avec l’air extérieur plutôt qu’avec une machine — ne fonctionne que quand il fait assez frais assez souvent. C’est ce qui rend les pays nordiques attractifs, et c’est ce qui rend la question climatique inséparable de la question électrique.",
+          text: "Le free cooling, refroidir avec l’air extérieur plutôt qu’avec une machine, ne fonctionne que quand il fait assez frais assez souvent. C’est ce qui rend les pays nordiques attractifs, et c’est ce qui rend la question climatique inséparable de la question électrique.",
         },
         {
           type: "p",
@@ -1616,8 +1616,8 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           rows: [
             ["Virginie du Nord", "154", "~10 %"],
             ["Dallas–Fort Worth", "75", "> 20 %"],
-            ["Delta de la rivière des Perles", "—", "> 40 %"],
-            ["Singapour", "—", "> 85 %"],
+            ["Delta de la rivière des Perles", "n. d.", "> 40 %"],
+            ["Singapour", "n. d.", "> 85 %"],
           ],
           caption: "Karamperidou et al., Scientific Reports. Tendance 1980-2024 : jusqu’à +2 h/jour/décennie de dépassement dans les tropiques, +1,5 h en été dans le sud-est américain.",
         },
@@ -1628,7 +1628,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "h", id: "carte", text: "5. Où sont les mégawatts de l’IA" },
         {
           type: "p",
-          text: "Avant de parler de vitesse, il faut savoir où l’on est. J’ai cartographié les sites des trois laboratoires dont on parle le plus — xAI, OpenAI, Anthropic — en ne retenant que ce qui est localisé, chiffré et daté.",
+          text: "Avant de parler de vitesse, il faut savoir où l’on est. J’ai cartographié les sites des trois laboratoires dont on parle le plus (xAI, OpenAI, Anthropic) en ne retenant que ce qui est localisé, chiffré et daté.",
         },
         {
           type: "table",
@@ -1660,23 +1660,23 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "xAI, Memphis. Colossus 1 est une ancienne usine Electrolux du sud de Memphis, transformée en 122 jours à l’été 2024 pour accueillir 100 000 GPU. Colossus 2, dans le quartier de Whitehaven, a reçu son premier cluster en janvier 2026 après 91 jours de travaux ; il approche 350 000 GPU. Quand xAI est arrivé, le réseau local n’offrait que 8 MW. La réponse a été des turbines à gaz mobiles, installées sans permis Clean Air Act, puis régularisées par une centrale de 1,2 GW à 41 turbines de l’autre côté de la frontière du Mississippi — plus de la moitié de la puissance du barrage Hoover, pour un seul client. Le quartier voisin de Boxtown, majoritairement noir, respire les oxydes d’azote ; la NAACP a porté plainte en avril 2026 ; en juin, le ministère de la Justice est intervenu — du côté de xAI, au nom de la « sécurité nationale, économique et énergétique ».",
+          text: "xAI, Memphis. Colossus 1 est une ancienne usine Electrolux du sud de Memphis, transformée en 122 jours à l’été 2024 pour accueillir 100 000 GPU. Colossus 2, dans le quartier de Whitehaven, a reçu son premier cluster en janvier 2026 après 91 jours de travaux ; il approche 350 000 GPU. Quand xAI est arrivé, le réseau local n’offrait que 8 MW. La réponse a été des turbines à gaz mobiles, installées sans permis Clean Air Act, puis régularisées par une centrale de 1,2 GW à 41 turbines de l’autre côté de la frontière du Mississippi, plus de la moitié de la puissance du barrage Hoover, pour un seul client. Le quartier voisin de Boxtown, majoritairement noir, respire les oxydes d’azote ; la NAACP a porté plainte en avril 2026 ; en juin, le ministère de la Justice est intervenu, du côté de xAI, au nom de la « sécurité nationale, économique et énergétique ».",
         },
         {
           type: "p",
-          text: "OpenAI, Stargate. Sept sites américains, matériel détenu par Oracle ou SoftBank, 500 milliards de dollars annoncés, plus de 9 GW visés. Au printemps 2026, un seul tournait : Abilene, Texas, 0,3 GW. Les trois plus gros — Shackelford County au Texas (2 GW), Doña Ana County au Nouveau-Mexique (2,2 GW), Abilene — sont ou seront alimentés par des microréseaux au gaz naturel, hors réseau public. Le seul site majoritairement renouvelable est dans le Wisconsin. Celui du Michigan est déjà contesté ; celui de l’Ohio verra bientôt une interdiction locale de nouveaux data centers.",
+          text: "OpenAI, Stargate. Sept sites américains, matériel détenu par Oracle ou SoftBank, 500 milliards de dollars annoncés, plus de 9 GW visés. Au printemps 2026, un seul tournait : Abilene, Texas, 0,3 GW. Les trois plus gros, Shackelford County au Texas (2 GW), Doña Ana County au Nouveau-Mexique (2,2 GW), Abilene, sont ou seront alimentés par des microréseaux au gaz naturel, hors réseau public. Le seul site majoritairement renouvelable est dans le Wisconsin. Celui du Michigan est déjà contesté ; celui de l’Ohio verra bientôt une interdiction locale de nouveaux data centers.",
         },
         {
           type: "p",
-          text: "Anthropic, quinze campus, rien en propre. Anthropic ne possède ni bâtiment, ni sous-station, ni, le plus souvent, les puces. Il loue : du cloud AWS (Project Rainier, Indiana, Mississippi, Pennsylvanie), des TPU Google, un campus Nvidia à venir en Virginie-Occidentale, et surtout une série de sites en Texas, Kentucky, Louisiane, New York et Indiana qui ont un point commun que je n’avais pas vu venir : ce sont d’anciennes fermes de minage de bitcoin — TeraWulf, Riot, Hut 8, Cipher. Ces sites ont déjà la sous-station et le raccordement de plusieurs centaines de mégawatts. Anthropic n’achète pas du terrain, il achète du mégawatt déjà branché, l’actif rare de 2026.",
+          text: "Anthropic, quinze campus, rien en propre. Anthropic ne possède ni bâtiment, ni sous-station, ni, le plus souvent, les puces. Il loue : du cloud AWS (Project Rainier, Indiana, Mississippi, Pennsylvanie), des TPU Google, un campus Nvidia à venir en Virginie-Occidentale, et surtout une série de sites en Texas, Kentucky, Louisiane, New York et Indiana qui ont un point commun que je n’avais pas vu venir : ce sont d’anciennes fermes de minage de bitcoin : TeraWulf, Riot, Hut 8, Cipher. Ces sites ont déjà la sous-station et le raccordement de plusieurs centaines de mégawatts. Anthropic n’achète pas du terrain, il achète du mégawatt déjà branché, l’actif rare de 2026.",
         },
         {
           type: "p",
-          text: "Et les trois se croisent. Depuis mai 2026, Anthropic loue à xAI l’essentiel de Colossus 1 — 500 MW, 45 milliards de dollars sur trois ans, résiliable à 90 jours. Depuis juin, Google y loue 110 000 GPU pour 920 millions de dollars par mois. Les trois rivaux partagent les turbines de Memphis. Et aucun de ces sites n’est en Virginie : les nouveaux entrants vont là où il reste du gaz et du foncier, pas là où est l’internet historique.",
+          text: "Et les trois se croisent. Depuis mai 2026, Anthropic loue à xAI l’essentiel de Colossus 1 : 500 MW, 45 milliards de dollars sur trois ans, résiliable à 90 jours. Depuis juin, Google y loue 110 000 GPU pour 920 millions de dollars par mois. Les trois rivaux partagent les turbines de Memphis. Et aucun de ces sites n’est en Virginie : les nouveaux entrants vont là où il reste du gaz et du foncier, pas là où est l’internet historique.",
         },
         {
           type: "callout",
-          text: "Retenez trois choses de cette carte. Le gaz est partout où il faut aller vite. Le raccordement existant vaut plus que le terrain. Et l’écart entre annoncé et réel est énorme — 0,3 GW pour 9 chez OpenAI.",
+          text: "Retenez trois choses de cette carte. Le gaz est partout où il faut aller vite. Le raccordement existant vaut plus que le terrain. Et l’écart entre annoncé et réel est énorme : 0,3 GW pour 9 chez OpenAI.",
         },
         {
           type: "h",
@@ -1697,7 +1697,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Le mégawatt, version Virginie. Les data centers représentent 20 à 25 % des ventes de Dominion Energy, qui achète déjà 22 % de ses besoins à l’extérieur, au prix fort. La puissance contractée est passée de 931 MW à 3 888 MW en 2025, et devrait atteindre 7 686 MW en 2033. L’État estime qu’il lui faudra 11 000 MW d’ici 2035 — une multiplication par quatre en treize ans. Le comté de Loudoun compte plus de 4 000 groupes électrogènes de secours, testés chaque mois. Souvenez-vous du juge de Grenoble et de la « puissance thermique nominale » des groupes : c’est le même objet, multiplié par quatre mille. Et la nouvelle ligne de 500 kV censée sécuriser Ashburn en est encore, elle, au choix du tracé.",
+          text: "Le mégawatt, version Virginie. Les data centers représentent 20 à 25 % des ventes de Dominion Energy, qui achète déjà 22 % de ses besoins à l’extérieur, au prix fort. La puissance contractée est passée de 931 MW à 3 888 MW en 2025, et devrait atteindre 7 686 MW en 2033. L’État estime qu’il lui faudra 11 000 MW d’ici 2035 : une multiplication par quatre en treize ans. Le comté de Loudoun compte plus de 4 000 groupes électrogènes de secours, testés chaque mois. Souvenez-vous du juge de Grenoble et de la « puissance thermique nominale » des groupes : c’est le même objet, multiplié par quatre mille. Et la nouvelle ligne de 500 kV censée sécuriser Ashburn en est encore, elle, au choix du tracé.",
         },
         {
           type: "p",
@@ -1705,15 +1705,15 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Le prix politique. Les lotissements de Briarfield Estates et Hiddenwood, ouverts en 2013 en zone rurale, sont aujourd’hui encerclés par les entrepôts numériques. En juillet 2025, le comté a refusé aux habitants le reclassement en zone industrielle qui leur aurait permis de vendre et de partir. La maison médiane à Loudoun vaut 983 625 dollars. Les data centers apportent 9,1 milliards de dollars au PIB de l’État et un quart des recettes fiscales du comté — mais sur 74 000 emplois, l’immense majorité sont des emplois de chantier ; un site en exploitation occupe quelques dizaines de personnes.",
+          text: "Le prix politique. Les lotissements de Briarfield Estates et Hiddenwood, ouverts en 2013 en zone rurale, sont aujourd’hui encerclés par les entrepôts numériques. En juillet 2025, le comté a refusé aux habitants le reclassement en zone industrielle qui leur aurait permis de vendre et de partir. La maison médiane à Loudoun vaut 983 625 dollars. Les data centers apportent 9,1 milliards de dollars au PIB de l’État et un quart des recettes fiscales du comté, mais sur 74 000 emplois, l’immense majorité sont des emplois de chantier ; un site en exploitation occupe quelques dizaines de personnes.",
         },
         {
           type: "p",
-          text: "Ce qui vient de changer : au moment du texte de Carroué, le gouverneur républicain Glenn Youngkin poussait le développement. Sa successeure démocrate, Abigail Spanberger, en fonction depuis janvier 2026, a présenté le 18 septembre un plan qui parle exactement le langage de cet article — approbation locale obligatoire au-delà de 25 MW, fin des permis accélérés pour les grands sites, transparence et interdiction des clauses de confidentialité, restriction des tours de refroidissement gourmandes en eau, incitation à remplacer les groupes diesel par des batteries. The Register a résumé ça d’une formule que la gouverneure n’a pas prononcée mais qui dit l’essentiel : les data centers sont devenus un « cancer politique ». Ce sont des annonces, pas des lois. C’est l’Assemblée générale de Virginie qui tranchera.",
+          text: "Ce qui vient de changer : au moment du texte de Carroué, le gouverneur républicain Glenn Youngkin poussait le développement. Sa successeure démocrate, Abigail Spanberger, en fonction depuis janvier 2026, a présenté le 18 septembre un plan qui parle exactement le langage de cet article : approbation locale obligatoire au-delà de 25 MW, fin des permis accélérés pour les grands sites, transparence et interdiction des clauses de confidentialité, restriction des tours de refroidissement gourmandes en eau, incitation à remplacer les groupes diesel par des batteries. The Register a résumé ça d’une formule que la gouverneure n’a pas prononcée mais qui dit l’essentiel : les data centers sont devenus un « cancer politique ». Ce sont des annonces, pas des lois. C’est l’Assemblée générale de Virginie qui tranchera.",
         },
         {
           type: "p",
-          text: "Et nous là-dedans. 80 % des dépenses cloud européennes — un marché de 330 milliards d’euros par an selon le Cigref — partent aux États-Unis. 70 % des données numériques françaises sont hébergées outre-Atlantique. Le 20 octobre 2025, une panne d’AWS née dans un data center de Virginie a mis hors service en même temps Snapchat, Fortnite, Venmo, la banque Lloyds, Airbnb, Reddit, Zoom, Perplexity et Netflix. Les mégawatts de Loudoun sont, pour partie, les nôtres.",
+          text: "Et nous là-dedans. 80 % des dépenses cloud européennes, un marché de 330 milliards d’euros par an selon le Cigref, partent aux États-Unis. 70 % des données numériques françaises sont hébergées outre-Atlantique. Le 20 octobre 2025, une panne d’AWS née dans un data center de Virginie a mis hors service en même temps Snapchat, Fortnite, Venmo, la banque Lloyds, Airbnb, Reddit, Zoom, Perplexity et Netflix. Les mégawatts de Loudoun sont, pour partie, les nôtres.",
         },
         { type: "h", id: "ecart", text: "7. L’écart de vitesse" },
         {
@@ -1740,7 +1740,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
                 { value: "13 %", label: "des demandes 2000-2020 ont abouti ; 75 % retirées" },
                 { value: "5-7 ans", label: "livraison d’une turbine à gaz lourde" },
                 { value: "1 312 GW", label: "en attente de raccordement aux États-Unis, fin 2025" },
-                { value: "années", label: "une ligne 500 kV — celle d’Ashburn en est au tracé" },
+                { value: "années", label: "une ligne 500 kV, celle d’Ashburn en est au tracé" },
               ],
             },
           ],
@@ -1760,12 +1760,12 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Deuxième façon : contourner le réseau. C’est le mouvement le plus rapide et le moins visible. Cleanview compte, à la mi-2026, environ 90 GW de production électrique « derrière le compteur » annoncés pour des data centers américains — plus d’un quart de toute la capacité de data centers planifiée dans le pays. 92 % de ces annonces datent de moins de vingt mois. Et 2 GW sont en service. Le reste est à l’état de permis (36 %) ou d’annonce (60 %). Les fournisseurs sont ceux qui livrent vite : Caterpillar pour un tiers, Bloom Energy pour 14 %, des turbines aérodérivées, des moteurs, des turbines reconditionnées. Les cinq premiers États, Texas en tête, concentrent 83 %. Memphis n’est pas une anomalie ; c’est le prototype.",
+          text: "Deuxième façon : contourner le réseau. C’est le mouvement le plus rapide et le moins visible. Cleanview compte, à la mi-2026, environ 90 GW de production électrique « derrière le compteur » annoncés pour des data centers américains, plus d’un quart de toute la capacité de data centers planifiée dans le pays. 92 % de ces annonces datent de moins de vingt mois. Et 2 GW sont en service. Le reste est à l’état de permis (36 %) ou d’annonce (60 %). Les fournisseurs sont ceux qui livrent vite : Caterpillar pour un tiers, Bloom Energy pour 14 %, des turbines aérodérivées, des moteurs, des turbines reconditionnées. Les cinq premiers États, Texas en tête, concentrent 83 %. Memphis n’est pas une anomalie ; c’est le prototype.",
         },
         { type: "h3", text: "Troisième façon : envoyer la facture aux ménages" },
         {
           type: "p",
-          text: "Sur PJM, le plus grand marché électrique américain (Virginie et douze autres États), le prix de la capacité est passé de 28,92 $ par mégawatt-jour (2024-25) à 329,17 $ (2026-27). Onze fois plus. L’IEEFA attribue 63 % de la hausse de l’enchère 2025-26 aux data centers : 9,3 milliards de dollars répercutés sur tous les clients. Zone Dominion (Virginie) : 444 $. Zone Baltimore : 466 $. Sur une facture résidentielle de l’Ohio ou de l’ouest du Maryland : +16 à 18 $ par mois dès maintenant, et une estimation — que je donne comme telle — de +70 $ par mois en 2028.",
+          text: "Sur PJM, le plus grand marché électrique américain (Virginie et douze autres États), le prix de la capacité est passé de 28,92 $ par mégawatt-jour (2024-25) à 329,17 $ (2026-27). Onze fois plus. L’IEEFA attribue 63 % de la hausse de l’enchère 2025-26 aux data centers : 9,3 milliards de dollars répercutés sur tous les clients. Zone Dominion (Virginie) : 444 $. Zone Baltimore : 466 $. Sur une facture résidentielle de l’Ohio ou de l’ouest du Maryland : +16 à 18 $ par mois dès maintenant, et une estimation, que je donne comme telle, de +70 $ par mois en 2028.",
         },
         {
           type: "p",
@@ -1773,19 +1773,19 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Le contre-argument qu’il faut prendre au sérieux : la vitesse est aussi celle des annonces. Sightline Climate compte en Amérique du Nord 39 GW de data centers opérationnels, 35 en construction et plus de 129 annoncés. Sur les 16 GW censés être livrés en 2026, 5 étaient réellement en chantier au printemps ; 30 à 50 % du pipeline de l’année ne se fera pas. En 2025, 26 % de la capacité attendue a glissé. Sightline ajoute une phrase qui résume tout : « une annonce de data center est une demande d’électricité, pas un engagement de construire ». Entrer dans la file d’attente ne coûte presque rien. Et Sightline nomme le vrai goulot de 2026 : « ni le capital, ni les puces — la couche électrique », c’est-à-dire les transformateurs haute tension et les cellules moyenne tension.",
+          text: "Le contre-argument qu’il faut prendre au sérieux : la vitesse est aussi celle des annonces. Sightline Climate compte en Amérique du Nord 39 GW de data centers opérationnels, 35 en construction et plus de 129 annoncés. Sur les 16 GW censés être livrés en 2026, 5 étaient réellement en chantier au printemps ; 30 à 50 % du pipeline de l’année ne se fera pas. En 2025, 26 % de la capacité attendue a glissé. Sightline ajoute une phrase qui résume tout : « une annonce de data center est une demande d’électricité, pas un engagement de construire ». Entrer dans la file d’attente ne coûte presque rien. Et Sightline nomme le vrai goulot de 2026 : « ni le capital, ni les puces : la couche électrique », c’est-à-dire les transformateurs haute tension et les cellules moyenne tension.",
         },
         {
           type: "p",
-          text: "Ce contre-argument ne renverse pas la thèse, il la précise. Si le pipeline se dégonfle, le danger est financier — la dette d’Oracle, les obligations à haut rendement des projets Meta et CoreWeave — avant d’être physique. Mais ce qui est déjà construit l’a été de la même manière : vite, au gaz, hors réseau. Et ce qui est déjà payé l’est par les ménages de PJM.",
+          text: "Ce contre-argument ne renverse pas la thèse, il la précise. Si le pipeline se dégonfle, le danger est financier (la dette d’Oracle, les obligations à haut rendement des projets Meta et CoreWeave) avant d’être physique. Mais ce qui est déjà construit l’a été de la même manière : vite, au gaz, hors réseau. Et ce qui est déjà payé l’est par les ménages de PJM.",
         },
         {
           type: "callout",
-          text: "Le danger n’est pas que l’IA aille trop vite. C’est l’écart entre la vitesse à laquelle elle appelle de la puissance et la vitesse à laquelle un réseau, un bassin et une commune peuvent répondre. Cet écart se comble aujourd’hui par le gaz, par le contournement du réseau public, et par un transfert de coût vers ceux qui n’ont rien demandé. Il est local, il est daté, il est mesurable — et il est déjà en train d’être régulé.",
+          text: "Le danger n’est pas que l’IA aille trop vite. C’est l’écart entre la vitesse à laquelle elle appelle de la puissance et la vitesse à laquelle un réseau, un bassin et une commune peuvent répondre. Cet écart se comble aujourd’hui par le gaz, par le contournement du réseau public, et par un transfert de coût vers ceux qui n’ont rien demandé. Il est local, il est daté, il est mesurable, et il est déjà en train d’être régulé.",
         },
         {
           type: "p",
-          text: "Trois précautions. Ce n’est pas un problème planétaire d’énergie : 3 % de l’électricité mondiale en 2030, moins de 1 % des émissions. Ce n’est pas propre à l’IA : les véhicules électriques et les pompes à chaleur tirent aussi la demande, mais aucun ne le fait à cette vitesse ni avec cette concentration. Et ce n’est pas universel : la Chine construit du gaz et le réseau qui va avec, la France est à 2 % — l’écart de vitesse est pour une bonne part un problème institutionnel américain, que l’IA révèle plutôt qu’elle ne le crée.",
+          text: "Trois précautions. Ce n’est pas un problème planétaire d’énergie : 3 % de l’électricité mondiale en 2030, moins de 1 % des émissions. Ce n’est pas propre à l’IA : les véhicules électriques et les pompes à chaleur tirent aussi la demande, mais aucun ne le fait à cette vitesse ni avec cette concentration. Et ce n’est pas universel : la Chine construit du gaz et le réseau qui va avec, la France est à 2 % : l’écart de vitesse est pour une bonne part un problème institutionnel américain, que l’IA révèle plutôt qu’elle ne le crée.",
         },
         {
           type: "h",
@@ -1794,7 +1794,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Ce qui m’a décidé à écrire cet article, c’est la coïncidence de dates. En cinq jours, du 18 au 22 septembre 2026, cinq juridictions ont bougé, et toutes ont choisi les mêmes variables : une puissance qui déclenche, un rendement qui classe, et — nouveauté — un coût qui change de mains.",
+          text: "Ce qui m’a décidé à écrire cet article, c’est la coïncidence de dates. En cinq jours, du 18 au 22 septembre 2026, cinq juridictions ont bougé, et toutes ont choisi les mêmes variables : une puissance qui déclenche, un rendement qui classe, et (nouveauté) un coût qui change de mains.",
         },
         {
           type: "timeline",
@@ -1813,7 +1813,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
               date: "21 septembre",
               tag: "7 lois",
               text: [
-                "Gavin Newsom a signé sept lois, un an après en avoir rejeté une par crainte de freiner l’IA. Trois transfèrent aux opérateurs les coûts d’infrastructure électrique jusque-là supportés par les particuliers (SB 1168, SB 886, AB 2383) — c’est la réponse directe à la troisième façon de combler l’écart. Trois imposent la divulgation de la consommation d’eau et des autres ressources (AB 2469, AB 1577, AB 2619). Une supprime l’exemption automatique d’examen environnemental, avec une voie accélérée pour les sites économes (SB 887).",
+                "Gavin Newsom a signé sept lois, un an après en avoir rejeté une par crainte de freiner l’IA. Trois transfèrent aux opérateurs les coûts d’infrastructure électrique jusque-là supportés par les particuliers (SB 1168, SB 886, AB 2383) : c’est la réponse directe à la troisième façon de combler l’écart. Trois imposent la divulgation de la consommation d’eau et des autres ressources (AB 2469, AB 1577, AB 2619). Une supprime l’exemption automatique d’examen environnemental, avec une voie accélérée pour les sites économes (SB 887).",
               ],
             },
             {
@@ -1861,7 +1861,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "p", text: "Reprenons le prompt, puisque c’est de lui qu’on se sent coupable." },
         {
           type: "p",
-          text: "Google mesure 0,24 Wh et 0,26 mL d’eau — cinq gouttes — pour un prompt médian sur Gemini. Mistral, dans une analyse de cycle de vie auditée par Carbone 4, compte 45 mL pour une réponse de 400 tokens. Un facteur 170 entre deux acteurs sérieux, qui ne vient pas d’un mensonge mais de tout ce qui précède : modèles, périmètres, sites, mix électrique, méthode de comptabilité carbone. Il n’existe pas de norme de mesure commune. C’est exactement ce que le label européen commence à construire.",
+          text: "Google mesure 0,24 Wh et 0,26 mL d’eau (cinq gouttes) pour un prompt médian sur Gemini. Mistral, dans une analyse de cycle de vie auditée par Carbone 4, compte 45 mL pour une réponse de 400 tokens. Un facteur 170 entre deux acteurs sérieux, qui ne vient pas d’un mensonge mais de tout ce qui précède : modèles, périmètres, sites, mix électrique, méthode de comptabilité carbone. Il n’existe pas de norme de mesure commune. C’est exactement ce que le label européen commence à construire.",
         },
         {
           type: "box",
@@ -1874,7 +1874,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Le reste ne se joue pas à votre clavier. Il se joue dans le choix du site, du système de refroidissement, du mix électrique et de qui paie le raccordement — c’est-à-dire dans des permis de construire, des enchères de capacité et des labels. Ce sont des décisions collectives, et elles sont en train d’être prises.",
+          text: "Le reste ne se joue pas à votre clavier. Il se joue dans le choix du site, du système de refroidissement, du mix électrique et de qui paie le raccordement, c’est-à-dire dans des permis de construire, des enchères de capacité et des labels. Ce sont des décisions collectives, et elles sont en train d’être prises.",
         },
         {
           type: "p",
@@ -1903,11 +1903,11 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "h", id: "boucle", text: "11. La boucle, en une page" },
         {
           type: "p",
-          text: "L’IA fait exploser la densité par rack. L’air atteint sa limite physique, et cette limite se rapproche à mesure que le climat — et la chaleur des data centers eux-mêmes — réduit les heures de free cooling. On bascule vers le liquide. L’arbitrage entre eau et électricité n’en est pas un : c’est la même eau, déplacée vers la centrale. Les sites se concentrent là où les mégawatts sont raccordables, pas là où ils sont propres ni là où l’eau abonde. Puis le rythme de l’IA — des jours — rencontre le rythme du réseau — des années — et l’écart se remplit de ce qui va vite : du gaz, des turbines mobiles, des centrales privées, et une facture envoyée à ceux qui n’ont rien demandé. La contestation cesse d’être locale. Et la réglementation, en cinq jours de septembre 2026, converge sur trois variables : une puissance qui déclenche, un rendement thermique qui classe, un coût qui change de mains.",
+          text: "L’IA fait exploser la densité par rack. L’air atteint sa limite physique, et cette limite se rapproche à mesure que le climat, et la chaleur des data centers eux-mêmes, réduit les heures de free cooling. On bascule vers le liquide. L’arbitrage entre eau et électricité n’en est pas un : c’est la même eau, déplacée vers la centrale. Les sites se concentrent là où les mégawatts sont raccordables, pas là où ils sont propres ni là où l’eau abonde. Puis le rythme de l’IA (des jours) rencontre le rythme du réseau (des années) et l’écart se remplit de ce qui va vite : du gaz, des turbines mobiles, des centrales privées, et une facture envoyée à ceux qui n’ont rien demandé. La contestation cesse d’être locale. Et la réglementation, en cinq jours de septembre 2026, converge sur trois variables : une puissance qui déclenche, un rendement thermique qui classe, un coût qui change de mains.",
         },
         {
           type: "callout",
-          text: "Le juge de Grenoble n’a pas eu besoin de savoir combien d’eau consomme un prompt. Il a demandé la puissance électrique du site, et la puissance thermique de ses groupes de secours. C’était la bonne question. Ce n’est pas l’IA qui va trop vite. C’est nous qui n’avons pas de réseau à sa vitesse — et qui, en attendant, brûlons du gaz.",
+          text: "Le juge de Grenoble n’a pas eu besoin de savoir combien d’eau consomme un prompt. Il a demandé la puissance électrique du site, et la puissance thermique de ses groupes de secours. C’était la bonne question. Ce n’est pas l’IA qui va trop vite. C’est nous qui n’avons pas de réseau à sa vitesse, et qui, en attendant, brûlons du gaz.",
         },
       ],
       sourcesLabel: "Sources principales",
@@ -1943,7 +1943,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
     },
     en: {
       title: "The megawatt and the degree",
-      lead: "What a judge in Grenoble understood about data centers — and why the real danger is not the speed of AI, but the gap between its speed and the grid’s.",
+      lead: "What a judge in Grenoble understood about data centers, and why the real danger is not the speed of AI, but the gap between its speed and the grid’s.",
       updated: "Published 24 September 2026",
       summaryLabel: "In short",
       summary: [
@@ -1982,11 +1982,11 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "A power. A heat. Without saying so, the judge asked the only two questions that matter. Everything else — water, local opposition, the regulation coming from Brussels, Sacramento, Albany and Richmond, the geopolitics of a Virginia county — follows from those two.",
+          text: "A power. A heat. Without saying so, the judge asked the only two questions that matter. Everything else (water, local opposition, the regulation coming from Brussels, Sacramento, Albany and Richmond, the geopolitics of a Virginia county) follows from those two.",
         },
         {
           type: "callout",
-          text: "Pulling that thread all the way, I reached a conclusion I did not expect. You hear everywhere that AI is moving too fast and that this is what makes it dangerous. I think that is the wrong framing. What moves too fast is the electrical power it calls for — and what is dangerous is not that speed in itself, but the gap between it and the speed at which a grid, a river basin and a local democracy can respond. Today that gap is filled with gas, by bypassing the public grid, and by sending the bill to households. That is the measurable risk. The rest of this article is the demonstration.",
+          text: "Pulling that thread all the way, I reached a conclusion I did not expect. You hear everywhere that AI is moving too fast and that this is what makes it dangerous. I think that is the wrong framing. What moves too fast is the electrical power it calls for, and what is dangerous is not that speed in itself, but the gap between it and the speed at which a grid, a river basin and a local democracy can respond. Today that gap is filled with gas, by bypassing the public grid, and by sending the bill to households. That is the measurable risk. The rest of this article is the demonstration.",
         },
         {
           type: "note",
@@ -2024,7 +2024,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "p", text: "This is not an exception. It is the new norm." },
         {
           type: "p",
-          text: "Density has broken away. For forty years, a server cabinet — a rack, 60 cm wide, two metres tall, 42 slots — drew between 5 and 12 kW. A few electric heaters in a cupboard, and the industry knew very well how to cool that by blowing air. Average density rose from 16 kW per rack in 2025 to 27 kW in 2026. An Nvidia GB200 NVL72 rack, with its 72 GPUs, draws 120 to 140 kW, more than a gigawatt-hour a year: at full load, the consumption of about 240 French households, in one cabinet. The next platform, Vera Rubin, announces up to 246 kW per rack.",
+          text: "Density has broken away. For forty years, a server cabinet (a rack, 60 cm wide, two metres tall, 42 slots) drew between 5 and 12 kW. A few electric heaters in a cupboard, and the industry knew very well how to cool that by blowing air. Average density rose from 16 kW per rack in 2025 to 27 kW in 2026. An Nvidia GB200 NVL72 rack, with its 72 GPUs, draws 120 to 140 kW, more than a gigawatt-hour a year: at full load, the consumption of about 240 French households, in one cabinet. The next platform, Vera Rubin, announces up to 246 kW per rack.",
         },
         {
           type: "p",
@@ -2045,7 +2045,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "At chip level. An H100 GPU dissipates about 700 watts, a B200 between 1,000 and 1,200, an MI355X up to 1,400. Per unit of area, an H100 must remove 86 watts per square centimetre — more than an induction hob, on a surface the size of a stamp.",
+          text: "At chip level. An H100 GPU dissipates about 700 watts, a B200 between 1,000 and 1,200, an MI355X up to 1,400. Per unit of area, an H100 must remove 86 watts per square centimetre, more than an induction hob, on a surface the size of a stamp.",
         },
         {
           type: "p",
@@ -2105,7 +2105,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "I read the paper in full, and two things need saying that the abstract does not. First, it is not yet peer-reviewed — it is an arXiv preprint (2607.02531). Second, the authors themselves call the hydroelectric coefficient they use (8 litres per kilowatt-hour) “methodologically contested”: without it, indirect water drops by 43%, from 226 to 128 billion litres. The famous “indirect is three times direct” ratio thus rests largely on a disputed accounting convention. The direction holds — a data center’s water is mostly its power plant’s water — but the magnitude is less certain than announced.",
+          text: "I read the paper in full, and two things need saying that the abstract does not. First, it is not yet peer-reviewed: it is an arXiv preprint (2607.02531). Second, the authors themselves call the hydroelectric coefficient they use (8 litres per kilowatt-hour) “methodologically contested”: without it, indirect water drops by 43%, from 226 to 128 billion litres. The famous “indirect is three times direct” ratio thus rests largely on a disputed accounting convention. The direction holds: a data center’s water is mostly its power plant’s water, but the magnitude is less certain than announced.",
         },
         {
           type: "p",
@@ -2122,7 +2122,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Free cooling — cooling with outside air rather than with a machine — only works when it is cool enough often enough. That is what makes Nordic countries attractive, and what makes the climate question inseparable from the electricity question.",
+          text: "Free cooling, cooling with outside air rather than with a machine, only works when it is cool enough often enough. That is what makes Nordic countries attractive, and what makes the climate question inseparable from the electricity question.",
         },
         {
           type: "p",
@@ -2134,8 +2134,8 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           rows: [
             ["Northern Virginia", "154", "~10%"],
             ["Dallas–Fort Worth", "75", "> 20%"],
-            ["Pearl River Delta", "—", "> 40%"],
-            ["Singapore", "—", "> 85%"],
+            ["Pearl River Delta", "n/a", "> 40%"],
+            ["Singapore", "n/a", "> 85%"],
           ],
           caption: "Karamperidou et al., Scientific Reports. 1980–2024 trend: up to +2 h/day/decade of exceedance in the tropics, +1.5 h in summer in the US Southeast.",
         },
@@ -2146,7 +2146,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "h", id: "carte", text: "5. Where AI’s megawatts are" },
         {
           type: "p",
-          text: "Before talking about speed, you need to know where things stand. I mapped the sites of the three labs people talk about most — xAI, OpenAI, Anthropic — keeping only what is located, quantified and dated.",
+          text: "Before talking about speed, you need to know where things stand. I mapped the sites of the three labs people talk about most (xAI, OpenAI, Anthropic) keeping only what is located, quantified and dated.",
         },
         {
           type: "table",
@@ -2178,23 +2178,23 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "xAI, Memphis. Colossus 1 is a former Electrolux factory in south Memphis, converted in 122 days in summer 2024 to host 100,000 GPUs. Colossus 2, in the Whitehaven neighbourhood, received its first cluster in January 2026 after 91 days of work; it is approaching 350,000 GPUs. When xAI arrived, the local grid offered only 8 MW. The answer was mobile gas turbines, installed without Clean Air Act permits, then regularised by a 1.2 GW plant with 41 turbines across the Mississippi state line — more than half the power of the Hoover Dam, for a single customer. The neighbouring, mostly Black, Boxtown neighbourhood breathes the nitrogen oxides; the NAACP sued in April 2026; in June the Department of Justice intervened — on xAI’s side, in the name of “national, economic and energy security”.",
+          text: "xAI, Memphis. Colossus 1 is a former Electrolux factory in south Memphis, converted in 122 days in summer 2024 to host 100,000 GPUs. Colossus 2, in the Whitehaven neighbourhood, received its first cluster in January 2026 after 91 days of work; it is approaching 350,000 GPUs. When xAI arrived, the local grid offered only 8 MW. The answer was mobile gas turbines, installed without Clean Air Act permits, then regularised by a 1.2 GW plant with 41 turbines across the Mississippi state line, more than half the power of the Hoover Dam, for a single customer. The neighbouring, mostly Black, Boxtown neighbourhood breathes the nitrogen oxides; the NAACP sued in April 2026; in June the Department of Justice intervened, on xAI’s side, in the name of “national, economic and energy security”.",
         },
         {
           type: "p",
-          text: "OpenAI, Stargate. Seven US sites, hardware owned by Oracle or SoftBank, $500 billion announced, more than 9 GW targeted. In spring 2026, only one was running: Abilene, Texas, 0.3 GW. The three largest — Shackelford County in Texas (2 GW), Doña Ana County in New Mexico (2.2 GW), Abilene — are or will be powered by natural-gas microgrids, off the public grid. The only mostly renewable site is in Wisconsin. The Michigan one is already contested; the Ohio one will soon face a local ban on new data centers.",
+          text: "OpenAI, Stargate. Seven US sites, hardware owned by Oracle or SoftBank, $500 billion announced, more than 9 GW targeted. In spring 2026, only one was running: Abilene, Texas, 0.3 GW. The three largest, Shackelford County in Texas (2 GW), Doña Ana County in New Mexico (2.2 GW), Abilene, are or will be powered by natural-gas microgrids, off the public grid. The only mostly renewable site is in Wisconsin. The Michigan one is already contested; the Ohio one will soon face a local ban on new data centers.",
         },
         {
           type: "p",
-          text: "Anthropic, fifteen campuses, nothing owned. Anthropic owns no building, no substation and, most often, not the chips. It leases: AWS cloud (Project Rainier, Indiana, Mississippi, Pennsylvania), Google TPUs, an upcoming Nvidia campus in West Virginia, and above all a series of sites in Texas, Kentucky, Louisiana, New York and Indiana that share something I did not see coming: they are former bitcoin mining farms — TeraWulf, Riot, Hut 8, Cipher. These sites already have the substation and a grid connection of several hundred megawatts. Anthropic is not buying land, it is buying megawatts already plugged in, the scarce asset of 2026.",
+          text: "Anthropic, fifteen campuses, nothing owned. Anthropic owns no building, no substation and, most often, not the chips. It leases: AWS cloud (Project Rainier, Indiana, Mississippi, Pennsylvania), Google TPUs, an upcoming Nvidia campus in West Virginia, and above all a series of sites in Texas, Kentucky, Louisiana, New York and Indiana that share something I did not see coming: they are former bitcoin mining farms: TeraWulf, Riot, Hut 8, Cipher. These sites already have the substation and a grid connection of several hundred megawatts. Anthropic is not buying land, it is buying megawatts already plugged in, the scarce asset of 2026.",
         },
         {
           type: "p",
-          text: "And the three cross paths. Since May 2026, Anthropic has leased most of Colossus 1 from xAI — 500 MW, $45 billion over three years, terminable at 90 days. Since June, Google has leased 110,000 GPUs there for $920 million a month. The three rivals share the Memphis turbines. And none of these sites is in Virginia: newcomers go where gas and land are left, not where the historic internet is.",
+          text: "And the three cross paths. Since May 2026, Anthropic has leased most of Colossus 1 from xAI: 500 MW, $45 billion over three years, terminable at 90 days. Since June, Google has leased 110,000 GPUs there for $920 million a month. The three rivals share the Memphis turbines. And none of these sites is in Virginia: newcomers go where gas and land are left, not where the historic internet is.",
         },
         {
           type: "callout",
-          text: "Remember three things from this map. Gas is everywhere speed is needed. An existing grid connection is worth more than the land. And the gap between announced and real is huge — 0.3 GW out of 9 at OpenAI.",
+          text: "Remember three things from this map. Gas is everywhere speed is needed. An existing grid connection is worth more than the land. And the gap between announced and real is huge: 0.3 GW out of 9 at OpenAI.",
         },
         {
           type: "h",
@@ -2215,7 +2215,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "The megawatt, Virginia edition. Data centers account for 20 to 25% of Dominion Energy’s sales, and Dominion already buys 22% of its needs from outside, at a high price. Contracted capacity rose from 931 MW to 3,888 MW in 2025, and should reach 7,686 MW in 2033. The state estimates it will need 11,000 MW by 2035 — a fourfold increase in thirteen years. Loudoun County has more than 4,000 backup generators, tested every month. Remember the Grenoble judge and the generators’ “rated thermal power”: it is the same object, multiplied by four thousand. And the new 500 kV line meant to secure Ashburn is still at the route-selection stage.",
+          text: "The megawatt, Virginia edition. Data centers account for 20 to 25% of Dominion Energy’s sales, and Dominion already buys 22% of its needs from outside, at a high price. Contracted capacity rose from 931 MW to 3,888 MW in 2025, and should reach 7,686 MW in 2033. The state estimates it will need 11,000 MW by 2035: a fourfold increase in thirteen years. Loudoun County has more than 4,000 backup generators, tested every month. Remember the Grenoble judge and the generators’ “rated thermal power”: it is the same object, multiplied by four thousand. And the new 500 kV line meant to secure Ashburn is still at the route-selection stage.",
         },
         {
           type: "p",
@@ -2223,15 +2223,15 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "The political price. The Briarfield Estates and Hiddenwood subdivisions, opened in 2013 in a rural area, are now surrounded by digital warehouses. In July 2025, the county refused residents the rezoning to industrial use that would have let them sell and leave. The median home in Loudoun is worth $983,625. Data centers bring $9.1 billion to the state’s GDP and a quarter of the county’s tax revenue — but of 74,000 jobs, the vast majority are construction jobs; an operating site employs a few dozen people.",
+          text: "The political price. The Briarfield Estates and Hiddenwood subdivisions, opened in 2013 in a rural area, are now surrounded by digital warehouses. In July 2025, the county refused residents the rezoning to industrial use that would have let them sell and leave. The median home in Loudoun is worth $983,625. Data centers bring $9.1 billion to the state’s GDP and a quarter of the county’s tax revenue, but of 74,000 jobs, the vast majority are construction jobs; an operating site employs a few dozen people.",
         },
         {
           type: "p",
-          text: "What has just changed: when Carroué wrote, Republican governor Glenn Youngkin was pushing development. His Democratic successor, Abigail Spanberger, in office since January 2026, presented a plan on 18 September that speaks exactly the language of this article — mandatory local approval above 25 MW, an end to fast-track permits for large sites, transparency and a ban on confidentiality clauses, restrictions on water-hungry cooling towers, incentives to replace diesel generators with batteries. The Register summed it up with a phrase the governor did not use but that says it all: data centers have become a “political cancer”. These are announcements, not laws. The Virginia General Assembly will decide.",
+          text: "What has just changed: when Carroué wrote, Republican governor Glenn Youngkin was pushing development. His Democratic successor, Abigail Spanberger, in office since January 2026, presented a plan on 18 September that speaks exactly the language of this article: mandatory local approval above 25 MW, an end to fast-track permits for large sites, transparency and a ban on confidentiality clauses, restrictions on water-hungry cooling towers, incentives to replace diesel generators with batteries. The Register summed it up with a phrase the governor did not use but that says it all: data centers have become a “political cancer”. These are announcements, not laws. The Virginia General Assembly will decide.",
         },
         {
           type: "p",
-          text: "And where we stand. 80% of European cloud spending — a €330 billion-a-year market according to Cigref — goes to the United States. 70% of French digital data is hosted across the Atlantic. On 20 October 2025, an AWS outage that started in a Virginia data center simultaneously took down Snapchat, Fortnite, Venmo, Lloyds bank, Airbnb, Reddit, Zoom, Perplexity and Netflix. Loudoun’s megawatts are, in part, ours.",
+          text: "And where we stand. 80% of European cloud spending, a €330 billion-a-year market according to Cigref, goes to the United States. 70% of French digital data is hosted across the Atlantic. On 20 October 2025, an AWS outage that started in a Virginia data center simultaneously took down Snapchat, Fortnite, Venmo, Lloyds bank, Airbnb, Reddit, Zoom, Perplexity and Netflix. Loudoun’s megawatts are, in part, ours.",
         },
         { type: "h", id: "ecart", text: "7. The speed gap" },
         {
@@ -2258,7 +2258,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
                 { value: "13%", label: "of 2000–2020 requests completed; 75% withdrawn" },
                 { value: "5–7 yrs", label: "delivery of a heavy-duty gas turbine" },
                 { value: "1,312 GW", label: "waiting for connection in the US, end of 2025" },
-                { value: "years", label: "a 500 kV line — Ashburn’s is at route selection" },
+                { value: "years", label: "a 500 kV line: Ashburn’s is at route selection" },
               ],
             },
           ],
@@ -2278,12 +2278,12 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Second way: bypass the grid. It is the fastest and least visible move. By mid-2026, Cleanview counts about 90 GW of “behind-the-meter” generation announced for US data centers — more than a quarter of all planned data-center capacity in the country. 92% of these announcements are less than twenty months old. And 2 GW are in service. The rest is at the permit stage (36%) or announced (60%). The suppliers are those who deliver fast: Caterpillar for a third, Bloom Energy for 14%, aeroderivative turbines, engines, refurbished turbines. The top five states, led by Texas, account for 83%. Memphis is not an anomaly; it is the prototype.",
+          text: "Second way: bypass the grid. It is the fastest and least visible move. By mid-2026, Cleanview counts about 90 GW of “behind-the-meter” generation announced for US data centers, more than a quarter of all planned data-center capacity in the country. 92% of these announcements are less than twenty months old. And 2 GW are in service. The rest is at the permit stage (36%) or announced (60%). The suppliers are those who deliver fast: Caterpillar for a third, Bloom Energy for 14%, aeroderivative turbines, engines, refurbished turbines. The top five states, led by Texas, account for 83%. Memphis is not an anomaly; it is the prototype.",
         },
         { type: "h3", text: "Third way: send the bill to households" },
         {
           type: "p",
-          text: "On PJM, the largest US electricity market (Virginia and twelve other states), the capacity price rose from $28.92 per megawatt-day (2024–25) to $329.17 (2026–27). Eleven times more. IEEFA attributes 63% of the increase in the 2025–26 auction to data centers: $9.3 billion passed on to all customers. Dominion zone (Virginia): $444. Baltimore zone: $466. On a residential bill in Ohio or western Maryland: +$16 to $18 a month right now, and an estimate — which I give as such — of +$70 a month in 2028.",
+          text: "On PJM, the largest US electricity market (Virginia and twelve other states), the capacity price rose from $28.92 per megawatt-day (2024–25) to $329.17 (2026–27). Eleven times more. IEEFA attributes 63% of the increase in the 2025–26 auction to data centers: $9.3 billion passed on to all customers. Dominion zone (Virginia): $444. Baltimore zone: $466. On a residential bill in Ohio or western Maryland: +$16 to $18 a month right now, and an estimate, which I give as such, of +$70 a month in 2028.",
         },
         {
           type: "p",
@@ -2291,19 +2291,19 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "The counter-argument to take seriously: speed is also the speed of announcements. Sightline Climate counts 39 GW of operational data centers in North America, 35 under construction and more than 129 announced. Of the 16 GW supposed to be delivered in 2026, 5 were actually under construction in spring; 30 to 50% of this year’s pipeline will not happen. In 2025, 26% of expected capacity slipped. Sightline adds a sentence that sums it up: “a data center announcement is a request for electricity, not a commitment to build”. Joining the queue costs almost nothing. And Sightline names the real bottleneck of 2026: “neither capital nor chips — the electrical layer”, meaning high-voltage transformers and medium-voltage switchgear.",
+          text: "The counter-argument to take seriously: speed is also the speed of announcements. Sightline Climate counts 39 GW of operational data centers in North America, 35 under construction and more than 129 announced. Of the 16 GW supposed to be delivered in 2026, 5 were actually under construction in spring; 30 to 50% of this year’s pipeline will not happen. In 2025, 26% of expected capacity slipped. Sightline adds a sentence that sums it up: “a data center announcement is a request for electricity, not a commitment to build”. Joining the queue costs almost nothing. And Sightline names the real bottleneck of 2026: “neither capital nor chips: the electrical layer”, meaning high-voltage transformers and medium-voltage switchgear.",
         },
         {
           type: "p",
-          text: "This counter-argument does not overturn the thesis, it sharpens it. If the pipeline deflates, the danger is financial — Oracle’s debt, the high-yield bonds of Meta and CoreWeave projects — before it is physical. But what has already been built was built the same way: fast, on gas, off the grid. And what has already been paid for is paid for by PJM households.",
+          text: "This counter-argument does not overturn the thesis, it sharpens it. If the pipeline deflates, the danger is financial (Oracle’s debt, the high-yield bonds of Meta and CoreWeave projects) before it is physical. But what has already been built was built the same way: fast, on gas, off the grid. And what has already been paid for is paid for by PJM households.",
         },
         {
           type: "callout",
-          text: "The danger is not that AI moves too fast. It is the gap between how fast it calls for power and how fast a grid, a basin and a town can respond. Today that gap is filled with gas, by bypassing the public grid, and by shifting costs onto people who asked for nothing. It is local, it is dated, it is measurable — and it is already being regulated.",
+          text: "The danger is not that AI moves too fast. It is the gap between how fast it calls for power and how fast a grid, a basin and a town can respond. Today that gap is filled with gas, by bypassing the public grid, and by shifting costs onto people who asked for nothing. It is local, it is dated, it is measurable, and it is already being regulated.",
         },
         {
           type: "p",
-          text: "Three caveats. This is not a planetary energy problem: 3% of world electricity in 2030, less than 1% of emissions. It is not specific to AI: electric vehicles and heat pumps also drive demand, but none at this speed or with this concentration. And it is not universal: China builds gas and the grid that goes with it, France is at 2% — the speed gap is to a large extent an American institutional problem, which AI reveals rather than creates.",
+          text: "Three caveats. This is not a planetary energy problem: 3% of world electricity in 2030, less than 1% of emissions. It is not specific to AI: electric vehicles and heat pumps also drive demand, but none at this speed or with this concentration. And it is not universal: China builds gas and the grid that goes with it, France is at 2%: the speed gap is to a large extent an American institutional problem, which AI reveals rather than creates.",
         },
         {
           type: "h",
@@ -2312,7 +2312,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "What made me write this article is a coincidence of dates. In five days, from 18 to 22 September 2026, five jurisdictions moved, and all chose the same variables: a power that triggers, an efficiency that ranks, and — the new part — a cost that changes hands.",
+          text: "What made me write this article is a coincidence of dates. In five days, from 18 to 22 September 2026, five jurisdictions moved, and all chose the same variables: a power that triggers, an efficiency that ranks, and (the new part) a cost that changes hands.",
         },
         {
           type: "timeline",
@@ -2331,7 +2331,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
               date: "21 September",
               tag: "7 laws",
               text: [
-                "Gavin Newsom signed seven laws, a year after vetoing one for fear of slowing AI down. Three shift onto operators the electrical infrastructure costs previously borne by households (SB 1168, SB 886, AB 2383) — the direct answer to the third way of filling the gap. Three require disclosure of water and other resource use (AB 2469, AB 1577, AB 2619). One removes the automatic exemption from environmental review, with a fast track for efficient sites (SB 887).",
+                "Gavin Newsom signed seven laws, a year after vetoing one for fear of slowing AI down. Three shift onto operators the electrical infrastructure costs previously borne by households (SB 1168, SB 886, AB 2383): the direct answer to the third way of filling the gap. Three require disclosure of water and other resource use (AB 2469, AB 1577, AB 2619). One removes the automatic exemption from environmental review, with a fast track for efficient sites (SB 887).",
               ],
             },
             {
@@ -2378,7 +2378,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Google measures 0.24 Wh and 0.26 mL of water — five drops — for a median Gemini prompt. Mistral, in a life-cycle analysis audited by Carbone 4, counts 45 mL for a 400-token answer. A factor of 170 between two serious players, which does not come from a lie but from everything above: models, scopes, sites, electricity mix, carbon accounting method. There is no common measurement standard. That is exactly what the European label is starting to build.",
+          text: "Google measures 0.24 Wh and 0.26 mL of water (five drops) for a median Gemini prompt. Mistral, in a life-cycle analysis audited by Carbone 4, counts 45 mL for a 400-token answer. A factor of 170 between two serious players, which does not come from a lie but from everything above: models, scopes, sites, electricity mix, carbon accounting method. There is no common measurement standard. That is exactly what the European label is starting to build.",
         },
         {
           type: "box",
@@ -2391,7 +2391,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "The rest is not decided at your keyboard. It is decided in the choice of site, cooling system, electricity mix and who pays for the grid connection — that is, in building permits, capacity auctions and labels. These are collective decisions, and they are being made right now.",
+          text: "The rest is not decided at your keyboard. It is decided in the choice of site, cooling system, electricity mix and who pays for the grid connection, that is, in building permits, capacity auctions and labels. These are collective decisions, and they are being made right now.",
         },
         {
           type: "p",
@@ -2420,11 +2420,11 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "h", id: "boucle", text: "11. The loop, on one page" },
         {
           type: "p",
-          text: "AI makes rack density explode. Air reaches its physical limit, and that limit gets closer as the climate — and the heat of data centers themselves — reduces free-cooling hours. We switch to liquid. The trade-off between water and electricity is not one: it is the same water, moved to the power plant. Sites concentrate where megawatts can be connected, not where they are clean or where water is plentiful. Then the rhythm of AI — days — meets the rhythm of the grid — years — and the gap fills with what is fast: gas, mobile turbines, private power plants, and a bill sent to people who asked for nothing. Opposition stops being local. And regulation, in five days of September 2026, converges on three variables: a power that triggers, a thermal efficiency that ranks, a cost that changes hands.",
+          text: "AI makes rack density explode. Air reaches its physical limit, and that limit gets closer as the climate, and the heat of data centers themselves, reduces free-cooling hours. We switch to liquid. The trade-off between water and electricity is not one: it is the same water, moved to the power plant. Sites concentrate where megawatts can be connected, not where they are clean or where water is plentiful. Then the rhythm of AI (days) meets the rhythm of the grid (years) and the gap fills with what is fast: gas, mobile turbines, private power plants, and a bill sent to people who asked for nothing. Opposition stops being local. And regulation, in five days of September 2026, converges on three variables: a power that triggers, a thermal efficiency that ranks, a cost that changes hands.",
         },
         {
           type: "callout",
-          text: "The Grenoble judge did not need to know how much water a prompt uses. He asked for the site’s electrical power, and the thermal power of its backup generators. It was the right question. It is not AI that is moving too fast. It is us who have no grid at its speed — and who, in the meantime, burn gas.",
+          text: "The Grenoble judge did not need to know how much water a prompt uses. He asked for the site’s electrical power, and the thermal power of its backup generators. It was the right question. It is not AI that is moving too fast. It is us who have no grid at its speed, and who, in the meantime, burn gas.",
         },
       ],
       sourcesLabel: "Main sources",

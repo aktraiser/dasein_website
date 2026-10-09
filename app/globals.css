@@ -950,6 +950,7 @@ button:hover .arrow {
 }
 
 .chip-i--arrow {
+  cursor: pointer;
   background: var(--ink);
   color: var(--accent);
   box-shadow: 0 0.06em 0.18em rgba(14, 15, 17, 0.28);
@@ -1126,6 +1127,9 @@ button:hover .arrow {
     font-size: 10px;
     letter-spacing: 0.12em;
     color: var(--muted);
+  }
+  .charstrip span::before {
+    content: attr(data-text);
   }
   .charstrip span {
     display: block;

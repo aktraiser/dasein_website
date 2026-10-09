@@ -18,7 +18,7 @@ export async function GET(_request: Request, { params }: RouteContext<"/[lang]/m
   const body = [
     `# ${t.title}`,
     `> ${t.intro}`,
-    entries.map((entry) => `- **${entry[lang].name}** — ${entry[lang].def}`).join("\n"),
+    entries.map((entry) => `- **${entry[lang].name}** : ${entry[lang].def}`).join("\n"),
   ].join("\n\n");
   return markdownResponse(`${body}\n`, `${siteUrl}/${lang}/glossary`);
 }

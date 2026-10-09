@@ -9,7 +9,7 @@ export default function NotFound() {
         <p className="eyebrow">404</p>
         <h1 className="display">Route not found.</h1>
         <p className="lead">
-          This path does not resolve to anything in the system. — Ce chemin ne mène à rien dans le système.
+          This path does not resolve to anything in the system. Ce chemin ne mène à rien dans le système.
         </p>
         <p style={{ marginTop: 40 }}>
           <Link href="/" className="link">

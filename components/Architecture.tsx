@@ -99,7 +99,7 @@ export function Architecture({ layers, traceTitle }: Props) {
             className="step"
           >
             <p className="step__label">
-              L{i + 1} — {layer.name}
+              L{i + 1} · {layer.name}
             </p>
             <h3 className="h3">{layer.title}</h3>
             <p>{layer.text}</p>

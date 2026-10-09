@@ -4,7 +4,7 @@ import { hasLocale } from "@/lib/i18n";
 import { articleOgImage, ogSize } from "@/lib/ogImage";
 import { readingMinutes } from "@/lib/readingTime";
 
-export const alt = "Dasein — Expertise";
+export const alt = "Dasein | Expertise";
 export const size = ogSize;
 export const contentType = "image/png";
 

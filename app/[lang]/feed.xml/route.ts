@@ -40,7 +40,7 @@ export async function GET(_request: Request, { params }: RouteContext<"/[lang]/f
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Dasein — ${escape(dict.articlesPage.label)}</title>
+    <title>Dasein | ${escape(dict.articlesPage.label)}</title>
     <link>${siteUrl}/${lang}/articles</link>
     <atom:link href="${self}" rel="self" type="application/rss+xml" />
     <description>${escape(dict.articlesPage.intro)}</description>

@@ -32,8 +32,9 @@ export function CharStrip({ seed = 1, length = 140, className = "" }: { seed?: n
   }
   return (
     <div className={`charstrip ${className}`} aria-hidden="true">
-      <span>{out}</span>
-      <span>{out}</span>
+      {/* Drawn by CSS from an attribute: decorative noise stays out of the page's text. */}
+      <span data-text={out} />
+      <span data-text={out} />
     </div>
   );
 }

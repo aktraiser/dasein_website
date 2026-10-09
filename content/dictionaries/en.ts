@@ -1,7 +1,7 @@
 const en = {
   meta: {
     siteName: "Dasein",
-    title: "Dasein — Data & AI Engineering",
+    title: "Dasein: Data & AI Engineering",
     description:
       "Dasein helps companies put AI to work: agents, platforms and governance, built on solid data foundations.",
   },
@@ -113,7 +113,7 @@ const en = {
   statement: {
     title: "We don’t stop at chatbots. We build the systems AI runs on.",
     points: [
-      { name: "Multi-model", text: "Mistral, OpenAI, Anthropic, open models — the right one for each constraint." },
+      { name: "Multi-model", text: "Mistral, OpenAI, Anthropic, open models: the right one for each constraint." },
       { name: "Multi-cloud", text: "AWS, Azure, GCP, IBM or private: we build on what you already run." },
       { name: "Production-first", text: "Identity, permissions, observability and governance from day one." },
     ],
@@ -127,11 +127,11 @@ const en = {
     items: [
       {
         name: "Connect without exposing",
-        text: "Agents reach systems through gateways, MCP servers and APIs — never with direct, blanket access. Every call is filtered, logged and revocable.",
+        text: "Agents reach systems through gateways, MCP servers and APIs, never with direct, blanket access. Every call is filtered, logged and revocable.",
       },
       {
         name: "Govern autonomy",
-        text: "Each agent has its own identity and scoped rights — read, generate, create, update, delete — matched to data sensitivity and validation points.",
+        text: "Each agent has its own identity and scoped rights (read, generate, create, update, delete) matched to data sensitivity and validation points.",
       },
       {
         name: "Observe, trace, audit",
@@ -149,7 +149,7 @@ const en = {
     label: "Method",
     title: "From experiment to production, step by step.",
     intro:
-      "We don’t start from a technology but from a portfolio of use cases — and we only scale what proves its value.",
+      "We don’t start from a technology but from a portfolio of use cases, and we only scale what proves its value.",
     deliverablesLabel: "Deliverables",
     steps: [
       {
@@ -173,7 +173,7 @@ const en = {
       {
         file: "04_run.exe",
         name: "Industrialise & run",
-        text: "Versioning, observability, rollback, cost control — AgentOps. What creates value is scaled; what doesn’t is retired.",
+        text: "Versioning, observability, rollback, cost control: AgentOps. What creates value is scaled; what doesn’t is retired.",
         deliverables: ["Agent catalogue & registries", "Observability & audit", "AgentOps practices"],
       },
     ],
@@ -204,7 +204,7 @@ const en = {
     label: "Agentic AI",
     title: "AI governance plays out across three verticals.",
     intro:
-      "An assistant that summarises a document and an agent that acts in an ERP don’t call for the same rules. We organise agentic AI in two verticals — end users and business teams — built on a common IT platform that governs every agent.",
+      "An assistant that summarises a document and an agent that acts in an ERP don’t call for the same rules. We organise agentic AI in three verticals: two facing usage (end users and business teams) and a third, the common IT platform, which governs every agent.",
     buildsLabel: "What we put in place",
     controlLabel: "Control",
     levels: ["Light", "Reinforced", "Strict"],
@@ -264,9 +264,9 @@ const en = {
         audience: "Business teams",
         name: "Business Applications",
         purpose: "Agents that work inside your processes, under control.",
-        lead: "Agents that work inside your processes and help you decide — under control.",
+        lead: "Agents that work inside your processes and help you decide, under control.",
         problem:
-          "Recurring processes — tickets, invoices, FinOps recommendations, audits — take up a lot of time on repetitive work, and the data needed to decide stays locked in warehouses and applications.",
+          "Recurring processes (tickets, invoices, FinOps recommendations, audits) take up a lot of time on repetitive work, and the data needed to decide stays locked in warehouses and applications.",
         builds: [
           { name: "Main agent and subagents", text: "An agent that plans and delegates, rather than one that does everything." },
           { name: "Talk to my data", text: "Query your data in everyday language, with each person’s rights." },
@@ -327,8 +327,8 @@ const en = {
     label: "Architecture",
     title: "One chain, running in production.",
     intro:
-      "Scroll to follow one IT incident through a Dasein system. Data comes in and becomes context; a model finds the root cause; an agent prepares the remediation; a human approves; the action runs in a real system — and every step is traced.",
-    traceTitle: "trace — example run",
+      "Scroll to follow one IT incident through a Dasein system. Data comes in and becomes context; a model finds the root cause; an agent prepares the remediation; a human approves; the action runs in a real system, and every step is traced.",
+    traceTitle: "trace: example run",
     layers: [
       {
         id: "data",
@@ -347,7 +347,7 @@ const en = {
         name: "Knowledge",
         stack: ["Corpus", "Search", "Vector", "RAG"],
         title: "Data becomes knowledge.",
-        text: "Documents and records are turned into a corpus: parsed, enriched with metadata, chunked, embedded and indexed — so models work from what the company actually knows.",
+        text: "Documents and records are turned into a corpus: parsed, enriched with metadata, chunked, embedded and indexed, so models work from what the company actually knows.",
         trace: [
           "index    runbooks + kb_articles  1 184 docs",
           "embed    pgvector.ops_idx  dim=1024",
@@ -359,7 +359,7 @@ const en = {
         name: "Intelligence",
         stack: ["Mistral", "OpenAI", "Anthropic", "Models"],
         title: "A model reasons over context.",
-        text: "The right model for the constraint: performance, sovereignty, cost. Context is engineered, not dumped — and every answer can be evaluated.",
+        text: "The right model for the constraint: performance, sovereignty, cost. Context is engineered, not dumped, and every answer can be evaluated.",
         trace: [
           "route    model=mistral-large  reason=sovereignty",
           "context  8 passages + 2 incidents + metrics",
@@ -395,7 +395,7 @@ const en = {
         name: "Infrastructure",
         stack: ["AWS", "Azure", "GCP", "IBM"],
         title: "Everything is governed and observed.",
-        text: "Gateways, runtimes, identity, permissions, observability and audit make the chain safe to run — on the cloud the company already uses.",
+        text: "Gateways, runtimes, identity, permissions, observability and audit make the chain safe to run, on the cloud the company already uses.",
         trace: [
           "gateway  llm-gw.eu-west  p95=410ms",
           "otel     span=agent.run  cost=€0.014",
@@ -428,7 +428,7 @@ const en = {
         name: "Agents & Automation",
         file: "agents.sys",
         keywords: ["Agents", "Multi-agent", "MCP", "Tools", "Skills", "Memory", "Orchestration"],
-        text: "Agents that act on the information system — with tools, memory and humans in the loop.",
+        text: "Agents that act on the information system, with tools, memory and humans in the loop.",
       },
       {
         name: "AI Infrastructure",
@@ -520,7 +520,7 @@ const en = {
     intersection: ["Data", "Software", "AI", "Infrastructure"],
     nameTitle: "Why “Dasein”",
     nameText:
-      "Dasein — “being-there”. An intelligence that is not abstract, but situated: present in an environment, aware of its context, able to act in it.",
+      "Dasein: “being-there”. An intelligence that is not abstract, but situated: present in an environment, aware of its context, able to act in it.",
     audienceTitle: "Who we work with",
     audienceText:
       "Large groups with complex data and cloud ecosystems, and technology companies accelerating the construction of their AI infrastructure and products.",
@@ -553,10 +553,7 @@ const en = {
     projectPlaceholder: "Context, systems involved, what you want to achieve…",
     submit: "Send",
     sending: "Sending…",
-    success: "Thank you — your message has been sent. We’ll be in touch shortly.",
-    sentTitle: "Thank you, your message is on its way.",
-    sentText: "We have received it and will get back to you very soon.",
-    sentClose: "Close",
+    success: "Thank you, your message has been sent. We’ll be in touch shortly.",
     error: "Something went wrong. Please try again in a moment.",
     invalid: "Please fill in every field with a valid email.",
   },

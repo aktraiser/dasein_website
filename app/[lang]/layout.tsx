@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
   const dict = await getDictionary(lang);
   return {
     metadataBase: new URL(siteUrl),
-    title: { default: dict.meta.title, template: `%s — Dasein` },
+    title: { default: dict.meta.title, template: `%s | Dasein` },
     description: dict.meta.description,
     alternates: alternatesFor(lang, ""),
     openGraph: {

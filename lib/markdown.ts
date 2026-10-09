@@ -77,7 +77,7 @@ function blockToMarkdown(block: Block, lang: Locale): string {
     case "list":
       return block.items.map((item) => `- ${item}`).join("\n");
     case "defs":
-      return block.items.map((item) => `- **${item.term}** — ${item.text}`).join("\n");
+      return block.items.map((item) => `- **${item.term}** : ${item.text}`).join("\n");
     case "code":
       return `${block.caption}\n\n\`\`\`\n${block.text}\n\`\`\``;
     case "table":
@@ -88,32 +88,32 @@ function blockToMarkdown(block: Block, lang: Locale): string {
         ...(block.caption ? ["", `*${block.caption}*`] : []),
       ].join("\n");
     case "quote":
-      return `> ${block.text}\n>\n> — ${block.cite}`;
+      return `> ${block.text}\n>\n> ${block.cite}`;
     case "note":
       return `*${block.text}*`;
     case "callout":
       return `> ${block.text}`;
     case "stats":
-      return block.items.map((item) => `- **${item.value}** — ${item.label}`).join("\n");
+      return block.items.map((item) => `- **${item.value}** : ${item.label}`).join("\n");
     case "compare":
       return [
         ...block.columns.map(
-          (column) => `**${column.title}**\n\n${column.items.map((item) => `- **${item.value}** — ${item.label}`).join("\n")}`,
+          (column) => `**${column.title}**\n\n${column.items.map((item) => `- **${item.value}** : ${item.label}`).join("\n")}`,
         ),
         ...(block.caption ? [`*${block.caption}*`] : []),
       ].join("\n\n");
     case "timeline":
       return block.items
-        .map((item) => `**${item.date} — ${item.place}**${item.tag ? ` (${item.tag})` : ""}\n\n${item.text.join("\n\n")}`)
+        .map((item) => `**${item.date}, ${item.place}**${item.tag ? ` (${item.tag})` : ""}\n\n${item.text.join("\n\n")}`)
         .join("\n\n");
     case "box":
       return `**${block.title}**\n\n${block.text}`;
     case "figure":
       return `*${block.caption}*`;
     case "related":
-      return `${block.label} : [${block.title}](${absolute(block.href, lang)}) — ${block.text}`;
+      return `${block.label} : [${block.title}](${absolute(block.href, lang)}), ${block.text}`;
     case "diagram":
-      return `*${lang === "fr" ? "Schéma" : "Diagram"} — ${DIAGRAMS[block.variant ?? "governance"][lang]}*`;
+      return `*${lang === "fr" ? "Schéma : " : "Diagram: "}${DIAGRAMS[block.variant ?? "governance"][lang]}*`;
   }
 }
 

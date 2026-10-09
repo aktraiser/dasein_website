@@ -5,7 +5,7 @@ import { fontVariables } from "@/lib/fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "404 — Dasein",
+  title: "404 | Dasein",
   robots: { index: false },
 };
 
@@ -16,7 +16,7 @@ export default function GlobalNotFound() {
     <html lang="en" className={fontVariables}>
       <body>
         <main className="notfound">
-          <Link href="/" className="wordmark" aria-label="Dasein — home">
+          <Link href="/" className="wordmark" aria-label="Dasein, home">
             <Mark className="wordmark__mark" />
             dasein
           </Link>

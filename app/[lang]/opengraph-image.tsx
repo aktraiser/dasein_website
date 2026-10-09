@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { getDictionary } from "@/content/dictionaries";
 import { hasLocale } from "@/lib/i18n";
 
-export const alt = "Dasein — Data & AI Engineering";
+export const alt = "Dasein: Data & AI Engineering";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
