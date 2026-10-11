@@ -1415,7 +1415,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
     fr: {
       title: "Le mégawatt et le degré",
       lead: "Ce qu’un juge de Grenoble a compris des data centers, et pourquoi le vrai danger n’est pas la vitesse de l’IA, mais l’écart entre sa vitesse et celle du réseau.",
-      updated: "Publié le 24 septembre 2026",
+      updated: "Publié le 24 septembre 2026 · mis à jour le 11 octobre 2026",
       summaryLabel: "En bref",
       summary: [
         "Un juge a suspendu le permis d’un data center de plus de 60 MW sur deux nombres : une puissance électrique et une puissance thermique.",
@@ -1485,6 +1485,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           rows: [
             ["Alixan (Sesterce)", "60 MW", "~78 000", "Valence"],
             ["Orange / Morrison, 4 campus", "400 MW", "~525 000", "une métropole moyenne"],
+            ["Jämsä, Finlande (Sesterce, phase 2 annoncée)", "600 MW", "~790 000", "dix fois Alixan"],
             [
               "Ashburn, Virginie (nov. 2025)",
               "2 830 MW",
@@ -1656,6 +1657,10 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
+          text: "Memphis a déjà son deuxième cas. En septembre, le New Jersey a infligé à l’opérateur DataOne une amende de 1,07 million de dollars, la plus lourde jamais prononcée par l’État contre un data center. Sur son site de Vineland, 62 groupes à gaz de 1 982 kW chacun avaient été installés sans aucun permis, soit environ 123 MW, et 45 tournaient, révélés par les images de drone thermique d’une enquête du Guardian et de Floodlight. Le seuil d’autorisation est de 37 kW par machine. L’opérateur conteste l’amende, parle de groupes « temporaires » et a 45 jours pour déposer ses demandes, pendant lesquels les machines peuvent continuer de tourner.",
+        },
+        {
+          type: "p",
           text: "OpenAI, Stargate. Sept sites américains, matériel détenu par Oracle ou SoftBank, 500 milliards de dollars annoncés, plus de 9 GW visés. Au printemps 2026, un seul tournait : Abilene, Texas, 0,3 GW. Les trois plus gros, Shackelford County au Texas (2 GW), Doña Ana County au Nouveau-Mexique (2,2 GW), Abilene, sont ou seront alimentés par des microréseaux au gaz naturel, hors réseau public. Le seul site majoritairement renouvelable est dans le Wisconsin. Celui du Michigan est déjà contesté ; celui de l’Ohio verra bientôt une interdiction locale de nouveaux data centers.",
         },
         {
@@ -1765,6 +1770,18 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
+          text: "Une quatrième façon apparaît : acheter du nucléaire qui existe déjà. Le 6 octobre, Google et Constellation ont signé un contrat de vingt ans pour 890 MW de capacité nucléaire nouvelle sur PJM, obtenue en augmentant la puissance de onze réacteurs existants dans l’Illinois, en Pennsylvanie et dans le New Jersey, pour plus de 4,3 milliards de dollars. Un second contrat, sur quinze ans, réserve 2 700 MW de production existante.",
+        },
+        {
+          type: "p",
+          text: "C’est moins sale que le gaz. Mais lisez le calendrier : première augmentation de puissance vers 2028, les 890 MW complets fin 2032. Même la solution la plus rapide du nucléaire se compte en années. Et les 2 700 MW existants ne sont pas des mégawatts nouveaux : ce sont des mégawatts que d’autres clients de PJM n’auront plus.",
+        },
+        {
+          type: "p",
+          text: "L’écart a désormais un visage. Selon The Information, qui cite deux sources anonymes, l’électricien Entergy a prévenu Amazon cette année qu’il pourrait devoir déconnecter ses data centers du Mississippi aux heures de pointe pour servir ses autres clients. Un électricien ne coupe presque jamais un grand client. La réponse d’Amazon, d’après la même enquête : un système automatique, Project Falcon, qui bascule les sites sur leurs groupes de secours quand le réseau signale une tension. Je n’ai pas pu lire l’article d’origine, seulement ses reprises. Si c’est exact, l’écart ne se comble plus seulement par des centrales à gaz neuves, mais par les groupes électrogènes déjà posés derrière chaque bâtiment. La « puissance thermique nominale » du juge de Grenoble, encore.",
+        },
+        {
+          type: "p",
           text: "Le contre-argument qu’il faut prendre au sérieux : la vitesse est aussi celle des annonces. Sightline Climate compte en Amérique du Nord 39 GW de data centers opérationnels, 35 en construction et plus de 129 annoncés. Sur les 16 GW censés être livrés en 2026, 5 étaient réellement en chantier au printemps ; 30 à 50 % du pipeline de l’année ne se fera pas. En 2025, 26 % de la capacité attendue a glissé. Sightline ajoute une phrase qui résume tout : « une annonce de data center est une demande d’électricité, pas un engagement de construire ». Entrer dans la file d’attente ne coûte presque rien. Et Sightline nomme le vrai goulot de 2026 : « ni le capital, ni les puces : la couche électrique », c’est-à-dire les transformateurs haute tension et les cellules moyenne tension.",
         },
         {
@@ -1777,7 +1794,11 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Trois précautions. Ce n’est pas un problème planétaire d’énergie : 3 % de l’électricité mondiale en 2030, moins de 1 % des émissions. Ce n’est pas propre à l’IA : les véhicules électriques et les pompes à chaleur tirent aussi la demande, mais aucun ne le fait à cette vitesse ni avec cette concentration. Et ce n’est pas universel : la Chine construit du gaz et le réseau qui va avec, la France est à 2 % : l’écart de vitesse est pour une bonne part un problème institutionnel américain, que l’IA révèle plutôt qu’elle ne le crée.",
+          text: "Trois précautions. Ce n’est pas un problème planétaire d’énergie : 3 % de l’électricité mondiale en 2030, moins de 1 % des émissions. Ce n’est pas propre à l’IA : les véhicules électriques et les pompes à chaleur tirent aussi la demande, mais aucun ne le fait à cette vitesse ni avec cette concentration.",
+        },
+        {
+          type: "p",
+          text: "Et ce n’est pas universel, mais c’est moins américain que je ne l’écrivais. En Espagne, Red Eléctrica a publié début octobre la carte des capacités d’accès accordées sur le réseau de transport : les data centers en détiennent 6 329 MW, soit 34,2 % du total, plus que l’industrie. Aucun n’est en service. C’est exactement la file d’attente américaine, en plus petit. En France, un test de résistance réalisé pour Montel par le chercheur Alex de Vries-Gao conclut que si les 15 GW aujourd’hui réservés par des projets de data centers étaient réellement consommés, une canicule extrême pourrait faire apparaître jusqu’à 9,5 GW de déficit. Ce n’est pas une prévision, et RTE ne s’inquiète pas pour l’offre. Mais le chiffre intéressant est le premier : 15 GW réservés, dans un pays dont les data centers consomment aujourd’hui l’équivalent d’un peu plus d’un gigawatt en continu.",
         },
         {
           type: "h",
@@ -1786,7 +1807,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Ce qui m’a décidé à écrire cet article, c’est la coïncidence de dates. En cinq jours, du 18 au 22 septembre 2026, cinq juridictions ont bougé, et toutes ont choisi les mêmes variables : une puissance qui déclenche, un rendement qui classe, et (nouveauté) un coût qui change de mains.",
+          text: "Ce qui m’a décidé à écrire cet article, c’est la coïncidence de dates. En une semaine, du 16 au 22 septembre 2026, six juridictions ont bougé, et toutes ont choisi les mêmes variables : une puissance qui déclenche, un rendement qui classe, et (nouveauté) un coût qui change de mains.",
         },
         {
           type: "timeline",
@@ -1829,6 +1850,14 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
               tag: "seuil 25 MW",
               text: [
                 "Le plan Spanberger, et la proposition de loi SB 253 pour transférer aux data centers les coûts de capacité et de distribution.",
+              ],
+            },
+            {
+              place: "Washington",
+              date: "16 septembre",
+              tag: "417 voix contre 3",
+              text: [
+                "La sixième juridiction, et elle a bougé la première. La Chambre des représentants a adopté par 417 voix contre 3 un texte demandant aux régulateurs des États d’envisager que les data centers paient le coût complet de la production et des lignes construites pour eux. C’est une recommandation fédérale, pas une obligation, et ses propres défenseurs parlent d’un « modeste début ». Mais 417 contre 3, dans ce Congrès, à quelques semaines des élections de mi-mandat : la facture des ménages est devenue un sujet électoral.",
               ],
             },
             {
@@ -1885,6 +1914,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
             "Les seuils exacts des classes PUE et WUE du label européen sont dans des annexes que je n’ai pas pu lire.",
             "Les 90 GW « derrière le compteur » de Cleanview sont à 98 % des annonces, et j’ai montré ce que valent les annonces. Les chiffres d’eau de Memphis viennent des opposants, pas de l’opérateur.",
             "L’estimation de 70 dollars par mois en 2028 sur PJM vient d’une source secondaire.",
+            "Les ajouts du 11 octobre ont leurs propres trous. Je n’ai lu l’enquête de The Information sur Entergy et Amazon, et l’étude de Montel, que par leurs reprises. Les chiffres de Jämsä viennent du communiqué de Sesterce. Les 123 MW de Vineland sont mon calcul (62 × 1 982 kW).",
             "Trois études que je cite de seconde main (Barnett-Itzhaki, Usman et Zakir, Hankendi et al.) sont derrière des accès payants. Le livre blanc de Schneider est celui d’un vendeur de refroidissement liquide. Et « cancer politique » est un titre de journal, pas une citation.",
           ],
         },
@@ -1892,10 +1922,19 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           type: "p",
           text: "Surtout : cette thèse est écrite pour être falsifiée. Si en 2027 les délais de raccordement passent sous trois ans, si l’enchère PJM retombe sous 100 dollars, si gaz et charbon couvrent moins d’un quart de la demande additionnelle, elle est fausse. Je tiens la liste.",
         },
+        { type: "h", id: "mise-a-jour", text: "Mise à jour du 11 octobre 2026 : dix fois Alixan, en Finlande" },
+        {
+          type: "p",
+          text: "Le 8 octobre, Sesterce a annoncé plus de 10 milliards d’euros pour un campus d’IA à Jämsä, en Finlande, sur le site de l’ancienne papeterie de Kaipola : 200 MW dans une première phase, 600 MW dans une seconde, plus d’un gigawatt visé à terme. Dans l’échelle de la partie 1, 600 MW, c’est la puissance moyenne appelée par environ 790 000 Français. Dix fois Alixan.",
+        },
+        {
+          type: "p",
+          text: "Je ne connais pas de meilleur résumé de cet article. Le permis est suspendu dans la Drôme en juillet ; en octobre, les mégawatts réapparaissent là où il fait froid et où une usine fermée a laissé un raccordement. Sesterce promet un refroidissement liquide en circuit fermé et un mégawatt renouvelable ajouté au réseau finlandais pour chaque mégawatt consommé. Deux réserves : ces chiffres viennent du communiqué de l’entreprise, repris par la presse, et une annonce, on l’a vu, est une demande d’électricité, pas un engagement de construire.",
+        },
         { type: "h", id: "boucle", text: "11. La boucle, en une page" },
         {
           type: "p",
-          text: "L’IA fait exploser la densité par rack. L’air atteint sa limite physique, et cette limite se rapproche à mesure que le climat, et la chaleur des data centers eux-mêmes, réduit les heures de free cooling. On bascule vers le liquide. L’arbitrage entre eau et électricité n’en est pas un : c’est la même eau, déplacée vers la centrale. Les sites se concentrent là où les mégawatts sont raccordables, pas là où ils sont propres ni là où l’eau abonde. Puis le rythme de l’IA (des jours) rencontre le rythme du réseau (des années) et l’écart se remplit de ce qui va vite : du gaz, des turbines mobiles, des centrales privées, et une facture envoyée à ceux qui n’ont rien demandé. La contestation cesse d’être locale. Et la réglementation, en cinq jours de septembre 2026, converge sur trois variables : une puissance qui déclenche, un rendement thermique qui classe, un coût qui change de mains.",
+          text: "L’IA fait exploser la densité par rack. L’air atteint sa limite physique, et cette limite se rapproche à mesure que le climat, et la chaleur des data centers eux-mêmes, réduit les heures de free cooling. On bascule vers le liquide. L’arbitrage entre eau et électricité n’en est pas un : c’est la même eau, déplacée vers la centrale. Les sites se concentrent là où les mégawatts sont raccordables, pas là où ils sont propres ni là où l’eau abonde. Puis le rythme de l’IA (des jours) rencontre le rythme du réseau (des années) et l’écart se remplit de ce qui va vite : du gaz, des turbines mobiles, des centrales privées, et une facture envoyée à ceux qui n’ont rien demandé. La contestation cesse d’être locale. Et la réglementation, en une semaine de septembre 2026, converge sur trois variables : une puissance qui déclenche, un rendement thermique qui classe, un coût qui change de mains.",
         },
         {
           type: "callout",
@@ -1931,12 +1970,40 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         { label: "PLA.I.A n°5 (14 août 2026) pour le vocabulaire technique" },
         { label: "Luccioni, Strubell & Crawford, FAccT 2025" },
+        {
+          label: "L’Agefi, Sesterce à Jämsä (8 octobre 2026)",
+          url: "https://www.agefi.fr/news/entreprises/la-start-up-dia-francaise-sesterce-annonce-un-projet-de-datacenter-en-finlande",
+        },
+        {
+          label: "Utility Dive, Google et Constellation (octobre 2026)",
+          url: "https://www.utilitydive.com/news/constellation-google-deal-will-bring-890-mw-of-new-nuclear-to-pjm/832223/",
+        },
+        {
+          label: "The Information, Entergy et Amazon (payant, lu par ses reprises)",
+          url: "https://www.theinformation.com/articles/amazon-rewired-data-centers-mississippi-power-warning",
+        },
+        {
+          label: "Yahoo News, DataOne à Vineland, d’après The Guardian et Floodlight (septembre 2026)",
+          url: "https://www.yahoo.com/news/us/articles/jersey-hits-data-center-powering-160500486.html",
+        },
+        {
+          label: "Red Eléctrica, carte des capacités d’accès (octobre 2026)",
+          url: "https://www.ree.es/es/sala-de-prensa/actualidad/nota-de-prensa/2026/10/red-electrica-publica-el-mapa-de-capacidades-de-demanda-tipo-consumo",
+        },
+        {
+          label: "La Dépêche, scénario Montel / de Vries-Gao (6 octobre 2026)",
+          url: "https://www.ladepeche.fr/2026/10/06/intelligence-artificielle-et-centres-de-donnees-le-scenario-qui-met-le-reseau-electrique-francais-sous-tension-13586474.php",
+        },
+        {
+          label: "Arkansas Times, vote de la Chambre des représentants (17 septembre 2026)",
+          url: "https://arktimes.com/arkansas-blog/2026/09/17/u-s-house-takes-up-familiar-debate-over-who-pays-for-data-centers-electric-infrastructure",
+        },
       ],
     },
     en: {
       title: "The megawatt and the degree",
       lead: "What a judge in Grenoble understood about data centers, and why the real danger is not the speed of AI, but the gap between its speed and the grid’s.",
-      updated: "Published 24 September 2026",
+      updated: "Published 24 September 2026 · updated 11 October 2026",
       summaryLabel: "In short",
       summary: [
         "A judge suspended the permit of a data center of more than 60 MW on two numbers: an electrical power and a thermal power.",
@@ -2003,6 +2070,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           rows: [
             ["Alixan (Sesterce)", "60 MW", "~78,000", "Valence"],
             ["Orange / Morrison, 4 campuses", "400 MW", "~525,000", "a mid-sized metro area"],
+            ["Jämsä, Finland (Sesterce, phase 2 announced)", "600 MW", "~790,000", "ten times Alixan"],
             [
               "Ashburn, Virginia (Nov. 2025)",
               "2,830 MW",
@@ -2174,6 +2242,10 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
+          text: "Memphis already has its second case. In September, New Jersey fined the operator DataOne $1.07 million, the heaviest penalty the state has ever imposed on a data center. At its Vineland site, 62 gas generators of 1,982 kW each had been installed without any permit, about 123 MW in all, and 45 were running, revealed by the thermal drone footage of an investigation by the Guardian and Floodlight. The permit threshold is 37 kW per machine. The operator is contesting the fine, describes the generators as temporary, and has 45 days to file its applications, during which the machines can keep running.",
+        },
+        {
+          type: "p",
           text: "OpenAI, Stargate. Seven US sites, hardware owned by Oracle or SoftBank, $500 billion announced, more than 9 GW targeted. In spring 2026, only one was running: Abilene, Texas, 0.3 GW. The three largest, Shackelford County in Texas (2 GW), Doña Ana County in New Mexico (2.2 GW), Abilene, are or will be powered by natural-gas microgrids, off the public grid. The only mostly renewable site is in Wisconsin. The Michigan one is already contested; the Ohio one will soon face a local ban on new data centers.",
         },
         {
@@ -2283,6 +2355,18 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
+          text: "A fourth way is emerging: buying nuclear that already exists. On 6 October, Google and Constellation signed a twenty-year contract for 890 MW of new nuclear capacity on PJM, obtained by uprating eleven existing reactors in Illinois, Pennsylvania and New Jersey, for more than $4.3 billion. A second contract, over fifteen years, reserves 2,700 MW of existing generation.",
+        },
+        {
+          type: "p",
+          text: "It is cleaner than gas. But read the calendar: first uprate around 2028, the full 890 MW at the end of 2032. Even nuclear’s fastest option is counted in years. And the 2,700 MW of existing output are not new megawatts: they are megawatts other PJM customers will no longer have.",
+        },
+        {
+          type: "p",
+          text: "The gap now has a face. According to The Information, citing two anonymous sources, the utility Entergy warned Amazon this year that it might have to disconnect its Mississippi data centers at peak hours in order to serve its other customers. A utility almost never cuts off a large customer. Amazon’s answer, according to the same investigation: an automated system, Project Falcon, that switches the sites over to their backup generators when the grid signals stress. I could not read the original article, only the reports based on it. If it is accurate, the gap is no longer filled only by new gas plants, but by the generators already sitting behind every building. The Grenoble judge’s “rated thermal power”, again.",
+        },
+        {
+          type: "p",
           text: "The counter-argument to take seriously: speed is also the speed of announcements. Sightline Climate counts 39 GW of operational data centers in North America, 35 under construction and more than 129 announced. Of the 16 GW supposed to be delivered in 2026, 5 were actually under construction in spring; 30 to 50% of this year’s pipeline will not happen. In 2025, 26% of expected capacity slipped. Sightline adds a sentence that sums it up: “a data center announcement is a request for electricity, not a commitment to build”. Joining the queue costs almost nothing. And Sightline names the real bottleneck of 2026: “neither capital nor chips: the electrical layer”, meaning high-voltage transformers and medium-voltage switchgear.",
         },
         {
@@ -2295,7 +2379,11 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Three caveats. This is not a planetary energy problem: 3% of world electricity in 2030, less than 1% of emissions. It is not specific to AI: electric vehicles and heat pumps also drive demand, but none at this speed or with this concentration. And it is not universal: China builds gas and the grid that goes with it, France is at 2%: the speed gap is to a large extent an American institutional problem, which AI reveals rather than creates.",
+          text: "Three caveats. This is not a planetary energy problem: 3% of world electricity in 2030, less than 1% of emissions. It is not specific to AI: electric vehicles and heat pumps also drive demand, but none at this speed or with this concentration.",
+        },
+        {
+          type: "p",
+          text: "And it is not universal, but it is less American than I first wrote. In Spain, Red Eléctrica published in early October the map of access capacity granted on the transmission grid: data centers hold 6,329 MW of it, 34.2% of the total, more than industry. None is in service. It is exactly the American queue, on a smaller scale. In France, a stress test carried out for Montel by the researcher Alex de Vries-Gao concludes that if the 15 GW currently reserved by data-center projects were actually consumed, an extreme heatwave could open up a shortfall of as much as 9.5 GW. This is not a forecast, and RTE is not worried about supply. But the interesting number is the first one: 15 GW reserved, in a country whose data centers today consume the equivalent of a little over one gigawatt around the clock.",
         },
         {
           type: "h",
@@ -2304,7 +2392,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "What made me write this article is a coincidence of dates. In five days, from 18 to 22 September 2026, five jurisdictions moved, and all chose the same variables: a power that triggers, an efficiency that ranks, and (the new part) a cost that changes hands.",
+          text: "What made me write this article is a coincidence of dates. In one week, from 16 to 22 September 2026, six jurisdictions moved, and all chose the same variables: a power that triggers, an efficiency that ranks, and (the new part) a cost that changes hands.",
         },
         {
           type: "timeline",
@@ -2347,6 +2435,14 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
               tag: "25 MW threshold",
               text: [
                 "The Spanberger plan, and bill SB 253 to shift capacity and distribution costs onto data centers.",
+              ],
+            },
+            {
+              place: "Washington",
+              date: "16 September",
+              tag: "417 votes to 3",
+              text: [
+                "The sixth jurisdiction, and the first to move. The House of Representatives passed by 417 votes to 3 a bill asking state regulators to consider making data centers pay the full cost of the generation and the lines built for them. It is a federal recommendation, not an obligation, and its own backers call it a modest start. But 417 to 3, in this Congress, a few weeks before the midterm elections: the household bill has become an electoral issue.",
               ],
             },
             {
@@ -2402,6 +2498,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
             "The exact thresholds of the PUE and WUE classes of the European label are in annexes I could not read.",
             "Cleanview’s 90 GW “behind the meter” are 98% announcements, and I have shown what announcements are worth. The Memphis water figures come from opponents, not the operator.",
             "The estimate of $70 a month in 2028 on PJM comes from a secondary source.",
+            "The additions of 11 October have gaps of their own. I read The Information’s investigation on Entergy and Amazon, and the Montel study, only through reports based on them. The Jämsä figures come from Sesterce’s press release. The 123 MW at Vineland are my own calculation (62 × 1,982 kW).",
             "Three studies I cite second-hand (Barnett-Itzhaki, Usman and Zakir, Hankendi et al.) are behind paywalls. The Schneider white paper is from a liquid-cooling vendor. And “political cancer” is a newspaper headline, not a quote.",
           ],
         },
@@ -2409,10 +2506,19 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           type: "p",
           text: "Above all: this thesis is written to be falsified. If in 2027 connection delays fall below three years, if the PJM auction drops back below $100, if gas and coal cover less than a quarter of additional demand, it is wrong. I am keeping the list.",
         },
+        { type: "h", id: "mise-a-jour", text: "Update of 11 October 2026: ten times Alixan, in Finland" },
+        {
+          type: "p",
+          text: "On 8 October, Sesterce announced more than €10 billion for an AI campus in Jämsä, Finland, on the site of the former Kaipola paper mill: 200 MW in a first phase, 600 MW in a second, more than a gigawatt targeted eventually. On the scale of part 1, 600 MW is the average power drawn by about 790,000 French people. Ten times Alixan.",
+        },
+        {
+          type: "p",
+          text: "I know of no better summary of this article. The permit is suspended in the Drôme in July; in October, the megawatts reappear where it is cold and where a closed mill has left a grid connection. Sesterce promises closed-loop liquid cooling and one renewable megawatt added to the Finnish grid for every megawatt consumed. Two reservations: these figures come from the company’s press release, as relayed by the press, and an announcement, as we have seen, is a request for electricity, not a commitment to build.",
+        },
         { type: "h", id: "boucle", text: "11. The loop, on one page" },
         {
           type: "p",
-          text: "AI makes rack density explode. Air reaches its physical limit, and that limit gets closer as the climate, and the heat of data centers themselves, reduces free-cooling hours. We switch to liquid. The trade-off between water and electricity is not one: it is the same water, moved to the power plant. Sites concentrate where megawatts can be connected, not where they are clean or where water is plentiful. Then the rhythm of AI (days) meets the rhythm of the grid (years) and the gap fills with what is fast: gas, mobile turbines, private power plants, and a bill sent to people who asked for nothing. Opposition stops being local. And regulation, in five days of September 2026, converges on three variables: a power that triggers, a thermal efficiency that ranks, a cost that changes hands.",
+          text: "AI makes rack density explode. Air reaches its physical limit, and that limit gets closer as the climate, and the heat of data centers themselves, reduces free-cooling hours. We switch to liquid. The trade-off between water and electricity is not one: it is the same water, moved to the power plant. Sites concentrate where megawatts can be connected, not where they are clean or where water is plentiful. Then the rhythm of AI (days) meets the rhythm of the grid (years) and the gap fills with what is fast: gas, mobile turbines, private power plants, and a bill sent to people who asked for nothing. Opposition stops being local. And regulation, in one week of September 2026, converges on three variables: a power that triggers, a thermal efficiency that ranks, a cost that changes hands.",
         },
         {
           type: "callout",
@@ -2448,6 +2554,34 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         { label: "PLA.I.A no. 5 (14 August 2026) for technical vocabulary" },
         { label: "Luccioni, Strubell & Crawford, FAccT 2025" },
+        {
+          label: "L’Agefi, Sesterce in Jämsä (8 October 2026)",
+          url: "https://www.agefi.fr/news/entreprises/la-start-up-dia-francaise-sesterce-annonce-un-projet-de-datacenter-en-finlande",
+        },
+        {
+          label: "Utility Dive, Google and Constellation (October 2026)",
+          url: "https://www.utilitydive.com/news/constellation-google-deal-will-bring-890-mw-of-new-nuclear-to-pjm/832223/",
+        },
+        {
+          label: "The Information, Entergy and Amazon (paywalled, read through reports based on it)",
+          url: "https://www.theinformation.com/articles/amazon-rewired-data-centers-mississippi-power-warning",
+        },
+        {
+          label: "Yahoo News, DataOne in Vineland, based on The Guardian and Floodlight (September 2026)",
+          url: "https://www.yahoo.com/news/us/articles/jersey-hits-data-center-powering-160500486.html",
+        },
+        {
+          label: "Red Eléctrica, access capacity map (October 2026)",
+          url: "https://www.ree.es/es/sala-de-prensa/actualidad/nota-de-prensa/2026/10/red-electrica-publica-el-mapa-de-capacidades-de-demanda-tipo-consumo",
+        },
+        {
+          label: "La Dépêche, Montel / de Vries-Gao scenario (6 October 2026)",
+          url: "https://www.ladepeche.fr/2026/10/06/intelligence-artificielle-et-centres-de-donnees-le-scenario-qui-met-le-reseau-electrique-francais-sous-tension-13586474.php",
+        },
+        {
+          label: "Arkansas Times, House of Representatives vote (17 September 2026)",
+          url: "https://arktimes.com/arkansas-blog/2026/09/17/u-s-house-takes-up-familiar-debate-over-who-pays-for-data-centers-electric-infrastructure",
+        },
       ],
     },
   },
