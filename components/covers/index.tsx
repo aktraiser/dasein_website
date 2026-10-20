@@ -2,6 +2,7 @@ import type { ArticleCover } from "@/content/articleIndex";
 import type { Locale } from "@/lib/i18n";
 import { BusinessCover } from "./BusinessCover";
 import { EnergyCover } from "./EnergyCover";
+import { GigawattCover } from "./GigawattCover";
 import { McpCover } from "./McpCover";
 import { PhaseoneCover } from "./PhaseoneCover";
 import { PlatformCover } from "./PlatformCover";
@@ -11,6 +12,7 @@ import { WeakSignalCover } from "./WeakSignalCover";
 
 const covers: Record<ArticleCover, (props: { lang: Locale }) => React.JSX.Element> = {
   energy: EnergyCover,
+  gigawatt: GigawattCover,
   mcp: McpCover,
   semantic: SemanticCover,
   phaseone: PhaseoneCover,

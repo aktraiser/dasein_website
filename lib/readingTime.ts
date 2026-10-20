@@ -1,4 +1,5 @@
 import type { Article, Block } from "@/content/articles";
+import { DEAL_STEPS } from "@/content/deals";
 
 const WORDS_PER_MINUTE = 220;
 
@@ -32,6 +33,11 @@ const blockText = (block: Block): string => {
       return block.caption;
     case "related":
       return `${block.title} ${block.text}`;
+    case "bars":
+      return [block.title, block.subtitle ?? "", ...block.items.map((item) => `${item.name} ${item.label}`), block.caption].join(" ");
+    case "deals":
+      return DEAL_STEPS.flatMap((step) => step.text.fr).join(" ");
+    case "deal-register":
     case "diagram":
       return "";
   }

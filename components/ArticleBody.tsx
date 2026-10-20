@@ -1,4 +1,6 @@
 import { ArticleEnd } from "./ArticleEnd";
+import { DealLoops } from "./DealLoops";
+import { DealRegister, GoogleMachineDiagram } from "./GigawattFigures";
 import Link from "next/link";
 import fs from "node:fs";
 import path from "node:path";
@@ -1113,7 +1115,33 @@ function renderBlock(block: Block, lang: Locale, seen: GlossarySeen) {
         </Link>
       );
     }
+    case "bars":
+      return (
+        <figure className="article__bars">
+          <p className="article__bars-title">{block.title}</p>
+          {block.subtitle && <p className="article__bars-sub">{block.subtitle}</p>}
+          <ul>
+            {block.items.map((item) => (
+              <li key={item.name} className={item.highlight ? "is-highlight" : undefined}>
+                <span className="article__bars-name">{item.name}</span>
+                <span className="article__bars-track">
+                  <span className="article__bars-fill" style={{ width: `${item.value}%` }} />
+                  <span className="article__bars-value" style={{ left: `calc(${item.value}% + 8px)` }}>
+                    {item.label}
+                  </span>
+                </span>
+              </li>
+            ))}
+          </ul>
+          <figcaption>{block.caption}</figcaption>
+        </figure>
+      );
+    case "deals":
+      return <DealLoops lang={lang} />;
+    case "deal-register":
+      return <DealRegister lang={lang} />;
     case "diagram":
+      if (block.variant === "google-machine") return <GoogleMachineDiagram lang={lang} />;
       if (block.variant === "mcp") return <McpDiagram lang={lang} />;
       if (block.variant === "patterns") return <PatternsDiagram lang={lang} />;
       if (block.variant === "protocols") return <ProtocolsDiagram lang={lang} />;

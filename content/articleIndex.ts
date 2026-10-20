@@ -7,6 +7,7 @@ import type { Locale } from "@/lib/i18n";
  */
 export type ArticleCover =
   | "energy"
+  | "gigawatt"
   | "weak-signal"
   | "phaseone"
   | "mcp"
@@ -31,6 +32,18 @@ export type ArticleEntry = {
 };
 
 export const articleIndex: ArticleEntry[] = [
+  {
+    slug: "le-gigawatt-et-le-dollar",
+    date: "2026-10-20",
+    href: "/articles/le-gigawatt-et-le-dollar",
+    cover: "gigawatt",
+    kind: "article",
+    topic: { fr: "Énergie et infrastructure", en: "Energy and infrastructure" },
+    title: {
+      fr: "Le gigawatt et le dollar",
+      en: "The gigawatt and the dollar",
+    },
+  },
   {
     slug: "le-megawatt-et-le-degre",
     date: "2026-09-24",

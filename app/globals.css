@@ -5820,6 +5820,512 @@ button:hover .arrow {
   }
 }
 
+/* ==========================================================================
+   "The gigawatt and the dollar": bars, Google's machine, the deal graph
+   ========================================================================== */
+.article__bars {
+  margin: 28px 0;
+  padding: 22px;
+  border: 1px solid var(--ink);
+}
+.article__bars-title {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 21px;
+  line-height: 1.25;
+}
+.article__bars-sub {
+  margin: 4px 0 18px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.article__bars ul {
+  display: grid;
+  gap: 12px;
+}
+.article__bars li {
+  display: grid;
+  grid-template-columns: minmax(110px, 34%) minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  font-size: 14px;
+}
+.article__bars-track {
+  position: relative;
+  height: 18px;
+  background: var(--paper-2);
+}
+.article__bars-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  min-width: 3px;
+  background: var(--muted);
+}
+.article__bars li.is-highlight .article__bars-name {
+  font-weight: 600;
+}
+.article__bars li.is-highlight .article__bars-fill {
+  background: var(--ink);
+}
+.article__bars-value {
+  position: absolute;
+  top: 1px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.article__bars figcaption {
+  margin-top: 16px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.gmdiag {
+  background: var(--paper);
+}
+.gmdiag__title {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 21px;
+  line-height: 1.25;
+}
+.gmdiag__sub {
+  margin: 4px 0 14px;
+  font-size: 14px;
+  color: var(--muted);
+}
+.gmdiag__scroll {
+  overflow-x: auto;
+}
+.gmdiag svg {
+  display: block;
+  width: 100%;
+  min-width: 560px;
+  height: auto;
+  font-family: var(--font-sans);
+  font-size: 11.5px;
+  fill: var(--ink);
+}
+.gmdiag__box {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1;
+}
+.gmdiag__box--accent {
+  fill: var(--accent);
+  stroke-width: 1.6;
+}
+.gmdiag__name {
+  font-size: 13px;
+  font-weight: 600;
+}
+.gmdiag__muted {
+  fill: var(--muted);
+}
+.gmdiag__flow path,
+.gmdiag__legend-flow {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.25;
+}
+.gmdiag__guar path,
+.gmdiag__legend-guar {
+  fill: none;
+  stroke: var(--deal-fin);
+  stroke-width: 1.6;
+  stroke-dasharray: 5 4;
+}
+.gmdiag__tip {
+  fill: var(--ink);
+}
+.gmdiag__tip--guar {
+  fill: var(--deal-fin);
+}
+.gmdiag figcaption {
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* Deal kinds share one colour each, in the graph, the cards and the register. */
+:root {
+  --deal-inv: #2b5bc6;
+  --deal-calc: #0b7f72;
+  --deal-fin: #a8680a;
+  --deal-acq: #7448bf;
+  --deal-rup: #c42f27;
+  --deal-ctx: #cfcdc4;
+}
+
+/* The graph (components/DealGraph.tsx): it fills its box, the camera frames the players in focus. */
+.dgraph {
+  position: relative;
+  min-height: 0;
+  height: 100%;
+}
+.dgraph svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-sans);
+}
+.dgraph__camera {
+  transform-origin: 0 0;
+  transition: transform 0.8s var(--ease);
+}
+.dgraph__line { fill: none; }
+.dgraph__line--inv { stroke: var(--deal-inv); }
+.dgraph__line--calc { stroke: var(--deal-calc); }
+.dgraph__line--fin { stroke: var(--deal-fin); }
+.dgraph__line--acq { stroke: var(--deal-acq); }
+.dgraph__line--rup { stroke: var(--deal-rup); }
+.dgraph__head-inv { fill: var(--deal-inv); }
+.dgraph__head-calc { fill: var(--deal-calc); }
+.dgraph__head-fin { fill: var(--deal-fin); }
+.dgraph__head-acq { fill: var(--deal-acq); }
+.dgraph__head-rup { fill: var(--deal-rup); }
+.dgraph__head-ctx { fill: var(--deal-ctx); }
+.dgraph__edge {
+  transition: opacity 0.4s;
+}
+.dgraph__edge--off {
+  opacity: 0;
+}
+.dgraph__edge--ctx {
+  opacity: 0.7;
+}
+.dgraph__edge--ctx .dgraph__line {
+  stroke: var(--deal-ctx);
+}
+.dgraph__hit {
+  fill: none;
+  stroke: transparent;
+  stroke-width: 14;
+  cursor: help;
+}
+.dgraph__node {
+  transition: opacity 0.4s;
+}
+.dgraph__node--dim { opacity: 0.42; }
+.dgraph__node--faint { opacity: 0.2; }
+.dgraph__dot {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.dgraph__node--lab .dgraph__dot {
+  fill: var(--ink);
+}
+.dgraph__node--on:not(.dgraph__node--lab) .dgraph__dot {
+  fill: var(--accent);
+}
+.dgraph__ring {
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+.dgraph__initial {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 19px;
+  fill: var(--paper);
+}
+.dgraph__name {
+  font-size: 13px;
+  font-weight: 500;
+  fill: var(--ink);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+}
+.dgraph__node--on .dgraph__name,
+.dgraph__node--lab .dgraph__name {
+  font-weight: 700;
+}
+.dgraph__node--lab .dgraph__name {
+  font-size: 15px;
+}
+.dgraph__cat {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  fill: var(--muted);
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 3px;
+}
+.dgraph__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 14px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.dgraph__legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.dgraph__swatch {
+  display: inline-block;
+  width: 16px;
+  height: 3px;
+}
+.dgraph__swatch--inv { background: var(--deal-inv); }
+.dgraph__swatch--calc { background: var(--deal-calc); }
+.dgraph__swatch--fin { background: var(--deal-fin); }
+.dgraph__swatch--acq { background: var(--deal-acq); }
+.dgraph__swatch--rup { background: repeating-linear-gradient(90deg, var(--deal-rup) 0 4px, transparent 4px 7px); }
+.dgraph__tip {
+  position: fixed;
+  z-index: 1100;
+  max-width: 300px;
+  padding: 10px 12px;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 13px;
+  line-height: 1.4;
+  pointer-events: none;
+}
+.dgraph__tip span {
+  display: block;
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  opacity: 0.8;
+}
+
+/* The scrolling story (components/DealLoops.tsx). It is widened to the full window by script. */
+/* Full width, so it sits above the article's sticky table of contents. */
+.deals {
+  position: relative;
+  z-index: 3;
+  background: var(--paper);
+}
+.deals {
+  margin: 40px 0;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+}
+.deals__intro {
+  max-width: 760px;
+  padding: 14px var(--gutter) 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--muted);
+}
+.deals__head {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 4px 18px;
+  padding: 12px 16px 8px;
+  background: linear-gradient(var(--paper) 70%, transparent);
+  pointer-events: none;
+}
+.deals__when {
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-variant-numeric: tabular-nums;
+}
+.deals__stage {
+  position: sticky;
+  top: var(--header-h);
+  height: calc(100vh - var(--header-h));
+  height: calc(100svh - var(--header-h));
+}
+
+/* Narrow screens: the graph fills the screen and the cards slide over its lower part. */
+.deals__grid {
+  display: grid;
+}
+.deals__grid > * {
+  grid-area: 1 / 1;
+}
+.deals__stage {
+  align-self: start;
+  z-index: 1;
+}
+.deals__steps {
+  position: relative;
+  z-index: 2;
+  padding: 0 var(--gutter) 30vh;
+  pointer-events: none;
+}
+.deals__step {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 90vh;
+  padding-bottom: 4vh;
+}
+.deals__step:first-child {
+  min-height: 100vh;
+}
+.deals__year {
+  display: none;
+}
+.deals__card {
+  max-width: 460px;
+  padding: 16px 18px;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  pointer-events: auto;
+  transition: opacity 0.3s, box-shadow 0.3s;
+}
+.deals__step.is-active .deals__card {
+  box-shadow: var(--shadow);
+}
+/* Narrow screens: a card already read fades out, so it does not cover the graph's header. */
+.deals__step.is-past .deals__card {
+  opacity: 0;
+}
+.deals__card p + p {
+  margin-top: 10px;
+}
+.deals__card-when {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.deals__card-title {
+  margin: 2px 0 8px;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 21px;
+  line-height: 1.2;
+  color: var(--ink);
+}
+.deals__mark {
+  padding: 0 0.2em;
+  color: #fff;
+}
+.deals__mark--inv { background: var(--deal-inv); }
+.deals__mark--calc { background: var(--deal-calc); }
+.deals__mark--fin { background: var(--deal-fin); }
+.deals__mark--acq { background: var(--deal-acq); }
+.deals__mark--rup { background: var(--deal-rup); }
+.deals__card-src {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--muted);
+}
+.deals__card-src a {
+  color: inherit;
+}
+.deals__loops {
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+.deals__loops li {
+  padding: 6px 0;
+  border-top: 1px solid var(--line);
+}
+
+/* Wide screens: the cards on a timeline rail at the left, the graph beside them. */
+@media (min-width: 900px) {
+  .deals__grid {
+    grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);
+  }
+  .deals__grid > * {
+    grid-area: auto;
+  }
+  .deals__steps {
+    grid-column: 1;
+    grid-row: 1;
+    margin-left: var(--gutter);
+    padding: 0 24px 40vh 28px;
+    border-left: 1px solid var(--ink);
+    pointer-events: auto;
+  }
+  .deals__stage {
+    grid-column: 2;
+    grid-row: 1;
+    border-left: 1px solid var(--line);
+  }
+  .deals__step {
+    justify-content: center;
+    min-height: 80vh;
+    padding-bottom: 0;
+  }
+  .deals__step:first-child {
+    min-height: 70vh;
+  }
+  .deals__year {
+    position: relative;
+    display: block;
+    margin: 0 0 16px;
+    font-family: var(--font-mono);
+    font-size: 15px;
+  }
+  /* A dot on the rail where each year starts. */
+  .deals__year::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -34px;
+    width: 11px;
+    height: 11px;
+    margin-top: -5.5px;
+    background: var(--accent);
+    border: 1px solid var(--ink);
+    border-radius: 50%;
+  }
+  .deals__card,
+  .deals__step.is-past .deals__card {
+    opacity: 0.45;
+  }
+  .deals__step.is-active .deals__card {
+    opacity: 1;
+  }
+}
+
+.deals-register .article__table {
+  min-width: 820px;
+  font-size: 13.5px;
+}
+.deals-register__num {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.deals-register__tag {
+  padding: 1px 6px;
+  border: 1px solid currentColor;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  white-space: nowrap;
+}
+.deals-register__tag--inv { color: var(--deal-inv); }
+.deals-register__tag--calc { color: var(--deal-calc); }
+.deals-register__tag--fin { color: var(--deal-fin); }
+.deals-register__tag--acq { color: var(--deal-acq); }
+.deals-register__tag--rup { color: var(--deal-rup); }
+.deals-register__status {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--muted);
+}
+.deals-register__status--sec {
+  color: var(--deal-calc);
+}
+/* The register is wide: it keeps its scroll box at every width. `position` keeps the
+   absolutely positioned screen-reader labels inside that box, so they cannot widen the page. */
+.article__tablewrap.deals-register {
+  position: relative;
+  overflow-x: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

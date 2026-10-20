@@ -1,4 +1,5 @@
 import type { Locale } from "@/lib/i18n";
+import { gigawattArticle } from "./gigawatt";
 
 /**
  * Long-form articles attached to an expertise page (one per vertical).
@@ -31,6 +32,17 @@ export type Block =
   | { type: "callout"; text: string }
   /** A card linking to another page of the site (path without the locale) or to a full URL. */
   | { type: "related"; href: string; label: string; title: string; text: string }
+  /** Horizontal bars on a 0–100 scale; `highlight` draws a bar in the accent colour. */
+  | {
+      type: "bars";
+      title: string;
+      subtitle?: string;
+      items: { name: string; value: number; label: string; highlight?: boolean }[];
+      caption: string;
+    }
+  /** The scrolling deal graph of content/deals.ts, and the register listing those deals with their sources. */
+  | { type: "deals" }
+  | { type: "deal-register" }
   /**
    * "governance" (default): the User Augmentation chain; "mcp": the layers around MCP;
    * "patterns": multi-agent coordination patterns; "protocols": AG-UI / MCP / A2A;
@@ -38,7 +50,8 @@ export type Block =
    * the three ways teams use it; "federated": platform team vs application teams;
    * "usecases": the three families of use cases; "auth": user → gateways → MCP identity chain;
    * "gateways": LLM, MCP and agent gateways; "pipeline": the Weak Signal pipeline;
-   * "semantic-chain": from a raw value to its meaning; "semantic-house": who builds the semantic foundation.
+   * "semantic-chain": from a raw value to its meaning; "semantic-house": who builds the semantic foundation;
+   * "google-machine": how Google, Broadcom and private credit carry Anthropic's chips.
    */
   | {
       type: "diagram";
@@ -55,7 +68,8 @@ export type Block =
         | "gateways"
         | "pipeline"
         | "semantic-chain"
-        | "semantic-house";
+        | "semantic-house"
+        | "google-machine";
     };
 
 export type Article = {
@@ -221,6 +235,7 @@ const PLATFORM_SOURCES = [
 
 /** Articles that stand on their own, published under /articles/<slug>. */
 export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>> = {
+  "le-gigawatt-et-le-dollar": gigawattArticle,
   "couche-semantique": {
     fr: {
       title: "La sémantique : le pont entre vos données et vos agents",
@@ -1415,7 +1430,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
     fr: {
       title: "Le mégawatt et le degré",
       lead: "Ce qu’un juge de Grenoble a compris des data centers, et pourquoi le vrai danger n’est pas la vitesse de l’IA, mais l’écart entre sa vitesse et celle du réseau.",
-      updated: "Publié le 24 septembre 2026 · mis à jour le 11 octobre 2026",
+      updated: "Publié le 24 septembre 2026 · mis à jour le 20 octobre 2026",
       summaryLabel: "En bref",
       summary: [
         "Un juge a suspendu le permis d’un data center de plus de 60 MW sur deux nombres : une puissance électrique et une puissance thermique.",
@@ -1669,7 +1684,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Et les trois se croisent. Depuis mai 2026, Anthropic loue à xAI l’essentiel de Colossus 1 : 500 MW, 45 milliards de dollars sur trois ans, résiliable à 90 jours. Depuis juin, Google y loue 110 000 GPU pour 920 millions de dollars par mois. Les trois rivaux partagent les turbines de Memphis. Et aucun de ces sites n’est en Virginie : les nouveaux entrants vont là où il reste du gaz et du foncier, pas là où est l’internet historique.",
+          text: "Et les trois se croisent. Depuis mai 2026, Anthropic loue à xAI, devenu SpaceX, du calcul sur Colossus et Colossus II : 1,25 milliard de dollars par mois jusqu’en mai 2029, soit environ 45 milliards, résiliable par chacune des parties avec 90 jours de préavis. La seule puissance publiée est de plus de 300 MW, pour Colossus 1. Depuis juin, Google y loue 110 000 GPU pour 920 millions de dollars par mois. Les trois rivaux partagent les turbines de Memphis. Et aucun de ces sites n’est en Virginie : les nouveaux entrants vont là où il reste du gaz et du foncier, pas là où est l’internet historique.",
         },
         {
           type: "callout",
@@ -1962,6 +1977,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { label: "Epoch AI, OpenAI Stargate: where the US sites stand (avril 2026)" },
         { label: "MeasuredAI, Anthropic’s 15+ GW data center build (août 2026)" },
         { label: "Wikipedia, Colossus (data center)" },
+        { label: "Prospectus d’introduction en Bourse de SpaceX, formulaire S-1 (mai 2026)", url: "https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm" },
         { label: "Google, mesure Gemini (août 2025)" },
         { label: "Mistral / Carbone 4 (juillet 2025)" },
         { label: "Schneider Electric (21 septembre 2026)" },
@@ -2003,7 +2019,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
     en: {
       title: "The megawatt and the degree",
       lead: "What a judge in Grenoble understood about data centers, and why the real danger is not the speed of AI, but the gap between its speed and the grid’s.",
-      updated: "Published 24 September 2026 · updated 11 October 2026",
+      updated: "Published 24 September 2026 · updated 20 October 2026",
       summaryLabel: "In short",
       summary: [
         "A judge suspended the permit of a data center of more than 60 MW on two numbers: an electrical power and a thermal power.",
@@ -2254,7 +2270,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "And the three cross paths. Since May 2026, Anthropic has leased most of Colossus 1 from xAI: 500 MW, $45 billion over three years, terminable at 90 days. Since June, Google has leased 110,000 GPUs there for $920 million a month. The three rivals share the Memphis turbines. And none of these sites is in Virginia: newcomers go where gas and land are left, not where the historic internet is.",
+          text: "And the three cross paths. Since May 2026, Anthropic has rented compute on Colossus and Colossus II from xAI, now part of SpaceX: $1.25 billion a month until May 2029, about $45 billion, terminable by either party on 90 days’ notice. The only published power figure is more than 300 MW, for Colossus 1. Since June, Google has leased 110,000 GPUs there for $920 million a month. The three rivals share the Memphis turbines. And none of these sites is in Virginia: newcomers go where gas and land are left, not where the historic internet is.",
         },
         {
           type: "callout",
@@ -2546,6 +2562,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { label: "Epoch AI, OpenAI Stargate: where the US sites stand (April 2026)" },
         { label: "MeasuredAI, Anthropic’s 15+ GW data center build (August 2026)" },
         { label: "Wikipedia, Colossus (data center)" },
+        { label: "SpaceX IPO prospectus, Form S-1 (May 2026)", url: "https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm" },
         { label: "Google, Gemini measurement (August 2025)" },
         { label: "Mistral / Carbone 4 (July 2025)" },
         { label: "Schneider Electric (21 September 2026)" },

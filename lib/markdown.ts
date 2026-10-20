@@ -1,4 +1,5 @@
 import type { Article, Block } from "@/content/articles";
+import { DEAL_KINDS, DEAL_SOURCES, DEAL_STEPS, DEALS, SOURCE_STATUS, dealMonth, nodeName, registerRows } from "@/content/deals";
 import { siteUrl, type Locale } from "./i18n";
 
 /**
@@ -57,6 +58,10 @@ const DIAGRAMS: Record<Variant, Record<Locale, string>> = {
     fr: "D’une donnée brute à son sens : la donnée (ID vidéo 84721), le concept (épisode), le contexte (rattaché à un programme), les attributs et relations (genre : sport, saison : 2).",
     en: "From a raw value to its meaning: the data (video ID 84721), the concept (episode), the context (attached to a programme), the attributes and relationships (genre: sport, season: 2).",
   },
+  "google-machine": {
+    fr: "La machine de Google : Google vend les TPU à Broadcom, qui les revend à un véhicule de crédit privé (Compute SPV, Apollo, Blackstone, Morgan Stanley), qui les loue à Anthropic. Google garantit jusqu’à 44 Md$ de loyers des data centers (815 M$ au bilan) ; Broadcom garantit environ 30 Md$ des 35 Md$ de dette.",
+    en: "Google’s machine: Google sells the TPUs to Broadcom, which resells them to a private credit vehicle (Compute SPV, Apollo, Blackstone, Morgan Stanley), which leases them to Anthropic. Google guarantees up to $44bn of data centre leases ($815M on its balance sheet); Broadcom guarantees about $30bn of the $35bn of debt.",
+  },
   "semantic-house": {
     fr: "Métiers et équipes tech alimentent le socle sémantique partagé ; la plateforme agentique le rend utilisable, sous la gouvernance data et IA.",
     en: "Business and tech teams feed the shared semantic foundation; the agentic platform makes it usable, under data and AI governance.",
@@ -114,6 +119,40 @@ function blockToMarkdown(block: Block, lang: Locale): string {
       return `${block.label} : [${block.title}](${absolute(block.href, lang)}), ${block.text}`;
     case "diagram":
       return `*${lang === "fr" ? "Schéma : " : "Diagram: "}${DIAGRAMS[block.variant ?? "governance"][lang]}*`;
+    case "bars":
+      return [
+        `**${block.title}**${block.subtitle ? ` (${block.subtitle})` : ""}`,
+        block.items.map((item) => `- ${item.name} : ${item.label}`).join("\n"),
+        `*${block.caption}*`,
+      ].join("\n\n");
+    case "deals":
+      // The graph is drawn in the page; here, the story it tells, step by step.
+      return DEAL_STEPS.filter((step) => Array.isArray(step.deals))
+        .map((step) => {
+          const text = step.text[lang].join("\n\n").replace(/\[[a-z]+:([^\]]+)\]/g, "$1");
+          const sources = step.sources ? `\n\n${lang === "fr" ? "Sources : " : "Sources: "}${step.sources.map((x) => `[${x.label}](${x.url})`).join(", ")}` : "";
+          return `**${step.when[lang]} · ${step.title[lang]}**\n\n${text}${sources}`;
+        })
+        .join("\n\n");
+    case "deal-register": {
+      const head = lang === "fr" ? ["Date", "De → Vers", "Type", "Montant", "Ce que dit l’accord", "Source"] : ["Date", "From → To", "Type", "Amount", "What the deal says", "Source"];
+      return [
+        `| ${head.join(" | ")} |`,
+        `| ${head.map(() => "---").join(" | ")} |`,
+        ...registerRows().map((i) => {
+          const deal = DEALS[i];
+          const source = DEAL_SOURCES[deal.s];
+          return `| ${[
+            dealMonth(deal.d, lang),
+            `${nodeName(deal.f, lang)} → ${nodeName(deal.t, lang)}`,
+            DEAL_KINDS[deal.k][lang],
+            deal.amt[lang],
+            deal.txt[lang],
+            `[${source.label[lang]}](${source.url}) (${SOURCE_STATUS[source.status][lang]})`,
+          ].map(cell).join(" | ")} |`;
+        }),
+      ].join("\n");
+    }
   }
 }
 
