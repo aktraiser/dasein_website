@@ -60,6 +60,11 @@ const SOURCES_FR: Article["sources"] = [
   { label: "Microsoft se retire du data center de Nscale à Loughton (The Guardian), 18 octobre 2026", url: "https://www.theguardian.com/uk-news/2026/oct/18/microsoft-drops-huge-ai-datacentre-project-in-essex-over-power-supply-concerns" },
   { label: "Nscale : pertes et projet d’introduction (City AM), 19 octobre 2026", url: "https://www.cityam.com/microsoft-pulls-out-of-nscale-deal-for-uks-largest-ai-data-centre/" },
   { label: "Nscale et Anthropic : un nouveau contrat de 45 Md$ en discussion (TechCrunch, d’après Bloomberg), 19 octobre 2026", url: "https://techcrunch.com/2026/10/19/nscale-and-anthropic-are-reportedly-in-talks-for-yet-another-45-billion-compute-deal/" },
+  { label: "Prospectus d’introduction en Bourse d’Anthropic (formulaire S-1, SEC), 26 octobre 2026", url: "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm" },
+  { label: "Anthropic dépose son prospectus (TechCrunch), 26 octobre 2026", url: "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/" },
+  { label: "Anthropic : premières observations sur le prospectus (Crunchbase News), 26 octobre 2026", url: "https://news.crunchbase.com/public/anthropic-ipo-filing-ai-earnings-growth-risks/" },
+  { label: "Anthropic : 80 Md$ de perte nette, cotation au Nasdaq (City AM), 26 octobre 2026", url: "https://www.cityam.com/anthropic-reveals-80bn-loss-as-ai-giant-files-for-blockbuster-ipo/" },
+  { label: "Ce que révèle le prospectus d’Anthropic (Wired), octobre 2026", url: "https://www.wired.com/story/anthropic-ipo-filings-reveal-finances-risks-strategy/" },
 ];
 
 // Same sources, labels in English (the URLs and their order are shared).
@@ -117,6 +122,11 @@ const SOURCE_LABELS_EN = [
   "Microsoft pulls out of Nscale’s Loughton data centre (The Guardian), 18 October 2026",
   "Nscale: losses and IPO plans (City AM), 19 October 2026",
   "Nscale and Anthropic: a new $45bn contract under discussion (TechCrunch, citing Bloomberg), 19 October 2026",
+  "Anthropic’s IPO prospectus (Form S-1, SEC), 26 October 2026",
+  "Anthropic files its prospectus (TechCrunch), 26 October 2026",
+  "Anthropic: first observations on the prospectus (Crunchbase News), 26 October 2026",
+  "Anthropic: $80bn net loss, Nasdaq listing (City AM), 26 October 2026",
+  "What Anthropic’s prospectus reveals (Wired), October 2026",
 ];
 
 const SOURCES_EN: Article["sources"] = SOURCES_FR.map((source, i) => ({ label: SOURCE_LABELS_EN[i], url: source.url }));
@@ -125,7 +135,7 @@ export const gigawattArticle: Record<Locale, Article> = {
   fr: {
     title: "Le gigawatt et le dollar",
     lead: "L’écart de vitesse entre l’IA et le réseau existe aussi en dollars, et il est comblé de la même façon : avec l’argent des autres.",
-    updated: "Publié le 20 octobre 2026",
+    updated: "Publié le 20 octobre 2026 · mis à jour le 28 octobre 2026",
     summaryLabel: "En bref",
     summary: [
       "En 2026, l’infrastructure IA absorbe environ 1 000 milliards de dollars, quand OpenAI et Anthropic réunis affichent environ 117 milliards de revenus annualisés : à peu près un dollar de revenu pour huit à neuf dollars investis.",
@@ -172,7 +182,7 @@ export const gigawattArticle: Record<Locale, Article> = {
         rows: [
           ["Secteur, 2026", "~1 000 Md$ d’infrastructure IA", "~117 Md$ annualisés (OpenAI ~50 + Anthropic ~67)", "~8,5", "Gartner via The Register, TechCrunch"],
           ["OpenAI, 2026-2030", "856 Md$ de calcul et d’infrastructure", "840 Md$ cumulés (hypothèse : ×10 en cinq ans)", "~1,0", "FT via Reuters"],
-          ["Anthropic, horizon non précisé", "518 Md$ d’obligations cloud et infrastructure", "~67 Md$ annualisés", "~7,7 années de revenu actuel", "Projet de prospectus via Reuters"],
+          ["Anthropic, horizon non précisé", "518 Md$ d’obligations cloud et infrastructure", "~67 Md$ annualisés", "~7,7 années de revenu actuel", "Projet de prospectus via Reuters ; « plus de 500 Md$ » dans le prospectus final"],
           ["Secteur, 2027-2030", "revenus nécessaires pour 12 % de ROIC : 8 500 Md$", "revenus attendus : 3 600 Md$", "~2,4", "Gartner via The Register"],
         ],
       },
@@ -187,7 +197,11 @@ export const gigawattArticle: Record<Locale, Article> = {
       },
       {
         type: "p",
-        text: "Enfin, les chiffres des deux labos ne se comparent pas directement. Anthropic compte dans son revenu annualisé les ventes faites par ses partenaires cloud ; OpenAI non, et l’accuse de gonfler ainsi ses revenus. Anthropic répond suivre les pratiques comptables établies (Reuters, via Hindu BusinessLine). En additionnant les deux, notre ratio donne donc un ordre de grandeur, pas une mesure exacte. Et la rentabilité « ajustée » d’Anthropic au troisième trimestre n’est pas un résultat net audité.",
+        text: "Enfin, les chiffres des deux labos ne se comparent pas directement. Anthropic compte dans son revenu annualisé les ventes faites par ses partenaires cloud ; OpenAI non, et l’accuse de gonfler ainsi ses revenus. Anthropic répond suivre les pratiques comptables établies (Reuters, via Hindu BusinessLine). En additionnant les deux, notre ratio donne donc un ordre de grandeur, pas une mesure exacte.",
+      },
+      {
+        type: "p",
+        text: "Depuis, Anthropic a publié des comptes audités, dans le prospectus déposé le 26 octobre. Au premier semestre 2026 : 16,3 milliards de dollars de revenus, contre 1,2 milliard un an plus tôt, et une perte d’exploitation de 693 millions, contre 2,1 milliards. L’activité elle-même est donc proche de l’équilibre. La perte nette, elle, atteint 80,7 milliards, mais environ 90 % de ce montant est une écriture comptable sans sortie d’argent : la hausse de la valorisation d’Anthropic augmente la valeur de ses obligations convertibles et de ses SAFE. Plus l’entreprise vaut cher, plus cette perte grossit. Le premier poste de coûts reste le calcul, environ 9 milliards sur le semestre. Il faut le dire honnêtement : c’est un tableau plus nuancé que celui d’un laboratoire qui brûle son argent.",
       },
       {
         type: "box",
@@ -275,6 +289,10 @@ export const gigawattArticle: Record<Locale, Article> = {
       },
       {
         type: "p",
+        text: "Le prospectus ajoute une pièce à ce montage : 48 % des revenus d’Anthropic passent par les plateformes cloud d’Amazon, de Google et de Microsoft. Google et Amazon investissent dans Anthropic, Anthropic leur achète du calcul, et près de la moitié de ses clients le paient à travers eux. La boucle se referme aussi du côté des revenus.",
+      },
+      {
+        type: "p",
         text: "Le premier lot est passé dans la machine en juin. Un véhicule ad hoc, Compute SPV, monté par Morgan Stanley, a payé 35 milliards pour environ 1 GW de matériel, soit près d’un million de TPU. L’argent vient de trois tranches de dette portées par Apollo et Blackstone. Broadcom garantit les deux tranches supérieures, à hauteur d’environ 30 milliards : si Anthropic cesse de payer et que les puces se revendent mal, c’est Broadcom qui comble le trou.",
       },
       {
@@ -328,13 +346,13 @@ export const gigawattArticle: Record<Locale, Article> = {
       { type: "h", id: "introduction", text: "4. Le prix d’introduction face aux valorisations privées" },
       {
         type: "p",
-        text: "Anthropic vise une introduction autour de 2 000 milliards de dollars, soit plus du double de sa dernière valorisation privée de 965 milliards, fixée au printemps. L’introduction en Bourse est le moment où le marché public dit s’il paie la même promesse que les investisseurs privés.",
+        text: "Les banques d’Anthropic viseraient une valorisation de 1 500 à 2 000 milliards de dollars, soit une fois et demie à deux fois sa dernière valorisation privée de 965 milliards, fixée au printemps. L’introduction en Bourse est le moment où le marché public dit s’il paie la même promesse que les investisseurs privés.",
       },
       {
         type: "table",
         head: ["Entreprise", "Dernière valorisation privée", "Valorisation visée", "Prime", "Multiple du revenu annualisé"],
         rows: [
-          ["Anthropic", "965 Md$ (levée de 65 Md$, printemps 2026)", "~2 000 Md$, introduction visée en novembre", "×2,1", "~30× (67 Md$)"],
+          ["Anthropic", "965 Md$ (levée de 65 Md$, printemps 2026)", "1 500 à 2 000 Md$, prospectus déposé le 26 octobre", "×1,6 à ×2,1", "~22 à 30× (67 Md$)"],
           ["OpenAI", "852 Md$ (levée de 122 Md$, mars 2026)", "~1 200 Md$ en discussion, introduction repoussée à 2027", "×1,4", "~24× (~50 Md$)"],
         ],
         caption: "Sources : Motley Fool, Euronews, FT via Reuters, TechCrunch.",
@@ -431,10 +449,10 @@ export const gigawattArticle: Record<Locale, Article> = {
         type: "p",
         text: "En octobre, les premiers signes sont apparus là où nous les attendions. Les maillons les plus endettés ont cédé les premiers, le crédit a renchéri, et deux chantiers se sont arrêtés en Europe, l’un sur un permis, l’autre sur le réseau. Ce n’est pas une rupture. C’est la preuve que les deux écarts n’en font qu’un : quand le béton prend du retard, c’est la dette qui attend.",
       },
-      { type: "h3", text: "Ouverture : le test de novembre, et la question européenne" },
+      { type: "h3", text: "Ouverture : le prix du marché, et la question européenne" },
       {
         type: "p",
-        text: "L’introduction en Bourse d’Anthropic, attendue à la mi-novembre, sera le premier vrai test. Pour la première fois, un grand laboratoire publiera des comptes audités : son résultat net, l’échéancier de ses engagements, la manière dont il compte ses revenus. Le marché devra alors fixer un prix, non plus sur une présentation aux investisseurs, mais sur des chiffres vérifiables. OpenAI, lui, cherche à lever 30 milliards avant que cette comparaison ne devienne possible.",
+        text: "Le 26 octobre, Anthropic a déposé son prospectus : Nasdaq, code ANT, avec Goldman Sachs et Morgan Stanley en tête. La première moitié du test est passée. Un grand laboratoire a publié des comptes audités, et ils sont plus nuancés que prévu : une activité proche de l’équilibre, une perte nette surtout comptable, des engagements de calcul de plus de 500 milliards. Reste la seconde moitié, la vraie : le prix que le marché acceptera de payer. Ni le prix par action ni le montant levé ne sont encore fixés. OpenAI, lui, cherche à lever 30 milliards avant que cette comparaison ne devienne possible.",
       },
       {
         type: "p",
@@ -455,7 +473,7 @@ export const gigawattArticle: Record<Locale, Article> = {
   en: {
     title: "The gigawatt and the dollar",
     lead: "The speed gap between AI and the grid also exists in dollars, and it is bridged the same way: with other people’s money.",
-    updated: "Published on 20 October 2026",
+    updated: "Published on 20 October 2026 · updated on 28 October 2026",
     summaryLabel: "In brief",
     summary: [
       "In 2026, AI infrastructure absorbs about $1 trillion, while OpenAI and Anthropic together report about $117 billion of annualised revenue: roughly one dollar of revenue for every eight or nine dollars invested.",
@@ -502,7 +520,7 @@ export const gigawattArticle: Record<Locale, Article> = {
         rows: [
           ["Sector, 2026", "~$1tn of AI infrastructure", "~$117bn annualised (OpenAI ~50 + Anthropic ~67)", "~8.5", "Gartner via The Register, TechCrunch"],
           ["OpenAI, 2026-2030", "$856bn of compute and infrastructure", "$840bn cumulative (assumption: ×10 in five years)", "~1.0", "FT via Reuters"],
-          ["Anthropic, no stated horizon", "$518bn of cloud and infrastructure obligations", "~$67bn annualised", "~7.7 years of current revenue", "Draft prospectus via Reuters"],
+          ["Anthropic, no stated horizon", "$518bn of cloud and infrastructure obligations", "~$67bn annualised", "~7.7 years of current revenue", "Draft prospectus via Reuters; “more than $500bn” in the final prospectus"],
           ["Sector, 2027-2030", "revenue needed for a 12% ROIC: $8.5tn", "expected revenue: $3.6tn", "~2.4", "Gartner via The Register"],
         ],
       },
@@ -517,7 +535,11 @@ export const gigawattArticle: Record<Locale, Article> = {
       },
       {
         type: "p",
-        text: "Third, the two labs’ figures are not directly comparable. Anthropic counts sales made by its cloud partners in its annualised revenue; OpenAI does not, and accuses it of inflating its revenue this way. Anthropic replies that it follows established accounting practice (Reuters, via Hindu BusinessLine). Adding the two together, our ratio therefore gives an order of magnitude, not an exact measure. And Anthropic’s “adjusted” third-quarter profit is not an audited net result.",
+        text: "Third, the two labs’ figures are not directly comparable. Anthropic counts sales made by its cloud partners in its annualised revenue; OpenAI does not, and accuses it of inflating its revenue this way. Anthropic replies that it follows established accounting practice (Reuters, via Hindu BusinessLine). Adding the two together, our ratio therefore gives an order of magnitude, not an exact measure.",
+      },
+      {
+        type: "p",
+        text: "Since then, Anthropic has published audited accounts, in the prospectus filed on 26 October. In the first half of 2026: $16.3 billion of revenue, against $1.2 billion a year earlier, and an operating loss of $693 million, against $2.1 billion. The business itself is therefore close to break-even. The net loss reaches $80.7 billion, but about 90% of that is a non-cash accounting entry: the rise in Anthropic’s valuation increases the value of its convertible notes and SAFEs. The more the company is worth, the bigger that loss gets. Compute remains the largest cost item, about $9 billion over the half-year. It has to be said plainly: this is a more nuanced picture than that of a lab burning through its cash.",
       },
       {
         type: "box",
@@ -605,6 +627,10 @@ export const gigawattArticle: Record<Locale, Article> = {
       },
       {
         type: "p",
+        text: "The prospectus adds one more piece to this arrangement: 48% of Anthropic’s revenue goes through the cloud platforms of Amazon, Google and Microsoft. Google and Amazon invest in Anthropic, Anthropic buys compute from them, and nearly half of its revenue reaches it through them. The loop closes on the revenue side too.",
+      },
+      {
+        type: "p",
         text: "The first batch went through the machine in June. A special-purpose vehicle, Compute SPV, set up by Morgan Stanley, paid $35 billion for about 1 GW of hardware, close to a million TPUs. The money comes from three tranches of debt held by Apollo and Blackstone. Broadcom guarantees the two senior tranches, for about $30 billion: if Anthropic stops paying and the chips resell poorly, Broadcom fills the hole.",
       },
       {
@@ -658,13 +684,13 @@ export const gigawattArticle: Record<Locale, Article> = {
       { type: "h", id: "introduction", text: "4. The IPO price against private valuations" },
       {
         type: "p",
-        text: "Anthropic is targeting an IPO at around $2 trillion, more than double its last private valuation of $965 billion, set in the spring. The IPO is the moment the public market says whether it will pay for the same promise as private investors.",
+        text: "Anthropic’s bankers are reportedly targeting a valuation of $1.5 to $2 trillion, one and a half to two times its last private valuation of $965 billion, set in the spring. The IPO is the moment the public market says whether it will pay for the same promise as private investors.",
       },
       {
         type: "table",
         head: ["Company", "Last private valuation", "Target valuation", "Premium", "Multiple of annualised revenue"],
         rows: [
-          ["Anthropic", "$965bn ($65bn round, spring 2026)", "~$2tn, IPO targeted for November", "×2.1", "~30× ($67bn)"],
+          ["Anthropic", "$965bn ($65bn round, spring 2026)", "$1.5 to $2tn, prospectus filed on 26 October", "×1.6 to ×2.1", "~22 to 30× ($67bn)"],
           ["OpenAI", "$852bn ($122bn round, March 2026)", "~$1.2tn under discussion, IPO pushed back to 2027", "×1.4", "~24× (~$50bn)"],
         ],
         caption: "Sources: Motley Fool, Euronews, FT via Reuters, TechCrunch.",
@@ -761,10 +787,10 @@ export const gigawattArticle: Record<Locale, Article> = {
         type: "p",
         text: "In October, the first signs appeared where we expected them. The most indebted links gave way first, credit became more expensive, and two sites stopped in Europe, one over a permit, the other over the grid. This is not a break. It is proof that the two gaps are one: when the concrete runs late, the debt waits.",
       },
-      { type: "h3", text: "Looking ahead: the November test, and the European question" },
+      { type: "h3", text: "Looking ahead: the market’s price, and the European question" },
       {
         type: "p",
-        text: "Anthropic’s IPO, expected in mid-November, will be the first real test. For the first time, a major lab will publish audited accounts: its net result, the schedule of its commitments, the way it counts its revenue. The market will then have to set a price, no longer on an investor presentation, but on verifiable figures. OpenAI, for its part, is trying to raise $30 billion before that comparison becomes possible.",
+        text: "On 26 October, Anthropic filed its prospectus: Nasdaq, ticker ANT, led by Goldman Sachs and Morgan Stanley. The first half of the test is over. A major lab has published audited accounts, and they are more nuanced than expected: a business close to break-even, a net loss that is mostly an accounting entry, compute commitments of more than $500 billion. The second half remains, the real one: the price the market will agree to pay. Neither the share price nor the amount raised has been set yet. OpenAI, for its part, is trying to raise $30 billion before that comparison becomes possible.",
       },
       {
         type: "p",
