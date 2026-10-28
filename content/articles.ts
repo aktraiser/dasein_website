@@ -1453,6 +1453,12 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           text: "Le 10 juillet 2026, le juge des référés du tribunal administratif de Grenoble a suspendu un permis de construire. Le projet : un « Computer Center » dédié à l’intelligence artificielle, 1,5 milliard d’euros, porté par la société Sesterce sur le parc d’activités de Rovaltain, à côté de la gare TGV de Valence. Le permis avait été signé par le maire d’Alixan le 18 décembre 2025.",
         },
         {
+          type: "figure",
+          src: "/articles/megawatt/rovaltain-ign.jpg",
+          alt: "Vue aérienne de la gare de Valence TGV et du parc d’activités de Rovaltain, entourés de champs",
+          caption: "La gare de Valence TGV, au centre, et le parc d’activités de Rovaltain qui l’entoure, au milieu des champs : environ 3,4 km sur 2,7. C’est dans ce parc que le Computer Center devait s’installer. Photographie aérienne IGN (BD ORTHO), Licence Ouverte 2.0.",
+        },
+        {
           type: "p",
           text: "Ce qui m’intéresse, ce n’est pas la décision. C’est son raisonnement.",
         },
@@ -1471,15 +1477,15 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
+          text: "La suspension est provisoire : elle arrête le chantier sans annuler le permis. Le 27 juillet, Sesterce a annoncé un pourvoi en cassation devant le Conseil d’État, qui n’a pas encore statué, et le recours sur le fond reste à juger. Une précision sur la puissance : la presse décrit un site de 40 MW au départ, extensible à 80 MW ; l’ordonnance retient « plus de 60 MW » à terme.",
+        },
+        {
+          type: "p",
           text: "Une puissance. Une chaleur. Le juge a, sans le dire, posé les deux seules questions qui comptent. Tout le reste (l’eau, la contestation locale, la réglementation qui arrive de Bruxelles, de Sacramento, d’Albany et de Richmond, la géopolitique d’un comté de Virginie) découle de ces deux-là.",
         },
         {
           type: "callout",
           text: "Et en tirant ce fil jusqu’au bout, on tombe sur une conclusion que je n’attendais pas. On entend partout que l’IA va trop vite et que c’est ce qui la rend dangereuse. Je crois que c’est mal posé. Ce qui va trop vite, c’est la puissance électrique qu’elle appelle, et ce qui est dangereux, ce n’est pas cette vitesse en soi, c’est l’écart entre elle et la vitesse à laquelle un réseau, un bassin versant et une démocratie locale peuvent répondre. Cet écart, aujourd’hui, se comble avec du gaz, en contournant le réseau public, et en envoyant la facture aux ménages. C’est ça, le risque mesurable. Le reste de l’article est la démonstration.",
-        },
-        {
-          type: "note",
-          text: "J’ai lu le texte intégral de ce que je cite quand il était accessible, y compris le règlement délégué européen du 21 septembre et deux études académiques dont je détaille les limites. Quand je n’ai pas pu, je le dis.",
         },
         { type: "h", id: "megawatt", text: "1. Une unité qui change tout : le mégawatt" },
         {
@@ -1576,8 +1582,20 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           text: "Dans une installation liquide, deux circuits se croisent sans se mélanger, séparés par une unité de distribution (CDU) : une boucle fermée de fluide ultra-pur qui va jusqu’aux puces, et une boucle d’eau de bâtiment qui monte sur le toit évacuer la chaleur. Retenez ce schéma : quand on vous dit qu’un site « consomme » tant de litres, la question est toujours de quelle boucle on parle, et si cette eau s’évapore ou revient.",
         },
         {
+          type: "figure",
+          src: "/articles/megawatt/liquid-cooling-tsubame.jpg",
+          alt: "Tuyaux d’eau métalliques reliant le plafond à l’arrière de baies de serveurs noires",
+          caption: "Le refroidissement liquide, en vrai : les tuyaux d’eau qui desservent l’arrière des baies du supercalculateur TSUBAME 3.0, à Tokyo, en 2018. Photo : Kestrel, Wikimedia Commons, CC BY-SA 4.0.",
+        },
+        {
           type: "p",
-          text: "La bonne nouvelle technique, c’est que la température monte. Plus le liquide qui sort des puces est chaud, moins il faut de machine frigorifique pour le refroidir. Nvidia a annoncé au CES de janvier 2026 que Vera Rubin accepte un liquide à 45 °C. À cette température, de simples aérorefroidisseurs suffisent, sans compresseur et sans eau. Schneider Electric a publié le 21 septembre 2026 un livre blanc comparant quatre architectures de 100 MW sous les climats de Paris et de Dallas : le liquide à 45 °C réduit la consommation d’eau d’au moins 50 % par rapport au refroidissement à air. Un bémol qu’il faut lire à côté : Schneider a racheté 75 % de Motivair, spécialiste du refroidissement liquide, en 2024, et vise le reste d’ici 2028. C’est une source intéressée. L’ordre de grandeur est cohérent avec le reste de la littérature, mais je ne lui accorde pas le statut d’une mesure indépendante.",
+          text: "La bonne nouvelle technique, c’est que la température monte. Plus le liquide qui sort des puces est chaud, moins il faut de machine frigorifique pour le refroidir. Nvidia a annoncé au CES de janvier 2026 que Vera Rubin accepte un liquide à 45 °C. À cette température, de simples aérorefroidisseurs suffisent, sans compresseur et sans eau. Schneider Electric a publié le 21 septembre 2026 un livre blanc comparant quatre architectures de 100 MW sous les climats de Paris et de Dallas : le liquide à 45 °C réduit la consommation d’eau d’au moins 50 % par rapport au refroidissement à air. Un bémol qu’il faut lire à côté : Schneider a racheté 75 % de Motivair, spécialiste du refroidissement liquide, en 2024, et vise le reste d’ici 2028. C’est une source intéressée : l’ordre de grandeur est cohérent avec le reste de la littérature, mais ce n’est pas une mesure indépendante.",
+        },
+        {
+          type: "figure",
+          src: "/articles/megawatt/datacenter-roof.jpg",
+          alt: "Toit d’un data center couvert de rangées de machines à ventilateurs, avec une file de groupes électrogènes blancs en contrebas",
+          caption: "Le toit d’un data center : les machines de refroidissement alignées avec leurs ventilateurs et, en contrebas, la rangée blanche des groupes électrogènes de secours. Le lieu n’est pas précisé par l’auteur. Photo : Rsparks3, Wikimedia Commons, CC0 (2025).",
         },
         { type: "h", id: "eau", text: "3. L’eau n’est pas un troisième problème, c’est le même" },
         { type: "p", text: "Voici le point qui désamorce la moitié des polémiques." },
@@ -1595,7 +1613,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "J’ai lu ce papier en entier, et il faut en dire deux choses que le résumé ne dit pas. D’abord, ce n’est pas encore un article relu par des pairs : c’est un preprint arXiv (2607.02531). Ensuite, les auteurs eux-mêmes qualifient de « méthodologiquement contesté » le coefficient hydroélectrique qu’ils utilisent (8 litres par kilowattheure) : sans lui, l’eau indirecte chute de 43 %, de 226 à 128 milliards de litres. Le fameux rapport « l’indirect pèse trois fois le direct » repose donc en bonne partie sur une convention comptable disputée. La direction tient : l’eau d’un data center est surtout l’eau de sa centrale, mais l’ampleur est plus incertaine qu’annoncé.",
+          text: "Il faut dire de ce papier deux choses que son résumé ne dit pas. D’abord, ce n’est pas encore un article relu par des pairs : c’est un preprint arXiv (2607.02531). Ensuite, les auteurs eux-mêmes qualifient de « méthodologiquement contesté » le coefficient hydroélectrique qu’ils utilisent (8 litres par kilowattheure) : sans lui, l’eau indirecte chute de 43 %, de 226 à 128 milliards de litres. Le fameux rapport « l’indirect pèse trois fois le direct » repose donc en bonne partie sur une convention comptable disputée. La direction tient : l’eau d’un data center est surtout l’eau de sa centrale, mais l’ampleur est plus incertaine qu’annoncé.",
         },
         {
           type: "p",
@@ -1636,7 +1654,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "h", id: "carte", text: "5. Où sont les mégawatts de l’IA" },
         {
           type: "p",
-          text: "Avant de parler de vitesse, il faut savoir où l’on est. J’ai cartographié les sites des trois laboratoires dont on parle le plus (xAI, OpenAI, Anthropic) en ne retenant que ce qui est localisé, chiffré et daté.",
+          text: "Avant de parler de vitesse, il faut savoir où l’on est. Voici les sites des trois laboratoires dont on parle le plus (xAI, OpenAI, Anthropic), en ne retenant que ce qui est localisé, chiffré et daté.",
         },
         {
           type: "table",
@@ -1704,12 +1722,24 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           text: "Les chiffres viennent d’un travail de géographie du CNES et de Géoconfluences signé Laurent Carroué (juillet 2025), sur imagerie satellite Pléiades. La Virginie compte 564 data centers, exploités par 83 entreprises, dont 155 pour le seul Amazon Web Services. Le pôle d’Ashburn, en novembre 2025 : 154 centres, deux millions de mètres carrés, 2 830 MW installés. La puissance de cette seule zone dépasse celle de Dublin, Londres, Francfort, Amsterdam, Singapour et Sydney réunies. Dans mon échelle de la partie 1, c’est la puissance moyenne appelée par 3,5 à 4 millions de Français, sur une bande de terrain le long d’un aéroport. C’est aussi plus que xAI, OpenAI et Anthropic réunis n’ont réellement en service aujourd’hui.",
         },
         {
+          type: "figure",
+          src: "/articles/megawatt/ashburn-naip.jpg",
+          alt: "Vue aérienne d’Ashburn, en Virginie : des dizaines de grands bâtiments à toit blanc entre des lotissements et des voies rapides",
+          caption: "Ashburn, comté de Loudoun, vu du ciel le 11 octobre 2023 : environ 7 km sur 5,5. Les grands toits blancs sont pour l’essentiel des data centers, les lotissements les bordent à l’ouest, et les terrains ocre sont des chantiers. Photographie aérienne NAIP, USDA / USGS, domaine public. L’image satellite Pléiades de juillet 2025 commentée par Laurent Carroué est à voir sur le site GeoImage du CNES.",
+        },
+        {
           type: "p",
           text: "Pourquoi là. Parce que tout s’y est accumulé. Le Pentagone, la CIA, la NSA et le FBI dans la même aire métropolitaine. L’ARPANET, ancêtre d’Internet, né à Arlington à la fin des années 1960. MAE-East, l’un des premiers grands points d’échange Internet, à Ashburn dès 1998 ; plus de la moitié du trafic Internet américain y transitait déjà en 2009. Une électricité longtemps bon marché fournie par Dominion Energy, l’eau du Potomac, du foncier, et une exonération fiscale sur les équipements votée en 2009 et prolongée jusqu’en 2035 au moins, pour 1,7 milliard de dollars cumulés entre 2014 et 2023. Ce n’est pas un marché qui a choisi un lieu ; c’est un lieu qui a fabriqué un marché. Les économistes appellent ça une dépendance de sentier.",
         },
         {
           type: "p",
           text: "Le mégawatt, version Virginie. Les data centers représentent 20 à 25 % des ventes de Dominion Energy, qui achète déjà 22 % de ses besoins à l’extérieur, au prix fort. La puissance contractée est passée de 931 MW à 3 888 MW en 2025, et devrait atteindre 7 686 MW en 2033. L’État estime qu’il lui faudra 11 000 MW d’ici 2035 : une multiplication par quatre en treize ans. Le comté de Loudoun compte plus de 4 000 groupes électrogènes de secours, testés chaque mois. Souvenez-vous du juge de Grenoble et de la « puissance thermique nominale » des groupes : c’est le même objet, multiplié par quatre mille. Et la nouvelle ligne de 500 kV censée sécuriser Ashburn en est encore, elle, au choix du tracé.",
+        },
+        {
+          type: "figure",
+          src: "/articles/megawatt/ashburn-aerial.jpg",
+          alt: "Vue d’avion de grands data centers à toit plat près d’Ashburn, avec un poste électrique au premier plan",
+          caption: "Les data centers du comté de Loudoun, près d’Ashburn, vus d’avion le 26 novembre 2025. Au premier plan, un poste électrique entre les bâtiments. Photo : Theodore Christopher, Wikimedia Commons, CC0.",
         },
         {
           type: "p",
@@ -1777,7 +1807,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "h3", text: "Troisième façon : envoyer la facture aux ménages" },
         {
           type: "p",
-          text: "Sur PJM, le plus grand marché électrique américain (Virginie et douze autres États), le prix de la capacité est passé de 28,92 $ par mégawatt-jour (2024-25) à 329,17 $ (2026-27). Onze fois plus. L’IEEFA attribue 63 % de la hausse de l’enchère 2025-26 aux data centers : 9,3 milliards de dollars répercutés sur tous les clients. Zone Dominion (Virginie) : 444 $. Zone Baltimore : 466 $. Sur une facture résidentielle de l’Ohio ou de l’ouest du Maryland : +16 à 18 $ par mois dès maintenant, et une estimation, que je donne comme telle, de +70 $ par mois en 2028.",
+          text: "Sur PJM, le plus grand marché électrique américain (Virginie et douze autres États), le prix de la capacité est passé de 28,92 $ par mégawatt-jour (2024-25) à 329,17 $ (2026-27). Onze fois plus. L’IEEFA attribue 63 % de la hausse de l’enchère 2025-26 aux data centers : 9,3 milliards de dollars répercutés sur tous les clients. Zone Dominion (Virginie) : 444 $. Zone Baltimore : 466 $. Sur une facture résidentielle de l’Ohio ou de l’ouest du Maryland : +16 à 18 $ par mois dès maintenant, et, selon une estimation de seconde main, +70 $ par mois en 2028.",
         },
         {
           type: "p",
@@ -1793,7 +1823,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "L’écart a désormais un visage. Selon The Information, qui cite deux sources anonymes, l’électricien Entergy a prévenu Amazon cette année qu’il pourrait devoir déconnecter ses data centers du Mississippi aux heures de pointe pour servir ses autres clients. Un électricien ne coupe presque jamais un grand client. La réponse d’Amazon, d’après la même enquête : un système automatique, Project Falcon, qui bascule les sites sur leurs groupes de secours quand le réseau signale une tension. Je n’ai pas pu lire l’article d’origine, seulement ses reprises. Si c’est exact, l’écart ne se comble plus seulement par des centrales à gaz neuves, mais par les groupes électrogènes déjà posés derrière chaque bâtiment. La « puissance thermique nominale » du juge de Grenoble, encore.",
+          text: "L’écart a désormais un visage. Selon The Information, qui cite deux sources anonymes, l’électricien Entergy a prévenu Amazon cette année qu’il pourrait devoir déconnecter ses data centers du Mississippi aux heures de pointe pour servir ses autres clients. Un électricien ne coupe presque jamais un grand client. La réponse d’Amazon, d’après la même enquête : un système automatique, Project Falcon, qui bascule les sites sur leurs groupes de secours quand le réseau signale une tension. Si c’est exact, l’écart ne se comble plus seulement par des centrales à gaz neuves, mais par les groupes électrogènes déjà posés derrière chaque bâtiment. La « puissance thermique nominale » du juge de Grenoble, encore.",
         },
         {
           type: "p",
@@ -1822,7 +1852,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "Ce qui m’a décidé à écrire cet article, c’est la coïncidence de dates. En une semaine, du 16 au 22 septembre 2026, six juridictions ont bougé, et toutes ont choisi les mêmes variables : une puissance qui déclenche, un rendement qui classe, et (nouveauté) un coût qui change de mains.",
+          text: "Le plus frappant est la coïncidence de dates. En une semaine, du 16 au 22 septembre 2026, six juridictions ont bougé, et toutes ont choisi les mêmes variables : une puissance qui déclenche, un rendement qui classe, et (nouveauté) un coût qui change de mains.",
         },
         {
           type: "timeline",
@@ -1832,7 +1862,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
               date: "21 septembre",
               tag: "seuil 500 kW",
               text: [
-                "La Commission a adopté un règlement délégué (C(2026) 3472 final, signé par Ursula von der Leyen) qui établit un système commun de notation des data centers. J’ai lu les quinze pages du texte, et il corrige ce que la presse en a dit le lendemain. Ce n’est pas un label « volontaire pour les sites de plus de 500 kW ». C’est l’inverse. Depuis 2024, tous les data centers de l’Union d’au moins 500 kW de puissance informatique sont déjà tenus de déclarer chaque année leur performance énergétique et hydrique dans une base de données européenne, au titre de l’article 12 de la directive sur l’efficacité énergétique ; deux campagnes de déclaration ont eu lieu. Le texte du 21 septembre fait générer automatiquement, à partir de ces déclarations obligatoires, un label électronique classant chaque site sur deux échelles : le PUE et le WUE. Premier label le 15 août 2027, puis chaque année. Seuls les sites de moins de 500 kW et ceux qui ne sont pas encore en service y participent sur la base du volontariat. Et l’article 6 fixe une revoyure au 31 décembre 2028, avec la possibilité explicite d’introduire un indicateur agrégé, une certification ou un audit des données déclarées. Le texte le dit lui-même : ce label est un précurseur de normes minimales.",
+                "La Commission a adopté un règlement délégué (C(2026) 3472 final, signé par Ursula von der Leyen) qui établit un système commun de notation des data centers. Le texte, quinze pages, corrige ce que la presse en a dit le lendemain. Ce n’est pas un label « volontaire pour les sites de plus de 500 kW ». C’est l’inverse. Depuis 2024, tous les data centers de l’Union d’au moins 500 kW de puissance informatique sont déjà tenus de déclarer chaque année leur performance énergétique et hydrique dans une base de données européenne, au titre de l’article 12 de la directive sur l’efficacité énergétique ; deux campagnes de déclaration ont eu lieu. Le texte du 21 septembre fait générer automatiquement, à partir de ces déclarations obligatoires, un label électronique classant chaque site sur deux échelles : le PUE et le WUE. Premier label le 15 août 2027, puis chaque année. Seuls les sites de moins de 500 kW et ceux qui ne sont pas encore en service y participent sur la base du volontariat. Et l’article 6 fixe une revoyure au 31 décembre 2028, avec la possibilité explicite d’introduire un indicateur agrégé, une certification ou un audit des données déclarées. Le texte le dit lui-même : ce label est un précurseur de normes minimales.",
                 "Le mémorandum contient aussi le chiffre le plus parlant du dossier : réutiliser la moitié de la chaleur fatale des data centers européens couvrirait le chauffage de près de quatre millions de foyers. Le degré n’est pas seulement un problème ; c’est une ressource que l’on jette.",
               ],
             },
@@ -1943,8 +1973,14 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           text: "Le 8 octobre, Sesterce a annoncé plus de 10 milliards d’euros pour un campus d’IA à Jämsä, en Finlande, sur le site de l’ancienne papeterie de Kaipola : 200 MW dans une première phase, 600 MW dans une seconde, plus d’un gigawatt visé à terme. Dans l’échelle de la partie 1, 600 MW, c’est la puissance moyenne appelée par environ 790 000 Français. Dix fois Alixan.",
         },
         {
+          type: "figure",
+          src: "/articles/megawatt/kaipola.jpg",
+          alt: "Entrée de la papeterie de Kaipola : un bâtiment rouge et blanc et un convoyeur surélevé",
+          caption: "L’entrée de la papeterie de Kaipola, à Jämsä, en juillet 2021, après sa fermeture. Photo : Tiia Monto, Wikimedia Commons, CC BY-SA 3.0.",
+        },
+        {
           type: "p",
-          text: "Je ne connais pas de meilleur résumé de cet article. Le permis est suspendu dans la Drôme en juillet ; en octobre, les mégawatts réapparaissent là où il fait froid et où une usine fermée a laissé un raccordement. Sesterce promet un refroidissement liquide en circuit fermé et un mégawatt renouvelable ajouté au réseau finlandais pour chaque mégawatt consommé. Deux réserves : ces chiffres viennent du communiqué de l’entreprise, repris par la presse, et une annonce, on l’a vu, est une demande d’électricité, pas un engagement de construire.",
+          text: "Je ne connais pas de meilleur résumé de cet article. Le permis est suspendu dans la Drôme le 10 juillet ; le 27, Sesterce conteste la suspension devant le Conseil d’État ; en octobre, les mégawatts réapparaissent là où il fait froid et où une usine fermée a laissé un raccordement. Sesterce promet un refroidissement liquide en circuit fermé et un mégawatt renouvelable ajouté au réseau finlandais pour chaque mégawatt consommé. Deux réserves : ces chiffres viennent du communiqué de l’entreprise, repris par la presse, et une annonce, on l’a vu, est une demande d’électricité, pas un engagement de construire.",
         },
         { type: "h", id: "boucle", text: "11. La boucle, en une page" },
         {
@@ -1953,7 +1989,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "callout",
-          text: "Le juge de Grenoble n’a pas eu besoin de savoir combien d’eau consomme un prompt. Il a demandé la puissance électrique du site, et la puissance thermique de ses groupes de secours. C’était la bonne question. Ce n’est pas l’IA qui va trop vite. C’est nous qui n’avons pas de réseau à sa vitesse, et qui, en attendant, brûlons du gaz.",
+          text: "Le juge de Grenoble n’a pas eu besoin de savoir combien d’eau consomme un prompt. Il a demandé la puissance électrique du site, et la puissance thermique de ses groupes de secours. C’était la bonne question. La sobriété de chacun n’y changera presque rien. Ce qui compte, c’est sur quoi les fournisseurs bâtissent leur offre : quelle électricité, quel refroidissement, quel site, et aux frais de qui. Tant que cette question reste sans réponse, l’écart se comble avec du gaz.",
         },
       ],
       sourcesLabel: "Sources principales",
@@ -1961,11 +1997,18 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { label: "Tribunal administratif de Grenoble, communiqué du 10 juillet 2026" },
         { label: "Reporterre" },
         {
+          label: "ICI Drôme Ardèche, pourvoi de Sesterce devant le Conseil d’État (27 juillet 2026)",
+          url: "https://www.ici.fr/auvergne-rhone-alpes/drome-26/alixan/projet-de-super-calculateur-a-rovaltain-sesterce-saisit-le-conseil-d-etat-3373198",
+        },
+        {
           label: "Commission européenne, règlement délégué C(2026) 3472 final du 21 septembre 2026, texte intégral",
         },
         { label: "Guidi & Dominici, arXiv:2607.02531 (juin 2026, preprint), texte intégral" },
         { label: "Karamperidou et al., Scientific Reports, texte intégral" },
-        { label: "Laurent Carroué, CNES Géoimages / Géoconfluences, juillet 2025" },
+        {
+          label: "Laurent Carroué, CNES GeoImage (image Pléiades du 4 juillet 2025) et Géoconfluences (juillet 2025)",
+          url: "https://cnes.fr/geoimage/etats-unis-virginie-data-center-alley-1er-pole-mondial-de-centres-de-donnees-coeur-cyberespace-de",
+        },
         { label: "IEA, Electricity 2026 et Energy and AI" },
         { label: "Lawrence Berkeley National Laboratory, Queued Up: 2026 Edition" },
         { label: "Cleanview, Bypassing the Grid (mi-2026)" },
@@ -2041,6 +2084,12 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           type: "p",
           text: "On 10 July 2026, the judge hearing urgent applications at the administrative court of Grenoble suspended a building permit. The project: a “Computer Center” dedicated to artificial intelligence, €1.5 billion, led by the company Sesterce on the Rovaltain business park, next to the Valence TGV station. The permit had been signed by the mayor of Alixan on 18 December 2025.",
         },
+        {
+          type: "figure",
+          src: "/articles/megawatt/rovaltain-ign.jpg",
+          alt: "Aerial view of the Valence TGV station and the Rovaltain business park, surrounded by fields",
+          caption: "The Valence TGV station, centre, and the Rovaltain business park around it, in the middle of farmland: about 3.4 km by 2.7. This is the park where the Computer Center was to be built. IGN aerial photography (BD ORTHO), Licence Ouverte 2.0.",
+        },
         { type: "p", text: "What interests me is not the decision. It is the reasoning." },
         {
           type: "p",
@@ -2057,15 +2106,15 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
+          text: "The suspension is provisional: it stops the works without cancelling the permit. On 27 July, Sesterce announced an appeal to the Conseil d’État, France’s highest administrative court, which has not yet ruled, and the case on the merits remains to be heard. A note on the power: the press describes a site of 40 MW at first, expandable to 80 MW; the order records “more than 60 MW” once complete.",
+        },
+        {
+          type: "p",
           text: "A power. A heat. Without saying so, the judge asked the only two questions that matter. Everything else (water, local opposition, the regulation coming from Brussels, Sacramento, Albany and Richmond, the geopolitics of a Virginia county) follows from those two.",
         },
         {
           type: "callout",
           text: "Pulling that thread all the way, I reached a conclusion I did not expect. You hear everywhere that AI is moving too fast and that this is what makes it dangerous. I think that is the wrong framing. What moves too fast is the electrical power it calls for, and what is dangerous is not that speed in itself, but the gap between it and the speed at which a grid, a river basin and a local democracy can respond. Today that gap is filled with gas, by bypassing the public grid, and by sending the bill to households. That is the measurable risk. The rest of this article is the demonstration.",
-        },
-        {
-          type: "note",
-          text: "I read the full text of what I quote whenever it was available, including the European delegated regulation of 21 September and two academic studies whose limits I detail. When I could not, I say so.",
         },
         { type: "h", id: "megawatt", text: "1. A unit that changes everything: the megawatt" },
         {
@@ -2162,8 +2211,20 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           text: "In a liquid installation, two circuits cross without mixing, separated by a coolant distribution unit (CDU): a closed loop of ultra-pure fluid running to the chips, and a building water loop that goes up to the roof to reject the heat. Keep this picture in mind: when you are told a site “consumes” so many litres, the question is always which loop we are talking about, and whether that water evaporates or comes back.",
         },
         {
+          type: "figure",
+          src: "/articles/megawatt/liquid-cooling-tsubame.jpg",
+          alt: "Metal water hoses running from the ceiling to the back of black server racks",
+          caption: "Liquid cooling in real life: the water pipes serving the back of the racks of the TSUBAME 3.0 supercomputer, in Tokyo, in 2018. Photo: Kestrel, Wikimedia Commons, CC BY-SA 4.0.",
+        },
+        {
           type: "p",
-          text: "The good technical news is that the temperature is rising. The hotter the liquid leaving the chips, the less refrigeration you need to cool it. Nvidia announced at CES in January 2026 that Vera Rubin accepts 45 °C liquid. At that temperature, simple dry coolers are enough, with no compressor and no water. On 21 September 2026 Schneider Electric published a white paper comparing four 100 MW architectures in the climates of Paris and Dallas: 45 °C liquid cuts water consumption by at least 50% compared with air cooling. One caveat to read alongside: Schneider bought 75% of Motivair, a liquid-cooling specialist, in 2024, and aims to buy the rest by 2028. It is an interested source. The order of magnitude is consistent with the rest of the literature, but I do not treat it as an independent measurement.",
+          text: "The good technical news is that the temperature is rising. The hotter the liquid leaving the chips, the less refrigeration you need to cool it. Nvidia announced at CES in January 2026 that Vera Rubin accepts 45 °C liquid. At that temperature, simple dry coolers are enough, with no compressor and no water. On 21 September 2026 Schneider Electric published a white paper comparing four 100 MW architectures in the climates of Paris and Dallas: 45 °C liquid cuts water consumption by at least 50% compared with air cooling. One caveat to read alongside: Schneider bought 75% of Motivair, a liquid-cooling specialist, in 2024, and aims to buy the rest by 2028. It is an interested source: the order of magnitude is consistent with the rest of the literature, but it is not an independent measurement.",
+        },
+        {
+          type: "figure",
+          src: "/articles/megawatt/datacenter-roof.jpg",
+          alt: "Roof of a data center covered with rows of fan units, with a line of white generators below",
+          caption: "The roof of a data center: the cooling units lined up with their fans and, below, the white row of backup generators. The location is not given by the author. Photo: Rsparks3, Wikimedia Commons, CC0 (2025).",
         },
         { type: "h", id: "eau", text: "3. Water is not a third problem, it is the same one" },
         { type: "p", text: "Here is the point that defuses half the controversies." },
@@ -2181,7 +2242,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "I read the paper in full, and two things need saying that the abstract does not. First, it is not yet peer-reviewed: it is an arXiv preprint (2607.02531). Second, the authors themselves call the hydroelectric coefficient they use (8 litres per kilowatt-hour) “methodologically contested”: without it, indirect water drops by 43%, from 226 to 128 billion litres. The famous “indirect is three times direct” ratio thus rests largely on a disputed accounting convention. The direction holds: a data center’s water is mostly its power plant’s water, but the magnitude is less certain than announced.",
+          text: "Two things need saying about this paper that its abstract does not. First, it is not yet peer-reviewed: it is an arXiv preprint (2607.02531). Second, the authors themselves call the hydroelectric coefficient they use (8 litres per kilowatt-hour) “methodologically contested”: without it, indirect water drops by 43%, from 226 to 128 billion litres. The famous “indirect is three times direct” ratio thus rests largely on a disputed accounting convention. The direction holds: a data center’s water is mostly its power plant’s water, but the magnitude is less certain than announced.",
         },
         {
           type: "p",
@@ -2222,7 +2283,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "h", id: "carte", text: "5. Where AI’s megawatts are" },
         {
           type: "p",
-          text: "Before talking about speed, you need to know where things stand. I mapped the sites of the three labs people talk about most (xAI, OpenAI, Anthropic) keeping only what is located, quantified and dated.",
+          text: "Before talking about speed, you need to know where things stand. Here are the sites of the three labs people talk about most (xAI, OpenAI, Anthropic), keeping only what is located, quantified and dated.",
         },
         {
           type: "table",
@@ -2290,12 +2351,24 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           text: "The figures come from geography work by CNES and Géoconfluences by Laurent Carroué (July 2025), based on Pléiades satellite imagery. Virginia has 564 data centers, run by 83 companies, 155 of them by Amazon Web Services alone. The Ashburn hub, in November 2025: 154 centers, two million square metres, 2,830 MW installed. The power of this single area exceeds that of Dublin, London, Frankfurt, Amsterdam, Singapore and Sydney combined. On my scale from part 1, it is the average power drawn by 3.5 to 4 million French people, on a strip of land along an airport. It is also more than xAI, OpenAI and Anthropic combined actually have in service today.",
         },
         {
+          type: "figure",
+          src: "/articles/megawatt/ashburn-naip.jpg",
+          alt: "Aerial view of Ashburn, Virginia: dozens of large white-roofed buildings between housing estates and expressways",
+          caption: "Ashburn, Loudoun County, seen from above on 11 October 2023: about 7 km by 5.5. The large white roofs are for the most part data centers, housing estates border them to the west, and the ochre plots are construction sites. NAIP aerial photography, USDA / USGS, public domain. The July 2025 Pléiades satellite image discussed by Laurent Carroué can be seen on the CNES GeoImage site.",
+        },
+        {
           type: "p",
           text: "Why there. Because everything piled up there. The Pentagon, the CIA, the NSA and the FBI in the same metropolitan area. ARPANET, the ancestor of the internet, born in Arlington in the late 1960s. MAE-East, one of the first major internet exchange points, in Ashburn from 1998; more than half of US internet traffic already passed through it in 2009. Long-cheap electricity supplied by Dominion Energy, water from the Potomac, land, and a tax exemption on equipment passed in 2009 and extended to at least 2035, worth $1.7 billion cumulatively between 2014 and 2023. It is not a market that chose a place; it is a place that made a market. Economists call that path dependence.",
         },
         {
           type: "p",
           text: "The megawatt, Virginia edition. Data centers account for 20 to 25% of Dominion Energy’s sales, and Dominion already buys 22% of its needs from outside, at a high price. Contracted capacity rose from 931 MW to 3,888 MW in 2025, and should reach 7,686 MW in 2033. The state estimates it will need 11,000 MW by 2035: a fourfold increase in thirteen years. Loudoun County has more than 4,000 backup generators, tested every month. Remember the Grenoble judge and the generators’ “rated thermal power”: it is the same object, multiplied by four thousand. And the new 500 kV line meant to secure Ashburn is still at the route-selection stage.",
+        },
+        {
+          type: "figure",
+          src: "/articles/megawatt/ashburn-aerial.jpg",
+          alt: "View from a plane of large flat-roofed data centers near Ashburn, with an electrical substation in the foreground",
+          caption: "The data centers of Loudoun County, near Ashburn, seen from a plane on 26 November 2025. In the foreground, an electrical substation between the buildings. Photo: Theodore Christopher, Wikimedia Commons, CC0.",
         },
         {
           type: "p",
@@ -2363,7 +2436,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { type: "h3", text: "Third way: send the bill to households" },
         {
           type: "p",
-          text: "On PJM, the largest US electricity market (Virginia and twelve other states), the capacity price rose from $28.92 per megawatt-day (2024–25) to $329.17 (2026–27). Eleven times more. IEEFA attributes 63% of the increase in the 2025–26 auction to data centers: $9.3 billion passed on to all customers. Dominion zone (Virginia): $444. Baltimore zone: $466. On a residential bill in Ohio or western Maryland: +$16 to $18 a month right now, and an estimate, which I give as such, of +$70 a month in 2028.",
+          text: "On PJM, the largest US electricity market (Virginia and twelve other states), the capacity price rose from $28.92 per megawatt-day (2024–25) to $329.17 (2026–27). Eleven times more. IEEFA attributes 63% of the increase in the 2025–26 auction to data centers: $9.3 billion passed on to all customers. Dominion zone (Virginia): $444. Baltimore zone: $466. On a residential bill in Ohio or western Maryland: +$16 to $18 a month right now, and, according to a second-hand estimate, +$70 a month in 2028.",
         },
         {
           type: "p",
@@ -2379,7 +2452,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "The gap now has a face. According to The Information, citing two anonymous sources, the utility Entergy warned Amazon this year that it might have to disconnect its Mississippi data centers at peak hours in order to serve its other customers. A utility almost never cuts off a large customer. Amazon’s answer, according to the same investigation: an automated system, Project Falcon, that switches the sites over to their backup generators when the grid signals stress. I could not read the original article, only the reports based on it. If it is accurate, the gap is no longer filled only by new gas plants, but by the generators already sitting behind every building. The Grenoble judge’s “rated thermal power”, again.",
+          text: "The gap now has a face. According to The Information, citing two anonymous sources, the utility Entergy warned Amazon this year that it might have to disconnect its Mississippi data centers at peak hours in order to serve its other customers. A utility almost never cuts off a large customer. Amazon’s answer, according to the same investigation: an automated system, Project Falcon, that switches the sites over to their backup generators when the grid signals stress. If it is accurate, the gap is no longer filled only by new gas plants, but by the generators already sitting behind every building. The Grenoble judge’s “rated thermal power”, again.",
         },
         {
           type: "p",
@@ -2408,7 +2481,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "p",
-          text: "What made me write this article is a coincidence of dates. In one week, from 16 to 22 September 2026, six jurisdictions moved, and all chose the same variables: a power that triggers, an efficiency that ranks, and (the new part) a cost that changes hands.",
+          text: "The most striking thing is the coincidence of dates. In one week, from 16 to 22 September 2026, six jurisdictions moved, and all chose the same variables: a power that triggers, an efficiency that ranks, and (the new part) a cost that changes hands.",
         },
         {
           type: "timeline",
@@ -2418,7 +2491,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
               date: "21 September",
               tag: "500 kW threshold",
               text: [
-                "The Commission adopted a delegated regulation (C(2026) 3472 final, signed by Ursula von der Leyen) establishing a common rating scheme for data centers. I read all fifteen pages, and it corrects what the press said the next day. It is not a label “voluntary for sites above 500 kW”. It is the opposite. Since 2024, every EU data center with at least 500 kW of IT power has already been required to report its energy and water performance each year to a European database, under article 12 of the Energy Efficiency Directive; two reporting rounds have taken place. The 21 September text automatically generates, from these mandatory reports, an electronic label rating each site on two scales: PUE and WUE. First label on 15 August 2027, then every year. Only sites below 500 kW and those not yet in service take part on a voluntary basis. And article 6 sets a review on 31 December 2028, with the explicit possibility of introducing an aggregate indicator, a certification or an audit of the reported data. The text says so itself: this label is a precursor to minimum standards.",
+                "The Commission adopted a delegated regulation (C(2026) 3472 final, signed by Ursula von der Leyen) establishing a common rating scheme for data centers. The text, fifteen pages long, corrects what the press said the next day. It is not a label “voluntary for sites above 500 kW”. It is the opposite. Since 2024, every EU data center with at least 500 kW of IT power has already been required to report its energy and water performance each year to a European database, under article 12 of the Energy Efficiency Directive; two reporting rounds have taken place. The 21 September text automatically generates, from these mandatory reports, an electronic label rating each site on two scales: PUE and WUE. First label on 15 August 2027, then every year. Only sites below 500 kW and those not yet in service take part on a voluntary basis. And article 6 sets a review on 31 December 2028, with the explicit possibility of introducing an aggregate indicator, a certification or an audit of the reported data. The text says so itself: this label is a precursor to minimum standards.",
                 "The memorandum also contains the most telling figure in the file: reusing half the waste heat of European data centers would cover the heating of nearly four million homes. The degree is not only a problem; it is a resource being thrown away.",
               ],
             },
@@ -2528,8 +2601,14 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
           text: "On 8 October, Sesterce announced more than €10 billion for an AI campus in Jämsä, Finland, on the site of the former Kaipola paper mill: 200 MW in a first phase, 600 MW in a second, more than a gigawatt targeted eventually. On the scale of part 1, 600 MW is the average power drawn by about 790,000 French people. Ten times Alixan.",
         },
         {
+          type: "figure",
+          src: "/articles/megawatt/kaipola.jpg",
+          alt: "Entrance of the Kaipola paper mill: a red and white building and an elevated conveyor",
+          caption: "The entrance of the Kaipola paper mill, in Jämsä, in July 2021, after it closed. Photo: Tiia Monto, Wikimedia Commons, CC BY-SA 3.0.",
+        },
+        {
           type: "p",
-          text: "I know of no better summary of this article. The permit is suspended in the Drôme in July; in October, the megawatts reappear where it is cold and where a closed mill has left a grid connection. Sesterce promises closed-loop liquid cooling and one renewable megawatt added to the Finnish grid for every megawatt consumed. Two reservations: these figures come from the company’s press release, as relayed by the press, and an announcement, as we have seen, is a request for electricity, not a commitment to build.",
+          text: "I know of no better summary of this article. The permit is suspended in the Drôme on 10 July; on the 27th, Sesterce challenges the suspension before the Conseil d’État; in October, the megawatts reappear where it is cold and where a closed mill has left a grid connection. Sesterce promises closed-loop liquid cooling and one renewable megawatt added to the Finnish grid for every megawatt consumed. Two reservations: these figures come from the company’s press release, as relayed by the press, and an announcement, as we have seen, is a request for electricity, not a commitment to build.",
         },
         { type: "h", id: "boucle", text: "11. The loop, on one page" },
         {
@@ -2538,7 +2617,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "callout",
-          text: "The Grenoble judge did not need to know how much water a prompt uses. He asked for the site’s electrical power, and the thermal power of its backup generators. It was the right question. It is not AI that is moving too fast. It is us who have no grid at its speed, and who, in the meantime, burn gas.",
+          text: "The Grenoble judge did not need to know how much water a prompt uses. He asked for the site’s electrical power, and the thermal power of its backup generators. It was the right question. Individual restraint will change almost nothing. What matters is what providers build their offer on: which electricity, which cooling, which site, and at whose expense. Until that question is answered, the gap is filled with gas.",
         },
       ],
       sourcesLabel: "Main sources",
@@ -2546,11 +2625,18 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         { label: "Administrative court of Grenoble, press release of 10 July 2026" },
         { label: "Reporterre" },
         {
+          label: "ICI Drôme Ardèche, Sesterce’s appeal to the Conseil d’État (27 July 2026)",
+          url: "https://www.ici.fr/auvergne-rhone-alpes/drome-26/alixan/projet-de-super-calculateur-a-rovaltain-sesterce-saisit-le-conseil-d-etat-3373198",
+        },
+        {
           label: "European Commission, delegated regulation C(2026) 3472 final of 21 September 2026, full text",
         },
         { label: "Guidi & Dominici, arXiv:2607.02531 (June 2026, preprint), full text" },
         { label: "Karamperidou et al., Scientific Reports, full text" },
-        { label: "Laurent Carroué, CNES Géoimages / Géoconfluences, July 2025" },
+        {
+          label: "Laurent Carroué, CNES GeoImage (Pléiades image of 4 July 2025) and Géoconfluences (July 2025)",
+          url: "https://cnes.fr/geoimage/etats-unis-virginie-data-center-alley-1er-pole-mondial-de-centres-de-donnees-coeur-cyberespace-de",
+        },
         { label: "IEA, Electricity 2026 and Energy and AI" },
         { label: "Lawrence Berkeley National Laboratory, Queued Up: 2026 Edition" },
         { label: "Cleanview, Bypassing the Grid (mid-2026)" },
@@ -2601,6 +2687,1030 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
       ],
     },
+  },
+  "le-token-et-le-kilowattheure": {
+    fr: {
+      title: "Le token et le kilowattheure",
+      lead: "Ce que 20, 200 ou 500 dollars d’abonnement à une IA achètent vraiment en électricité, et pourquoi le courant, qui ne pèse presque rien dans le prix, est pourtant ce qui manque.",
+      updated: "Publié le 13 octobre 2026",
+      summaryLabel: "En bref",
+      summary: [
+        "L’électricité pèse quelques pourcents du prix d’un token, et quelques centimes par mois dans un abonnement ordinaire.",
+        "C’est pourtant elle qui plafonne l’offre : un forfait d’IA se comporte comme un abonnement de puissance, avec ses paliers et son disjoncteur.",
+        "Le token est bon marché en partie parce que son coût est ailleurs. Ce qui compte, c’est sur quoi les fournisseurs bâtissent leur offre."
+      ],
+      blocks: [
+        {
+          type: "stats",
+          items: [
+            {
+              value: "500 $",
+              label: "par mois : le forfait Pro 500 d’OpenAI, lancé le 29 septembre 2026"
+            },
+            {
+              value: "7 cents",
+              label: "l’électricité que consomme en un mois un abonné à cent questions par jour"
+            }
+          ]
+        },
+        {
+          type: "p",
+          text: "Le 29 septembre 2026, OpenAI a lancé un forfait à 500 dollars par mois. Le même jour, pour les nouveaux abonnés, le forfait à 200 dollars a vu son quota divisé par deux, au même prix."
+        },
+        {
+          type: "p",
+          text: "Vingt-cinq fois le prix d’un abonnement ordinaire. La question qui vient est simple : qu’est-ce qu’on achète, à ce prix-là ? Des tokens, bien sûr, ces fragments de mots que le modèle lit et produit. Mais un token est de l’électricité transformée. Alors j’ai fait le calcul dans l’autre sens : pour 20, 100, 200 ou 500 dollars, à combien d’électricité a-t-on droit ?"
+        },
+        {
+          type: "callout",
+          text: "La réponse tient en deux phrases qui ont l’air de se contredire. L’électricité ne pèse presque rien dans le prix : quelques centimes par mois pour un abonné ordinaire. Et c’est pourtant elle qui fixe la limite de ce qu’on peut vous vendre. Un forfait d’IA n’est pas une facture de kilowattheures. C’est un abonnement de puissance."
+        },
+        {
+          type: "related",
+          href: "/articles/le-megawatt-et-le-degre",
+          label: "L’article précédent",
+          title: "Le mégawatt et le degré",
+          text: "Pourquoi le vrai danger n’est pas la vitesse de l’IA, mais l’écart entre sa vitesse et celle du réseau."
+        },
+        {
+          type: "h",
+          id: "courbes",
+          text: "1. Deux prix qui se tournent le dos"
+        },
+        {
+          type: "p",
+          text: "Le prix du token s’effondre. À qualité égale, il est divisé par dix chaque année selon Andreessen Horowitz, et par 9 à 900 selon le niveau visé d’après Epoch AI. Début 2023, un million de tokens produits coûtait environ 60 dollars ; début septembre 2026, un indice de marché le situait à 0,97 dollar."
+        },
+        {
+          type: "p",
+          text: "Le prix de l’électricité fait le chemin inverse. Aux États-Unis, le kilowattheure résidentiel est passé de 17,3 cents en 2025 à un peu plus de 18 en 2026, environ 5 % de plus, et jusqu’à 7 % par an sur la côte est."
+        },
+        {
+          type: "p",
+          text: "Une nuance, tout de suite. La chute du token ralentit : YipitData ne mesure que 6 % de baisse du prix réellement payé sur les cinq premiers mois de 2026. Et la baisse « à qualité égale » n’est pas celle que voit l’abonné, comme on va le voir avec le forfait à 200 dollars."
+        },
+        {
+          type: "h",
+          id: "forfait",
+          text: "2. Ce que votre forfait achèterait en électricité"
+        },
+        {
+          type: "p",
+          text: "Premier calcul, volontairement naïf : et si tout le prix du forfait partait en courant ? Un data center américain paie son électricité autour de 8 cents le kilowattheure."
+        },
+        {
+          type: "table",
+          head: [
+            "Forfait mensuel",
+            "En électricité",
+            "Équivalent"
+          ],
+          rows: [
+            [
+              "20 $",
+              "250 kWh",
+              "les deux tiers d’un foyer français"
+            ],
+            [
+              "100 $",
+              "1 250 kWh",
+              "3 foyers"
+            ],
+            [
+              "200 $",
+              "2 500 kWh",
+              "6 foyers"
+            ],
+            [
+              "500 $",
+              "6 250 kWh",
+              "16 foyers"
+            ]
+          ],
+          caption: "Hypothèse : 8 cents le kWh. Un foyer français consomme environ 4 700 kWh par an, soit 390 kWh par mois. C’est une image, pas une consommation réelle."
+        },
+        {
+          type: "p",
+          text: "Seize foyers pour un seul abonné. Personne ne consomme ça, évidemment. Mais le tableau donne l’échelle : le prix d’un forfait est énorme par rapport à l’électricité qu’il met en jeu."
+        },
+        {
+          type: "h",
+          id: "reel",
+          text: "3. Ce qu’un abonné consomme vraiment"
+        },
+        {
+          type: "p",
+          text: "Une question à ChatGPT, c’est environ 0,3 wattheure selon Epoch AI, pour une réponse de 500 tokens. Google mesure 0,24 Wh pour Gemini. Cent questions par jour, tous les jours : 0,9 kWh par mois. Sept cents d’électricité, sur un forfait à 20 dollars. Moins d’un demi-pourcent."
+        },
+        {
+          type: "p",
+          text: "Mais ce chiffre vaut pour un modèle standard, et tout dépend du modèle qui répond. Une équipe de l’université de Rhode Island a estimé l’énergie par question d’une trentaine de modèles, pour une question courte et pour une question longue. Voici ce que deviennent les mêmes cent questions par jour."
+        },
+        {
+          type: "table",
+          head: [
+            "Modèle",
+            "Type",
+            "Wh par question, courte à longue",
+            "100 questions par jour, par mois",
+            "Électricité par mois"
+          ],
+          rows: [
+            [
+              "GPT-4.1 nano",
+              "léger",
+              "0,10 à 0,45",
+              "0,3 à 1,4 kWh",
+              "2 à 11 cents"
+            ],
+            [
+              "GPT-4o",
+              "standard",
+              "0,42 à 1,79",
+              "1,3 à 5,4 kWh",
+              "10 à 43 cents"
+            ],
+            [
+              "Claude 3.7 Sonnet",
+              "haut de gamme",
+              "0,84 à 5,52",
+              "2,5 à 17 kWh",
+              "0,20 à 1,30 $"
+            ],
+            [
+              "Claude 3.7 Sonnet, réflexion étendue",
+              "raisonnement",
+              "3,49 à 17,05",
+              "10 à 51 kWh",
+              "0,85 à 4,10 $"
+            ],
+            [
+              "o3",
+              "raisonnement lourd",
+              "7,03 à 39,22",
+              "21 à 118 kWh",
+              "1,70 à 9,40 $"
+            ],
+            [
+              "GPT-5",
+              "raisonnement, 2025",
+              "plus de 18, jusqu’à 40",
+              "54 à 120 kWh",
+              "4,30 à 9,60 $"
+            ]
+          ],
+          caption: "Estimations de Jegham et al. (2025), déduites des temps de réponse et non mesurées. Question courte : 100 tokens lus, 300 produits ; longue : 10 000 lus, 1 500 produits. Électricité à 8 cents le kWh. GPT-5 : estimation du même laboratoire pour une réponse d’environ 1 000 tokens."
+        },
+        {
+          type: "p",
+          text: "Du plus léger au plus lourd, un rapport de 1 à 70. Avec un modèle de raisonnement lourd, cent questions par jour pèsent jusqu’à 118 kWh par mois, près du tiers de la consommation d’un foyer français. C’est ce qui explique la structure des forfaits : les modèles de raisonnement les plus lourds sont en bonne partie réservés aux paliers les plus chers, ou rationnés en dessous. Et même là, l’électricité reste sous les dix dollars par mois."
+        },
+        {
+          type: "p",
+          text: "Et les modèles d’aujourd’hui ? Aucun fournisseur ne publie leur énergie. Mais on connaît leurs prix, et on connaît, pour les modèles de 2025, la part de l’électricité dans le prix du token : 4 % pour GPT-4.1 nano, moins de 1 % pour GPT-4o, 3 % pour o3, aux tarifs de l’époque. En appliquant cette fourchette de 1 à 4 % à la grille actuelle d’OpenAI, on obtient un ordre de grandeur."
+        },
+        {
+          type: "table",
+          head: [
+            "Modèle",
+            "Prix d’une réponse moyenne",
+            "Électricité estimée par réponse",
+            "100 questions par jour, en tokens",
+            "Dont électricité"
+          ],
+          rows: [
+            [
+              "GPT-6 Luna, léger",
+              "0,06 cent",
+              "0,06 à 0,3 Wh",
+              "1,80 $ par mois",
+              "1 à 8 cents"
+            ],
+            [
+              "GPT-6.1 Sol, intermédiaire",
+              "1,2 cent",
+              "1,2 à 6,5 Wh",
+              "36 $ par mois",
+              "0,30 à 1,55 $"
+            ],
+            [
+              "GPT-6 Astra, modèle phare",
+              "6 cents",
+              "6 à 32 Wh",
+              "180 $ par mois",
+              "1,40 à 7,75 $"
+            ]
+          ],
+          caption: "Tarifs officiels de l’API OpenAI au 13 octobre 2026, par million de tokens lus et produits : Luna 0,10 et 0,50 $, Sol 2 et 10 $, Astra 10 et 50 $. Réponse moyenne : 1 000 tokens lus, 1 000 produits. L’énergie est une hypothèse : elle suppose que la part de l’électricité dans le prix n’a pas changé depuis 2025."
+        },
+        {
+          type: "p",
+          text: "Trois choses à lire dans ce tableau. D’un modèle à l’autre, le prix va de 1 à 100. Cent questions par jour au modèle phare valent 180 dollars de tokens par mois, à peu près le prix du forfait à 200 dollars : la grille des forfaits suit celle des modèles. Et sur ces 180 dollars, l’électricité en pèse entre 1,40 et 7,75. La différence, plus de 170 dollars, paie les puces, les bâtiments, la recherche et la marge."
+        },
+        {
+          type: "p",
+          text: "L’estimation tient debout : pour Astra, la fourchette de 6 à 32 Wh encadre les 18 Wh que les chercheurs de Rhode Island attribuaient à GPT-5. Et la grille dit autre chose. Astra coûte deux fois et demie son prédécesseur, GPT-5.6 Sol, pendant que le modèle intermédiaire a vu son prix divisé par deux. Le token baisse au milieu de la gamme. À la pointe, il monte."
+        },
+        {
+          type: "p",
+          text: "Tout change avec les agents, ces programmes qui enchaînent des centaines d’appels en relisant à chaque fois un long contexte. Epoch AI estime à 40 Wh un appel qui embarque 100 000 tokens en entrée. Un agent de programmation qui en fait 500 par jour consomme 20 kWh par jour, 600 par mois : une cinquantaine de dollars d’électricité."
+        },
+        {
+          type: "compare",
+          columns: [
+            {
+              title: "L’abonné ordinaire",
+              items: [
+                {
+                  value: "100",
+                  label: "questions par jour"
+                },
+                {
+                  value: "0,9 kWh",
+                  label: "par mois"
+                },
+                {
+                  value: "7 cents",
+                  label: "d’électricité, pour 20 $ de forfait"
+                }
+              ]
+            },
+            {
+              title: "L’agent qui tourne toute la journée",
+              items: [
+                {
+                  value: "500",
+                  label: "appels par jour, 100 000 tokens de contexte chacun"
+                },
+                {
+                  value: "600 kWh",
+                  label: "par mois, plus qu’un foyer français"
+                },
+                {
+                  value: "~50 $",
+                  label: "d’électricité, pour 200 ou 500 $ de forfait"
+                }
+              ]
+            }
+          ],
+          caption: "Ordres de grandeur d’après Epoch AI (février 2025). Le second cas est une illustration haute : la mise en cache du contexte réduit fortement l’énergie réelle."
+        },
+        {
+          type: "p",
+          text: "Un rapport de près de 1 à 700 entre les deux, pour des forfaits qui vont de 1 à 25. Le cabinet SemiAnalysis a fait le test en juin 2026 : en poussant un forfait à 200 dollars jusqu’à sa limite hebdomadaire, on consomme l’équivalent de 8 000 dollars de tokens au tarif public chez Anthropic, et de 14 000 chez OpenAI."
+        },
+        {
+          type: "p",
+          text: "Retenez deux choses. Même l’abonné qui sature son forfait ne consomme pas en électricité ce qu’il paie. Et le fournisseur lui vend ses tokens très en dessous de son propre tarif public. Ce n’est donc ni le courant ni le token qui fixent le prix du forfait."
+        },
+        {
+          type: "h",
+          id: "watt",
+          text: "4. Le watt, pas le kilowattheure"
+        },
+        {
+          type: "p",
+          text: "Ce qui fixe le prix, c’est la rareté de la puissance. En mars 2026, Nvidia a fait du « token par watt » son indicateur central. Le raisonnement est celui d’un industriel : un data center d’un gigawatt ne devient pas un data center de deux gigawatts sans un nouveau raccordement, qui prend des années. À puissance fixe, le chiffre d’affaires dépend du nombre de tokens qu’on tire de chaque watt."
+        },
+        {
+          type: "p",
+          text: "Reprenez le site d’Alixan du premier article : 1,5 milliard d’euros d’investissement pour plus de 60 MW. Sa consommation d’une année, à 8 centimes le kilowattheure, coûterait environ 42 millions. Moins de 3 % de l’investissement."
+        },
+        {
+          type: "p",
+          text: "Voilà pourquoi le prix du kilowattheure ne freine rien. Quand l’électricité représente quelques pourcents du coût et que chaque mégawatt disponible rapporte bien plus qu’il ne coûte, un opérateur paie n’importe quel mégawatt : une turbine à gaz, une centrale privée, un contrat nucléaire sur vingt ans. Le kilowattheure est bon marché. C’est le kilowatt qui manque."
+        },
+        {
+          type: "h",
+          id: "abonnement",
+          text: "5. Un forfait est un abonnement de puissance"
+        },
+        {
+          type: "p",
+          text: "Regardez votre contrat d’électricité. Vous payez deux choses : les kilowattheures consommés, et un abonnement pour une puissance, 6 ou 9 kVA. Si vous dépassez cette puissance, le disjoncteur saute, même si vous n’avez presque rien consommé dans le mois."
+        },
+        {
+          type: "p",
+          text: "Les forfaits d’IA ont gardé la seconde moitié et jeté la première. Pas de compteur de tokens, mais des plafonds : une fenêtre de quelques heures, puis une limite par semaine. La limite de session, c’est le disjoncteur. Et les paliers s’appellent ×5, ×20 : des puissances souscrites."
+        },
+        {
+          type: "table",
+          head: [
+            "Forfait OpenAI",
+            "Prix",
+            "Usage, en multiples de Plus",
+            "Prix par unité d’usage"
+          ],
+          rows: [
+            [
+              "Plus",
+              "20 $",
+              "1",
+              "20 $"
+            ],
+            [
+              "Pro 200, nouveaux abonnés",
+              "200 $",
+              "10",
+              "20 $"
+            ],
+            [
+              "Pro 500",
+              "500 $",
+              "25",
+              "20 $"
+            ],
+            [
+              "Pro 200, ancien quota",
+              "200 $",
+              "20",
+              "10 $"
+            ]
+          ],
+          caption: "Multiples rapportés par la presse au lancement de Pro 500 (fin septembre 2026). OpenAI vend aussi un Pro 100, dont le multiple n’est pas confirmé."
+        },
+        {
+          type: "p",
+          text: "La grille est devenue parfaitement linéaire : 20 dollars par unité d’usage, du bas en haut de l’échelle. Il n’y a plus de remise au volume. C’est la signature d’une ressource rationnée : on ne brade pas ce qu’on n’a pas en quantité."
+        },
+        {
+          type: "p",
+          text: "Et pour le forfait à 200 dollars, le prix de l’unité vient de doubler en une nuit. Pendant que les courbes annoncent un token divisé par dix chaque année, l’abonné, lui, en reçoit deux fois moins pour le même prix."
+        },
+        {
+          type: "p",
+          text: "Dernier indice : le forfait à 500 dollars est le seul à donner accès à un mode « Ultrafast », annoncé huit fois plus rapide. On ne vous vend plus seulement une quantité. On vous vend un débit. C’est exactement la différence entre le kilowattheure et le kilowatt. La grille de l’API fait la même chose : cinq vitesses pour le même token, de Batch à Ultrafast, et un token lu deux fois plus cher quand le contexte est long."
+        },
+        {
+          type: "h",
+          id: "bourse",
+          text: "6. Le token entre en bourse, comme le courant"
+        },
+        {
+          type: "p",
+          text: "Quand une ressource devient standard et rare, elle finit sur un marché à terme. C’est en train d’arriver."
+        },
+        {
+          type: "list",
+          items: [
+            "Le CME, le plus grand marché de produits dérivés au monde, prépare des contrats à terme sur la location de GPU. Le régulateur américain a repoussé leur lancement au 9 novembre, le temps de vérifier que l’indice de prix n’est pas manipulable.",
+            "ICE prépare les siens sur un indice de calcul « normalisé en énergie ».",
+            "Nodal Exchange a annoncé les siens le 3 septembre. Nodal est une bourse d’électricité.",
+            "La bourse de Shanghai travaille, selon Reuters, à des contrats à terme sur les tokens eux-mêmes.",
+            "Un article académique de mars 2026 propose un « token d’inférence standard », explicitement calqué sur les contrats d’électricité."
+          ]
+        },
+        {
+          type: "p",
+          text: "Le parallèle a une limite, et elle est de taille. Un électron vaut un électron. Un token ne vaut pas un token : deux modèles ne produisent pas la même qualité, et le même GPU se loue entre 1,79 et 10 dollars de l’heure selon le fournisseur. Le token n’est pas encore une matière première. Mais tout le monde s’organise comme s’il allait le devenir."
+        },
+        {
+          type: "h",
+          id: "cout",
+          text: "7. Ce que le prix ne contient pas"
+        },
+        {
+          type: "p",
+          text: "Si l’électricité pèse si peu dans le prix du token, où est passé son coût ? Dans le premier article. Sur PJM, le plus grand marché électrique américain, l’IEEFA attribue aux data centers 63 % de la hausse de l’enchère 2025-26 : 9,3 milliards de dollars répercutés sur tous les clients. Sur une facture de l’Ohio ou de l’ouest du Maryland, cela fait 16 à 18 dollars de plus par mois."
+        },
+        {
+          type: "p",
+          text: "Mettez les deux chiffres côte à côte. Un abonnement à une IA : 20 dollars par mois. La hausse de la facture d’électricité d’un ménage qui n’a pas d’abonnement : 16 à 18 dollars par mois. Le token est bon marché en partie parce qu’une part de son coût est payée par quelqu’un d’autre."
+        },
+        {
+          type: "p",
+          text: "L’objection sérieuse : la baisse du prix du token reflète aussi de vrais progrès. Google annonce une énergie par requête divisée par 33 en un an, et une étude du MIT attribue aux seuls algorithmes un gain d’environ trois par an. C’est exact. Mais l’efficacité par token ne dit rien du total : ce qui devient moins cher devient plus utilisé, et la consommation des data centers a augmenté de 17 % la même année."
+        },
+        {
+          type: "p",
+          text: "C’est pour cela que la sobriété de chacun ne changera presque rien. À quelques cents d’électricité par mois, l’abonné ordinaire n’a presque aucun levier. Le seul qui existe est le choix du modèle, et c’est de plus en plus le fournisseur qui le fait à sa place, en orientant chaque question vers le modèle qu’il juge adapté. Le levier est du côté de l’offre : quelle électricité, quel site, quel refroidissement, et qui paie le raccordement."
+        },
+        {
+          type: "p",
+          text: "Et c’est là que la question devient celle de la souveraineté. Tant que vos modèles tournent chez un fournisseur dont vous ne voyez que le tarif, vous héritez de tout le reste sans le savoir. Avoir ses propres modèles, hébergés là où l’on peut vérifier ce qui les alimente, ne consomme pas moins par nature. Mais cela rend le choix possible."
+        },
+        {
+          type: "h",
+          id: "inconnues",
+          text: "8. Ce que je ne sais pas"
+        },
+        {
+          type: "list",
+          items: [
+            "Les énergies par modèle sont des estimations sur des modèles de 2025, déduites des temps de réponse. Pour les modèles actuels, il n’existe aucun chiffre : mon estimation applique aux tarifs d’aujourd’hui la part d’électricité de 2025, entre 1 et 4 %, ce qui est une hypothèse et non une mesure. L’estimation de GPT-5 est de seconde main.",
+          "L’énergie des tokens lus en entrée, qui font l’essentiel de l’usage des agents, n’est publiée par aucun fournisseur. Mon agent à 600 kWh par mois est une illustration haute, pas une mesure.",
+            "Les multiples d’usage des forfaits OpenAI viennent d’articles de presse. Je n’ai pas pu ouvrir les notes de version d’OpenAI.",
+            "Le test de SemiAnalysis (8 000 et 14 000 dollars) est cité de seconde main. La valeur au tarif public n’est pas le coût réel du fournisseur.",
+            "Le prix de 8 cents le kilowattheure est une hypothèse. Les contrats des grands opérateurs ne sont pas publics.",
+            "L’indice à 0,97 dollar le million de tokens et l’étude du MIT sont cités de seconde main.",
+            "Personne ne publie la part exacte de l’électricité dans le coût de revient d’un token. « Quelques pourcents » est un ordre de grandeur."
+          ]
+        },
+        {
+          type: "callout",
+          text: "Votre forfait n’achète pas de l’électricité. Il achète un droit d’accès à une puissance que le fournisseur n’a pas en quantité illimitée, et qu’il ira chercher là où elle se branche le plus vite. La bonne question à lui poser n’est pas le prix du token. C’est sur quoi il est bâti."
+        }
+      ],
+      sourcesLabel: "Sources principales",
+      sources: [
+        {
+          label: "OpenAI, notes de version ChatGPT (Pro 500, 29 septembre 2026)",
+          url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          label: "BusinessToday, le forfait à 500 $ et le Pro à 200 $ (30 septembre 2026)",
+          url: "https://www.businesstoday.in/technology/news/story/chatgpt-now-has-a-500-monthly-plan-with-8x-faster-computing-what-happens-to-the-200-pro-tier-558697-2026-09-30"
+        },
+        {
+          label: "WinBuzzer, OpenAI ajoute Pro 500 et réduit le quota du Pro 200",
+          url: "https://winbuzzer.com/2026/09/30/openai-adds-500-chatgpt-pro-cuts-allowance-new-200-subscribers-a005-xcxwbn/"
+        },
+        {
+          label: "Andreessen Horowitz, LLMflation",
+          url: "https://www.a16z.com/llmflation-llm-inference-cost"
+        },
+        {
+          label: "Epoch AI, LLM inference price trends",
+          url: "https://epoch.ai/blog/llm-inference-price-trends"
+        },
+        {
+          label: "Epoch AI, How much energy does ChatGPT use? (février 2025)",
+          url: "https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use"
+        },
+        {
+          label: "Jegham et al., How Hungry is AI? (arXiv 2505.09598, 2025)",
+          url: "https://arxiv.org/abs/2505.09598"
+        },
+        {
+          label: "Data Center Dynamics, l’énergie de GPT-5 estimée par l’université de Rhode Island",
+          url: "https://www.datacenterdynamics.com/en/news/gpt-5-could-require-significantly-more-energy-per-chatgpt-response-compared-to-prior-versions-report/"
+        },
+        {
+          label: "TechCrunch, lancement de GPT-6 Astra (3 septembre 2026)",
+          url: "https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/"
+        },
+        {
+          label: "OpenAI, grille tarifaire de l’API (consultée le 13 octobre 2026)"
+        },
+        {
+          label: "YipitData, cloud LLM pricing trends",
+          url: "https://www.yipitdata.com/resources/blog/cloud-llm-pricing-trends"
+        },
+        {
+          label: "Tech Economics, token deflation (indice Silicon Data, étude MIT)",
+          url: "https://techeconomics.substack.com/p/token-deflation-the-treadmill-killing"
+        },
+        {
+          label: "Utility Dive, tarifs résidentiels et data centers (EIA)",
+          url: "https://www.utilitydive.com/news/data-centers-electricity-residential-rates-eia/820342/"
+        },
+        {
+          label: "36Kr, reprise du test SemiAnalysis sur la valeur des forfaits (juin 2026)",
+          url: "https://eu.36kr.com/en/p/3856818962437125"
+        },
+        {
+          label: "Hashrate Index, GTC 2026 : le token par watt",
+          url: "https://hashrateindex.com/blog/nvidia-gtc-2026-takeaways-infrastructure-operators/"
+        },
+        {
+          label: "TechCrunch, contrats à terme sur le calcul (mai 2026)",
+          url: "https://techcrunch.com/2026/05/28/just-like-gold-and-oil-well-soon-be-able-to-trade-ai-token-futures/"
+        },
+        {
+          label: "ICE et NATIVX, contrats à terme sur le calcul",
+          url: "https://ir.theice.com/press/news-details/2026/ICE-and-NATIVX-to-Launch-Energy-Normalized-Compute-Futures-Contracts/default.aspx"
+        },
+        {
+          label: "Nodal Exchange et Compute Desk (3 septembre 2026)",
+          url: "https://www.nodalexchange.com/wp-content/uploads/Nodal-Exchange-and-Compute-Desk-to-launch-Compute-Futures-Contracts-Sep-3-2026.pdf"
+        },
+        {
+          label: "Reuters, contrats à terme sur tokens à Shanghai",
+          url: "https://finance.yahoo.com/news/exclusive-china-works-ai-token-091135280.html"
+        },
+        {
+          label: "arXiv 2603.21690, Standard Inference Token",
+          url: "https://arxiv.org/html/2603.21690"
+        },
+        {
+          label: "Google, mesure Gemini (août 2025)"
+        },
+        {
+          label: "IEEFA, PJM : voir « Le mégawatt et le degré »"
+        }
+      ]
+    },
+    en: {
+      title: "The token and the kilowatt-hour",
+      lead: "What a $20, $200 or $500 AI subscription really buys in electricity, and why power, which weighs almost nothing in the price, is nevertheless what is missing.",
+      updated: "Published 13 October 2026",
+      summaryLabel: "In short",
+      summary: [
+        "Electricity is a few percent of the price of a token, and a few cents a month in an ordinary subscription.",
+        "Yet it is what caps supply: an AI plan behaves like a power subscription, with its tiers and its circuit breaker.",
+        "The token is cheap partly because its cost sits elsewhere. What matters is what providers build their offer on."
+      ],
+      blocks: [
+        {
+          type: "stats",
+          items: [
+            {
+              value: "$500",
+              label: "a month: OpenAI’s Pro 500 plan, launched on 29 September 2026"
+            },
+            {
+              value: "7 cents",
+              label: "the electricity used in a month by a subscriber asking a hundred questions a day"
+            }
+          ]
+        },
+        {
+          type: "p",
+          text: "On 29 September 2026, OpenAI launched a plan at $500 a month. The same day, for new subscribers, the $200 plan had its allowance cut in half, at the same price."
+        },
+        {
+          type: "p",
+          text: "Twenty-five times the price of an ordinary subscription. The obvious question: what do you buy at that price? Tokens, of course, the fragments of words the model reads and produces. But a token is transformed electricity. So I ran the calculation the other way round: for $20, $100, $200 or $500, how much electricity are you entitled to?"
+        },
+        {
+          type: "callout",
+          text: "The answer fits in two sentences that seem to contradict each other. Electricity weighs almost nothing in the price: a few cents a month for an ordinary subscriber. And yet it is what sets the limit of what can be sold to you. An AI plan is not a bill for kilowatt-hours. It is a power subscription."
+        },
+        {
+          type: "related",
+          href: "/articles/le-megawatt-et-le-degre",
+          label: "The previous article",
+          title: "The megawatt and the degree",
+          text: "Why the real danger is not the speed of AI, but the gap between its speed and the grid’s."
+        },
+        {
+          type: "h",
+          id: "courbes",
+          text: "1. Two prices heading in opposite directions"
+        },
+        {
+          type: "p",
+          text: "The price of a token is collapsing. At equal quality, it is divided by ten every year according to Andreessen Horowitz, and by 9 to 900 depending on the level targeted according to Epoch AI. In early 2023, a million output tokens cost about $60; in early September 2026, a market index put it at $0.97."
+        },
+        {
+          type: "p",
+          text: "The price of electricity is going the other way. In the United States, the residential kilowatt-hour rose from 17.3 cents in 2025 to a little over 18 in 2026, about 5% more, and up to 7% a year on the East Coast."
+        },
+        {
+          type: "p",
+          text: "One caveat, straight away. The fall of the token is slowing: YipitData measures only a 6% drop in the price actually paid over the first five months of 2026. And the fall “at equal quality” is not what the subscriber sees, as the $200 plan will show."
+        },
+        {
+          type: "h",
+          id: "forfait",
+          text: "2. What your plan would buy in electricity"
+        },
+        {
+          type: "p",
+          text: "A first, deliberately naive calculation: what if the whole price of the plan went into power? A US data center pays around 8 cents per kilowatt-hour for its electricity."
+        },
+        {
+          type: "table",
+          head: [
+            "Monthly plan",
+            "In electricity",
+            "Equivalent"
+          ],
+          rows: [
+            [
+              "$20",
+              "250 kWh",
+              "two thirds of a French household"
+            ],
+            [
+              "$100",
+              "1,250 kWh",
+              "3 households"
+            ],
+            [
+              "$200",
+              "2,500 kWh",
+              "6 households"
+            ],
+            [
+              "$500",
+              "6,250 kWh",
+              "16 households"
+            ]
+          ],
+          caption: "Assumption: 8 cents per kWh. A French household uses about 4,700 kWh a year, or 390 kWh a month. This is an image, not actual consumption."
+        },
+        {
+          type: "p",
+          text: "Sixteen households for a single subscriber. Nobody consumes that, obviously. But the table gives the scale: the price of a plan is huge compared with the electricity it involves."
+        },
+        {
+          type: "h",
+          id: "reel",
+          text: "3. What a subscriber actually consumes"
+        },
+        {
+          type: "p",
+          text: "One question to ChatGPT is about 0.3 watt-hours according to Epoch AI, for a 500-token answer. Google measures 0.24 Wh for Gemini. A hundred questions a day, every day: 0.9 kWh a month. Seven cents of electricity, on a $20 plan. Less than half a percent."
+        },
+        {
+          type: "p",
+          text: "But that figure holds for a standard model, and everything depends on which model answers. A team at the University of Rhode Island estimated the energy per question of some thirty models, for a short question and for a long one. Here is what the same hundred questions a day become."
+        },
+        {
+          type: "table",
+          head: [
+            "Model",
+            "Type",
+            "Wh per question, short to long",
+            "100 questions a day, per month",
+            "Electricity per month"
+          ],
+          rows: [
+            [
+              "GPT-4.1 nano",
+              "light",
+              "0.10 to 0.45",
+              "0.3 to 1.4 kWh",
+              "2 to 11 cents"
+            ],
+            [
+              "GPT-4o",
+              "standard",
+              "0.42 to 1.79",
+              "1.3 to 5.4 kWh",
+              "10 to 43 cents"
+            ],
+            [
+              "Claude 3.7 Sonnet",
+              "high-end",
+              "0.84 to 5.52",
+              "2.5 to 17 kWh",
+              "$0.20 to $1.30"
+            ],
+            [
+              "Claude 3.7 Sonnet, extended thinking",
+              "reasoning",
+              "3.49 to 17.05",
+              "10 to 51 kWh",
+              "$0.85 to $4.10"
+            ],
+            [
+              "o3",
+              "heavy reasoning",
+              "7.03 to 39.22",
+              "21 to 118 kWh",
+              "$1.70 to $9.40"
+            ],
+            [
+              "GPT-5",
+              "reasoning, 2025",
+              "over 18, up to 40",
+              "54 to 120 kWh",
+              "$4.30 to $9.60"
+            ]
+          ],
+          caption: "Estimates by Jegham et al. (2025), inferred from response times rather than measured. Short question: 100 tokens read, 300 produced; long: 10,000 read, 1,500 produced. Electricity at 8 cents per kWh. GPT-5: estimate by the same lab for an answer of about 1,000 tokens."
+        },
+        {
+          type: "p",
+          text: "From the lightest to the heaviest, a ratio of 1 to 70. With a heavy reasoning model, a hundred questions a day weigh up to 118 kWh a month, nearly a third of a French household’s consumption. That explains the structure of the plans: the heaviest reasoning models are largely reserved for the most expensive tiers, or rationed below them. And even there, electricity stays under ten dollars a month."
+        },
+        {
+          type: "p",
+          text: "And today’s models? No provider publishes their energy. But their prices are known, and for the 2025 models we know the share of electricity in the price of a token: 4% for GPT-4.1 nano, less than 1% for GPT-4o, 3% for o3, at the rates of the time. Applying that 1 to 4% range to OpenAI’s current price list gives an order of magnitude."
+        },
+        {
+          type: "table",
+          head: [
+            "Model",
+            "Price of a medium answer",
+            "Estimated electricity per answer",
+            "100 questions a day, in tokens",
+            "Of which electricity"
+          ],
+          rows: [
+            [
+              "GPT-6 Luna, light",
+              "0.06 cent",
+              "0.06 to 0.3 Wh",
+              "$1.80 a month",
+              "1 to 8 cents"
+            ],
+            [
+              "GPT-6.1 Sol, mid-range",
+              "1.2 cents",
+              "1.2 to 6.5 Wh",
+              "$36 a month",
+              "$0.30 to $1.55"
+            ],
+            [
+              "GPT-6 Astra, flagship",
+              "6 cents",
+              "6 to 32 Wh",
+              "$180 a month",
+              "$1.40 to $7.75"
+            ]
+          ],
+          caption: "Official OpenAI API prices on 13 October 2026, per million tokens read and produced: Luna $0.10 and $0.50, Sol $2 and $10, Astra $10 and $50. Medium answer: 1,000 tokens read, 1,000 produced. The energy is an assumption: it supposes that the share of electricity in the price has not changed since 2025."
+        },
+        {
+          type: "p",
+          text: "Three things to read in this table. From one model to the next, the price ranges from 1 to 100. A hundred questions a day to the flagship are worth $180 of tokens a month, roughly the price of the $200 plan: the grid of plans follows the grid of models. And of those $180, electricity accounts for between $1.40 and $7.75. The difference, more than $170, pays for the chips, the buildings, the research and the margin."
+        },
+        {
+          type: "p",
+          text: "The estimate holds up: for Astra, the 6 to 32 Wh range brackets the 18 Wh the Rhode Island researchers attributed to GPT-5. And the price list says something else. Astra costs two and a half times its predecessor, GPT-5.6 Sol, while the mid-range model has seen its price halved. The token is falling in the middle of the range. At the frontier, it is rising."
+        },
+        {
+          type: "p",
+          text: "Everything changes with agents, the programs that chain hundreds of calls and re-read a long context each time. Epoch AI estimates 40 Wh for a call carrying 100,000 input tokens. A coding agent making 500 of them a day uses 20 kWh a day, 600 a month: about fifty dollars of electricity."
+        },
+        {
+          type: "compare",
+          columns: [
+            {
+              title: "The ordinary subscriber",
+              items: [
+                {
+                  value: "100",
+                  label: "questions a day"
+                },
+                {
+                  value: "0.9 kWh",
+                  label: "a month"
+                },
+                {
+                  value: "7 cents",
+                  label: "of electricity, for a $20 plan"
+                }
+              ]
+            },
+            {
+              title: "The agent running all day",
+              items: [
+                {
+                  value: "500",
+                  label: "calls a day, 100,000 tokens of context each"
+                },
+                {
+                  value: "600 kWh",
+                  label: "a month, more than a French household"
+                },
+                {
+                  value: "~$50",
+                  label: "of electricity, for a $200 or $500 plan"
+                }
+              ]
+            }
+          ],
+          caption: "Orders of magnitude based on Epoch AI (February 2025). The second case is a high-end illustration: context caching sharply reduces the real energy."
+        },
+        {
+          type: "p",
+          text: "A ratio of nearly 1 to 700 between the two, for plans that range from 1 to 25. The firm SemiAnalysis ran the test in June 2026: pushing a $200 plan to its weekly limit consumes the equivalent of $8,000 of tokens at list price at Anthropic, and $14,000 at OpenAI."
+        },
+        {
+          type: "p",
+          text: "Keep two things in mind. Even the subscriber who maxes out the plan does not use in electricity what they pay. And the provider sells them tokens far below its own list price. So neither power nor the token sets the price of the plan."
+        },
+        {
+          type: "h",
+          id: "watt",
+          text: "4. The watt, not the kilowatt-hour"
+        },
+        {
+          type: "p",
+          text: "What sets the price is the scarcity of power capacity. In March 2026, Nvidia made “tokens per watt” its central metric. The reasoning is an industrialist’s: a one-gigawatt data center does not become a two-gigawatt data center without a new grid connection, which takes years. At fixed power, revenue depends on how many tokens you get out of each watt."
+        },
+        {
+          type: "p",
+          text: "Take the Alixan site from the first article: €1.5 billion of investment for more than 60 MW. A year of its consumption, at 8 cents per kilowatt-hour, would cost about 42 million. Less than 3% of the investment."
+        },
+        {
+          type: "p",
+          text: "That is why the price of the kilowatt-hour slows nothing down. When electricity is a few percent of the cost and every available megawatt earns far more than it costs, an operator will pay for any megawatt: a gas turbine, a private power plant, a twenty-year nuclear contract. The kilowatt-hour is cheap. It is the kilowatt that is missing."
+        },
+        {
+          type: "h",
+          id: "abonnement",
+          text: "5. A plan is a power subscription"
+        },
+        {
+          type: "p",
+          text: "Look at a French electricity contract. You pay for two things: the kilowatt-hours you use, and a subscription for a power level, 6 or 9 kVA. If you exceed that power, the circuit breaker trips, even if you have used almost nothing that month."
+        },
+        {
+          type: "p",
+          text: "AI plans kept the second half and threw away the first. No token meter, but caps: a window of a few hours, then a weekly limit. The session limit is the circuit breaker. And the tiers are called 5x, 20x: subscribed power levels."
+        },
+        {
+          type: "table",
+          head: [
+            "OpenAI plan",
+            "Price",
+            "Usage, in multiples of Plus",
+            "Price per unit of usage"
+          ],
+          rows: [
+            [
+              "Plus",
+              "$20",
+              "1",
+              "$20"
+            ],
+            [
+              "Pro 200, new subscribers",
+              "$200",
+              "10",
+              "$20"
+            ],
+            [
+              "Pro 500",
+              "$500",
+              "25",
+              "$20"
+            ],
+            [
+              "Pro 200, previous allowance",
+              "$200",
+              "20",
+              "$10"
+            ]
+          ],
+          caption: "Multiples reported by the press at the launch of Pro 500 (late September 2026). OpenAI also sells a Pro 100, whose multiple is not confirmed."
+        },
+        {
+          type: "p",
+          text: "The grid has become perfectly linear: $20 per unit of usage, from the bottom of the ladder to the top. There is no volume discount any more. That is the signature of a rationed resource: you do not discount what you do not have in quantity."
+        },
+        {
+          type: "p",
+          text: "And for the $200 plan, the price of a unit doubled overnight. While the curves announce a token divided by ten every year, the subscriber gets half as many for the same price."
+        },
+        {
+          type: "p",
+          text: "One last clue: the $500 plan is the only one with access to an “Ultrafast” mode, announced as eight times faster. You are no longer sold only a quantity. You are sold a rate. That is exactly the difference between the kilowatt-hour and the kilowatt. The API price list does the same: five speeds for the same token, from Batch to Ultrafast, and a token read that costs twice as much when the context is long."
+        },
+        {
+          type: "h",
+          id: "bourse",
+          text: "6. The token goes to the exchange, like power"
+        },
+        {
+          type: "p",
+          text: "When a resource becomes standard and scarce, it ends up on a futures market. That is happening now."
+        },
+        {
+          type: "list",
+          items: [
+            "CME, the world’s largest derivatives marketplace, is preparing futures on GPU rental. The US regulator pushed their launch back to 9 November, to check that the price index cannot be manipulated.",
+            "ICE is preparing its own on an “energy-normalized” compute index.",
+            "Nodal Exchange announced its own on 3 September. Nodal is an electricity exchange.",
+            "The Shanghai Futures Exchange is working, according to Reuters, on futures on tokens themselves.",
+            "An academic paper from March 2026 proposes a “standard inference token”, explicitly modelled on electricity contracts."
+          ]
+        },
+        {
+          type: "p",
+          text: "The parallel has a limit, and a big one. An electron is an electron. A token is not a token: two models do not produce the same quality, and the same GPU rents for $1.79 to $10 an hour depending on the provider. The token is not yet a commodity. But everyone is getting organised as if it were about to become one."
+        },
+        {
+          type: "h",
+          id: "cout",
+          text: "7. What the price does not contain"
+        },
+        {
+          type: "p",
+          text: "If electricity weighs so little in the price of a token, where did its cost go? Into the first article. On PJM, the largest US electricity market, IEEFA attributes 63% of the increase in the 2025–26 auction to data centers: $9.3 billion passed on to all customers. On a bill in Ohio or western Maryland, that is $16 to $18 more a month."
+        },
+        {
+          type: "p",
+          text: "Put the two numbers side by side. An AI subscription: $20 a month. The increase in the electricity bill of a household that has no subscription: $16 to $18 a month. The token is cheap partly because part of its cost is paid by someone else."
+        },
+        {
+          type: "p",
+          text: "The serious objection: the falling price of the token also reflects real progress. Google reports energy per query divided by 33 in a year, and an MIT study attributes a gain of about three a year to algorithms alone. That is true. But efficiency per token says nothing about the total: what becomes cheaper gets used more, and data-center consumption rose 17% in the same year."
+        },
+        {
+          type: "p",
+          text: "That is why individual restraint will change almost nothing. At a few cents of electricity a month, the ordinary subscriber has almost no lever. The only one that exists is the choice of model, and more and more it is the provider that makes it for them, by routing each question to the model it deems suitable. The lever is on the supply side: which electricity, which site, which cooling, and who pays for the connection."
+        },
+        {
+          type: "p",
+          text: "And that is where the question becomes one of sovereignty. As long as your models run at a provider of which you only see the price list, you inherit everything else without knowing it. Having your own models, hosted where you can check what powers them, does not consume less by nature. But it makes the choice possible."
+        },
+        {
+          type: "h",
+          id: "inconnues",
+          text: "8. What I do not know"
+        },
+        {
+          type: "list",
+          items: [
+            "The per-model energy figures are estimates on 2025 models, inferred from response times. For current models, no figure exists: my estimate applies the 2025 share of electricity, between 1 and 4%, to today’s prices, which is an assumption and not a measurement. The GPT-5 estimate is second-hand.",
+          "The energy of input tokens, which make up most of what agents use, is not published by any provider. My 600 kWh-a-month agent is a high-end illustration, not a measurement.",
+            "The usage multiples of OpenAI’s plans come from press articles. I could not open OpenAI’s release notes.",
+            "The SemiAnalysis test ($8,000 and $14,000) is cited second-hand. Value at list price is not the provider’s actual cost.",
+            "The price of 8 cents per kilowatt-hour is an assumption. The contracts of large operators are not public.",
+            "The index at $0.97 per million tokens and the MIT study are cited second-hand.",
+            "Nobody publishes the exact share of electricity in the cost of producing a token. “A few percent” is an order of magnitude."
+          ]
+        },
+        {
+          type: "callout",
+          text: "Your plan does not buy electricity. It buys a right of access to power capacity that the provider does not have in unlimited quantity, and that it will go and find wherever it can be connected fastest. The right question to ask it is not the price of the token. It is what the token is built on."
+        }
+      ],
+      sourcesLabel: "Main sources",
+      sources: [
+        {
+          label: "OpenAI, ChatGPT release notes (Pro 500, 29 September 2026)",
+          url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+        },
+        {
+          label: "BusinessToday, the $500 plan and the $200 Pro (30 September 2026)",
+          url: "https://www.businesstoday.in/technology/news/story/chatgpt-now-has-a-500-monthly-plan-with-8x-faster-computing-what-happens-to-the-200-pro-tier-558697-2026-09-30"
+        },
+        {
+          label: "WinBuzzer, OpenAI adds Pro 500 and cuts the Pro 200 allowance",
+          url: "https://winbuzzer.com/2026/09/30/openai-adds-500-chatgpt-pro-cuts-allowance-new-200-subscribers-a005-xcxwbn/"
+        },
+        {
+          label: "Andreessen Horowitz, LLMflation",
+          url: "https://www.a16z.com/llmflation-llm-inference-cost"
+        },
+        {
+          label: "Epoch AI, LLM inference price trends",
+          url: "https://epoch.ai/blog/llm-inference-price-trends"
+        },
+        {
+          label: "Epoch AI, How much energy does ChatGPT use? (February 2025)",
+          url: "https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use"
+        },
+        {
+          label: "Jegham et al., How Hungry is AI? (arXiv 2505.09598, 2025)",
+          url: "https://arxiv.org/abs/2505.09598"
+        },
+        {
+          label: "Data Center Dynamics, GPT-5 energy as estimated by the University of Rhode Island",
+          url: "https://www.datacenterdynamics.com/en/news/gpt-5-could-require-significantly-more-energy-per-chatgpt-response-compared-to-prior-versions-report/"
+        },
+        {
+          label: "TechCrunch, launch of GPT-6 Astra (3 September 2026)",
+          url: "https://techcrunch.com/2026/09/03/openai-launches-astra-its-powerful-and-controversial-new-model/"
+        },
+        {
+          label: "OpenAI, API price list (accessed 13 October 2026)"
+        },
+        {
+          label: "YipitData, cloud LLM pricing trends",
+          url: "https://www.yipitdata.com/resources/blog/cloud-llm-pricing-trends"
+        },
+        {
+          label: "Tech Economics, token deflation (Silicon Data index, MIT study)",
+          url: "https://techeconomics.substack.com/p/token-deflation-the-treadmill-killing"
+        },
+        {
+          label: "Utility Dive, residential rates and data centers (EIA)",
+          url: "https://www.utilitydive.com/news/data-centers-electricity-residential-rates-eia/820342/"
+        },
+        {
+          label: "36Kr, report on the SemiAnalysis test of plan value (June 2026)",
+          url: "https://eu.36kr.com/en/p/3856818962437125"
+        },
+        {
+          label: "Hashrate Index, GTC 2026: tokens per watt",
+          url: "https://hashrateindex.com/blog/nvidia-gtc-2026-takeaways-infrastructure-operators/"
+        },
+        {
+          label: "TechCrunch, compute futures (May 2026)",
+          url: "https://techcrunch.com/2026/05/28/just-like-gold-and-oil-well-soon-be-able-to-trade-ai-token-futures/"
+        },
+        {
+          label: "ICE and NATIVX, compute futures",
+          url: "https://ir.theice.com/press/news-details/2026/ICE-and-NATIVX-to-Launch-Energy-Normalized-Compute-Futures-Contracts/default.aspx"
+        },
+        {
+          label: "Nodal Exchange and Compute Desk (3 September 2026)",
+          url: "https://www.nodalexchange.com/wp-content/uploads/Nodal-Exchange-and-Compute-Desk-to-launch-Compute-Futures-Contracts-Sep-3-2026.pdf"
+        },
+        {
+          label: "Reuters, token futures in Shanghai",
+          url: "https://finance.yahoo.com/news/exclusive-china-works-ai-token-091135280.html"
+        },
+        {
+          label: "arXiv 2603.21690, Standard Inference Token",
+          url: "https://arxiv.org/html/2603.21690"
+        },
+        {
+          label: "Google, Gemini measurement (August 2025)"
+        },
+        {
+          label: "IEEFA, PJM: see “The megawatt and the degree”"
+        }
+      ]
+    }
   },
   mcp: {
     fr: {

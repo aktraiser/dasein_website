@@ -7,11 +7,13 @@ import { McpCover } from "./McpCover";
 import { PhaseoneCover } from "./PhaseoneCover";
 import { PlatformCover } from "./PlatformCover";
 import { SemanticCover } from "./SemanticCover";
+import { TokenCover } from "./TokenCover";
 import { UserAugmentationCover } from "./UserAugmentationCover";
 import { WeakSignalCover } from "./WeakSignalCover";
 
 const covers: Record<ArticleCover, (props: { lang: Locale }) => React.JSX.Element> = {
   energy: EnergyCover,
+  token: TokenCover,
   gigawatt: GigawattCover,
   mcp: McpCover,
   semantic: SemanticCover,

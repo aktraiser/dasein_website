@@ -21,6 +21,7 @@ export type VerticalSlug = (typeof verticalSlugs)[number];
 /** Standalone articles, under /articles/<slug>. */
 export const articleSlugs = [
   "le-gigawatt-et-le-dollar",
+  "le-token-et-le-kilowattheure",
   "le-megawatt-et-le-degre",
   "weak-signal-l-acoustics",
   "phaseone10841",
