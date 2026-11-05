@@ -125,11 +125,11 @@ export const rateLimitArticle: Record<Locale, Article> = {
       },
       {
         type: "p",
-        text: "Le rate limiting est donc une décision d’architecture et de gouvernance, pas un paramètre de SDK. Le fournisseur gère une rareté physique ; l’entreprise, elle, gère une rareté organisationnelle : décider quelles applications et quels agents doivent continuer à fonctionner quand la capacité manque. C’est le fil de cet article."
+        text: "Le rate limiting est donc une décision d’architecture et de gouvernance, pas un paramètre de SDK. Le fournisseur gère une rareté physique ; l’entreprise, elle, gère une rareté organisationnelle : décider quelles applications et quels agents doivent continuer à fonctionner quand la capacité manque."
       },
       {
         type: "p",
-        text: "Ce que cet article apporte. Pris séparément, les mécanismes du rate limiting sont déjà documentés, souvent par des éditeurs de passerelles (Requesty, TrueFoundry, Palo Alto Networks) ou des plateformes (Palantir), et la FinOps Foundation traite le choix entre capacité partagée et réservée (FinOps Foundation). Cet article relie la mécanique et la décision : ce que le quota mesure vraiment, puis qui doit décider de la répartition, avec quelles règles, quel budget, quels risques et quels indicateurs, et enfin ce que la plateforme doit savoir faire pour appliquer ces décisions."
+        text: "Ce que cet article apporte. Pris séparément, les mécanismes du rate limiting sont déjà documentés, souvent par des éditeurs de passerelles (Requesty, TrueFoundry, Palo Alto Networks) ou des plateformes (Palantir), et la FinOps Foundation traite le choix entre capacité partagée et réservée. Ce qui manque, c’est le lien entre la mécanique et la décision : c’est ce lien que cet article construit."
       },
       {
         type: "related",
@@ -1828,11 +1828,11 @@ export const rateLimitArticle: Record<Locale, Article> = {
       },
       {
         type: "p",
-        text: "Rate limiting is therefore an architecture and governance decision, not an SDK setting. The provider manages a physical scarcity; the company manages an organisational one: deciding which applications and which agents must keep running when capacity runs short. That is the thread of this article."
+        text: "Rate limiting is therefore an architecture and governance decision, not an SDK setting. The provider manages a physical scarcity; the company manages an organisational one: deciding which applications and which agents must keep running when capacity runs short."
       },
       {
         type: "p",
-        text: "What this article adds. Taken separately, the mechanisms of rate limiting are already documented, often by gateway vendors (Requesty, TrueFoundry, Palo Alto Networks) or platforms (Palantir), and the FinOps Foundation covers the choice between shared and reserved capacity (FinOps Foundation). This article connects the mechanics and the decision: what the quota really measures, then who should decide the allocation, with which rules, which budget, which risks and which indicators, and finally what the platform must be able to do to enforce those decisions."
+        text: "What this article adds. Taken separately, the mechanisms of rate limiting are already documented, often by gateway vendors (Requesty, TrueFoundry, Palo Alto Networks) or platforms (Palantir), and the FinOps Foundation covers the choice between shared and reserved capacity. What is missing is the link between the mechanics and the decision: that link is what this article builds."
       },
       {
         type: "related",
