@@ -6,6 +6,7 @@ import type { Locale } from "@/lib/i18n";
  * on the /articles page. `cover` picks the illustration in components/covers.
  */
 export type ArticleCover =
+  | "ratelimit"
   | "energy"
   | "token"
   | "gigawatt"
@@ -33,6 +34,19 @@ export type ArticleEntry = {
 };
 
 export const articleIndex: ArticleEntry[] = [
+  {
+    slug: "le-429-n-est-pas-un-bug",
+    seoTitle: { fr: "Le 429 n’est pas un bug : gouverner l’inférence", en: "A 429 is not a bug: governing inference" },
+    date: "2026-11-03",
+    href: "/articles/le-429-n-est-pas-un-bug",
+    cover: "ratelimit",
+    kind: "article",
+    topic: { fr: "Plateforme IA", en: "AI platform" },
+    title: {
+      fr: "Le 429 n’est pas un bug : gouverner la capacité d’inférence chez AWS, Microsoft et Google",
+      en: "A 429 is not a bug: governing inference capacity at AWS, Microsoft and Google",
+    },
+  },
   {
     slug: "le-gigawatt-et-le-dollar",
     date: "2026-10-20",

@@ -58,6 +58,14 @@ const DIAGRAMS: Record<Variant, Record<Locale, string>> = {
     fr: "D’une donnée brute à son sens : la donnée (ID vidéo 84721), le concept (épisode), le contexte (rattaché à un programme), les attributs et relations (genre : sport, saison : 2).",
     en: "From a raw value to its meaning: the data (video ID 84721), the concept (episode), the context (attached to a programme), the attributes and relationships (genre: sport, season: 2).",
   },
+  "seven-levels": {
+    fr: "Les sept facteurs qui peuvent limiter une requête : chez vous, l’instance applicative, le limiteur distribué et la gateway ; chez le fournisseur, son quota, le niveau de service, le périmètre géographique et la capacité physique.",
+    en: "The seven factors that can limit a request: at home, the application instance, the distributed limiter and the gateway; at the provider, its quota, the service tier, the geographic scope and physical capacity.",
+  },
+  "admission-chain": {
+    fr: "La chaîne qui traite un 429 avant le fournisseur : applications et runtime d’agents, passerelle IA, contrôle d’admission, ordonnanceur par classe (critique, standard, différé), routeur, puis AWS, Microsoft et Google, avec l’observabilité tout au long.",
+    en: "The chain that handles a 429 before the provider: applications and agent runtime, AI gateway, admission control, scheduler by class (critical, standard, deferred), router, then AWS, Microsoft and Google, with observability throughout.",
+  },
   "google-machine": {
     fr: "La machine de Google : Google vend les TPU à Broadcom, qui les revend à un véhicule de crédit privé (Compute SPV, Apollo, Blackstone, Morgan Stanley), qui les loue à Anthropic. Google garantit jusqu’à 44 Md$ de loyers des data centers (815 M$ au bilan) ; Broadcom garantit environ 30 Md$ des 35 Md$ de dette.",
     en: "Google’s machine: Google sells the TPUs to Broadcom, which resells them to a private credit vehicle (Compute SPV, Apollo, Blackstone, Morgan Stanley), which leases them to Anthropic. Google guarantees up to $44bn of data centre leases ($815M on its balance sheet); Broadcom guarantees about $30bn of the $35bn of debt.",

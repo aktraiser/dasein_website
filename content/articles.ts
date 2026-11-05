@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/i18n";
 import { gigawattArticle } from "./gigawatt";
+import { rateLimitArticle } from "./ratelimit";
 
 /**
  * Long-form articles attached to an expertise page (one per vertical).
@@ -51,7 +52,9 @@ export type Block =
    * "usecases": the three families of use cases; "auth": user → gateways → MCP identity chain;
    * "gateways": LLM, MCP and agent gateways; "pipeline": the Weak Signal pipeline;
    * "semantic-chain": from a raw value to its meaning; "semantic-house": who builds the semantic foundation;
-   * "google-machine": how Google, Broadcom and private credit carry Anthropic's chips.
+   * "google-machine": how Google, Broadcom and private credit carry Anthropic's chips;
+   * "admission-chain": the platform chain that handles a 429 before the provider;
+   * "seven-levels": the seven factors that can limit an LLM request.
    */
   | {
       type: "diagram";
@@ -69,7 +72,9 @@ export type Block =
         | "pipeline"
         | "semantic-chain"
         | "semantic-house"
-        | "google-machine";
+        | "google-machine"
+        | "admission-chain"
+        | "seven-levels";
     };
 
 export type Article = {
@@ -235,6 +240,7 @@ const PLATFORM_SOURCES = [
 
 /** Articles that stand on their own, published under /articles/<slug>. */
 export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>> = {
+  "le-429-n-est-pas-un-bug": rateLimitArticle,
   "le-gigawatt-et-le-dollar": gigawattArticle,
   "couche-semantique": {
     fr: {

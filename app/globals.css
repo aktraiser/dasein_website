@@ -6340,3 +6340,124 @@ button:hover .arrow {
     transform: none;
   }
 }
+
+/* Admission chain diagram ("Le 429 n’est pas un bug") */
+.acdiag__title {
+  margin: 0 0 14px;
+  font-weight: 600;
+}
+.acdiag__grid {
+  display: grid;
+  gap: 12px;
+}
+.acdiag__main {
+  display: grid;
+  gap: 6px;
+}
+.acdiag__row {
+  display: grid;
+  gap: 8px;
+}
+.acdiag__group {
+  gap: 8px;
+}
+.acdiag__group .adiag__node {
+  background: var(--paper-2);
+}
+.acdiag__arrow {
+  justify-self: center;
+  line-height: 1;
+  color: var(--muted);
+}
+.acdiag__obs {
+  align-content: start;
+  gap: 8px;
+  border-style: dashed;
+  text-align: left;
+}
+.acdiag__caption {
+  margin-top: 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+@media (min-width: 640px) {
+  .acdiag__row--2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .acdiag__row--3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 900px) {
+  .acdiag__grid {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+/* Seven levels diagram ("Le 429 n’est pas un bug") */
+.sldiag__title {
+  margin: 0;
+  font-weight: 600;
+}
+.sldiag__subtitle {
+  margin: 4px 0 14px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.sldiag__group {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid var(--ink);
+  background: var(--paper);
+}
+.sldiag__group-title {
+  margin: 0;
+  font-weight: 600;
+}
+.sldiag__levels {
+  display: grid;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.sldiag__levels > li {
+  display: grid;
+  gap: 4px;
+}
+.sldiag__level {
+  justify-items: start;
+  gap: 4px;
+  text-align: left;
+  background: var(--paper-2);
+}
+.sldiag__head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+}
+.sldiag__tag {
+  padding: 1px 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+}
+.sldiag__tag--alloc {
+  border-style: dashed;
+}
+.sldiag__tag--physical {
+  background: var(--accent);
+}
+.sldiag__arrow {
+  display: block;
+  justify-self: center;
+  margin: 2px auto;
+  width: max-content;
+  line-height: 1;
+  color: var(--muted);
+}

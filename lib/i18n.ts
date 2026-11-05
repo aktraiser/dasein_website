@@ -20,6 +20,7 @@ export type VerticalSlug = (typeof verticalSlugs)[number];
 
 /** Standalone articles, under /articles/<slug>. */
 export const articleSlugs = [
+  "le-429-n-est-pas-un-bug",
   "le-gigawatt-et-le-dollar",
   "le-token-et-le-kilowattheure",
   "le-megawatt-et-le-degre",
