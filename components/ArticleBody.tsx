@@ -1,4 +1,5 @@
 import { ArticleEnd } from "./ArticleEnd";
+import { ArticleToc } from "./ArticleToc";
 import { DealLoops } from "./DealLoops";
 import { DealRegister, GoogleMachineDiagram } from "./GigawattFigures";
 import { AdmissionChainDiagram } from "./AdmissionChainDiagram";
@@ -1168,16 +1169,11 @@ export function ArticleBody({ article, lang, path }: { article: Article; lang: L
   const headings = article.blocks.filter((b): b is Extract<Block, { type: "h" }> => b.type === "h");
   return (
     <div className="article">
-      <nav className="article__toc" aria-label={lang === "fr" ? "Sommaire" : "Contents"}>
-        {headings.map((h) => (
-          <a key={h.id} href={`#${h.id}`}>
-            {h.text}
-          </a>
-        ))}
-        <a href={`/${lang}/glossary`} className="article__toc-glossary">
-          {lang === "fr" ? "Glossaire" : "Glossary"} <span aria-hidden="true">→</span>
-        </a>
-      </nav>
+      <ArticleToc
+        headings={headings.map((h) => ({ id: h.id, text: h.text }))}
+        label={lang === "fr" ? "Sommaire" : "Contents"}
+        glossary={{ href: `/${lang}/glossary`, text: lang === "fr" ? "Glossaire" : "Glossary" }}
+      />
       <div className="article__body">
         <aside className="article__summary">
           <p className="article__summary-label">{article.summaryLabel}</p>

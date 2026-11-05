@@ -3180,12 +3180,26 @@ button:hover .arrow {
     gap: 10px;
     font-size: 14px;
   }
+  .article__toc {
+    max-height: calc(100vh - var(--header-h) - 56px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
   .article__toc a {
+    padding-left: 12px;
+    border-left: 2px solid transparent;
     color: var(--muted);
     line-height: 1.35;
+    transition: color 0.15s, border-color 0.15s;
   }
   .article__toc a:hover {
     color: var(--ink);
+  }
+  .article__toc a[aria-current="location"] {
+    border-left-color: var(--ink);
+    color: var(--ink);
+    font-weight: 500;
   }
 }
 
