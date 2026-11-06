@@ -23,7 +23,6 @@ export const articleSlugs = [
   "quand-la-politique-devient-le-risque",
   "le-429-n-est-pas-un-bug",
   "le-gigawatt-et-le-dollar",
-  "le-token-et-le-kilowattheure",
   "le-megawatt-et-le-degre",
   "weak-signal-l-acoustics",
   "phaseone10841",

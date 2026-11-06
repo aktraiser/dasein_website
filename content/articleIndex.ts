@@ -9,7 +9,6 @@ export type ArticleCover =
   | "midterms"
   | "ratelimit"
   | "energy"
-  | "token"
   | "gigawatt"
   | "weak-signal"
   | "phaseone"
@@ -70,18 +69,6 @@ export const articleIndex: ArticleEntry[] = [
     title: {
       fr: "Le gigawatt et le dollar",
       en: "The gigawatt and the dollar",
-    },
-  },
-  {
-    slug: "le-token-et-le-kilowattheure",
-    date: "2026-10-13",
-    href: "/articles/le-token-et-le-kilowattheure",
-    cover: "token",
-    kind: "article",
-    topic: { fr: "Énergie et infrastructure", en: "Energy and infrastructure" },
-    title: {
-      fr: "Le token et le kilowattheure",
-      en: "The token and the kilowatt-hour",
     },
   },
   {

@@ -13,7 +13,6 @@ function Visual({ visual, lang }: { visual: NewsVisual; lang: Locale }) {
     case "midterms":
     case "energy":
     case "ratelimit":
-    case "token":
     case "gigawatt":
     case "weak-signal":
     case "phaseone":

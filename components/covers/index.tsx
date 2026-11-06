@@ -9,7 +9,6 @@ import { PhaseoneCover } from "./PhaseoneCover";
 import { PlatformCover } from "./PlatformCover";
 import { RateLimitCover } from "./RateLimitCover";
 import { SemanticCover } from "./SemanticCover";
-import { TokenCover } from "./TokenCover";
 import { UserAugmentationCover } from "./UserAugmentationCover";
 import { WeakSignalCover } from "./WeakSignalCover";
 
@@ -17,7 +16,6 @@ const covers: Record<ArticleCover, (props: { lang: Locale }) => React.JSX.Elemen
   midterms: MidtermsCover,
   energy: EnergyCover,
   ratelimit: RateLimitCover,
-  token: TokenCover,
   gigawatt: GigawattCover,
   mcp: McpCover,
   semantic: SemanticCover,
