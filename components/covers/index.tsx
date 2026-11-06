@@ -4,6 +4,7 @@ import { BusinessCover } from "./BusinessCover";
 import { EnergyCover } from "./EnergyCover";
 import { GigawattCover } from "./GigawattCover";
 import { McpCover } from "./McpCover";
+import { MidtermsCover } from "./MidtermsCover";
 import { PhaseoneCover } from "./PhaseoneCover";
 import { PlatformCover } from "./PlatformCover";
 import { RateLimitCover } from "./RateLimitCover";
@@ -13,6 +14,7 @@ import { UserAugmentationCover } from "./UserAugmentationCover";
 import { WeakSignalCover } from "./WeakSignalCover";
 
 const covers: Record<ArticleCover, (props: { lang: Locale }) => React.JSX.Element> = {
+  midterms: MidtermsCover,
   energy: EnergyCover,
   ratelimit: RateLimitCover,
   token: TokenCover,

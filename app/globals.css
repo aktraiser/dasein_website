@@ -6475,3 +6475,49 @@ button:hover .arrow {
   line-height: 1;
   color: var(--muted);
 }
+
+/* Midterms cover: the 45 local ballots, filled when they voted restrictions. */
+.mtcover__cell {
+  fill: var(--paper);
+  stroke: var(--ink);
+  stroke-width: 0.5;
+}
+.mtcover__cell--yes {
+  fill: var(--ink);
+  animation: mtcover-fill 0.5s ease-out both;
+}
+@keyframes mtcover-fill {
+  from {
+    fill: var(--paper);
+  }
+}
+.mtcover__legend {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 1cqw;
+  font-family: var(--font-mono);
+  font-size: 2.2cqw;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--muted);
+  transform: translate(-50%, -50%);
+}
+.mtcover__key {
+  width: 2.2cqw;
+  height: 2.2cqw;
+  margin-left: 1.4cqw;
+  border: 1px solid var(--ink);
+  border-radius: 2px;
+  background: var(--paper);
+}
+.mtcover__key--yes {
+  margin-left: 0;
+  background: var(--ink);
+}
+@media (prefers-reduced-motion: reduce) {
+  .mtcover__cell--yes {
+    animation: none;
+  }
+}

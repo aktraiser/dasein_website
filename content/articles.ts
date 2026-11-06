@@ -1,5 +1,6 @@
 import type { Locale } from "@/lib/i18n";
 import { gigawattArticle } from "./gigawatt";
+import { midtermsArticle } from "./midterms";
 import { rateLimitArticle } from "./ratelimit";
 
 /**
@@ -240,6 +241,7 @@ const PLATFORM_SOURCES = [
 
 /** Articles that stand on their own, published under /articles/<slug>. */
 export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>> = {
+  "quand-la-politique-devient-le-risque": midtermsArticle,
   "le-429-n-est-pas-un-bug": rateLimitArticle,
   "le-gigawatt-et-le-dollar": gigawattArticle,
   "couche-semantique": {

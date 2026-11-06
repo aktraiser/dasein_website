@@ -10,6 +10,7 @@ const CHECK = "M14.6 20.2l3.9 3.9 7.2-7.6";
 
 function Visual({ visual, lang }: { visual: NewsVisual; lang: Locale }) {
   switch (visual) {
+    case "midterms":
     case "energy":
     case "ratelimit":
     case "token":

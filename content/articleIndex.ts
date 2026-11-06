@@ -6,6 +6,7 @@ import type { Locale } from "@/lib/i18n";
  * on the /articles page. `cover` picks the illustration in components/covers.
  */
 export type ArticleCover =
+  | "midterms"
   | "ratelimit"
   | "energy"
   | "token"
@@ -34,6 +35,18 @@ export type ArticleEntry = {
 };
 
 export const articleIndex: ArticleEntry[] = [
+  {
+    slug: "quand-la-politique-devient-le-risque",
+    date: "2026-11-05",
+    href: "/articles/quand-la-politique-devient-le-risque",
+    cover: "midterms",
+    kind: "article",
+    topic: { fr: "Énergie et infrastructure", en: "Energy and infrastructure" },
+    title: {
+      fr: "Data centers : quand la politique devient le risque",
+      en: "Data centers: when politics becomes the risk",
+    },
+  },
   {
     slug: "le-429-n-est-pas-un-bug",
     seoTitle: { fr: "Le 429 n’est pas un bug : gouverner l’inférence", en: "A 429 is not a bug: governing inference" },
