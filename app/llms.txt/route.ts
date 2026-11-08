@@ -1,5 +1,5 @@
 import { articleIndex } from "@/content/articleIndex";
-import { articles, standaloneArticles } from "@/content/articles";
+import { articles } from "@/content/articles";
 import { getDictionary } from "@/content/dictionaries";
 import { locales, siteUrl, type Locale } from "@/lib/i18n";
 
@@ -17,20 +17,20 @@ export async function GET() {
   const parts = [
     "# Dasein",
     `> ${en.meta.description}`,
-    "Dasein is a French Data & AI engineering company. It helps organisations put agentic AI into production: agents for employees (User Augmentation), agents inside business processes (Business Applications), and the shared platform that governs them all (AI Platform), on top of a data and semantic foundation. The site is published in English and French; every article below links to a Markdown version.",
+    "Dasein is a French company that puts AI agents to work in organisations, in three ways: helping teams work with agents (Work with AI), automating business processes (Automate your operations), and designing the architecture that runs agents at scale, under control (Deploy AI at scale). Each offer starts with a short first engagement with a defined scope. The site is published in English and French; every article below links to a Markdown version.",
   ];
 
   for (const lang of locales) {
     const dict = lang === "en" ? en : await getDictionary(lang);
     const t = HEADINGS[lang];
     const line = (entry: (typeof articleIndex)[number]) => {
-      const article = (standaloneArticles[entry.slug] ?? articles[entry.slug])?.[lang];
+      const article = articles[entry.slug]?.[lang];
       return `- [${entry.title[lang]}](${siteUrl}/${lang}${entry.href}.md)${article ? `: ${article.lead}` : ""}`;
     };
     if (lang === "en") {
       parts.push(
         `## ${t.offer}`,
-        dict.verticals.items.map((item) => `- [${item.name}](${siteUrl}/${lang}/expertise/${item.slug}.md): ${item.lead}`).join("\n"),
+        dict.offers.items.map((item) => `- [${item.name}](${siteUrl}/${lang}/offers/${item.slug}): ${item.lead}`).join("\n"),
       );
     }
     parts.push(

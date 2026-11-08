@@ -85,7 +85,7 @@ export const news: NewsItem[] = [
     slug: "ai-platform",
     kind: "article",
     visual: "platform",
-    href: "/expertise/ai-platform",
+    href: "/articles/ai-platform",
     content: {
       en: { title: "The shared foundation that lets every team build its agents", meta: "AI Platform" },
       fr: { title: "Le socle commun qui permet à chaque équipe de construire ses agents", meta: "AI Platform" },
@@ -95,7 +95,7 @@ export const news: NewsItem[] = [
     slug: "business-applications",
     kind: "article",
     visual: "business",
-    href: "/expertise/business-applications",
+    href: "/articles/business-applications",
     content: {
       en: { title: "Agents that work inside your processes, under control", meta: "Business Applications" },
       fr: { title: "Des agents qui travaillent dans vos processus, sous contrôle", meta: "Business Applications" },
@@ -105,7 +105,7 @@ export const news: NewsItem[] = [
     slug: "user-augmentation",
     kind: "article",
     visual: "user-augmentation",
-    href: "/expertise/user-augmentation",
+    href: "/articles/user-augmentation",
     content: {
       en: { title: "Giving every employee agents, without losing control", meta: "User Augmentation" },
       fr: { title: "Donner des agents à chaque collaborateur, sans perdre le contrôle", meta: "User Augmentation" },

@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { getDictionary } from "@/content/dictionaries";
 import { hasLocale } from "@/lib/i18n";
 
-export const alt = "Dasein: Data & AI Engineering";
+export const alt = "Dasein: AI agents at work";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -46,7 +46,7 @@ export default async function Image({ params }: { params: Promise<{ lang: string
         <div style={{ display: "flex", gap: 20, fontSize: 26, color: "#36383c" }}>
           {dict.hero.chain.map((step, i) => (
             <span key={step} style={{ color: i === dict.hero.chain.length - 1 ? "#0e0f11" : "#36383c", fontWeight: i === dict.hero.chain.length - 1 ? 700 : 400 }}>
-              {i > 0 ? "→  " : ""}
+              {i > 0 ? "·  " : ""}
               {step}
             </span>
           ))}

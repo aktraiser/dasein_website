@@ -9,7 +9,7 @@ import { Wordmark } from "./Wordmark";
 
 type Labels = Dictionary["nav"];
 type Menu = Dictionary["navMenu"];
-type Key = "expertise" | "about";
+type Key = "offers" | "about";
 type Entry = { label: string; href: string };
 
 const CLOSE_DELAY = 160;
@@ -31,7 +31,7 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
 
   // Lists built from the content files, so the menu follows the site.
   const panels: Record<Key, { href: string; label: string; explore: string; main: Entry[]; sideTitle: string; side: Entry[] }> = {
-    expertise: { href: "/#verticals", label: labels.expertise, ...menu.expertise },
+    offers: { href: "/#offers", label: labels.offers, ...menu.offers },
     about: { href: "/about", label: labels.about, ...menu.about },
   };
   const keys = Object.keys(panels) as Key[];
@@ -222,10 +222,10 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
               <Link href={path(panels[key].href)} aria-current={isCurrent(panels[key].href) ? "page" : undefined} onClick={closeAll}>
                 {panels[key].label}
               </Link>
-              {/* The verticals, reachable on mobile too (the desktop panel lists them) */}
-              {key === "expertise" && (
+              {/* The offers, reachable on mobile too (the desktop panel lists them) */}
+              {key === "offers" && (
                 <ul className="mobile-nav__sub">
-                  {panels.expertise.main.map((entry) => (
+                  {panels.offers.main.map((entry) => (
                     <li key={entry.href}>
                       <Link
                         href={path(entry.href)}

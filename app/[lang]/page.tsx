@@ -5,10 +5,9 @@ import { HeroTitle } from "@/components/HeroTitle";
 import { CharStrip, Crop } from "@/components/os/Crop";
 import { DitherField } from "@/components/os/DitherField";
 import { Reveal } from "@/components/Reveal";
-import { OfferMap } from "@/components/OfferMap";
+import { Offers } from "@/components/Offers";
 import { SectionHead } from "@/components/SectionHead";
 import { SentDialog } from "@/components/SentDialog";
-import { Verticals } from "@/components/Verticals";
 import { getDictionary } from "@/content/dictionaries";
 import { news } from "@/content/news";
 import { hasLocale } from "@/lib/i18n";
@@ -44,7 +43,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
               <Link href={`/${lang}/contact`} className="biglink">
                 {hero.primary}
               </Link>
-              <Link href={`/${lang}/articles`} className="biglink">
+              <Link href={`/${lang}#offers`} className="biglink">
                 {hero.secondary}
               </Link>
             </p>
@@ -53,14 +52,13 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <CharStrip seed={7} className="hero__strip" />
       </section>
 
-      {/* The three verticals: the claim, the picture, then the detail ------ */}
-      <section id="verticals" className="section offer-section">
+      {/* The three offers, each starting from the client's problem ------- */}
+      <section id="offers" className="section">
         <div className="container">
-          <SectionHead label={dict.verticals.label} title={dict.verticals.title}>
-            {dict.verticals.intro}
+          <SectionHead label={dict.offers.label} title={dict.offers.title}>
+            {dict.offers.intro}
           </SectionHead>
-          <OfferMap data={dict.offer} lang={lang} />
-          <Verticals data={dict.verticals} lang={lang} />
+          <Offers data={dict.offers} lang={lang} />
         </div>
       </section>
 

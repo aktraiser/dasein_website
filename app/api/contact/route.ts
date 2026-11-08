@@ -16,7 +16,15 @@ import nodemailer from "nodemailer";
 
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-type Payload = { name: string; company: string; email: string; project: string };
+type Payload = { name: string; company: string; email: string; project: string; topic: string };
+
+/** Subjects the form offers (optional), named in English for the inbox. */
+const TOPICS: Record<string, string> = {
+  "ways-of-working": "Work with AI",
+  solutions: "Automate your operations",
+  engineering: "Deploy AI at scale",
+  other: "Something else",
+};
 
 function parse(body: unknown): Payload | null {
   if (!body || typeof body !== "object") return null;
@@ -28,6 +36,7 @@ function parse(body: unknown): Payload | null {
     if (typeof value !== "string" || !value.trim() || value.length > 5000) return null;
     out[field] = value.trim();
   }
+  out.topic = typeof data.topic === "string" && Object.hasOwn(TOPICS, data.topic) ? TOPICS[data.topic] : "";
   return EMAIL.test(out.email) ? out : null;
 }
 
@@ -101,9 +110,9 @@ export async function POST(request: Request) {
       from: CONTACT_FROM || SMTP_USER,
       to: CONTACT_TO,
       replyTo: payload.email,
-      subject: `New project: ${payload.company} (${payload.name})`,
-      text: `${payload.name}, ${payload.company}\n${payload.email}\n\n${payload.project}`,
-      html: `<p><strong>${escape(payload.name)}</strong>, ${escape(payload.company)}<br>${escape(payload.email)}</p><p style="white-space:pre-wrap">${escape(payload.project)}</p>`,
+      subject: `New project${payload.topic ? ` (${payload.topic})` : ""}: ${payload.company} (${payload.name})`,
+      text: `${payload.name}, ${payload.company}\n${payload.email}${payload.topic ? `\nSubject: ${payload.topic}` : ""}\n\n${payload.project}`,
+      html: `<p><strong>${escape(payload.name)}</strong>, ${escape(payload.company)}<br>${escape(payload.email)}${payload.topic ? `<br>Subject: ${escape(payload.topic)}` : ""}</p><p style="white-space:pre-wrap">${escape(payload.project)}</p>`,
     });
   } catch (error) {
     // Never log the credentials: only the reason reported by the mail server.

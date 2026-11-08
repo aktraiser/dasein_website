@@ -20,7 +20,7 @@ const nextConfig: NextConfig = {
   async rewrites() {
     return [
       // Markdown versions for AI agents: "/fr/articles/mcp.md", "/fr/glossary.md".
-      { source: "/:lang(en|fr)/:section(articles|expertise)/:slug([a-z0-9-]+).md", destination: "/:lang/md/:section/:slug" },
+      { source: "/:lang(en|fr)/:section(articles)/:slug([a-z0-9-]+).md", destination: "/:lang/md/:section/:slug" },
       { source: "/:lang(en|fr)/glossary.md", destination: "/:lang/md/glossary" },
     ];
   },
@@ -34,7 +34,9 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       // Pages removed from the site.
-      { source: "/:lang(en|fr)/expertise", destination: "/:lang#verticals", permanent: true },
+      { source: "/:lang(en|fr)/expertise", destination: "/:lang#offers", permanent: true },
+      // The former expertise pages are articles now (their ".md" versions too).
+      { source: "/:lang(en|fr)/expertise/:slug", destination: "/:lang/articles/:slug", permanent: true },
       { source: "/:lang(en|fr)/:old(lab|work)", destination: "/:lang", permanent: true },
       { source: "/:lang(en|fr)/:old(lab|work)/:rest*", destination: "/:lang", permanent: true },
     ];

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ArticleBody } from "@/components/ArticleBody";
 import { Cover } from "@/components/covers";
 import { articleIndex } from "@/content/articleIndex";
-import { standaloneArticles } from "@/content/articles";
+import { articles } from "@/content/articles";
 import { getDictionary } from "@/content/dictionaries";
 import { articleSlugs, hasLocale, type Route } from "@/lib/i18n";
 import { articleJsonLd, jsonLdScript } from "@/lib/jsonld";
@@ -18,7 +18,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/[lang]/articles/[slug]">) {
   const { lang, slug } = await params;
   if (!hasLocale(lang)) return {};
-  const article = standaloneArticles[slug]?.[lang];
+  const article = articles[slug]?.[lang];
   const entry = articleIndex.find((item) => item.slug === slug);
   if (!article) return {};
   return pageMetadata(lang, `/articles/${slug}` as Route, article.title, article.lead, {
@@ -32,7 +32,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/articles/[
 export default async function ArticlePage({ params }: PageProps<"/[lang]/articles/[slug]">) {
   const { lang, slug } = await params;
   if (!hasLocale(lang)) notFound();
-  const article = standaloneArticles[slug]?.[lang];
+  const article = articles[slug]?.[lang];
   if (!article) notFound();
   const { articlesPage } = await getDictionary(lang);
   const entry = articleIndex.find((item) => item.slug === slug);

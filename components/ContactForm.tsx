@@ -7,7 +7,7 @@ import type { Locale } from "@/lib/i18n";
 
 type Status = "idle" | "sending" | "success" | "error" | "invalid";
 
-export function ContactForm({ labels, lang }: { labels: Dictionary["contact"]; lang: Locale }) {
+export function ContactForm({ labels, lang, topic }: { labels: Dictionary["contact"]; lang: Locale; topic: string }) {
   const router = useRouter();
   const [status, setStatus] = useState<Status>("idle");
 
@@ -62,6 +62,17 @@ export function ContactForm({ labels, lang }: { labels: Dictionary["contact"]; l
       <div className="field">
         <label htmlFor="email">{labels.email}</label>
         <input id="email" name="email" type="email" autoComplete="email" required maxLength={320} />
+      </div>
+      <div className="field">
+        <label htmlFor="topic">{labels.topic}</label>
+        <select id="topic" name="topic" defaultValue={topic}>
+          <option value="">{labels.topicNone}</option>
+          {Object.entries(labels.topics).map(([value, label]) => (
+            <option key={value} value={value}>
+              {label}
+            </option>
+          ))}
+        </select>
       </div>
       <div className="field">
         <label htmlFor="project">{labels.project}</label>

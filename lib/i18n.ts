@@ -14,9 +14,9 @@ export const siteUrl = (
 /** Company page on LinkedIn (footer link and structured data). */
 export const linkedinUrl = "https://www.linkedin.com/company/dasein-ai/";
 
-/** One page per vertical, under /expertise/<slug>. */
-export const verticalSlugs = ["user-augmentation", "business-applications", "ai-platform"] as const;
-export type VerticalSlug = (typeof verticalSlugs)[number];
+/** One page per offer, under /offers/<slug>. */
+export const offerSlugs = ["ways-of-working", "solutions", "engineering"] as const;
+export type OfferSlug = (typeof offerSlugs)[number];
 
 /** Standalone articles, under /articles/<slug>. */
 export const articleSlugs = [
@@ -28,12 +28,15 @@ export const articleSlugs = [
   "phaseone10841",
   "couche-semantique",
   "mcp",
+  "ai-platform",
+  "business-applications",
+  "user-augmentation",
 ] as const;
 
 /** Site routes, without locale prefix. Used by navigation, sitemap and hreflang. */
 export const routes = [
   "",
-  ...verticalSlugs.map((slug) => `/expertise/${slug}` as const),
+  ...offerSlugs.map((slug) => `/offers/${slug}` as const),
   "/about",
   "/contact",
   "/glossary",
@@ -47,7 +50,7 @@ export const localizedPath = (locale: Locale, route: string = "") =>
   `/${locale}${route}`;
 
 /** Routes that also exist as Markdown, at the same address followed by ".md". */
-const hasMarkdown = (route: string) => /^\/(articles|expertise)\/.|^\/glossary$/.test(route);
+const hasMarkdown = (route: string) => /^\/articles\/.|^\/glossary$/.test(route);
 
 /** Canonical + hreflang alternates for a route, the RSS feed of the language, and its Markdown version. */
 export function alternatesFor(locale: Locale, route: Route) {

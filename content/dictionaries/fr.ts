@@ -3,17 +3,17 @@ import type { Dictionary } from "./en";
 const fr: Dictionary = {
   meta: {
     siteName: "Dasein",
-    title: "Dasein : Ingénierie Data & IA",
+    title: "Dasein : agents IA au travail",
     description:
-      "Dasein aide les entreprises à mettre l’IA au travail : agents, plateformes et gouvernance, sur des fondations data solides.",
+      "Dasein aide les entreprises à travailler avec des agents IA : méthodes d’équipe, automatisation des processus et déploiement à grande échelle, sous contrôle.",
   },
 
   nav: {
-    expertise: "Expertise",
+    offers: "Offres",
     articles: "Articles",
     about: "À propos",
     contact: "Contact",
-    cta: "Démarrer un projet",
+    cta: "Nous contacter",
     menu: "Menu",
     close: "Fermer",
     language: "Langue",
@@ -21,16 +21,16 @@ const fr: Dictionary = {
   },
 
   navMenu: {
-    expertise: {
-      explore: "Explorer l’expertise",
+    offers: {
+      explore: "Explorer les offres",
       main: [
-        { label: "User Augmentation", href: "/expertise/user-augmentation" },
-        { label: "Business Applications", href: "/expertise/business-applications" },
-        { label: "AI Platform", href: "/expertise/ai-platform" },
+        { label: "Travailler avec l’IA", href: "/offers/ways-of-working" },
+        { label: "Automatiser votre activité", href: "/offers/solutions" },
+        { label: "Déployer l’IA à grande échelle", href: "/offers/engineering" },
       ],
-      sideTitle: "Approche",
+      sideTitle: "Vue d’ensemble",
       side: [
-        { label: "Trois verticales", href: "/#verticals" },
+        { label: "Les trois offres", href: "/#offers" },
       ],
     },
     about: {
@@ -43,23 +43,23 @@ const fr: Dictionary = {
       ],
       sideTitle: "Société",
       side: [
-        { label: "Expertise", href: "/#verticals" },
+        { label: "Offres", href: "/#offers" },
       ],
     },
   },
 
   hero: {
-    eyebrow: "Ingénierie Data & IA",
-    title: "Nous construisons les systèmes qui font fonctionner l’IA dans l’entreprise.",
+    eyebrow: "Agents IA au travail",
+    title: "Nous travaillons avec des agents IA tous les jours. Nous mettons les vôtres au travail.",
     // Same sentence with inline pictograms: {arrow} {stack} {secure}
-    titleMarked: "Nous construisons {arrow} les systèmes qui font fonctionner {stack} l’IA dans {secure} l’entreprise.",
+    titleMarked: "Nous travaillons avec des agents IA {stack} tous les jours. Nous mettons {arrow} les vôtres {secure} au travail.",
     chipLabels: { stack: "Technologies avec lesquelles nous travaillons", secure: "Sécurisé, validé par un humain" },
-    lead: "Dasein conçoit et industrialise les fondations data et les systèmes IA qui transforment les données, les connaissances et les outils existants d’une organisation en systèmes capables de comprendre, raisonner et agir.",
-    chain: ["Data", "Knowledge", "Intelligence", "Action"],
-    primary: "Démarrer un projet",
-    secondary: "Lire nos articles",
+    lead: "Des méthodes de vos équipes jusqu’aux systèmes en production, avec des agents qui restent sous votre contrôle.",
+    chain: ["Méthodes", "Processus", "Plateformes"],
+    primary: "Nous contacter",
+    secondary: "Voir les offres",
     intro: "Voici Dasein",
-    introRight: "Ingénierie Data & IA",
+    introRight: "Agents IA au travail",
     inboxTitle: "inbox.app",
     inboxHead: "UN PROJET ?",
     inboxText: "Dites-nous ce que vous construisez.",
@@ -104,7 +104,7 @@ const fr: Dictionary = {
     stackHint: "glisser pour pivoter",
     clockTitle: "Horloge 1.0",
     footerTitle: "Dasein",
-    footer: ["Version 0.1", "Ingénierie Data & IA.", "Tous les systèmes sont opérationnels."],
+    footer: ["Version 0.1", "Agents IA au travail.", "Tous les systèmes sont opérationnels."],
   },
 
   featured: {
@@ -181,145 +181,278 @@ const fr: Dictionary = {
     ],
   },
 
-  offer: {
-    caption:
-      "Schéma de l’offre Dasein : l’accompagnement en haut ; au centre, User Augmentation et Business Applications autour de l’AI Platform, avec la gouvernance en son cœur ; en dessous, le socle data et sémantique ; en bas, les modes de déploiement.",
-    audience: { left: "Personnes", core: "IT", right: "Processus" },
-    axes: { support: "Accompagner", activate: "Activer", govern: "Gouverner", ground: "Fonder", deploy: "Déployer" },
-    support: {
-      title: "Accompagnement",
-      items: ["Cadrage des cas d’usage", "Mise en place de la gouvernance", "Montée en compétence des équipes"],
-    },
-    left: { name: "User Augmentation", text: "Des agents pour chaque collaborateur" },
-    right: { name: "Business Applications", text: "Des agents dans les processus métiers" },
-    core: { name: "AI Platform", text: "Gateway · Registry · Observabilité" },
-    inner: { name: "Gouvernance", text: "Identité · Droits · Audit" },
-    data: {
-      title: "Socle data et sémantique",
-      items: ["Données fiables", "Référentiels", "Sens partagé entre métiers et agents"],
-    },
-    infra: ["Cloud public", "Cloud souverain", "On-premise", "Air-gapped"],
-  },
-
-  verticals: {
-    index: "01",
-    label: "IA agentique",
-    title: "La gouvernance de l’IA se joue sur trois verticales.",
-    intro:
-      "Un assistant qui résume un document et un agent qui agit dans un ERP n’appellent pas les mêmes règles. Nous structurons l’IA agentique en trois verticales : deux tournées vers les usages (utilisateurs et métiers) et une troisième, le socle IT commun, qui gouverne tous les agents.",
-    buildsLabel: "Ce que nous mettons en place",
-    controlLabel: "Contrôle",
-    levels: ["Léger", "Renforcé", "Strict"],
-    // Used on the Work page to label each case's autonomy.
-    patterns: [
-      "Assistant augmenté",
-      "Agent outillé",
-      "Agent de workflow",
-      "Agent autonome supervisé",
-      "Orchestration multi-agents",
-    ],
+  offers: {
+    label: "Offres",
+    title: "Trois façons de travailler avec nous.",
+    intro: "Chaque offre part d’un problème que vous connaissez et commence par une première mission courte, au périmètre défini. Elles sont indépendantes et se complètent.",
+    resultLabel: "À la fin, vous avez",
+    startLabel: "Pour commencer",
+    more: "Voir l’offre",
     page: {
-      back: "Expertise",
-      problemLabel: "Le problème",
-      buildsLabel: "Ce que nous construisons",
-      useCasesLabel: "Cas d’usage types",
-      controlLabel: "Gouvernance",
-      casesLabel: "Réalisations associées",
-      next: "Verticale suivante",
-      more: "Lire l’article",
+      back: "Offres",
+      secondaryCta: "Comment ça se passe",
+      whatLabel: "Ce que nous faisons",
+      resultLabel: "À la fin, vous avez",
+      proofLabel: "Ce que nous avons fait",
+      startLabel: "Pour commencer",
+      entryLabel: "Première mission",
+      nextLabel: "Ensuite",
+      deliverablesLabel: "Livrables",
+      scopeNote: "Durée et prix sont fixés ensemble, selon votre périmètre.",
+      talk: "En parler",
+      howLabel: "Comment ça se passe",
+      conditionsLabel: "Ce qu’il faut pour réussir",
+      excludedLabel: "Hors périmètre",
+      technicalLabel: "Pour les équipes techniques",
+      readingLabel: "À lire",
+      read: "Lire",
+      closingText: "Quelques lignes suffisent : votre contexte et ce que vous voulez accomplir. Nous revenons vers vous rapidement.",
+      otherOffers: "Les autres offres",
+      kinds: { article: "Article", case: "Retour d’expérience" },
     },
     items: [
       {
-        id: "end-users",
-        slug: "user-augmentation",
-        audience: "Utilisateurs",
-        name: "User Augmentation",
-        purpose: "Des agents pour chaque collaborateur, avec ses propres droits.",
-        lead: "Donner à chaque collaborateur des agents utiles, simples à créer, et qui agissent avec ses propres droits.",
-        problem:
-          "Les collaborateurs utilisent déjà l’IA, souvent avec des outils grand public, hors de tout cadre. Les données sortent de l’entreprise, les usages ne sont pas mesurés, et les assistants ne sont reliés à aucun de vos outils.",
-        builds: [
-          { name: "Choix et intégration du front IA", text: "Un front du marché, souverain ou open source, intégré à vos outils." },
-          { name: "Agents déclaratifs", text: "Des agents décrits en YAML : relus, versionnés, validés avant publication." },
-          { name: "Connexions MCP gouvernées", text: "Un catalogue de serveurs MCP validés, ouverts par groupe." },
-          { name: "Propagation d’identité", text: "L’agent agit avec les droits de l’utilisateur, pas plus." },
-          { name: "Skills et prompts partagés", text: "Des savoir-faire réutilisables, gérés comme une bibliothèque." },
+        slug: "ways-of-working",
+        name: "Travailler avec l’IA",
+        internal: "AI Ways of Working",
+        audience: "Équipes et dirigeants",
+        says: "« Mes équipes utilisent ChatGPT, chacun dans son coin. »",
+        tagline: "Vos équipes utilisent déjà l’IA. Donnons-leur les bons outils et une méthode commune.",
+        lead: "Vos équipes utilisent déjà l’IA, mais chacun à sa façon. Nous installons les bons outils, configurés pour vos métiers, et une méthode commune : quoi confier aux agents, comment vérifier leur travail, comment partager ce qui marche.",
+        result: "Une équipe pilote qui travaille avec ses agents : un environnement configuré, des skills partagés et une méthode commune pour déléguer et vérifier.",
+        figures: [],
+        figuresNote: "",
+        features: [
+          {
+            title: "Un environnement configuré pour chaque personne",
+            text: "Claude, ChatGPT ou Gemini, connectés aux outils autorisés de l’équipe, avec des skills écrits pour vos métiers.",
+            window: "espace-equipe",
+            rows: [
+              { label: "Assistant · messagerie, agenda, documents", status: "connecté", tone: "ok" },
+              { label: "Skill · synthèse de réunion", status: "actif", tone: "ok" },
+              { label: "Skill · relecture de contrat", status: "actif", tone: "ok" },
+              { label: "Skill · veille concurrents", status: "en test", tone: "wait" },
+            ],
+          },
+          {
+            title: "Une méthode commune pour déléguer",
+            text: "Ce qu’on confie à un agent, ce qu’on vérifie, ce qu’on garde : des règles simples, partagées par toute l’équipe.",
+            window: "methode.md",
+            rows: [
+              { label: "Brouillon de compte rendu", status: "déléguer", tone: "ok" },
+              { label: "Chiffres d’un devis", status: "vérifier", tone: "wait" },
+              { label: "Décision pour un client", status: "garder", tone: "off" },
+            ],
+          },
+          {
+            title: "Des données qui restent sous contrôle",
+            text: "Une charte d’usage et un classement clair : ce qui peut être confié à un agent, et ce qui ne le peut pas.",
+            window: "regles-donnees",
+            rows: [
+              { label: "Documents publics", status: "autorisé", tone: "ok" },
+              { label: "Documents internes", status: "outils validés seulement", tone: "ok" },
+              { label: "Données clients", status: "sur validation", tone: "wait" },
+              { label: "Données RH", status: "exclu", tone: "off" },
+            ],
+          },
         ],
-        useCases: [
-          "Synthèses d’incidents et notes de résolution",
-          "Préparation de réunions et de comités",
-          "Recherche dans la documentation technique",
-          "Premiers livrables : comptes rendus, articles de base de connaissance",
+        start: {
+          name: "Setup pilote",
+          text: "Une équipe réduite, un environnement, quelques skills, un atelier.",
+          steps: [
+            {
+              name: "Diagnostic",
+              text: "Qui utilise quoi, pour quelles tâches, avec quelles données.",
+            },
+            {
+              name: "Configuration",
+              text: "Un environnement de travail : outils, skills, connexions autorisées.",
+            },
+            {
+              name: "Atelier méthode",
+              text: "Confier un travail à un agent, le vérifier, partager ce qui marche.",
+            },
+          ],
+          deliverables: "L’environnement en place, un guide d’équipe, trois à cinq skills métier.",
+        },
+        nextName: "Déploiement d’équipe",
+        next: "Généralisation à toute l’équipe, base de connaissances partagée, gouvernance des droits et des données, accompagnement dans la durée. Ateliers dirigeants, formations d’équipe et formation de référents complètent l’offre.",
+        conditions: [
+          "Un sponsor qui porte le projet : dirigeant ou directeur métier.",
+          "Une équipe pilote volontaire, disponible pour l’atelier.",
+          "Des outils et des données autorisés par votre sécurité avant de commencer.",
         ],
-        control: "L’agent agit avec l’identité et les droits de l’utilisateur ; la personne valide.",
-        controlPoints: [
-          "Des outils validés par l’entreprise plutôt que des outils grand public",
-          "Des données classifiées : ce qui peut, ou non, être exposé",
-          "Une vérification humaine de chaque sortie",
-          "Une charte d’usage et une formation des équipes",
+        excluded: [
+          "Le déploiement à toute l’équipe, qui vient ensuite.",
+          "Le développement d’outils sur mesure.",
+          "Le support après la livraison.",
         ],
-        level: 1,
+        technical: "Configuration de Claude, Codex ou Gemini ; skills et bibliothèques de prompts partagées ; mémoire et base de connaissances ; connecteurs MCP vers les outils de l’équipe ; règles de délégation et de supervision ; charte d’usage et classement des données qui peuvent, ou non, être confiées à un agent.",
+        related: ["user-augmentation"],
+        cta: "Organiser un setup pilote",
+        closing: "Commencez avec une équipe pilote.",
       },
       {
-        id: "business",
-        slug: "business-applications",
-        audience: "Métiers",
-        name: "Business Applications",
-        purpose: "Des agents qui travaillent dans vos processus, sous contrôle.",
-        lead: "Des agents qui travaillent dans vos processus et vous aident à décider, sous contrôle.",
-        problem:
-          "Les processus récurrents (tickets, factures, recommandations FinOps, audits) absorbent un temps considérable en tâches répétitives, et la donnée utile pour décider reste enfermée dans les entrepôts et les applications.",
-        builds: [
-          { name: "Agent principal et sous-agents", text: "Un agent qui planifie et délègue, plutôt qu’un agent qui fait tout." },
-          { name: "Talk to my data", text: "Interroger vos données en langage courant, avec les droits de chacun." },
-          { name: "Aide à la décision", text: "Des recommandations sourcées, validées par un expert." },
-          { name: "Middlewares de contrôle", text: "Validation humaine, plafonds, masquage des données, branchés sur la boucle de l’agent." },
-          { name: "Runtimes isolés", text: "Chaque agent dans son environnement, limité à son périmètre." },
+        slug: "solutions",
+        name: "Automatiser votre activité",
+        internal: "AI Solutions Studio",
+        audience: "Directions métier et opérations",
+        says: "« On perd des heures sur des tâches répétitives. »",
+        tagline: "Confiez à un agent les tâches qui se répètent, et gardez la main sur ce qui compte.",
+        lead: "Documents, emails, dossiers, factures : une partie de votre activité se répète tous les jours. Nous construisons un agent qui prend ces tâches en charge, connecté à vos outils, et qui vous demande validation aux étapes qui comptent.",
+        result: "Un processus automatisé, testé sur vos données et mis en production sur un périmètre restreint, avec un avant/après mesuré.",
+        figures: [
+          { value: "×5", label: "articles traités chaque jour" },
+          { value: "×10", label: "plus rapide pour qualifier une opportunité" },
+          { value: "−58 %", label: "de faux positifs" },
         ],
-        useCases: [
-          "Recommandations FinOps et suivi des remédiations",
-          "Réconciliation de factures fournisseurs",
-          "Rapports d’audit sécurité avant mise en production",
-          "Automatisation de tickets ITSM",
+        figuresNote: "Weak Signal, avec L-Acoustics : un pipeline agentique qui lit l’actualité, qualifie les opportunités et les transmet à la bonne équipe commerciale.",
+        features: [
+          {
+            title: "Un agent connecté à vos outils",
+            text: "Il lit les documents, les emails ou les dossiers là où ils arrivent, et prépare le travail dans vos applications.",
+            window: "agent-factures",
+            rows: [
+              { label: "Factures reçues", status: "lues", tone: "ok" },
+              { label: "Rapprochées avec les commandes", status: "fait", tone: "ok" },
+              { label: "Écarts détectés", status: "à vérifier", tone: "wait" },
+            ],
+          },
+          {
+            title: "Votre validation aux étapes qui comptent",
+            text: "L’agent prépare, une personne valide. Rien n’est écrit dans vos systèmes sans accord, et chaque action est tracée.",
+            window: "validation",
+            rows: [
+              { label: "Écart fournisseur", status: "en attente de validation", tone: "wait" },
+              { label: "Avoir préparé", status: "prêt", tone: "ok" },
+              { label: "Paiement", status: "bloqué jusqu’à validation", tone: "off" },
+            ],
+          },
+          {
+            title: "Un résultat mesuré",
+            text: "Temps passé, erreurs, délais : mesurés avant et après, pour décider d’étendre, d’ajuster ou d’arrêter.",
+            window: "bilan",
+            rows: [
+              { label: "Temps de traitement · avant / après", status: "mesuré", tone: "ok" },
+              { label: "Erreurs · avant / après", status: "mesuré", tone: "ok" },
+              { label: "Processus suivant", status: "à décider", tone: "wait" },
+            ],
+          },
         ],
-        control: "Droits limités par agent, runtimes isolés, validation humaine avant toute écriture.",
-        controlPoints: [
-          "Des droits d’accès limités au périmètre de chaque agent",
-          "Des sources validées et versionnées",
-          "Une validation humaine aux étapes clés",
-          "Une traçabilité complète des actions",
+        start: {
+          name: "Sprint sur un processus",
+          text: "Un cas, choisi avec vous, mené jusqu’à la production.",
+          steps: [
+            {
+              name: "Prérequis",
+              text: "La première semaine, nous vérifions les accès, les données, la sécurité et la disponibilité d’un responsable métier, et nous choisissons le processus.",
+            },
+            { name: "Mesure de départ", text: "Temps passé, erreurs, délais : l’avant, chiffré." },
+            {
+              name: "Construction",
+              text: "L’agent est construit et testé sur vos données, avec de vrais utilisateurs.",
+            },
+            {
+              name: "Mise en production",
+              text: "Sur un périmètre restreint, si les prérequis sont réunis ; sinon, elle fait l’objet d’une mission séparée.",
+            },
+            { name: "Bilan", text: "L’après, mesuré, et la décision : étendre, ajuster ou arrêter." },
+          ],
+          deliverables: "Le processus automatisé, le bilan avant/après, la liste des processus suivants.",
+        },
+        nextName: "Processus suivants",
+        next: "D’autres processus, un par un. Quand les agents se multiplient, un socle commun pour les gérer : c’est la troisième offre.",
+        conditions: [
+          "Un responsable métier disponible chaque semaine.",
+          "Des accès autorisés aux systèmes concernés.",
+          "Des données exploitables.",
+          "Une définition partagée du résultat attendu et de sa mesure.",
         ],
-        level: 2,
+        excluded: [
+          "La refonte de vos outils existants.",
+          "La reprise de données historiques.",
+          "L’exploitation après le sprint, qui fait l’objet d’un contrat séparé.",
+        ],
+        technical: "Agent principal et sous-agents ; traitement documentaire (extraction, classement, rédaction) ; workflows ; intégrations API et MCP ; validation humaine, plafonds et masquage des données ; jeux d’évaluation et indicateurs de valeur.",
+        related: ["weak-signal-l-acoustics", "business-applications"],
+        cta: "Proposer un processus à automatiser",
+        closing: "Commencez par un processus.",
       },
       {
-        id: "it",
-        slug: "ai-platform",
-        audience: "IT & plateforme",
-        name: "AI Platform",
-        purpose: "Le socle commun qui connecte, sécurise et observe tous les agents.",
-        lead: "Le socle commun qui connecte, sécurise et observe tous vos agents.",
-        problem:
-          "Sans socle commun, chaque équipe construit ses agents de son côté : clés d’API dispersées, outils exposés sans contrôle, aucune vision des accès, des coûts ou des erreurs. Le passage à l’échelle devient un risque.",
-        builds: [
-          { name: "Gateways LLM, MCP et agents", text: "Un point de passage par type de flux, avec ses propres règles." },
-          { name: "Catalogue d’agents, d’outils et de skills", text: "Ce qui est validé, réutilisable par toutes les équipes." },
-          { name: "Observabilité, évaluation et coûts", text: "Chaque exécution tracée, mesurée, attribuée à une équipe." },
-          { name: "Standards et centre d’excellence", text: "Les règles communes et les modèles validés, pour un modèle fédéré." },
+        slug: "engineering",
+        name: "Déployer l’IA à grande échelle",
+        internal: "AI Architecture & Engineering",
+        audience: "DSI, CTO, architectes",
+        says: "« Chaque équipe lance son projet IA, personne ne contrôle rien. »",
+        tagline: "Un socle commun pour que chaque équipe construise ses agents, sans multiplier les risques.",
+        lead: "Plusieurs équipes construisent déjà des agents. Sans socle commun, les accès, les coûts et les risques se multiplient. Nous concevons et mettons en place l’architecture qui permet à vos agents de fonctionner avec vos systèmes, vos règles de sécurité et vos exigences de contrôle, sur le cloud que vous utilisez déjà.",
+        result: "Une architecture validée par votre sécurité : identité des agents, accès, coûts et traces sous contrôle, sur laquelle chaque équipe peut construire.",
+        figures: [],
+        figuresNote: "",
+        features: [
+          {
+            title: "Un point de passage pour tous les agents",
+            text: "Des gateways pour les modèles, les outils MCP et les agents : chaque appel est filtré, journalisé et révocable.",
+            window: "gateway",
+            rows: [
+              { label: "llm-gateway · eu-west", status: "actif", tone: "ok" },
+              { label: "mcp · ticketing", status: "lecture seule", tone: "ok" },
+              { label: "mcp · erp", status: "écriture sur validation", tone: "wait" },
+              { label: "Clé d’API personnelle", status: "refusée", tone: "off" },
+            ],
+          },
+          {
+            title: "Une identité et des droits par agent",
+            text: "Chaque agent agit avec sa propre identité ou celle de l’utilisateur, jamais avec plus de droits que nécessaire.",
+            window: "agents",
+            rows: [
+              { label: "agent-support", status: "lire · rédiger", tone: "ok" },
+              { label: "agent-finops", status: "lire · recommander", tone: "ok" },
+              { label: "agent-factures", status: "écrire après validation", tone: "wait" },
+            ],
+          },
+          {
+            title: "Coûts, traces et versions sous contrôle",
+            text: "Chaque exécution est tracée, attribuée à une équipe et versionnée. Un agent se retire en une seule opération.",
+            window: "observabilite",
+            rows: [
+              { label: "Coût par équipe", status: "suivi", tone: "ok" },
+              { label: "Traces d’exécution", status: "conservées", tone: "ok" },
+              { label: "agent-legacy v2", status: "retiré", tone: "off" },
+            ],
+          },
         ],
-        useCases: [
-          "Plateforme agentique à l’échelle d’un groupe",
-          "Gateway LLM multi-cloud",
-          "Catalogue d’agents et de serveurs MCP",
-          "Migration applicative assistée",
+        start: {
+          name: "Revue d’architecture",
+          text: "Un état des lieux et une architecture cible, avant de construire.",
+          steps: [
+            { name: "État des lieux", text: "Agents existants, accès, flux de données, coûts." },
+            {
+              name: "Écarts",
+              text: "Ce qui s’écarte de vos exigences de sécurité et de conformité.",
+            },
+            {
+              name: "Architecture cible",
+              text: "Le socle à mettre en place et la feuille de route pour y aller.",
+            },
+          ],
+          deliverables: "Une architecture de référence, un modèle d’identité et de droits des agents, un plan de déploiement.",
+        },
+        nextName: "Construction de la plateforme",
+        next: "La construction et l’exploitation de la plateforme, puis les agents métier qui s’appuient dessus.",
+        conditions: [
+          "Un interlocuteur côté DSI ou architecture.",
+          "L’accès à la documentation d’architecture et aux politiques de sécurité.",
+          "Des entretiens avec les équipes qui construisent déjà des agents.",
         ],
-        control: "Un point de contrôle unique pour toutes les équipes : identités, accès, coûts, traces et versions.",
-        controlPoints: [
-          "Un point de contrôle unique pour tous les agents",
-          "Une identité propre à chaque agent, des droits révocables",
-          "Des versions maîtrisées : modèles, prompts, skills",
-          "Le retrait d’un agent en une seule opération",
+        excluded: [
+          "La construction de la plateforme, qui vient ensuite.",
+          "Un audit de sécurité formel ou une certification.",
         ],
-        level: 3,
+        technical: "Gateways LLM, MCP et agents ; identité propre à chaque agent et propagation de l’identité de l’utilisateur ; catalogue d’agents, d’outils et de skills ; observabilité, évaluation et suivi des coûts ; versionnement et retour arrière ; déploiement en cloud public, cloud souverain, sur site ou déconnecté ; socle data et sémantique.",
+        related: ["ai-platform", "mcp", "couche-semantique", "phaseone10841"],
+        cta: "Demander une revue d’architecture",
+        closing: "Commencez par une revue d’architecture.",
       },
     ],
   },
@@ -488,7 +621,7 @@ const fr: Dictionary = {
       {
         title: "La valeur se joue dans la gouvernance, pas dans le front.",
         text: "L’interface de chat s’achète. Ce qui fait la différence, c’est ce qu’il y a derrière : qui peut faire quoi, avec quelles données, à quel coût, et avec quelle trace.",
-        link: { label: "User Augmentation", href: "/expertise/user-augmentation" },
+        link: { label: "User Augmentation", href: "/articles/user-augmentation" },
       },
       {
         title: "Un agent agit toujours avec les droits de quelqu’un.",
@@ -498,12 +631,12 @@ const fr: Dictionary = {
       {
         title: "Un socle commun plutôt que cent projets isolés.",
         text: "Gateways, catalogue, observabilité, standards : mis en commun une fois, ils permettent à chaque équipe d’avancer vite sans réinventer la sécurité.",
-        link: { label: "AI Platform", href: "/expertise/ai-platform" },
+        link: { label: "AI Platform", href: "/articles/ai-platform" },
       },
       {
         title: "Le plus simple qui fonctionne.",
         text: "Un workflow avant un agent, un agent avant plusieurs. On ajoute de la complexité quand le problème l’exige, pas parce que la technologie le permet.",
-        link: { label: "Business Applications", href: "/expertise/business-applications" },
+        link: { label: "Business Applications", href: "/articles/business-applications" },
       },
       {
         title: "L’IA a un poids physique.",
@@ -525,7 +658,7 @@ const fr: Dictionary = {
       "Dasein : « être-là ». Une intelligence qui n’est pas abstraite mais située : présente dans un environnement, consciente de son contexte, capable d’y agir.",
     audienceTitle: "Avec qui nous travaillons",
     audienceText:
-      "De grands groupes disposant d’écosystèmes data et cloud complexes, comme des entreprises technologiques qui accélèrent la construction de leurs infrastructures et produits IA.",
+      "Des grands groupes aux PME : des équipes qui veulent travailler avec des agents IA, des directions métier qui veulent automatiser, et des DSI qui doivent déployer l’IA à grande échelle sans perdre le contrôle.",
     clients: [
       { name: "TF1", logo: "tf1.svg" },
       { name: "Safran", logo: "safran.svg" },
@@ -535,11 +668,11 @@ const fr: Dictionary = {
     audience: [
       {
         title: "Directions",
-        items: ["COMEX", "CODIR", "CTO", "DSI et systèmes d’information"],
+        items: ["Dirigeants de PME et d’ETI", "COMEX", "CODIR", "Directions métier", "CTO", "DSI et systèmes d’information"],
       },
       {
         title: "Équipes",
-        items: ["Produit", "Data center", "Réseau", "Cloud", "Data", "Cybersécurité"],
+        items: ["Opérations", "Produit", "Data center", "Réseau", "Cloud", "Data", "Cybersécurité"],
       },
     ],
   },
@@ -551,6 +684,14 @@ const fr: Dictionary = {
     name: "Nom",
     company: "Entreprise",
     email: "Email",
+    topic: "Sujet",
+    topicNone: "Choisir un sujet (facultatif)",
+    topics: {
+      "ways-of-working": "Travailler avec l’IA",
+      solutions: "Automatiser votre activité",
+      engineering: "Déployer l’IA à grande échelle",
+      other: "Autre chose",
+    },
     project: "Votre projet",
     projectPlaceholder: "Contexte, systèmes concernés, ce que vous voulez accomplir…",
     submit: "Envoyer",
@@ -580,7 +721,7 @@ const fr: Dictionary = {
   },
 
   footer: {
-    tagline: "Ingénierie Data & IA.",
+    tagline: "Agents IA au travail, sous contrôle.",
     rights: "Tous droits réservés.",
     legal: "Mentions légales",
     made: "Conçu et développé par Dasein.",

@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Cover } from "@/components/covers";
 import { Reveal } from "@/components/Reveal";
 import { articleIndex } from "@/content/articleIndex";
-import { articles, standaloneArticles } from "@/content/articles";
+import { articles } from "@/content/articles";
 import { getDictionary } from "@/content/dictionaries";
 import { hasLocale, type Locale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/articles">
 /** Each index entry with its lead and reading time, taken from the full article. */
 function entries(lang: Locale) {
   return articleIndex.flatMap((entry) => {
-    const article = (standaloneArticles[entry.slug] ?? articles[entry.slug])?.[lang];
+    const article = articles[entry.slug]?.[lang];
     return article ? [{ ...entry, lead: article.lead, minutes: readingMinutes(article), updated: article.updated }] : [];
   });
 }

@@ -4,7 +4,7 @@ import { midtermsArticle } from "./midterms";
 import { rateLimitArticle } from "./ratelimit";
 
 /**
- * Long-form articles attached to an expertise page (one per vertical).
+ * Long-form articles, each published under /articles/<slug>.
  * Content is written as blocks so it stays easy to edit and to translate.
  * A "figure" whose image file is missing from /public is skipped at build time.
  * A table can show logos in its first column: `logos[i]` lists the files
@@ -239,8 +239,8 @@ const PLATFORM_SOURCES = [
   { label: "Google Cloud: Agentic AI architecture guides", url: "https://docs.cloud.google.com/architecture/agentic-ai-overview" },
 ];
 
-/** Articles that stand on their own, published under /articles/<slug>. */
-export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>> = {
+/** Articles that stood on their own from the start. */
+const standaloneArticles: Partial<Record<string, Record<Locale, Article>>> = {
   "quand-la-politique-devient-le-risque": midtermsArticle,
   "le-429-n-est-pas-un-bug": rateLimitArticle,
   "le-gigawatt-et-le-dollar": gigawattArticle,
@@ -406,7 +406,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "related",
-          href: "/expertise/ai-platform",
+          href: "/articles/ai-platform",
           label: "À lire aussi",
           title: "AI Platform : le socle commun des agents",
           text: "La plateforme qui rend cette connaissance interrogeable et actionnable, avec des droits et des garde-fous.",
@@ -584,7 +584,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "related",
-          href: "/expertise/ai-platform",
+          href: "/articles/ai-platform",
           label: "Read next",
           title: "AI Platform: the shared foundation for agents",
           text: "The platform that makes this knowledge queryable and actionable, with rights and guardrails.",
@@ -753,7 +753,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "related",
-          href: "/expertise/business-applications",
+          href: "/articles/business-applications",
           label: "Article",
           title: "Business Applications : des agents qui travaillent dans vos processus, sous contrôle",
           text: "Pour aller plus loin sur les agents métiers, l’aide à la décision et les garde-fous qui les entourent.",
@@ -920,7 +920,7 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
         },
         {
           type: "related",
-          href: "/expertise/business-applications",
+          href: "/articles/business-applications",
           label: "Article",
           title: "Business Applications: agents that work inside your processes, under control",
           text: "More on business agents, decision support and the guardrails around them.",
@@ -3047,7 +3047,8 @@ export const standaloneArticles: Partial<Record<string, Record<Locale, Article>>
     },
   },};
 
-export const articles: Partial<Record<string, Record<Locale, Article>>> = {
+/** The three articles that used to be the expertise pages (one per former vertical). */
+const verticalArticles: Partial<Record<string, Record<Locale, Article>>> = {
   "user-augmentation": {
     fr: {
       title: "User Augmentation\u00a0: donner des agents à chaque collaborateur, sans perdre le contrôle",
@@ -4018,4 +4019,10 @@ export const articles: Partial<Record<string, Record<Locale, Article>>> = {
       sources: BUSINESS_SOURCES,
     },
   },
+};
+
+/** Every article, by slug. */
+export const articles: Partial<Record<string, Record<Locale, Article>>> = {
+  ...standaloneArticles,
+  ...verticalArticles,
 };

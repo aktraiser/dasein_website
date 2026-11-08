@@ -3,14 +3,20 @@
  * The list is a ring: each click on the stack moves three logos forward,
  * so every brand shows up in turn. Files live in /public/logos/<id>.svg.
  *
- * Sources: Simple Icons (Snowflake, Databricks, Claude, Datadog, Google, in
- * brand colours) and Wikimedia Commons (ServiceNow, Salesforce, AWS, Azure,
- * OpenAI).
+ * The first three (the assistants people already use) are the ones the
+ * hero shows before any click.
+ *
+ * Sources: Simple Icons (Snowflake, Databricks, Claude, Gemini, Datadog,
+ * Google, in brand colours) and Wikimedia Commons (ServiceNow, Salesforce,
+ * AWS, Azure, OpenAI).
  * All are trademarks of their owners. `wide` gives long wordmarks more room.
  */
 export type Logo = { id: string; name: string; wide?: boolean };
 
 export const logos: Logo[] = [
+  { id: "openai", name: "ChatGPT" },
+  { id: "claude", name: "Claude" },
+  { id: "googlegemini", name: "Gemini" },
   { id: "snowflake", name: "Snowflake" },
   { id: "servicenow", name: "ServiceNow", wide: true },
   { id: "salesforce", name: "Salesforce" },
@@ -18,8 +24,6 @@ export const logos: Logo[] = [
   { id: "aws", name: "AWS" },
   { id: "azure", name: "Microsoft Azure" },
   { id: "google", name: "Google" },
-  { id: "openai", name: "OpenAI" },
-  { id: "claude", name: "Claude" },
   { id: "datadog", name: "Datadog" },
 ];
 

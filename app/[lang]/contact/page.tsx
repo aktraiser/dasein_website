@@ -11,10 +11,13 @@ export async function generateMetadata({ params }: PageProps<"/[lang]/contact">)
   return pageMetadata(lang, "/contact", contact.label, contact.intro);
 }
 
-export default async function ContactPage({ params }: PageProps<"/[lang]/contact">) {
+export default async function ContactPage({ params, searchParams }: PageProps<"/[lang]/contact">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const { contact } = await getDictionary(lang);
+  // An offer page links here with "?offer=<slug>": the form opens with that subject chosen.
+  const { offer } = await searchParams;
+  const topic = typeof offer === "string" && Object.hasOwn(contact.topics, offer) ? offer : "";
 
   return (
     <section className="page-hero">
@@ -25,7 +28,7 @@ export default async function ContactPage({ params }: PageProps<"/[lang]/contact
           <p className="lead">{contact.intro}</p>
         </div>
         <div className="contact__card">
-          <ContactForm labels={contact} lang={lang} />
+          <ContactForm labels={contact} lang={lang} topic={topic} />
         </div>
       </div>
     </section>

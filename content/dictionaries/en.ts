@@ -1,17 +1,17 @@
 const en = {
   meta: {
     siteName: "Dasein",
-    title: "Dasein: Data & AI Engineering",
+    title: "Dasein: AI agents at work",
     description:
-      "Dasein helps companies put AI to work: agents, platforms and governance, built on solid data foundations.",
+      "Dasein helps companies work with AI agents: team methods, process automation and deployment at scale, under control.",
   },
 
   nav: {
-    expertise: "Expertise",
+    offers: "Offers",
     articles: "Articles",
     about: "About",
     contact: "Contact",
-    cta: "Start a project",
+    cta: "Contact us",
     menu: "Menu",
     close: "Close",
     language: "Language",
@@ -19,16 +19,16 @@ const en = {
   },
 
   navMenu: {
-    expertise: {
-      explore: "Explore expertise",
+    offers: {
+      explore: "Explore the offers",
       main: [
-        { label: "User Augmentation", href: "/expertise/user-augmentation" },
-        { label: "Business Applications", href: "/expertise/business-applications" },
-        { label: "AI Platform", href: "/expertise/ai-platform" },
+        { label: "Work with AI", href: "/offers/ways-of-working" },
+        { label: "Automate your operations", href: "/offers/solutions" },
+        { label: "Deploy AI at scale", href: "/offers/engineering" },
       ],
-      sideTitle: "Approach",
+      sideTitle: "Overview",
       side: [
-        { label: "Three verticals", href: "/#verticals" },
+        { label: "The three offers", href: "/#offers" },
       ],
     },
     about: {
@@ -41,23 +41,23 @@ const en = {
       ],
       sideTitle: "Company",
       side: [
-        { label: "Expertise", href: "/#verticals" },
+        { label: "Offers", href: "/#offers" },
       ],
     },
   },
 
   hero: {
-    eyebrow: "Data & AI engineering",
-    title: "We build the systems that let AI work inside the enterprise.",
+    eyebrow: "AI agents at work",
+    title: "We work with AI agents every day. We put yours to work.",
     // Same sentence with inline pictograms: {arrow} {stack} {secure}
-    titleMarked: "We build {arrow} the systems that let {stack} AI work inside {secure} the enterprise.",
+    titleMarked: "We work with AI agents {stack} every day. We put {arrow} yours {secure} to work.",
     chipLabels: { stack: "Technologies we work with", secure: "Secure, human-approved" },
-    lead: "Dasein designs and industrialises the data foundations and AI systems that turn an organisation’s data, knowledge and existing tools into systems able to understand, reason and act.",
-    chain: ["Data", "Knowledge", "Intelligence", "Action"],
-    primary: "Start a project",
-    secondary: "Read our articles",
+    lead: "From the way your teams work to the systems running in production, with agents that stay under your control.",
+    chain: ["Methods", "Processes", "Platforms"],
+    primary: "Contact us",
+    secondary: "See the offers",
     intro: "Introducing Dasein",
-    introRight: "Data & AI engineering",
+    introRight: "AI agents at work",
     inboxTitle: "inbox.app",
     inboxHead: "NEW PROJECT?",
     inboxText: "Tell us what you’re building.",
@@ -102,7 +102,7 @@ const en = {
     stackHint: "drag to rotate",
     clockTitle: "Clock 1.0",
     footerTitle: "Dasein",
-    footer: ["Version 0.1", "Data & AI engineering.", "All systems nominal."],
+    footer: ["Version 0.1", "AI agents at work.", "All systems nominal."],
   },
 
   featured: {
@@ -179,145 +179,272 @@ const en = {
     ],
   },
 
-  offer: {
-    caption:
-      "Dasein’s offer: support on top; in the middle, User Augmentation and Business Applications around the AI Platform, with governance at its core; below it, the data and semantic foundation; deployment options at the bottom.",
-    audience: { left: "People", core: "IT", right: "Processes" },
-    axes: { support: "Support", activate: "Activate", govern: "Govern", ground: "Ground", deploy: "Deploy" },
-    support: {
-      title: "Support",
-      items: ["Use-case framing", "Setting up governance", "Upskilling teams"],
-    },
-    left: { name: "User Augmentation", text: "Agents for every employee" },
-    right: { name: "Business Applications", text: "Agents inside business processes" },
-    core: { name: "AI Platform", text: "Gateway · Registry · Observability" },
-    inner: { name: "Governance", text: "Identity · Rights · Audit" },
-    data: {
-      title: "Data and semantic foundation",
-      items: ["Reliable data", "Reference data", "Meaning shared by teams and agents"],
-    },
-    infra: ["Public cloud", "Sovereign cloud", "On-premise", "Air-gapped"],
-  },
-
-  verticals: {
-    index: "01",
-    label: "Agentic AI",
-    title: "AI governance plays out across three verticals.",
-    intro:
-      "An assistant that summarises a document and an agent that acts in an ERP don’t call for the same rules. We organise agentic AI in three verticals: two facing usage (end users and business teams) and a third, the common IT platform, which governs every agent.",
-    buildsLabel: "What we put in place",
-    controlLabel: "Control",
-    levels: ["Light", "Reinforced", "Strict"],
-    // Used on the Work page to label each case's autonomy.
-    patterns: [
-      "Augmented assistant",
-      "Tool-using agent",
-      "Workflow agent",
-      "Supervised autonomous agent",
-      "Multi-agent orchestration",
-    ],
+  offers: {
+    label: "Offers",
+    title: "Three ways to work with us.",
+    intro: "Each offer starts from a problem you already know, and begins with a short first engagement with a defined scope. They stand on their own and work together.",
+    resultLabel: "What you end up with",
+    startLabel: "To get started",
+    more: "See the offer",
     page: {
-      back: "Expertise",
-      problemLabel: "The problem",
-      buildsLabel: "What we build",
-      useCasesLabel: "Typical use cases",
-      controlLabel: "Governance",
-      casesLabel: "Related work",
-      next: "Next vertical",
-      more: "Read the article",
+      back: "Offers",
+      secondaryCta: "How it works",
+      whatLabel: "What we do",
+      resultLabel: "What you end up with",
+      proofLabel: "What we have done",
+      startLabel: "To get started",
+      entryLabel: "First engagement",
+      nextLabel: "Then",
+      deliverablesLabel: "Deliverables",
+      scopeNote: "Duration and price are set together, based on your scope.",
+      talk: "Talk about it",
+      howLabel: "How it works",
+      conditionsLabel: "What it takes to succeed",
+      excludedLabel: "Out of scope",
+      technicalLabel: "For technical teams",
+      readingLabel: "Further reading",
+      read: "Read",
+      closingText: "A few lines are enough: your context and what you want to achieve. We will get back to you quickly.",
+      otherOffers: "The other offers",
+      kinds: { article: "Article", case: "Case study" },
     },
     items: [
       {
-        id: "end-users",
-        slug: "user-augmentation",
-        audience: "End users",
-        name: "User Augmentation",
-        purpose: "Agents for every employee, with their own rights.",
-        lead: "Give every employee useful agents that are simple to create and act with their own rights.",
-        problem:
-          "Employees already use AI, often through consumer tools, outside any framework. Data leaves the company, usage isn’t measured, and assistants aren’t connected to any of your tools.",
-        builds: [
-          { name: "Choosing and integrating the AI front end", text: "A market front end, sovereign or open source, integrated with your tools." },
-          { name: "Declarative agents", text: "Agents described in YAML: reviewed, versioned, approved before publishing." },
-          { name: "Governed MCP connections", text: "A catalogue of approved MCP servers, opened by group." },
-          { name: "Identity propagation", text: "The agent acts with the user’s rights, nothing more." },
-          { name: "Shared skills and prompts", text: "Reusable know-how, managed as a library." },
+        slug: "ways-of-working",
+        name: "Work with AI",
+        internal: "AI Ways of Working",
+        audience: "Teams and leaders",
+        says: "“My teams use ChatGPT, each in their own corner.”",
+        tagline: "Your teams already use AI. Let’s give them the right tools and a shared method.",
+        lead: "Your teams already use AI, each in their own way. We set up the right tools, configured for your work, and a shared method: what to hand to agents, how to check their work, how to share what works.",
+        result: "A pilot team that works with its agents: a configured environment, shared skills and a common method to delegate and check.",
+        figures: [] as { value: string; label: string }[],
+        figuresNote: "",
+        features: [
+          {
+            title: "An environment set up for each person",
+            text: "Claude, ChatGPT or Gemini, connected to the tools your team is allowed to use, with skills written for your work.",
+            window: "team-workspace",
+            rows: [
+              { label: "Assistant · email, calendar, documents", status: "connected", tone: "ok" },
+              { label: "Skill · meeting summary", status: "active", tone: "ok" },
+              { label: "Skill · contract review", status: "active", tone: "ok" },
+              { label: "Skill · competitor watch", status: "in test", tone: "wait" },
+            ],
+          },
+          {
+            title: "A shared method to delegate",
+            text: "What to hand to an agent, what to check, what to keep: simple rules, shared by the whole team.",
+            window: "method.md",
+            rows: [
+              { label: "Draft of a meeting report", status: "delegate", tone: "ok" },
+              { label: "Figures in a quote", status: "check", tone: "wait" },
+              { label: "Decision for a client", status: "keep", tone: "off" },
+            ],
+          },
+          {
+            title: "Data that stays under control",
+            text: "A usage charter and a clear classification: what may be handed to an agent, and what may not.",
+            window: "data-rules",
+            rows: [
+              { label: "Public documents", status: "allowed", tone: "ok" },
+              { label: "Internal documents", status: "approved tools only", tone: "ok" },
+              { label: "Client data", status: "on approval", tone: "wait" },
+              { label: "HR data", status: "excluded", tone: "off" },
+            ],
+          },
         ],
-        useCases: [
-          "Incident summaries and resolution notes",
-          "Meeting and committee preparation",
-          "Search across technical documentation",
-          "First drafts: minutes, knowledge base articles",
+        start: {
+          name: "Pilot setup",
+          text: "A small team, one environment, a few skills, one workshop.",
+          steps: [
+            { name: "Assessment", text: "Who uses what, for which tasks, with which data." },
+            {
+              name: "Configuration",
+              text: "A working environment: tools, skills, approved connections.",
+            },
+            {
+              name: "Method workshop",
+              text: "Handing work to an agent, checking it, sharing what works.",
+            },
+          ],
+          deliverables: "The environment in place, a team guide, three to five skills for your work.",
+        },
+        nextName: "Team rollout",
+        next: "Extending to the whole team, a shared knowledge base, governance of rights and data, support over time. Leadership workshops, team training and training for internal champions complete the offer.",
+        conditions: [
+          "A sponsor who backs the project: a CEO or a business head.",
+          "A volunteer pilot team, available for the workshop.",
+          "Tools and data approved by your security team before we start.",
         ],
-        control: "The agent acts with the user’s own identity and rights; the person approves.",
-        controlPoints: [
-          "Company-approved tools instead of consumer tools",
-          "Classified data: what may and may not be exposed",
-          "Human review of every output",
-          "A usage charter and team training",
+        excluded: [
+          "Rolling out to the whole team, which comes next.",
+          "Building custom tools.",
+          "Support after delivery.",
         ],
-        level: 1,
+        technical: "Claude, Codex or Gemini configuration; shared skills and prompt libraries; memory and knowledge base; MCP connectors to the team’s tools; delegation and supervision rules; a usage charter and a classification of the data that may, or may not, be handed to an agent.",
+        related: ["user-augmentation"],
+        cta: "Set up a pilot",
+        closing: "Start with a pilot team.",
       },
       {
-        id: "business",
-        slug: "business-applications",
-        audience: "Business teams",
-        name: "Business Applications",
-        purpose: "Agents that work inside your processes, under control.",
-        lead: "Agents that work inside your processes and help you decide, under control.",
-        problem:
-          "Recurring processes (tickets, invoices, FinOps recommendations, audits) take up a lot of time on repetitive work, and the data needed to decide stays locked in warehouses and applications.",
-        builds: [
-          { name: "Main agent and subagents", text: "An agent that plans and delegates, rather than one that does everything." },
-          { name: "Talk to my data", text: "Query your data in everyday language, with each person’s rights." },
-          { name: "Decision support", text: "Sourced recommendations, approved by an expert." },
-          { name: "Control middleware", text: "Human approval, caps, data masking, plugged into the agent loop." },
-          { name: "Isolated runtimes", text: "Each agent in its own environment, limited to its scope." },
+        slug: "solutions",
+        name: "Automate your operations",
+        internal: "AI Solutions Studio",
+        audience: "Business and operations teams",
+        says: "“We lose hours on repetitive tasks.”",
+        tagline: "Hand repetitive tasks to an agent, and keep control of what matters.",
+        lead: "Documents, emails, files, invoices: part of your work repeats every day. We build an agent that takes these tasks on, connected to your tools, and asks for your approval at the steps that matter.",
+        result: "An automated process, tested on your data and running in production on a limited scope, with a measured before and after.",
+        figures: [
+          { value: "×5", label: "articles processed every day" },
+          { value: "×10", label: "faster to qualify an opportunity" },
+          { value: "−58%", label: "false positives" },
         ],
-        useCases: [
-          "FinOps recommendations and remediation follow-up",
-          "Supplier invoice reconciliation",
-          "Security audit reports before go-live",
-          "ITSM ticket automation",
+        figuresNote: "Weak Signal, with L-Acoustics: an agentic pipeline that reads the news, qualifies opportunities and passes them to the right sales team.",
+        features: [
+          {
+            title: "An agent connected to your tools",
+            text: "It reads documents, emails or files where they arrive, and prepares the work in your applications.",
+            window: "invoice-agent",
+            rows: [
+              { label: "Invoices received", status: "read", tone: "ok" },
+              { label: "Matched with purchase orders", status: "done", tone: "ok" },
+              { label: "Discrepancies found", status: "to check", tone: "wait" },
+            ],
+          },
+          {
+            title: "Your approval at the steps that matter",
+            text: "The agent prepares, a person approves. Nothing is written to your systems without consent, and every action is traced.",
+            window: "approval",
+            rows: [
+              { label: "Supplier discrepancy", status: "awaiting approval", tone: "wait" },
+              { label: "Credit note prepared", status: "ready", tone: "ok" },
+              { label: "Payment", status: "blocked until approved", tone: "off" },
+            ],
+          },
+          {
+            title: "A measured result",
+            text: "Time spent, errors, delays: measured before and after, to decide whether to extend, adjust or stop.",
+            window: "review",
+            rows: [
+              { label: "Processing time · before / after", status: "measured", tone: "ok" },
+              { label: "Errors · before / after", status: "measured", tone: "ok" },
+              { label: "Next process", status: "to decide", tone: "wait" },
+            ],
+          },
         ],
-        control: "Rights limited per agent, isolated runtimes, human approval before any write.",
-        controlPoints: [
-          "Access rights limited to each agent’s scope",
-          "Validated, versioned sources",
-          "Human approval at the key steps",
-          "Full traceability of every action",
+        start: {
+          name: "Process sprint",
+          text: "One case, chosen with you, taken to production.",
+          steps: [
+            {
+              name: "Prerequisites",
+              text: "In the first week we check access, data, security and the availability of a business owner, and we choose the process.",
+            },
+            { name: "Baseline", text: "Time spent, errors, delays: the before, in numbers." },
+            { name: "Build", text: "The agent is built and tested on your data, with real users." },
+            {
+              name: "Production",
+              text: "On a limited scope, if the prerequisites are met; otherwise it becomes a separate engagement.",
+            },
+            {
+              name: "Review",
+              text: "The after, measured, and the decision: extend, adjust or stop.",
+            },
+          ],
+          deliverables: "The automated process, the before-and-after review, the list of next processes.",
+        },
+        nextName: "Next processes",
+        next: "Other processes, one at a time. When agents multiply, a shared foundation to run them: that is the third offer.",
+        conditions: [
+          "A business owner available every week.",
+          "Approved access to the systems involved.",
+          "Usable data.",
+          "A shared definition of the expected result and of how to measure it.",
         ],
-        level: 2,
+        excluded: [
+          "Redesigning your existing tools.",
+          "Migrating historical data.",
+          "Running the process after the sprint, under a separate contract.",
+        ],
+        technical: "Lead agent and sub-agents; document processing (extraction, filing, drafting); workflows; API and MCP integrations; human approval, caps and data masking; evaluation sets and value metrics.",
+        related: ["weak-signal-l-acoustics", "business-applications"],
+        cta: "Suggest a process to automate",
+        closing: "Start with one process.",
       },
       {
-        id: "it",
-        slug: "ai-platform",
-        audience: "IT & platform",
-        name: "AI Platform",
-        purpose: "The shared foundation that connects, secures and observes every agent.",
-        lead: "The common foundation that connects, secures and observes all your agents.",
-        problem:
-          "Without a common foundation, every team builds its agents on its own: scattered API keys, tools exposed without control, no view of access, cost or errors. Scaling up becomes a risk.",
-        builds: [
-          { name: "LLM, MCP and agent gateways", text: "One checkpoint per type of flow, each with its own rules." },
-          { name: "Catalogue of agents, tools and skills", text: "What is approved, reusable by every team." },
-          { name: "Observability, evaluation and cost", text: "Every run traced, measured and attributed to a team." },
-          { name: "Standards and centre of excellence", text: "Shared rules and approved models, for a federated model." },
+        slug: "engineering",
+        name: "Deploy AI at scale",
+        internal: "AI Architecture & Engineering",
+        audience: "CIOs, CTOs, architects",
+        says: "“Every team starts its own AI project, and nobody controls anything.”",
+        tagline: "A shared foundation so every team can build its agents without multiplying risks.",
+        lead: "Several teams are already building agents. Without a shared foundation, access, costs and risks multiply. We design and put in place the architecture that lets your agents work with your systems, your security rules and your control requirements, on the cloud you already use.",
+        result: "An architecture approved by your security team: agent identity, access, costs and traces under control, that every team can build on.",
+        figures: [] as { value: string; label: string }[],
+        figuresNote: "",
+        features: [
+          {
+            title: "One gateway for every agent",
+            text: "Gateways for models, MCP tools and agents: every call is filtered, logged and revocable.",
+            window: "gateway",
+            rows: [
+              { label: "llm-gateway · eu-west", status: "active", tone: "ok" },
+              { label: "mcp · ticketing", status: "read only", tone: "ok" },
+              { label: "mcp · erp", status: "write on approval", tone: "wait" },
+              { label: "Personal API key", status: "refused", tone: "off" },
+            ],
+          },
+          {
+            title: "An identity and rights for each agent",
+            text: "Each agent acts with its own identity or the user’s, never with more rights than it needs.",
+            window: "agents",
+            rows: [
+              { label: "support-agent", status: "read · draft", tone: "ok" },
+              { label: "finops-agent", status: "read · recommend", tone: "ok" },
+              { label: "invoice-agent", status: "write after approval", tone: "wait" },
+            ],
+          },
+          {
+            title: "Costs, traces and versions under control",
+            text: "Every run is traced, attributed to a team and versioned. An agent is retired in a single operation.",
+            window: "observability",
+            rows: [
+              { label: "Cost per team", status: "tracked", tone: "ok" },
+              { label: "Run traces", status: "kept", tone: "ok" },
+              { label: "legacy-agent v2", status: "retired", tone: "off" },
+            ],
+          },
         ],
-        useCases: [
-          "Group-wide agentic platform",
-          "Multi-cloud LLM gateway",
-          "Catalogue of agents and MCP servers",
-          "Assisted application migration",
+        start: {
+          name: "Architecture review",
+          text: "An assessment and a target architecture, before building anything.",
+          steps: [
+            { name: "Current state", text: "Existing agents, access, data flows, costs." },
+            { name: "Gaps", text: "What departs from your security and compliance requirements." },
+            {
+              name: "Target architecture",
+              text: "The foundation to put in place and the roadmap to get there.",
+            },
+          ],
+          deliverables: "A reference architecture, an identity and rights model for agents, a rollout plan.",
+        },
+        nextName: "Building the platform",
+        next: "Building and running the platform, then the business agents that rely on it.",
+        conditions: [
+          "A counterpart in IT or architecture.",
+          "Access to the architecture documentation and the security policies.",
+          "Interviews with the teams already building agents.",
         ],
-        control: "One control point for every team: identities, access, cost, traces and versions.",
-        controlPoints: [
-          "One control point for every agent",
-          "Each agent has its own identity and revocable rights",
-          "Controlled versions: models, prompts, skills",
-          "An agent can be retired in a single step",
+        excluded: [
+          "Building the platform, which comes next.",
+          "A formal security audit or a certification.",
         ],
-        level: 3,
+        technical: "LLM, MCP and agent gateways; an identity for each agent and propagation of the user’s identity; a catalogue of agents, tools and skills; observability, evaluation and cost tracking; versioning and rollback; deployment on public cloud, sovereign cloud, on premises or air-gapped; data and semantic foundation.",
+        related: ["ai-platform", "mcp", "couche-semantique", "phaseone10841"],
+        cta: "Request an architecture review",
+        closing: "Start with an architecture review.",
       },
     ],
   },
@@ -486,7 +613,7 @@ const en = {
       {
         title: "Value lies in governance, not in the front end.",
         text: "You can buy the chat interface. What makes the difference is what sits behind it: who can do what, with which data, at what cost, and with what trace.",
-        link: { label: "User Augmentation", href: "/expertise/user-augmentation" },
+        link: { label: "User Augmentation", href: "/articles/user-augmentation" },
       },
       {
         title: "An agent always acts with someone’s rights.",
@@ -496,12 +623,12 @@ const en = {
       {
         title: "One shared foundation rather than a hundred isolated projects.",
         text: "Gateways, catalogue, observability, standards: pooled once, they let every team move fast without reinventing security.",
-        link: { label: "AI Platform", href: "/expertise/ai-platform" },
+        link: { label: "AI Platform", href: "/articles/ai-platform" },
       },
       {
         title: "The simplest thing that works.",
         text: "A workflow before an agent, one agent before several. Add complexity when the problem demands it, not because the technology allows it.",
-        link: { label: "Business Applications", href: "/expertise/business-applications" },
+        link: { label: "Business Applications", href: "/articles/business-applications" },
       },
       {
         title: "AI has a physical weight.",
@@ -523,7 +650,7 @@ const en = {
       "Dasein: “being-there”. An intelligence that is not abstract, but situated: present in an environment, aware of its context, able to act in it.",
     audienceTitle: "Who we work with",
     audienceText:
-      "Large groups with complex data and cloud ecosystems, and technology companies accelerating the construction of their AI infrastructure and products.",
+      "From large groups to SMEs: teams that want to work with AI agents, business heads who want to automate, and IT departments that need to deploy AI at scale without losing control.",
     clients: [
       { name: "TF1", logo: "tf1.svg" },
       { name: "Safran", logo: "safran.svg" },
@@ -533,11 +660,11 @@ const en = {
     audience: [
       {
         title: "Leadership",
-        items: ["Executive committees", "Management committees", "CTOs", "IT departments and information systems"],
+        items: ["SME and mid-cap leaders", "Executive committees", "Business heads", "CTOs", "IT departments and information systems"],
       },
       {
         title: "Teams",
-        items: ["Product", "Data center", "Network", "Cloud", "Data", "Cybersecurity"],
+        items: ["Operations", "Product", "Data center", "Network", "Cloud", "Data", "Cybersecurity"],
       },
     ],
   },
@@ -549,6 +676,14 @@ const en = {
     name: "Name",
     company: "Company",
     email: "Email",
+    topic: "Subject",
+    topicNone: "Choose a subject (optional)",
+    topics: {
+      "ways-of-working": "Work with AI",
+      solutions: "Automate your operations",
+      engineering: "Deploy AI at scale",
+      other: "Something else",
+    },
     project: "Your project",
     projectPlaceholder: "Context, systems involved, what you want to achieve…",
     submit: "Send",
@@ -578,7 +713,7 @@ const en = {
   },
 
   footer: {
-    tagline: "Data & AI engineering.",
+    tagline: "AI agents at work, under control.",
     rights: "All rights reserved.",
     legal: "Legal notice",
     made: "Designed & engineered by Dasein.",

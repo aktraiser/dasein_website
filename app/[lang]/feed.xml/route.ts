@@ -1,5 +1,5 @@
 import { articleIndex } from "@/content/articleIndex";
-import { articles, standaloneArticles } from "@/content/articles";
+import { articles } from "@/content/articles";
 import { getDictionary } from "@/content/dictionaries";
 import { hasLocale, locales, siteUrl } from "@/lib/i18n";
 
@@ -22,7 +22,7 @@ export async function GET(_request: Request, { params }: RouteContext<"/[lang]/f
   const items = [...articleIndex]
     .sort((a, b) => b.date.localeCompare(a.date))
     .flatMap((entry) => {
-      const article = (standaloneArticles[entry.slug] ?? articles[entry.slug])?.[lang];
+      const article = articles[entry.slug]?.[lang];
       if (!article) return [];
       const url = `${siteUrl}/${lang}${entry.href}`;
       return [
