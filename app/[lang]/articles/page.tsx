@@ -1,10 +1,14 @@
 import Link from "next/link";
+import { Fragment } from "react";
 import { notFound } from "next/navigation";
-import { Cover } from "@/components/covers";
-import { Reveal } from "@/components/Reveal";
+import { ArticleViews } from "@/components/ArticleViews";
+import { Atlas } from "@/components/Atlas";
+import { ArticleVisual } from "@/components/ArticleVisual";
+import "./editorial.css";
 import { articleIndex } from "@/content/articleIndex";
 import { articles } from "@/content/articles";
 import { getDictionary } from "@/content/dictionaries";
+import { buildAtlas } from "@/lib/atlas";
 import { hasLocale, type Locale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
 import { readingMinutes } from "@/lib/readingTime";
@@ -24,30 +28,42 @@ function entries(lang: Locale) {
   });
 }
 
+type Card = ReturnType<typeof entries>[number] & { links: { id: string; label: string; href: string }[] };
+
 function CardGrid({
   items,
   lang,
   readingTime,
+  linkedTo,
 }: {
-  items: ReturnType<typeof entries>;
+  items: Card[];
   lang: Locale;
   readingTime: string;
+  linkedTo: string;
 }) {
   return (
     <ul className="articles__grid">
-      {items.map((entry, i) => (
-        <Reveal as="li" key={entry.slug} delay={i * 80}>
+      {items.map((entry) => (
+        <li key={entry.slug} id={`article-${entry.slug}`}>
           <Link href={`/${lang}${entry.href}`} className="acard">
             <span className="acard__media">
-              <Cover cover={entry.cover} lang={lang} />
+              <ArticleVisual cover={entry.cover} lang={lang} />
             </span>
-            <span className="acard__meta">
-              {entry.topic[lang]} · {entry.minutes} {readingTime}
-            </span>
-            <span className="acard__title">{entry.title[lang]}</span>
-            <span className="acard__lead">{entry.lead}</span>
+            <span className="acard__title" title={entry.title[lang]}>{entry.title[lang]}</span>
+            <span className="acard__meta"><time dateTime={entry.date}>{new Intl.DateTimeFormat(lang === "fr" ? "fr-FR" : "en-GB", { day: "numeric", month: "long", year: "numeric" }).format(new Date(entry.date))}</time><span>{entry.minutes} {readingTime}</span></span>
           </Link>
-        </Reveal>
+          {entry.links.length > 0 && (
+            <p className="acard__links">
+              {linkedTo}{" "}
+              {entry.links.map((link, j) => (
+                <Fragment key={link.id}>
+                  {j > 0 && " · "}
+                  <Link href={link.href}>{link.label}</Link>
+                </Fragment>
+              ))}
+            </p>
+          )}
+        </li>
       ))}
     </ul>
   );
@@ -56,55 +72,45 @@ function CardGrid({
 export default async function ArticlesPage({ params }: PageProps<"/[lang]/articles">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
-  const { articlesPage: t } = await getDictionary(lang);
-  const all = entries(lang);
-  const inDepth = all.filter((entry) => entry.kind === "article");
-  const cases = all.filter((entry) => entry.kind === "case");
-  const [featured, ...rest] = inDepth;
+  const { articlesPage: t, offers } = await getDictionary(lang);
+  const atlas = buildAtlas(lang, offers, t.readingTime, t.atlas.others);
+  const byId = new Map(atlas.nodes.map((node) => [node.id, node]));
+  const cards = new Map(entries(lang).map((entry) => [`a:${entry.slug}`, entry]));
+  // Each card lists the other articles it is linked to (once, whichever way the
+  // link goes); offers are already named at the head of each subject.
+  const linksOf = (id: string) =>
+    [...new Set(atlas.links.flatMap(({ source, target }) => (source === id ? [target] : target === id ? [source] : [])))]
+      .map((other) => byId.get(other)!)
+      .filter((node) => node.group !== "offer")
+      .map((node) => ({ id: node.id, label: node.short, href: `#article-${node.id.slice(2)}` }));
 
   return (
-    <>
-      <section className="page-hero">
-        <div className="container">
-          <p className="eyebrow">{t.label}</p>
-          <h1 className="display display--serif xp-title">{t.title}</h1>
-          <p className="lead">{t.intro}</p>
-        </div>
-      </section>
-
-      <div className="container articles">
-        <section className="articles__rubric" aria-labelledby="rubric-articles">
-          <h2 id="rubric-articles" className="articles__rubric-title">
-            {t.rubrics.article} <span>{inDepth.length}</span>
-          </h2>
-          {featured && (
-            <Reveal>
-              <Link href={`/${lang}${featured.href}`} className="acard acard--featured">
-                <span className="acard__media">
-                  <Cover cover={featured.cover} lang={lang} />
-                </span>
-                <span className="acard__text">
-                  <span className="acard__meta">
-                    {featured.topic[lang]} · {featured.minutes} {t.readingTime}
-                  </span>
-                  <span className="acard__title">{featured.title[lang]}</span>
-                  <span className="acard__lead">{featured.lead}</span>
-                  <span className="acard__more">
-                    {t.read} <span aria-hidden="true">→</span>
-                  </span>
-                </span>
-              </Link>
-            </Reveal>
-          )}
-          <CardGrid items={rest} lang={lang} readingTime={t.readingTime} />
-        </section>
-
-        <section className="articles__rubric" aria-labelledby="rubric-cases">
-          <h2 id="rubric-cases" className="articles__rubric-title">
-            {t.rubrics.case} <span>{cases.length}</span>
-          </h2>
-          <CardGrid items={cases} lang={lang} readingTime={t.readingTime} />
-        </section>
+    <ArticleViews lang={lang} title={t.title} intro={t.intro} kicker={t.atlas.kicker}
+      graph={<Atlas data={atlas} labels={t.atlas} lang={lang} title={t.title} intro={t.intro} />}>
+      <div id="list" className="container articles">
+        {atlas.clusters.map((cluster) => {
+          const items = cluster.ids.flatMap((id) => {
+            const entry = cards.get(id);
+            return entry ? [{ ...entry, links: linksOf(id) }] : [];
+          });
+          if (!items.length) return null;
+          const offer = cluster.ids.map((id) => byId.get(id)!).find((node) => node.group === "offer");
+          return (
+            <section key={cluster.name} className="articles__rubric" aria-label={cluster.name}>
+              <div className="articles__rubric-head">
+                <h2 className="articles__rubric-title">
+                  {cluster.name} <span>{items.length}</span>
+                </h2>
+                {offer && (
+                  <Link href={`/${lang}${offer.href}`} className="link">
+                    {t.atlas.open.offer}
+                  </Link>
+                )}
+              </div>
+              <CardGrid items={items.sort((a, b) => b.date.localeCompare(a.date))} lang={lang} readingTime={t.readingTime} linkedTo={t.atlas.linkedTo} />
+            </section>
+          );
+        })}
 
         <aside className="articles__glossary">
           <div>
@@ -112,10 +118,10 @@ export default async function ArticlesPage({ params }: PageProps<"/[lang]/articl
             <p>{t.glossaryText}</p>
           </div>
           <Link href={`/${lang}/glossary`} className="pill pill--ink">
-            {t.glossaryLink} <span aria-hidden="true">→</span>
+            {t.glossaryLink}
           </Link>
         </aside>
       </div>
-    </>
+    </ArticleViews>
   );
 }

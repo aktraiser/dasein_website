@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { NightHeader } from "@/components/home/NightHeader";
 import { ArticleBody } from "@/components/ArticleBody";
-import { Cover } from "@/components/covers";
+import { ArticleVisual } from "@/components/ArticleVisual";
+import "../editorial.css";
 import { articleIndex } from "@/content/articleIndex";
 import { articles } from "@/content/articles";
 import { getDictionary } from "@/content/dictionaries";
@@ -49,9 +51,12 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/article
     : null;
 
   return (
-    <>
+    <div className="article-reading">
+      <NightHeader />
       {jsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(jsonLd)} />}
-      <section className="page-hero vp-hero">
+      <section className="page-hero vp-hero article-reading__hero" data-night="">
+        {cover && <div className="article-reading__visual" aria-hidden="true"><ArticleVisual cover={cover} lang={lang} large /></div>}
+        <div className="article-reading__light" aria-hidden="true" />
         <div className="container">
           <p className="eyebrow">
             <Link href={`/${lang}/articles`}>{articlesPage.label}</Link>
@@ -63,17 +68,12 @@ export default async function ArticlePage({ params }: PageProps<"/[lang]/article
           <p className="vp-hero__level">
             <span className="vp-hero__updated">{article.updated}</span>
           </p>
-          {cover && (
-            <div className="article-cover">
-              <Cover cover={cover} lang={lang} />
-            </div>
-          )}
         </div>
       </section>
 
       <div className="container vp">
         <ArticleBody article={article} lang={lang} path={`/articles/${slug}`} />
       </div>
-    </>
+    </div>
   );
 }

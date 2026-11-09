@@ -43,9 +43,13 @@ const blockText = (block: Block): string => {
   }
 };
 
+/** The readable text of an article, as one string. */
+const articleText = (article: Article) =>
+  [article.lead, ...article.summary, ...article.blocks.map(blockText)].join(" ");
+
+export const articleWords = (article: Article) => articleText(article).split(/\s+/).filter(Boolean).length;
+
 /** Estimated reading time in whole minutes (at least 1). */
 export function readingMinutes(article: Article) {
-  const text = [article.lead, ...article.summary, ...article.blocks.map(blockText)].join(" ");
-  const words = text.split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.round(words / WORDS_PER_MINUTE));
+  return Math.max(1, Math.round(articleWords(article) / WORDS_PER_MINUTE));
 }

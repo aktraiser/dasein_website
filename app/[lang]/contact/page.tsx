@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { offerDesign } from "@/content/offerDesign";
 import { ContactForm } from "@/components/ContactForm";
 import { getDictionary } from "@/content/dictionaries";
 import { hasLocale } from "@/lib/i18n";
@@ -15,6 +16,11 @@ export default async function ContactPage({ params, searchParams }: PageProps<"/
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
   const { contact } = await getDictionary(lang);
+  const labels = { ...contact, topics: { ...contact.topics,
+    "ways-of-working": `WORK — ${offerDesign[lang]["ways-of-working"].name}`,
+    solutions: `SYSTEMS — ${offerDesign[lang].solutions.name}`,
+    engineering: `FOUNDATIONS — ${offerDesign[lang].engineering.name}`,
+  } };
   // An offer page links here with "?offer=<slug>": the form opens with that subject chosen.
   const { offer } = await searchParams;
   const topic = typeof offer === "string" && Object.hasOwn(contact.topics, offer) ? offer : "";
@@ -28,7 +34,7 @@ export default async function ContactPage({ params, searchParams }: PageProps<"/
           <p className="lead">{contact.intro}</p>
         </div>
         <div className="contact__card">
-          <ContactForm labels={contact} lang={lang} topic={topic} />
+          <ContactForm labels={labels} lang={lang} topic={topic} />
         </div>
       </div>
     </section>

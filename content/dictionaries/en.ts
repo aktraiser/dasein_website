@@ -105,18 +105,185 @@ const en = {
     footer: ["Version 0.1", "AI agents at work.", "All systems nominal."],
   },
 
-  featured: {
-    label: "Featured",
-    kinds: { article: "Article", announcement: "Announcement", case: "Case study" },
-  },
-
-  statement: {
-    title: "We don’t stop at chatbots. We build the systems AI runs on.",
-    points: [
-      { name: "Multi-model", text: "Mistral, OpenAI, Anthropic, open models: the right one for each constraint." },
-      { name: "Multi-cloud", text: "AWS, Azure, GCP, IBM or private: we build on what you already run." },
-      { name: "Production-first", text: "Identity, permissions, observability and governance from day one." },
-    ],
+  // Home page: the opening scene, then position, offers, own systems, work, journal, meeting.
+  home: {
+    stage: {
+      label: "Between intention and action, there is meaning",
+      scrollLabel: "Explore below",
+      opening: "Between intention",
+      middle: "and action,",
+      ending: "there is",
+      meaning: "meaning.",
+      intro: "Dasein designs simpler relationships between people and artificial intelligence.",
+      contact: "Let’s talk",
+      offers: "What we do",
+      human: "A human intention",
+      machine: "New possibilities",
+    },
+    simple: {
+      systemsTitle: "Inside our workshop.",
+      workTitle: "Ideas made tangible.",
+      journalTitle: "Take time to understand.",
+      projectDetails: "About the project",
+      readCase: "Read the case study",
+      readArticle: "Read the article",
+      relationLabel: "The relationship before the tool",
+      relationTitle: "You bring meaning. AI opens possibilities.",
+      relationText: "We help your teams work with AI and build the systems that make this collaboration possible.",
+      relationSteps: [
+        ["Intention", "You bring the context and what matters."],
+        ["Dialogue", "AI proposes. You explore and refine."],
+        ["Action", "You choose what becomes real."],
+      ],
+      offersLabel: "Our practice",
+      offersTitle: "Three ways forward.",
+      offers: [
+        { slug: "ways-of-working", name: "Work with AI", text: "Find where AI belongs in your team’s work.", internal: "AI Ways of Working" },
+        { slug: "solutions", name: "Build a solution", text: "Build an agent or a tool that is useful to your business.", internal: "AI Solutions Studio" },
+        { slug: "engineering", name: "Design the architecture", text: "Design the technical foundations of your AI systems.", internal: "AI Architecture & Engineering" },
+      ],
+      explore: "What we build and share",
+      systemsLabel: "In our workshop",
+      discover: "Our monitoring and research station. An internal tool.",
+      gatebot: "A WhatsApp assistant, in preparation.",
+      workLabel: "Work and publications",
+      journalLabel: "Journal",
+      allArticles: "Open the journal",
+      maker: "AI Maker, our editorial project.",
+      contactTitle: "What would you like to do?",
+      contactText: "Let’s start there.",
+      contactLink: "Start a conversation",
+    },
+    position: {
+      label: "Our position",
+      // The middle part is set apart, to leave room between the two.
+      title: ["We design what happens", "between", "people and artificial intelligence."],
+      text: [
+        "Dasein explores and builds new forms of collaboration between people, their knowledge and AI agents.",
+        "From the way work is done to the systems that make action possible, we bring together human experience, design and engineering.",
+      ],
+    },
+    offers: {
+      label: "What we do",
+      title: "Three ways we intervene.",
+      intro: "Independent and complementary, each one starts with a short first engagement.",
+      resultLabel: "Outcome",
+      more: "See the offer",
+      items: [
+        {
+          slug: "ways-of-working",
+          name: "Transform work",
+          internal: "AI Ways of Working",
+          text: [
+            "When agents can search, analyse, produce and act, the way work is done changes.",
+            "We design agentic environments together with the people who use them: tools, skills, knowledge, memory, delegation, supervision and creation.",
+          ],
+          result: "A working environment people actually use, and a method suited to the team’s activities.",
+        },
+        {
+          slug: "solutions",
+          name: "Build systems",
+          internal: "AI Solutions Studio",
+          text: [
+            "Turning intentions and business needs into operational systems.",
+            "We build agents and processes connected to the organisation’s tools, data and rules.",
+          ],
+          result: "A working, measurable use case, with controlled actions.",
+        },
+        {
+          slug: "engineering",
+          name: "Architect intelligence",
+          internal: "AI Architecture & Engineering",
+          text: [
+            "Artificial intelligence is becoming a component of enterprise systems.",
+            "We design the architectures that let agents access knowledge, use tools, respect identities and permissions, and act with traceability.",
+          ],
+          result: "Foundations to build, secure and evolve AI systems.",
+        },
+      ],
+    },
+    systems: {
+      label: "Our own systems",
+      title: "We also build our own systems.",
+      intro: "We work every day with the agents we build. Two of them, shown as they are.",
+      items: [
+        {
+          name: "Discover",
+          state: "live",
+          status: "In use internally · not for sale",
+          role: "Our monitoring and research station.",
+          text: "It collects and connects a wide range of information sources to support our analyses and publications.",
+          spec: [
+            ["Function", "Monitoring and research"],
+            ["Used for", "Our analyses and our journal"],
+            ["Access", "Internal"],
+          ],
+        },
+        {
+          name: "Gatebot",
+          state: "soon",
+          status: "In preparation",
+          role: "Our personal assistant on WhatsApp, for freelancers and small-business owners.",
+          text: "It keeps track of ongoing matters and aims to carry out actions with its user’s agreement.",
+          spec: [
+            ["Channel", "WhatsApp"],
+            ["For", "Freelancers, small-business owners"],
+            ["Principle", "Act with the user’s agreement"],
+            ["Opening", "Once its reliability and security criteria are met"],
+          ],
+        },
+      ],
+    },
+    proofs: {
+      label: "Work",
+      title: "What we have done.",
+      intro: "Each entry states what it is: a client project, an internal experiment or a technical publication.",
+      kinds: { client: "Client project", internal: "Internal experiment", publication: "Technical publication" },
+      // `slug` is an entry of content/articleIndex.ts: the page each line opens.
+      items: [
+        {
+          slug: "weak-signal-l-acoustics",
+          kind: "client",
+          name: "Weak Signal",
+          text: "An agentic pipeline that reads the news, qualifies opportunities and sends them to the right sales team.",
+          meta: "With L-Acoustics · delivered in December 2025",
+        },
+        {
+          slug: "phaseone10841",
+          kind: "internal",
+          name: "PHASEONE10841",
+          text: "A documentary memorial open to AI agents: two interfaces for the same content, an MCP server, access rules.",
+          meta: "phaseone10841.fr",
+        },
+        {
+          slug: "mcp",
+          kind: "publication",
+          name: "MCP",
+          text: "The protocol, its limits, and what it needs around it.",
+          meta: "AI platform",
+        },
+        {
+          slug: "ai-platform",
+          kind: "publication",
+          name: "AI Platform",
+          text: "The shared foundation that lets every team build its agents.",
+          meta: "Architecture",
+        },
+      ],
+    },
+    journal: {
+      label: "Journal",
+      title: "Observe, research, write.",
+      intro: "Technical articles and analyses, prepared with Discover. Every source is checked before publication.",
+      editorial: "Also: AI Maker, our editorial project.",
+      all: "All articles",
+    },
+    meet: {
+      label: "Meeting",
+      question: "What could artificial intelligence change in the way you work?",
+      offers: "Explore what we do",
+      contact: "Tell us about your project",
+    },
   },
 
   bigline: ["Six layers.", "One system."],
@@ -216,7 +383,7 @@ const en = {
         audience: "Teams and leaders",
         says: "“My teams use ChatGPT, each in their own corner.”",
         tagline: "Your teams already use AI. Let’s give them the right tools and a shared method.",
-        lead: "Your teams already use AI, each in their own way. We set up the right tools, configured for your work, and a shared method: what to hand to agents, how to check their work, how to share what works.",
+        lead: "We start with your team’s tasks to configure its AI tools, prepare reusable methods and learn how to delegate work, check it and share what works.",
         result: "A pilot team that works with its agents: a configured environment, shared skills and a common method to delegate and check.",
         figures: [] as { value: string; label: string }[],
         figuresNote: "",
@@ -255,7 +422,7 @@ const en = {
           },
         ],
         start: {
-          name: "Pilot setup",
+          name: "Team pilot",
           text: "A small team, one environment, a few skills, one workshop.",
           steps: [
             { name: "Assessment", text: "Who uses what, for which tasks, with which data." },
@@ -284,7 +451,7 @@ const en = {
         ],
         technical: "Claude, Codex or Gemini configuration; shared skills and prompt libraries; memory and knowledge base; MCP connectors to the team’s tools; delegation and supervision rules; a usage charter and a classification of the data that may, or may not, be handed to an agent.",
         related: ["user-augmentation"],
-        cta: "Set up a pilot",
+        cta: "Plan a team pilot",
         closing: "Start with a pilot team.",
       },
       {
@@ -295,7 +462,7 @@ const en = {
         says: "“We lose hours on repetitive tasks.”",
         tagline: "Hand repetitive tasks to an agent, and keep control of what matters.",
         lead: "Documents, emails, files, invoices: part of your work repeats every day. We build an agent that takes these tasks on, connected to your tools, and asks for your approval at the steps that matter.",
-        result: "An automated process, tested on your data and running in production on a limited scope, with a measured before and after.",
+        result: "A first automated process tested on your data, a before-and-after assessment and a limited production rollout when the prerequisites are met.",
         figures: [
           { value: "×5", label: "articles processed every day" },
           { value: "×10", label: "faster to qualify an opportunity" },
@@ -381,7 +548,7 @@ const en = {
         says: "“Every team starts its own AI project, and nobody controls anything.”",
         tagline: "A shared foundation so every team can build its agents without multiplying risks.",
         lead: "Several teams are already building agents. Without a shared foundation, access, costs and risks multiply. We design and put in place the architecture that lets your agents work with your systems, your security rules and your control requirements, on the cloud you already use.",
-        result: "An architecture approved by your security team: agent identity, access, costs and traces under control, that every team can build on.",
+        result: "A target architecture to review with your security team, an agent identity and permissions model, and a deployment plan.",
         figures: [] as { value: string; label: string }[],
         figuresNote: "",
         features: [
@@ -695,15 +862,40 @@ const en = {
 
   articlesPage: {
     label: "Articles",
-    rubrics: { article: "In-depth articles", case: "Case studies" },
     readingTime: "min read",
-    title: "Understanding enterprise AI, without the jargon.",
+    title: "AI, in practice.",
     intro:
-      "In-depth, sourced articles on how to put agents to work inside a company: what changes, what gets stuck, and how to govern it.",
-    read: "Read the article",
+      "Uses, architecture, energy: our analyses and project experience to inform your decisions.",
     glossaryTitle: "Lost on a word?",
     glossaryText: "Every technical and business term used in these articles is explained simply in the glossary.",
     glossaryLink: "Open the glossary",
+    atlas: {
+      kicker: "The Dasein journal",
+      intro:
+        "Each point is an article or an offer; each line, a link between them. Hover to see the links, click to open.",
+      groups: { article: "In-depth articles", case: "Case studies", offer: "Offers" },
+      groupText: {
+        article: "Sourced analyses of AI in the enterprise.",
+        case: "What we built, and what we learned from it.",
+        offer: "The three ways to work with us.",
+      },
+      stats: { articles: "articles", words: "words", minutes: "minutes of reading", links: "links" },
+      open: {
+        article: "Read the article",
+        case: "Read the case study",
+        offer: "See the offer",
+      },
+      linked: "Links",
+      linkedTo: "Linked to:",
+      others: "Other subjects",
+      search: "Search an article or an offer",
+      reset: "Recentre",
+      close: "Close",
+      toList: "See the list",
+      loading: "Drawing the map…",
+      unsupported: "The map needs WebGL, which is not available here. Every article is listed just below.",
+      mapLabel: "Map of the articles and offers, linked together",
+    },
   },
 
   glossary: {

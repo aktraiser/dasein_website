@@ -107,18 +107,182 @@ const fr: Dictionary = {
     footer: ["Version 0.1", "Agents IA au travail.", "Tous les systèmes sont opérationnels."],
   },
 
-  featured: {
-    label: "À la une",
-    kinds: { article: "Article", announcement: "Annonce", case: "Réalisation" },
-  },
-
-  statement: {
-    title: "Nous ne nous limitons pas aux chatbots. Nous construisons les systèmes sur lesquels l’IA fonctionne.",
-    points: [
-      { name: "Multi-modèles", text: "Mistral, OpenAI, Anthropic, modèles open source : le bon pour chaque contrainte." },
-      { name: "Multi-cloud", text: "AWS, Azure, GCP, IBM ou privé : nous construisons sur ce que vous utilisez déjà." },
-      { name: "Production d’abord", text: "Identité, permissions, observabilité et gouvernance dès le premier jour." },
-    ],
+  home: {
+    stage: {
+      label: "Entre l’intention et l’action, il y a le sens",
+      scrollLabel: "Découvrir la suite",
+      opening: "Entre l’intention",
+      middle: "et l’action,",
+      ending: "il y a le",
+      meaning: "sens.",
+      intro: "Dasein conçoit des relations plus simples entre les personnes et l’intelligence artificielle.",
+      contact: "Parlons ensemble",
+      offers: "Ce que nous faisons",
+      human: "Une intention humaine",
+      machine: "Des possibilités nouvelles",
+    },
+    simple: {
+      systemsTitle: "Notre atelier, à ciel ouvert.",
+      workTitle: "Des idées devenues concrètes.",
+      journalTitle: "Prendre le temps de comprendre.",
+      projectDetails: "À propos du projet",
+      readCase: "Lire le retour d’expérience",
+      readArticle: "Lire l’article",
+      relationLabel: "La relation avant l’outil",
+      relationTitle: "Vous donnez le sens. L’IA ouvre des possibles.",
+      relationText: "Nous aidons vos équipes à travailler avec l’IA et construisons les systèmes qui rendent cette collaboration possible.",
+      relationSteps: [
+        ["L’intention", "Vous apportez le contexte et ce qui compte."],
+        ["Le dialogue", "L’IA propose. Vous explorez et ajustez."],
+        ["L’action", "Vous choisissez ce qui devient réel."],
+      ],
+      offersLabel: "Notre pratique",
+      offersTitle: "Trois manières d’avancer.",
+      offers: [
+        { slug: "ways-of-working", name: "Travailler avec l’IA", text: "Trouver la place de l’IA dans le travail de votre équipe.", internal: "AI Ways of Working" },
+        { slug: "solutions", name: "Construire une solution", text: "Construire un agent ou un outil utile à votre activité.", internal: "AI Solutions Studio" },
+        { slug: "engineering", name: "Concevoir l’architecture", text: "Concevoir les fondations techniques de vos systèmes IA.", internal: "AI Architecture & Engineering" },
+      ],
+      explore: "Ce que nous construisons et partageons",
+      systemsLabel: "Dans notre atelier",
+      discover: "Notre station de veille et de recherche. Un outil interne.",
+      gatebot: "Un assistant sur WhatsApp, en préparation.",
+      workLabel: "Réalisations et publications",
+      journalLabel: "Journal",
+      allArticles: "Ouvrir le journal",
+      maker: "AI Maker, notre projet éditorial.",
+      contactTitle: "Qu’aimeriez-vous faire ?",
+      contactText: "Partons de là.",
+      contactLink: "Entrer en conversation",
+    },
+    position: {
+      label: "Notre position",
+      title: ["Nous concevons ce qui se passe", "entre", "l’humain et l’intelligence artificielle."],
+      text: [
+        "Dasein explore et construit de nouvelles formes de collaboration entre les personnes, leurs connaissances et les agents IA.",
+        "De la manière de travailler aux systèmes qui permettent d’agir, nous réunissons expérience humaine, conception et ingénierie.",
+      ],
+    },
+    offers: {
+      label: "Nos interventions",
+      title: "Trois formes d’intervention.",
+      intro: "Indépendantes et complémentaires, elles commencent toutes par une première mission courte.",
+      resultLabel: "Résultat",
+      more: "Voir l’offre",
+      items: [
+        {
+          slug: "ways-of-working",
+          name: "Transformer le travail",
+          internal: "AI Ways of Working",
+          text: [
+            "Quand les agents peuvent chercher, analyser, produire et agir, les méthodes de travail changent.",
+            "Nous concevons avec les personnes leurs environnements agentiques : outils, skills, connaissances, mémoire, délégation, supervision et création.",
+          ],
+          result: "Un environnement de travail réellement utilisable et une méthode adaptée aux activités de l’équipe.",
+        },
+        {
+          slug: "solutions",
+          name: "Construire des systèmes",
+          internal: "AI Solutions Studio",
+          text: [
+            "Transformer des intentions et des besoins métier en systèmes opérationnels.",
+            "Nous développons des agents et des processus connectés aux outils, aux données et aux règles de l’organisation.",
+          ],
+          result: "Un cas d’usage fonctionnel et mesurable, avec des actions contrôlées.",
+        },
+        {
+          slug: "engineering",
+          name: "Architecturer l’intelligence",
+          internal: "AI Architecture & Engineering",
+          text: [
+            "L’intelligence artificielle devient une composante des systèmes d’entreprise.",
+            "Nous concevons les architectures permettant aux agents d’accéder aux connaissances, d’utiliser les outils, de respecter les identités et les droits, et d’agir avec traçabilité.",
+          ],
+          result: "Des fondations permettant de construire, sécuriser et faire évoluer les systèmes IA.",
+        },
+      ],
+    },
+    systems: {
+      label: "Nos propres systèmes",
+      title: "Nous construisons aussi nos propres systèmes.",
+      intro: "Nous travaillons chaque jour avec les agents que nous construisons. Deux d’entre eux, présentés tels qu’ils sont.",
+      items: [
+        {
+          name: "Discover",
+          state: "live",
+          status: "Actif en interne · non commercialisé",
+          role: "Notre station de veille et de recherche.",
+          text: "Elle collecte et relie de nombreuses sources d’information pour soutenir nos analyses et nos publications.",
+          spec: [
+            ["Fonction", "Veille et recherche"],
+            ["Sert à", "Nos analyses et notre journal"],
+            ["Accès", "Interne"],
+          ],
+        },
+        {
+          name: "Gatebot",
+          state: "soon",
+          status: "En préparation",
+          role: "Notre assistant personnel sur WhatsApp, pour les indépendants et les dirigeants de TPE.",
+          text: "Il suit les sujets en cours et vise à réaliser des actions avec l’accord de son utilisateur.",
+          spec: [
+            ["Canal", "WhatsApp"],
+            ["Pour", "Indépendants, dirigeants de TPE"],
+            ["Principe", "Agir avec l’accord de l’utilisateur"],
+            ["Ouverture", "Une fois ses critères de fiabilité et de sécurité validés"],
+          ],
+        },
+      ],
+    },
+    proofs: {
+      label: "Réalisations",
+      title: "Ce que nous avons fait.",
+      intro: "Chaque entrée précise sa nature : projet client, expérimentation interne ou publication technique.",
+      kinds: { client: "Projet client", internal: "Expérimentation interne", publication: "Publication technique" },
+      items: [
+        {
+          slug: "weak-signal-l-acoustics",
+          kind: "client",
+          name: "Weak Signal",
+          text: "Un pipeline agentique qui lit l’actualité, qualifie les opportunités et les transmet à la bonne équipe commerciale.",
+          meta: "Avec L-Acoustics · livré en décembre 2025",
+        },
+        {
+          slug: "phaseone10841",
+          kind: "internal",
+          name: "PHASEONE10841",
+          text: "Un mémorial documentaire ouvert aux agents IA : deux interfaces pour un même contenu, un serveur MCP, des règles d’accès.",
+          meta: "phaseone10841.fr",
+        },
+        {
+          slug: "mcp",
+          kind: "publication",
+          name: "MCP",
+          text: "Le protocole, ses limites, et ce qu’il faut autour.",
+          meta: "Plateforme IA",
+        },
+        {
+          slug: "ai-platform",
+          kind: "publication",
+          name: "AI Platform",
+          text: "Le socle commun qui permet à chaque équipe de construire ses agents.",
+          meta: "Architecture",
+        },
+      ],
+    },
+    journal: {
+      label: "Journal",
+      title: "Observer, chercher, écrire.",
+      intro: "Des articles techniques et des analyses, préparés avec l’appui de Discover. Chaque source est vérifiée avant publication.",
+      editorial: "Également : AI Maker, notre projet éditorial.",
+      all: "Tous les articles",
+    },
+    meet: {
+      label: "La rencontre",
+      question: "Qu’est-ce que l’intelligence artificielle pourrait changer dans votre manière de travailler ?",
+      offers: "Découvrir nos interventions",
+      contact: "Nous parler de votre projet",
+    },
   },
 
   bigline: ["Six couches.", "Un seul système."],
@@ -218,7 +382,7 @@ const fr: Dictionary = {
         audience: "Équipes et dirigeants",
         says: "« Mes équipes utilisent ChatGPT, chacun dans son coin. »",
         tagline: "Vos équipes utilisent déjà l’IA. Donnons-leur les bons outils et une méthode commune.",
-        lead: "Vos équipes utilisent déjà l’IA, mais chacun à sa façon. Nous installons les bons outils, configurés pour vos métiers, et une méthode commune : quoi confier aux agents, comment vérifier leur travail, comment partager ce qui marche.",
+        lead: "Nous partons des tâches de votre équipe pour configurer ses outils IA, préparer des méthodes réutilisables et apprendre à déléguer un travail, le vérifier et partager ce qui fonctionne.",
         result: "Une équipe pilote qui travaille avec ses agents : un environnement configuré, des skills partagés et une méthode commune pour déléguer et vérifier.",
         figures: [],
         figuresNote: "",
@@ -257,7 +421,7 @@ const fr: Dictionary = {
           },
         ],
         start: {
-          name: "Setup pilote",
+          name: "Pilote d’équipe",
           text: "Une équipe réduite, un environnement, quelques skills, un atelier.",
           steps: [
             {
@@ -289,7 +453,7 @@ const fr: Dictionary = {
         ],
         technical: "Configuration de Claude, Codex ou Gemini ; skills et bibliothèques de prompts partagées ; mémoire et base de connaissances ; connecteurs MCP vers les outils de l’équipe ; règles de délégation et de supervision ; charte d’usage et classement des données qui peuvent, ou non, être confiées à un agent.",
         related: ["user-augmentation"],
-        cta: "Organiser un setup pilote",
+        cta: "Préparer un pilote d’équipe",
         closing: "Commencez avec une équipe pilote.",
       },
       {
@@ -300,7 +464,7 @@ const fr: Dictionary = {
         says: "« On perd des heures sur des tâches répétitives. »",
         tagline: "Confiez à un agent les tâches qui se répètent, et gardez la main sur ce qui compte.",
         lead: "Documents, emails, dossiers, factures : une partie de votre activité se répète tous les jours. Nous construisons un agent qui prend ces tâches en charge, connecté à vos outils, et qui vous demande validation aux étapes qui comptent.",
-        result: "Un processus automatisé, testé sur vos données et mis en production sur un périmètre restreint, avec un avant/après mesuré.",
+        result: "Un premier processus automatisé et testé sur vos données, un bilan avant/après et une mise en production sur un périmètre restreint lorsque les prérequis sont réunis.",
         figures: [
           { value: "×5", label: "articles traités chaque jour" },
           { value: "×10", label: "plus rapide pour qualifier une opportunité" },
@@ -386,7 +550,7 @@ const fr: Dictionary = {
         says: "« Chaque équipe lance son projet IA, personne ne contrôle rien. »",
         tagline: "Un socle commun pour que chaque équipe construise ses agents, sans multiplier les risques.",
         lead: "Plusieurs équipes construisent déjà des agents. Sans socle commun, les accès, les coûts et les risques se multiplient. Nous concevons et mettons en place l’architecture qui permet à vos agents de fonctionner avec vos systèmes, vos règles de sécurité et vos exigences de contrôle, sur le cloud que vous utilisez déjà.",
-        result: "Une architecture validée par votre sécurité : identité des agents, accès, coûts et traces sous contrôle, sur laquelle chaque équipe peut construire.",
+        result: "Une architecture cible à faire valider avec vos équipes sécurité, un modèle d’identité et de droits des agents, et un plan de déploiement.",
         figures: [],
         figuresNote: "",
         features: [
@@ -703,15 +867,40 @@ const fr: Dictionary = {
 
   articlesPage: {
     label: "Articles",
-    rubrics: { article: "Articles de fond", case: "Retours d’expérience" },
     readingTime: "min de lecture",
-    title: "Comprendre l’IA en entreprise, sans jargon.",
+    title: "L’IA, en pratique.",
     intro:
-      "Des articles de fond, sourcés, pour comprendre comment on met des agents au travail dans une entreprise : ce que ça change, ce qui coince, et comment le gouverner.",
-    read: "Lire l’article",
+      "Usages, architecture, énergie : nos analyses et nos retours d’expérience pour éclairer vos décisions.",
     glossaryTitle: "Un mot vous échappe ?",
     glossaryText: "Tous les termes techniques et métiers employés dans ces articles sont expliqués simplement dans le glossaire.",
     glossaryLink: "Ouvrir le glossaire",
+    atlas: {
+      kicker: "Le journal Dasein",
+      intro:
+        "Chaque point est un article ou une offre ; chaque trait, un lien entre eux. Survolez pour voir les liens, cliquez pour ouvrir.",
+      groups: { article: "Articles de fond", case: "Retours d’expérience", offer: "Offres" },
+      groupText: {
+        article: "Des analyses sourcées sur l’IA en entreprise.",
+        case: "Ce que nous avons construit, et ce que nous en avons appris.",
+        offer: "Les trois façons de travailler avec nous.",
+      },
+      stats: { articles: "articles", words: "mots", minutes: "min de lecture", links: "liens" },
+      open: {
+        article: "Lire l’article",
+        case: "Lire le retour d’expérience",
+        offer: "Voir l’offre",
+      },
+      linked: "Liens",
+      linkedTo: "Relié à :",
+      others: "Autres sujets",
+      search: "Chercher un article ou une offre",
+      reset: "Recentrer",
+      close: "Fermer",
+      toList: "Voir la liste",
+      loading: "Dessin de la carte…",
+      unsupported: "La carte a besoin de WebGL, indisponible ici. Tous les articles sont listés juste en dessous.",
+      mapLabel: "Carte des articles et des offres, reliés entre eux",
+    },
   },
 
   glossary: {

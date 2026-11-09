@@ -44,6 +44,13 @@ export default async function LegalPage({ params }: PageProps<"/[lang]/legal">) 
             </div>
           </section>
         ))}
+        <section id="credits-photo" className="legal__section">
+          <h2>{lang === "fr" ? "Crédits photographiques" : "Photography credits"}</h2>
+          <div className="legal__body">
+            <p>{lang === "fr" ? "Photographies d’illustration de la homepage : Capitole du Texas, LoneStarMike / Wikimedia Commons, recadrée, sous licence " : "Homepage illustrative photographs: Texas State Capitol, LoneStarMike / Wikimedia Commons, cropped, licensed under "}<a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+            <p>{lang === "fr" ? "Toit de data center : Rsparks3. Vue aérienne d’Ashburn : Theodore Christopher. Wikimedia Commons, CC0." : "Data center roof: Rsparks3. Aerial view of Ashburn: Theodore Christopher. Wikimedia Commons, CC0."}</p>
+          </div>
+        </section>
         <p className="legal__updated">{t.updated}</p>
       </div>
     </>

@@ -144,7 +144,13 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
                 </Link>
               ))}
             </div>
-            <Link href={path("/contact")} className="pill pill--ink header__cta" onClick={closeAll}>
+            <Link
+              href={path("/contact")}
+              className="pill pill--ink header__cta"
+              data-track="contact_open"
+              data-track-from="header"
+              onClick={closeAll}
+            >
               {labels.cta} <span aria-hidden="true">↗</span>
             </Link>
             <button
@@ -243,7 +249,13 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
           <Link href={path("/articles")} aria-current={isCurrent("/articles") ? "page" : undefined} onClick={closeAll}>
             {labels.articles}
           </Link>
-          <Link href={path("/contact")} className="pill pill--ink mobile-nav__cta" onClick={closeAll}>
+          <Link
+            href={path("/contact")}
+            className="pill pill--ink mobile-nav__cta"
+            data-track="contact_open"
+            data-track-from="menu"
+            onClick={closeAll}
+          >
             {labels.cta} <span aria-hidden="true">↗</span>
           </Link>
         </nav>

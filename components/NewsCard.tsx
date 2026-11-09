@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { NewsItem, NewsVisual } from "@/content/news";
 import type { Locale } from "@/lib/i18n";
-import { Cover } from "./covers";
+import { ArticleVisual } from "./ArticleVisual";
 import { FloatingChips } from "./FloatingChips";
 import { DitherField } from "./os/DitherField";
 
@@ -22,7 +22,7 @@ function Visual({ visual, lang }: { visual: NewsVisual; lang: Locale }) {
     case "user-augmentation":
       return (
         <div className="card__media">
-          <Cover cover={visual} lang={lang} />
+          <ArticleVisual cover={visual} lang={lang} />
         </div>
       );
     case "chips":

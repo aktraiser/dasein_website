@@ -4905,6 +4905,489 @@ button:hover .arrow {
 /* ==========================================================================
    CTA & footer
    ========================================================================== */
+/* Articles map (after secondbrainos.dev): the whole body of writing as one graph */
+:where(.atlas) button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+}
+
+.atlas {
+  --atlas-line: rgba(241, 240, 234, 0.13);
+  --atlas-soft: rgba(241, 240, 234, 0.62);
+  --atlas-card: rgba(20, 21, 24, 0.78);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: var(--header-h);
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.atlas__stage {
+  position: relative;
+  /* The label layer sets large z-indexes on its labels: keep them inside the map */
+  isolation: isolate;
+  height: 64svh;
+  min-height: 420px;
+}
+
+.atlas__graph {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease);
+}
+
+.atlas__graph[data-ready="true"] {
+  opacity: 1;
+}
+
+.atlas__graph canvas {
+  display: block;
+}
+
+.atlas__status {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  text-align: center;
+  color: var(--atlas-soft);
+  pointer-events: none;
+}
+
+.atlas__intro {
+  padding: 32px var(--gutter) 0;
+}
+
+.atlas__kicker {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--atlas-soft);
+}
+
+.atlas__title {
+  margin-top: 14px;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(34px, 3vw, 46px);
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.atlas__lead {
+  margin-top: 16px;
+  font-size: 16px;
+  line-height: 1.55;
+  color: rgba(241, 240, 234, 0.78);
+}
+
+.atlas__hint {
+  margin-top: 8px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--atlas-soft);
+}
+
+.atlas__groups {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+}
+
+@media (min-width: 600px) and (max-width: 999px) {
+  .atlas__groups {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.atlas__group {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2px 12px;
+  width: 100%;
+  padding: 9px 14px;
+  border: 1px solid var(--atlas-line);
+  border-left: 3px solid var(--group);
+  border-radius: 10px;
+  background: var(--atlas-card);
+  backdrop-filter: blur(6px);
+  color: var(--paper);
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.atlas__group:hover,
+.atlas__group[aria-pressed="true"] {
+  border-color: rgba(241, 240, 234, 0.32);
+  border-left-color: var(--group);
+  background: rgba(32, 33, 37, 0.9);
+}
+
+.atlas__group-name {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.atlas__group-count {
+  align-self: center;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--atlas-soft);
+}
+
+.atlas__group-text {
+  grid-column: 1 / -1;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--atlas-soft);
+}
+
+.atlas__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--atlas-line);
+}
+
+.atlas__stats dt {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--accent);
+}
+
+.atlas__stats dd {
+  margin-top: 4px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--atlas-soft);
+}
+
+.atlas__tolist {
+  display: inline-block;
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--atlas-soft);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.atlas__tolist:hover {
+  color: var(--paper);
+}
+
+.atlas__search {
+  position: relative;
+  z-index: 3;
+  margin: 20px var(--gutter) 12px;
+}
+
+.atlas__search input {
+  width: 100%;
+  height: 40px;
+  padding: 0 14px;
+  border: 1px solid rgba(241, 240, 234, 0.18);
+  border-radius: 10px;
+  background: var(--atlas-card);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.atlas__search input::placeholder {
+  color: var(--atlas-soft);
+}
+
+.atlas__search input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.atlas__results {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-top: 6px;
+  overflow: hidden;
+  border: 1px solid var(--atlas-line);
+  border-radius: 10px;
+  background: #141518;
+}
+
+.atlas__results button,
+.atlas__near button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 14px;
+  color: var(--paper);
+  font-size: 14px;
+  line-height: 1.35;
+  text-align: left;
+  cursor: pointer;
+}
+
+.atlas__results button:hover,
+.atlas__near button:hover {
+  background: rgba(241, 240, 234, 0.07);
+}
+
+.atlas__results i,
+.atlas__near i,
+.atlas__legend i {
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.atlas__panel {
+  position: relative;
+  z-index: 3;
+  margin: 12px var(--gutter) 0;
+  padding: 24px;
+  border: 1px solid rgba(241, 240, 234, 0.15);
+  border-radius: 14px;
+  background: rgba(17, 18, 21, 0.94);
+  backdrop-filter: blur(8px);
+}
+
+.atlas__close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--atlas-soft);
+  cursor: pointer;
+}
+
+.atlas__close:hover {
+  color: var(--paper);
+}
+
+.atlas__panel-kind {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.atlas__panel-title {
+  margin-top: 10px;
+  padding-right: 20px;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.atlas__panel-meta {
+  margin-top: 10px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--atlas-soft);
+}
+
+.atlas__panel-text {
+  margin: 14px 0 20px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(241, 240, 234, 0.8);
+}
+
+.atlas__panel-label {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 26px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--atlas-line);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--atlas-soft);
+}
+
+.atlas__near button {
+  padding-inline: 0;
+}
+
+.atlas__legend {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 16px;
+  margin: 12px var(--gutter) 28px;
+  padding: 10px 16px;
+  border: 1px solid var(--atlas-line);
+  border-radius: 10px;
+  background: var(--atlas-card);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.atlas__legend button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: rgba(241, 240, 234, 0.85);
+  cursor: pointer;
+}
+
+.atlas__legend button span {
+  color: var(--atlas-soft);
+}
+
+.atlas__legend button[aria-pressed="true"] {
+  color: var(--accent);
+}
+
+.atlas__reset {
+  color: var(--atlas-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+/* Labels drawn over the 3D scene, one per node, beside it (left or right) */
+.atlas__label {
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: 15px;
+  color: var(--paper);
+  white-space: nowrap;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.95);
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+@media (max-width: 699px) {
+  .atlas__label {
+    font-size: 12px;
+  }
+  .atlas__label--offer {
+    font-size: 13px;
+  }
+}
+
+/* The label layer centres each title on its point; `translate` adds to its transform */
+.atlas__label[data-side="right"] {
+  translate: calc(50% + 16px) 0;
+}
+
+.atlas__label[data-side="left"] {
+  translate: calc(-50% - 16px) 0;
+}
+
+.atlas__label--offer {
+  font-size: 17px;
+  font-weight: 500;
+}
+
+/* At rest, titles further from the camera are dimmer (set per frame in --depth) */
+.atlas__label[data-state="idle"] {
+  opacity: var(--depth, 1);
+}
+
+.atlas__label[data-state="off"] {
+  opacity: 0.08;
+}
+
+.atlas__label[data-state="near"] {
+  opacity: 1;
+}
+
+.atlas__label[data-state="center"] {
+  opacity: 1;
+  color: var(--accent);
+}
+
+/* Wide screens with a mouse: the map fills the section, the panels float over it
+   (the same query gates the 3D map in components/Atlas.tsx) */
+@media (min-width: 1000px) and (hover: hover) and (pointer: fine) {
+  .atlas {
+    display: block;
+    height: clamp(720px, 100svh, 1000px);
+    overflow: hidden;
+  }
+  .atlas__stage {
+    position: absolute;
+    inset: var(--header-h) 0 0;
+    height: auto;
+  }
+  .atlas__status {
+    padding-left: calc(var(--gutter) + min(34vw, 460px));
+  }
+  .atlas__intro {
+    position: absolute;
+    top: calc(var(--header-h) + 36px);
+    left: var(--gutter);
+    z-index: 2;
+    width: min(34vw, 460px);
+    padding: 0;
+  }
+  .atlas__search {
+    position: absolute;
+    top: calc(var(--header-h) + 20px);
+    right: var(--gutter);
+    width: min(380px, 32vw);
+    margin: 0;
+  }
+  .atlas__panel {
+    position: absolute;
+    top: calc(var(--header-h) + 76px);
+    right: var(--gutter);
+    bottom: 84px;
+    width: min(380px, 32vw);
+    margin: 0;
+    overflow: auto;
+  }
+  .atlas__legend {
+    position: absolute;
+    left: var(--gutter);
+    bottom: 20px;
+    margin: 0;
+  }
+}
+
+/* Touch and small screens: no 3D map, the intro leads straight into the list below */
+@media not all and (min-width: 1000px) and (hover: hover) and (pointer: fine) {
+  .atlas__groups,
+  .atlas__stage,
+  .atlas__search,
+  .atlas__panel,
+  .atlas__legend {
+    display: none;
+  }
+}
+
+/* Short screens: drop the collection descriptions so the intro clears the legend */
+@media (min-width: 1000px) and (hover: hover) and (pointer: fine) and (max-height: 880px) {
+  .atlas__group-text {
+    display: none;
+  }
+}
+
+.atlas + .articles {
+  padding-top: clamp(56px, 8vw, 104px);
+}
+
 /* Articles index */
 .articles {
   display: grid;
@@ -4951,31 +5434,29 @@ button:hover .arrow {
   line-height: 1.5;
   color: var(--ink-soft);
 }
-.acard--featured .acard__text {
-  display: grid;
-  gap: 12px;
-  align-content: center;
+/* What a card is linked to: other cards on the page */
+.acard__links {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--muted);
 }
-.acard--featured .acard__title {
-  font-family: var(--font-serif);
-  font-size: clamp(30px, 3.4vw, 48px);
-  font-weight: 400;
-  line-height: 1.05;
-  letter-spacing: -0.01em;
+.acard__links a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 3px;
 }
-.acard--featured .acard__lead {
-  font-size: 17px;
+.acard__links a:hover {
+  text-decoration-color: var(--ink);
 }
-.acard__more {
-  margin-top: 6px;
-  font-weight: 500;
+.articles__grid > li {
+  scroll-margin-top: calc(var(--header-h) + 24px);
 }
-@media (min-width: 900px) {
-  .acard--featured {
-    grid-template-columns: 1.4fr 1fr;
-    gap: clamp(28px, 4vw, 56px);
-    align-items: center;
-  }
+.articles__grid > li:target .acard__media {
+  box-shadow: 0 0 0 3px var(--accent), var(--shadow);
 }
 .articles__grid {
   display: grid;
@@ -4998,12 +5479,20 @@ button:hover .arrow {
   display: grid;
   gap: clamp(28px, 4vw, 44px);
 }
+/* A subject: its name (and its offer, if it has one), then its articles */
+.articles__rubric-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ink);
+}
 .articles__rubric-title {
   display: flex;
   align-items: baseline;
   gap: 12px;
-  padding-top: 20px;
-  border-top: 1px solid var(--ink);
   font-family: var(--font-serif);
   font-size: clamp(30px, 3.4vw, 46px);
   font-weight: 400;

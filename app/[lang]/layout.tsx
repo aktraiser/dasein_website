@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { TermPopovers } from "@/components/TermPopovers";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { TrackClicks } from "@/components/TrackClicks";
 import { fontVariables } from "@/lib/fonts";
 import { jsonLdScript } from "@/lib/jsonld";
 import { getDictionary } from "@/content/dictionaries";
@@ -77,6 +78,7 @@ export default async function RootLayout({ children, params }: LayoutProps<"/[la
         <main id="main">{children}</main>
         <Footer lang={lang} dict={dict} />
         <TermPopovers />
+        <TrackClicks />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={jsonLdScript([organization, website])}

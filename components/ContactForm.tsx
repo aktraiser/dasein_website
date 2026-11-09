@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import type { Dictionary } from "@/content/dictionaries";
 import type { Locale } from "@/lib/i18n";
+import { track } from "@/lib/track";
 
 type Status = "idle" | "sending" | "success" | "error" | "invalid";
 
@@ -29,6 +30,7 @@ export function ContactForm({ labels, lang, topic }: { labels: Dictionary["conta
       });
       if (response.status === 400) return setStatus("invalid");
       if (!response.ok) throw new Error(String(response.status));
+      track("contact_sent", { topic: String(new FormData(form).get("topic") ?? "") });
       form.reset();
       setStatus("success");
       // Back to the home page, which thanks the visitor in a dialog.
