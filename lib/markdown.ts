@@ -58,6 +58,10 @@ const DIAGRAMS: Record<Variant, Record<Locale, string>> = {
     fr: "D’une donnée brute à son sens : la donnée (ID vidéo 84721), le concept (épisode), le contexte (rattaché à un programme), les attributs et relations (genre : sport, saison : 2).",
     en: "From a raw value to its meaning: the data (video ID 84721), the concept (episode), the context (attached to a programme), the attributes and relationships (genre: sport, season: 2).",
   },
+  "midterms-map": {
+    fr: "Carte : les postes perdus par les républicains le 3 novembre 2026 (gouverneur et Sénat au Texas et dans l’Ohio, gouverneur au Nevada et en Géorgie, Sénat en Caroline du Sud, un siège à la Chambre en Arizona, Sénat non attribué au Mississippi), et les grands projets texans : Fermi Matador (6 GW, gelé), GW Ranch (7,65 GW), Nexus Hubbard (6,4 GW, gelé), Stargate Frontier (1,82 GW), Abilene (2,1 GW, gelé), Stargate Milam (1,2 GW, audit ERCOT), Meta El Paso (1 GW), Goodnight (0,9 GW, gelé). ERCOT : 420,8 GW de demandes de data centers.",
+    en: "Map: the offices Republicans lost on 3 November 2026 (governor and Senate in Texas and Ohio, governor in Nevada and Georgia, Senate in South Carolina, a House seat in Arizona, Senate not called in Mississippi), and the large Texas projects: Fermi Matador (6 GW, frozen), GW Ranch (7.65 GW), Nexus Hubbard (6.4 GW, frozen), Stargate Frontier (1.82 GW), Abilene (2.1 GW, frozen), Stargate Milam (1.2 GW, ERCOT audit), Meta El Paso (1 GW), Goodnight (0.9 GW, frozen). ERCOT: 420.8 GW of data-center requests.",
+  },
   "seven-levels": {
     fr: "Les sept facteurs qui peuvent limiter une requête : chez vous, l’instance applicative, le limiteur distribué et la gateway ; chez le fournisseur, son quota, le niveau de service, le périmètre géographique et la capacité physique.",
     en: "The seven factors that can limit a request: at home, the application instance, the distributed limiter and the gateway; at the provider, its quota, the service tier, the geographic scope and physical capacity.",

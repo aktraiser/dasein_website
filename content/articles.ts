@@ -55,7 +55,8 @@ export type Block =
    * "semantic-chain": from a raw value to its meaning; "semantic-house": who builds the semantic foundation;
    * "google-machine": how Google, Broadcom and private credit carry Anthropic's chips;
    * "admission-chain": the platform chain that handles a 429 before the provider;
-   * "seven-levels": the seven factors that can limit an LLM request.
+   * "seven-levels": the seven factors that can limit an LLM request;
+   * "midterms-map": what Republicans lost in November 2026, and the large Texas data-center projects.
    */
   | {
       type: "diagram";
@@ -75,7 +76,8 @@ export type Block =
         | "semantic-house"
         | "google-machine"
         | "admission-chain"
-        | "seven-levels";
+        | "seven-levels"
+        | "midterms-map";
     };
 
 export type Article = {

@@ -1687,6 +1687,331 @@ export const glossary: GlossaryEntry[] = [
       match: ["business glossary", "business glossaries"],
     },
   },
+  {
+    id: "midterms",
+    fr: {
+      name: "Midterms",
+      def: "Les élections américaines de mi-mandat, deux ans après la présidentielle : toute la Chambre des représentants, un tiers du Sénat, de nombreux gouverneurs et élus locaux.",
+      match: ["midterms"],
+    },
+    en: {
+      name: "Midterms",
+      def: "US mid-term elections, two years after the presidential vote: the whole House of Representatives, a third of the Senate, many governors and local officials.",
+      match: ["midterms"],
+    },
+  },
+  {
+    id: "moratorium",
+    fr: {
+      name: "Moratoire",
+      def: "Une suspension temporaire décidée par une autorité, ici de nouveaux permis ou de nouvelles constructions de data centers.",
+      match: ["moratoires", "moratoire"],
+    },
+    en: {
+      name: "Moratorium",
+      def: "A temporary suspension decided by an authority, here of new permits or new data-center construction.",
+      match: ["moratoriums", "moratorium"],
+    },
+  },
+  {
+    id: "ercot",
+    fr: {
+      name: "ERCOT",
+      def: "L’opérateur du réseau électrique qui couvre l’essentiel du Texas. Il gère l’équilibre du réseau et la file d’attente des raccordements.",
+      match: ["ERCOT"],
+    },
+    en: {
+      name: "ERCOT",
+      def: "The operator of the power grid that covers most of Texas. It balances the grid and runs the queue of connection requests.",
+      match: ["ERCOT"],
+    },
+  },
+  {
+    id: "tceq",
+    fr: {
+      name: "TCEQ",
+      def: "La Texas Commission on Environmental Quality, le régulateur environnemental du Texas. Elle délivre les permis air et eau, dont ceux des centrales qui alimentent les data centers.",
+      match: ["TCEQ"],
+    },
+    en: {
+      name: "TCEQ",
+      def: "The Texas Commission on Environmental Quality, the state’s environmental regulator. It issues air and water permits, including those for the power plants that feed data centers.",
+      match: ["TCEQ"],
+    },
+  },
+  {
+    id: "nrc",
+    fr: {
+      name: "NRC",
+      def: "La Nuclear Regulatory Commission, l’autorité fédérale américaine qui autorise et contrôle les réacteurs nucléaires.",
+      match: ["NRC"],
+    },
+    en: {
+      name: "NRC",
+      def: "The Nuclear Regulatory Commission, the US federal authority that licenses and oversees nuclear reactors.",
+      match: ["NRC"],
+    },
+  },
+  {
+    id: "clean-air-permit",
+    fr: {
+      name: "Permis Clean Air",
+      def: "L’autorisation d’émettre des polluants dans l’air, prévue par la loi fédérale Clean Air Act. Une centrale à gaz ne peut pas tourner sans elle.",
+      match: ["permis Clean Air", "Clean Air Act"],
+    },
+    en: {
+      name: "Clean Air permit",
+      def: "The authorisation to emit pollutants into the air, required under the federal Clean Air Act. A gas plant cannot run without it.",
+      match: ["Clean Air permit", "Clean Air Act"],
+    },
+  },
+  {
+    id: "grid-connection",
+    fr: {
+      name: "Raccordement",
+      def: "Le branchement d’un site au réseau électrique public, avec la puissance garantie qui va avec. Il faut des années pour l’obtenir, et c’est souvent l’actif le plus rare.",
+      match: ["raccordements", "raccordement"],
+    },
+    en: {
+      name: "Grid connection",
+      def: "Hooking a site up to the public power grid, with the guaranteed capacity that comes with it. It takes years to obtain and is often the scarcest asset.",
+      match: ["grid connections", "grid connection"],
+    },
+  },
+  {
+    id: "spv",
+    fr: {
+      name: "SPV",
+      def: "Une société créée pour porter un seul projet et sa dette (special purpose vehicle). Elle permet de garder cette dette hors du bilan du groupe qui utilise le projet.",
+      match: ["SPV"],
+    },
+    en: {
+      name: "SPV",
+      def: "A company set up to hold a single project and its debt (special-purpose vehicle). It keeps that debt off the balance sheet of the group that uses the project.",
+      match: ["special-purpose vehicles", "SPVs", "SPV"],
+    },
+  },
+  {
+    id: "off-balance-sheet",
+    fr: {
+      name: "Hors bilan",
+      def: "Des engagements ou des dettes qui n’apparaissent pas dans les comptes principaux d’une entreprise, par exemple parce qu’ils sont logés dans une SPV.",
+      match: ["hors du bilan", "hors bilan"],
+    },
+    en: {
+      name: "Off balance sheet",
+      def: "Commitments or debts that do not appear in a company’s main accounts, for example because they sit in an SPV.",
+      match: ["off the balance sheets", "off-balance-sheet"],
+    },
+  },
+  {
+    id: "private-debt",
+    fr: {
+      name: "Dette privée",
+      def: "Des prêts accordés directement par des fonds d’investissement, des assureurs ou des fonds de pension, sans passer par une banque ni par la bourse. Plus chers, et plus difficiles à revendre.",
+      match: ["dette privée"],
+    },
+    en: {
+      name: "Private debt",
+      def: "Loans made directly by investment funds, insurers or pension funds, without going through a bank or the bond market. More expensive, and harder to sell on.",
+      match: ["private debt"],
+    },
+  },
+  {
+    id: "refinancing",
+    fr: {
+      name: "Refinancement",
+      def: "Remplacer une dette qui arrive à échéance par une nouvelle dette. Quand le crédit se ferme ou devient cher, c’est là que le risque se matérialise.",
+      match: ["se refinancer", "refinancement"],
+    },
+    en: {
+      name: "Refinancing",
+      def: "Replacing a debt that falls due with new debt. When credit closes or gets expensive, this is where the risk materialises.",
+      match: ["refinancing", "refinance"],
+    },
+  },
+  {
+    id: "securitisation",
+    fr: {
+      name: "Titrisation",
+      def: "Regrouper des prêts et les revendre à des investisseurs sous forme de titres. Le prêteur se débarrasse du risque, qui circule ailleurs.",
+      match: ["titrisation", "titrisés"],
+    },
+    en: {
+      name: "Securitisation",
+      def: "Pooling loans and selling them to investors as securities. The lender offloads the risk, which then circulates elsewhere.",
+      match: ["securitisation", "securitised"],
+    },
+  },
+  {
+    id: "subprime",
+    fr: {
+      name: "Subprimes",
+      def: "Des prêts immobiliers accordés à des emprunteurs fragiles, au cœur de la crise financière de 2007-2008.",
+      match: ["subprimes"],
+    },
+    en: {
+      name: "Subprime",
+      def: "Mortgages granted to fragile borrowers, at the heart of the 2007-2008 financial crisis.",
+      match: ["subprime"],
+    },
+  },
+  {
+    id: "cdo",
+    fr: {
+      name: "CDO",
+      def: "Un titre financier qui regroupe des dettes et les découpe en tranches plus ou moins risquées. Les CDO de crédits subprimes ont propagé la crise de 2008.",
+      match: ["CDO"],
+    },
+    en: {
+      name: "CDO",
+      def: "A security that pools debts and slices them into tranches of varying risk. CDOs of subprime loans spread the 2008 crisis.",
+      match: ["CDOs", "CDO"],
+    },
+  },
+  {
+    id: "cds",
+    fr: {
+      name: "CDS",
+      def: "Un contrat d’assurance contre le défaut d’un emprunteur (credit default swap). Son prix mesure la peur du marché.",
+      match: ["CDS"],
+    },
+    en: {
+      name: "CDS",
+      def: "An insurance contract against a borrower’s default (credit default swap). Its price measures market fear.",
+      match: ["CDS"],
+    },
+  },
+  {
+    id: "speculative-grade",
+    fr: {
+      name: "Obligation spéculative",
+      def: "Une dette notée sous la catégorie « investissement » par les agences de notation : plus risquée, donc mieux rémunérée.",
+      match: ["spéculatives"],
+    },
+    en: {
+      name: "Speculative grade",
+      def: "Debt rated below investment grade by the rating agencies: riskier, and so better paid.",
+      match: ["speculative grade"],
+    },
+  },
+  {
+    id: "convertible",
+    fr: {
+      name: "Obligation convertible",
+      def: "Une dette que le prêteur peut transformer en actions de l’entreprise. Elle coûte moins d’intérêts mais dilue les actionnaires.",
+      match: ["convertibles"],
+    },
+    en: {
+      name: "Convertible bond",
+      def: "Debt the lender can turn into shares of the company. It costs less interest but dilutes shareholders.",
+      match: ["convertibles"],
+    },
+  },
+  {
+    id: "adjusted-income",
+    fr: {
+      name: "Résultat ajusté",
+      def: "Un résultat présenté par l’entreprise en excluant certaines charges. Il flatte la rentabilité et ne dit pas si la trésorerie couvre les intérêts.",
+      match: ["résultat d’exploitation ajusté"],
+    },
+    en: {
+      name: "Adjusted income",
+      def: "A result presented by the company excluding certain charges. It flatters profitability and does not say whether cash covers the interest.",
+      match: ["adjusted operating income"],
+    },
+  },
+  {
+    id: "write-down",
+    fr: {
+      name: "Dépréciation",
+      def: "Baisser dans les comptes la valeur d’un actif qui vaut moins que prévu, par exemple des serveurs devenus obsolètes.",
+      match: ["dépréciations"],
+    },
+    en: {
+      name: "Write-down",
+      def: "Reducing the book value of an asset that is worth less than expected, for example servers that have become obsolete.",
+      match: ["write-downs"],
+    },
+  },
+  {
+    id: "backlog",
+    fr: {
+      name: "Carnet de commandes",
+      def: "Les commandes signées mais pas encore livrées. Il donne de la visibilité sur les ventes des mois et années à venir.",
+      match: ["carnet de commandes", "en carnet"],
+    },
+    en: {
+      name: "Backlog",
+      def: "Orders signed but not yet delivered. It gives visibility on sales in the months and years ahead.",
+      match: ["order books", "backlog"],
+    },
+  },
+  {
+    id: "hyperscaler",
+    fr: {
+      name: "Hyperscaler",
+      def: "Les géants du cloud qui construisent et exploitent leurs propres data centers à très grande échelle : AWS, Microsoft, Google, Meta, Oracle.",
+      match: ["hyperscalers", "hyperscaler"],
+    },
+    en: {
+      name: "Hyperscaler",
+      def: "The cloud giants that build and run their own data centers at very large scale: AWS, Microsoft, Google, Meta, Oracle.",
+      match: ["hyperscalers", "hyperscaler"],
+    },
+  },
+  {
+    id: "neocloud",
+    fr: {
+      name: "Neocloud",
+      def: "Un fournisseur de cloud spécialisé dans la location de GPU pour l’IA, comme CoreWeave, Nebius ou Nscale. Souvent jeune et financé par la dette.",
+      match: ["neoclouds", "neocloud"],
+    },
+    en: {
+      name: "Neocloud",
+      def: "A cloud provider specialised in renting GPUs for AI, such as CoreWeave, Nebius or Nscale. Often young and debt-financed.",
+      match: ["neoclouds", "neocloud"],
+    },
+  },
+  {
+    id: "permian-basin",
+    fr: {
+      name: "Bassin permien",
+      def: "La grande région pétrolière et gazière de l’ouest du Texas et du sud-est du Nouveau-Mexique. Le gaz y sort avec le pétrole, parfois en surplus.",
+      match: ["bassin permien"],
+    },
+    en: {
+      name: "Permian Basin",
+      def: "The large oil and gas region of West Texas and south-east New Mexico. Gas comes up there with the oil, sometimes in surplus.",
+      match: ["Permian Basin"],
+    },
+  },
+  {
+    id: "water-stress",
+    fr: {
+      name: "Stress hydrique",
+      def: "Le rapport entre l’eau prélevée et l’eau disponible dans un bassin. Au-delà de 80 %, on parle de stress extrêmement élevé.",
+      match: ["stress hydrique"],
+    },
+    en: {
+      name: "Water stress",
+      def: "The ratio between water withdrawn and water available in a basin. Above 80%, it is rated extremely high.",
+      match: ["water stress"],
+    },
+  },
+  {
+    id: "aquifer",
+    fr: {
+      name: "Aquifère",
+      def: "Une couche souterraine de roche ou de sable qui contient de l’eau exploitable. Celui d’Ogallala, sous les Grandes Plaines, se vide plus vite qu’il ne se recharge.",
+      match: ["aquifère"],
+    },
+    en: {
+      name: "Aquifer",
+      def: "An underground layer of rock or sand that holds usable water. The Ogallala aquifer, under the Great Plains, is emptying faster than it refills.",
+      match: ["aquifer"],
+    },
+  },
 ];
 
 export const glossaryById = new Map(glossary.map((entry) => [entry.id, entry]));

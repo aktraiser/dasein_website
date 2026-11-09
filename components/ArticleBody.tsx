@@ -4,6 +4,7 @@ import { DealLoops } from "./DealLoops";
 import { DealRegister, GoogleMachineDiagram } from "./GigawattFigures";
 import { AdmissionChainDiagram } from "./AdmissionChainDiagram";
 import { SevenLevelsDiagram } from "./SevenLevelsDiagram";
+import { MidtermsMap } from "./MidtermsMap";
 import Link from "next/link";
 import fs from "node:fs";
 import path from "node:path";
@@ -1147,6 +1148,7 @@ function renderBlock(block: Block, lang: Locale, seen: GlossarySeen) {
       if (block.variant === "google-machine") return <GoogleMachineDiagram lang={lang} />;
       if (block.variant === "admission-chain") return <AdmissionChainDiagram lang={lang} />;
       if (block.variant === "seven-levels") return <SevenLevelsDiagram lang={lang} />;
+      if (block.variant === "midterms-map") return <MidtermsMap lang={lang} />;
       if (block.variant === "mcp") return <McpDiagram lang={lang} />;
       if (block.variant === "patterns") return <PatternsDiagram lang={lang} />;
       if (block.variant === "protocols") return <ProtocolsDiagram lang={lang} />;

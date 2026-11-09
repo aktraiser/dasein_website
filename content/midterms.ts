@@ -137,6 +137,10 @@ export const midtermsArticle: Record<Locale, Article> = {
         text: "Les gouverneurs comptent autant que le Congrès. Les démocrates ont gagné le Nevada, la Géorgie, l’Ohio et le Texas sur des promesses de règles plus strictes. À partir de janvier, les États dirigés par des démocrates favorables aux moratoires porteront environ 45 % de la capacité prévue, selon Goldman Sachs (CNN)."
       },
       {
+        type: "diagram",
+        variant: "midterms-map"
+      },
+      {
         type: "p",
         text: "Au niveau fédéral, le frein est plus incertain. Bernie Sanders et Alexandria Ocasio-Cortez ont déposé en mars un moratoire fédéral sur les data centers IA (Sanders). Mais les analystes doutent qu’une loi bloquante soit adoptée, Trump pouvant y opposer son veto (Reuters via The Standard)."
       },
@@ -535,7 +539,7 @@ export const midtermsArticle: Record<Locale, Article> = {
       },
       {
         type: "p",
-        text: "Les travaux récents sur arXiv ne traitent pas du risque politique, mais de la condition technique posée par ERCOT : rester flexible ou produire sa propre électricité."
+        text: "Les travaux de recherche récents ne traitent pas du risque politique, mais de la condition technique posée par ERCOT : rester flexible ou produire sa propre électricité."
       },
       {
         type: "defs",
@@ -877,6 +881,10 @@ export const midtermsArticle: Record<Locale, Article> = {
         text: "Governors matter as much as Congress. Democrats won Nevada, Georgia, Ohio and Texas on promises of stricter rules. From January, states led by Democrats who favour moratoriums will carry about 45% of planned capacity, according to Goldman Sachs (CNN)."
       },
       {
+        type: "diagram",
+        variant: "midterms-map"
+      },
+      {
         type: "p",
         text: "At the federal level, the brake is less certain. Bernie Sanders and Alexandria Ocasio-Cortez introduced a federal moratorium on AI data centers in March (Sanders). But analysts doubt a blocking law will pass, since Trump could veto it (Reuters via The Standard)."
       },
@@ -1168,7 +1176,7 @@ export const midtermsArticle: Record<Locale, Article> = {
       },
       {
         type: "p",
-        text: "A gigawatt of AI data center represents about $43bn of equipment, at $42.7m per MW in 2026. Servers and networking make up 85% of it: Nvidia, AMD, Dell, Supermicro, TSMC, SK hynix. The rest goes to power, cooling and buildings, where Europeans are strong: Schneider Electric, Legrand, Siemens Energy, Hitachi Energy in Sweden, mtu engines, Stulz, Vinci or Skanska (BofA Global Research count, cited in the article “Where the models run, in Europe”, 24 October 2026)."
+        text: "A gigawatt of AI data center represents about $43bn of equipment, at $42.7m per MW in 2026. Servers and networking make up 85% of it: Nvidia, AMD, Dell, Supermicro, TSMC, SK hynix. The remainder goes to power, cooling and buildings, where Europeans are strong: Schneider Electric, Legrand, Siemens Energy, Hitachi Energy in Sweden, mtu engines, Stulz, Vinci or Skanska (BofA Global Research count, cited in the article “Where the models run, in Europe”, 24 October 2026)."
       },
       {
         type: "p",
@@ -1275,7 +1283,7 @@ export const midtermsArticle: Record<Locale, Article> = {
       },
       {
         type: "p",
-        text: "Recent work on arXiv does not address political risk, but the technical condition set by ERCOT: stay flexible or generate your own power."
+        text: "Recent research does not address political risk, but the technical condition set by ERCOT: stay flexible or generate your own power."
       },
       {
         type: "defs",
