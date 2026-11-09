@@ -1,127 +1,28 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { Reveal } from "@/components/Reveal";
-import { getDictionary } from "@/content/dictionaries";
+import { NightHeader } from "@/components/home/NightHeader";
+import { aboutPage } from "@/content/aboutPage";
 import { hasLocale } from "@/lib/i18n";
 import { pageMetadata } from "@/lib/metadata";
+import "./about.css";
 
-export async function generateMetadata({ params }: PageProps<"/[lang]/about">) {
-  const { lang } = await params;
-  if (!hasLocale(lang)) return {};
-  const { about } = await getDictionary(lang);
-  return pageMetadata(lang, "/about", about.visionLabel, about.lead);
+const content={
+ fr:{title:"Des agents utiles. Un travail qui garde son sens.",purpose:"Notre raison d’être",pillars:[{title:"Comprendre votre travail",text:"Partir des personnes, de leurs besoins et des situations qu’elles rencontrent."},{title:"Donner du contexte aux agents",text:"Relier vos connaissances, votre vocabulaire et vos méthodes aux outils que vous utilisez."},{title:"Construire et vérifier",text:"Réaliser une réponse adaptée, puis évaluer son utilité sur une activité concrète."},{title:"Transmettre les moyens d’agir",text:"Partager les choix et les méthodes pour que vos équipes puissent poursuivre."}],practice:"Au plus près du travail",practiceText:"Une solution utile commence par une conversation, l’observation d’une activité et la compréhension de ce qui compte pour les personnes qui la réalisent.",values:"Ce qui guide nos choix",valuesIntro:"La présence d’un agent change la façon de préparer, de décider et d’agir. Notre rôle est de rendre ces relations plus simples et plus claires.",principles:[{title:"Votre contexte vous appartient.",text:"Les connaissances utilisées sont choisies avec vous. Elles doivent pouvoir être corrigées, actualisées et retirées."},{title:"Le jugement reste ouvert.",text:"Vous pouvez questionner une proposition, demander une autre lecture ou décider de ne pas la suivre."},{title:"L’utilité se vérifie.",text:"Nous partons d’un problème précis et regardons ce que la solution change réellement, avec ses limites."}]},
+ en:{title:"Useful agents. Work that keeps its meaning.",purpose:"Our purpose",pillars:[{title:"Understand your work",text:"Start with people, their needs and the situations they encounter."},{title:"Give agents context",text:"Connect your knowledge, vocabulary and methods to the tools you use."},{title:"Build and check",text:"Build an appropriate response, then assess its usefulness on a real activity."},{title:"Share the means to act",text:"Share decisions and methods so your teams can carry the work forward."}],practice:"Close to real work",practiceText:"A useful solution begins with a conversation, observing an activity and understanding what matters to the people doing it.",values:"What guides our choices",valuesIntro:"An agent changes how people prepare, decide and act. Our role is to make these relationships simpler and clearer.",principles:[{title:"Your context belongs to you.",text:"Knowledge is selected with you. It must remain possible to correct, update and remove it."},{title:"Judgement remains open.",text:"You can question a proposal, ask for another interpretation or choose not to follow it."},{title:"Usefulness is tested.",text:"We start with a specific problem and examine what the solution actually changes, including its limits."}]},
+};
+export async function generateMetadata({params}:PageProps<"/[lang]/about">) {
+ const {lang}=await params;if(!hasLocale(lang)) return {};
+ return pageMetadata(lang,"/about",aboutPage[lang].label,aboutPage[lang].intro);
 }
-
-export default async function AboutPage({ params }: PageProps<"/[lang]/about">) {
-  const { lang } = await params;
-  if (!hasLocale(lang)) notFound();
-  const { about } = await getDictionary(lang);
-
-  return (
-    <>
-      <section className="page-hero">
-        <div className="container">
-          <p className="eyebrow">{about.visionLabel}</p>
-          <h1 className="display display--serif vision__title">{about.title}</h1>
-          <p className="lead">{about.lead}</p>
-        </div>
-      </section>
-
-      <section className="section vision__band">
-        <div className="container">
-          <Reveal as="p" className="intersection">
-            {about.intersection.map((word, i) => (
-              <span key={word}>
-                {i > 0 && <i>× </i>}
-                {word}
-              </span>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Convictions, each pointing to the article that develops it */}
-      <section id="vision" className="section">
-        <div className="container">
-          <p className="eyebrow">{about.beliefsLabel}</p>
-          <ol className="beliefs">
-            {about.beliefs.map((belief, i) => (
-              <Reveal as="li" key={belief.title} className="belief">
-                <span className="belief__num">{String(i + 1).padStart(2, "0")}</span>
-                <div className="belief__body">
-                  <h2 className="belief__title">{belief.title}</h2>
-                  <p>{belief.text}</p>
-                  {"link" in belief && belief.link && (
-                    <Link href={`/${lang}${belief.link.href}`} className="belief__link">
-                      {about.beliefMore} {belief.link.label} <span aria-hidden="true">→</span>
-                    </Link>
-                  )}
-                </div>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section id="role" className="section">
-        <div className="container role">
-          <Reveal>
-            <p className="eyebrow">{about.roleLabel}</p>
-            <h2 className="role__title">{about.roleTitle}</h2>
-          </Reveal>
-          <ol className="role__steps">
-            {about.role.map((step, i) => (
-              <Reveal as="li" key={step.title} delay={i * 80}>
-                <span className="role__num">{String(i + 1).padStart(2, "0")}</span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section id="name" className="section">
-        <div className="container two-col">
-          <Reveal>
-            <p className="eyebrow">{about.nameTitle}</p>
-          </Reveal>
-          <Reveal>
-            <p className="vision__name">{about.nameText}</p>
-          </Reveal>
-        </div>
-      </section>
-
-      <section id="audience" className="section">
-        <div className="container two-col">
-          <Reveal>
-            <p className="eyebrow">{about.audienceTitle}</p>
-            <p className="lead" style={{ marginTop: 24 }}>
-              {about.audienceText}
-            </p>
-            <ul className="clients">
-              {about.clients.map((client) => (
-                <li key={client.name}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`/logos/${client.logo}`} alt={client.name} loading="lazy" />
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-          <Reveal className="audience">
-            {about.audience.map((group) => (
-              <div key={group.title}>
-                <p className="audience__title">{group.title}</p>
-                <ul className="spec">
-                  {group.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-    </>
-  );
+export default async function AboutPage({params}:PageProps<"/[lang]/about">) {
+ const {lang}=await params;if(!hasLocale(lang)) notFound();const t=aboutPage[lang];const c=content[lang];
+ return <div className="about-page"><NightHeader/>
+  <section className="about-opening container" aria-labelledby="about-title"><div><p className="about-label">{t.label}</p><h1 id="about-title">{c.title}</h1></div><div className="about-opening__statement"><p>{t.intro}</p><Link className="about-button" href={`/${lang}/contact`}>{t.contact}</Link></div></section>
+  <section className="about-purpose container" aria-labelledby="about-purpose-title"><h2 id="about-purpose-title" className="about-label">{c.purpose}</h2><div>{c.pillars.map(p=><article key={p.title}><h3>{p.title}</h3><p>{p.text}</p></article>)}</div></section>
+  <section className="about-practice container" aria-labelledby="about-practice-title"><div className="about-practice__panel"><div className="about-practice__intro"><h2 id="about-practice-title">{c.practice}</h2><p>{c.practiceText}</p></div><Image src="/images/process-workshop.jpg" alt={lang==="fr" ? "Photographie d’illustration : des personnes discutent d’un projet autour d’un ordinateur." : "Illustrative photograph: people discussing a project around a laptop."} width={1000} height={667} sizes="(max-width:719px) 90vw, 40vw"/><div className="about-practice__context"><p className="about-practice__quote">{t.title}</p><p>{t.context}</p><Link className="about-text-link" href={`/${lang}#offers`}>{t.offers}</Link></div></div></section>
+  <section className="about-values container" aria-labelledby="about-values-title"><div><h2 id="about-values-title">{c.values}</h2><p>{c.valuesIntro}</p></div><div className="about-values__list">{c.principles.map(p=><article key={p.title}><h3>{p.title}</h3><p>{p.text}</p></article>)}</div></section>
+  <section className="about-name container" aria-labelledby="about-name-title"><h2 id="about-name-title">{t.nameTitle}</h2><div><p>{t.name}</p><Link className="about-text-link" href={`/${lang}/articles`}>{t.journal}</Link></div></section>
+  <section className="about-contact container" aria-labelledby="about-contact-title"><h2 id="about-contact-title">{t.contactTitle}</h2><Link className="about-button" href={`/${lang}/contact`}>{t.contact}</Link></section>
+ </div>;
 }

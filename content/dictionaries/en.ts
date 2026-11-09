@@ -26,10 +26,6 @@ const en = {
         { label: "Automate your operations", href: "/offers/solutions" },
         { label: "Deploy AI at scale", href: "/offers/engineering" },
       ],
-      sideTitle: "Overview",
-      side: [
-        { label: "The three offers", href: "/#offers" },
-      ],
     },
     about: {
       explore: "About Dasein",

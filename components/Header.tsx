@@ -9,7 +9,7 @@ import { Wordmark } from "./Wordmark";
 
 type Labels = Dictionary["nav"];
 type Menu = Dictionary["navMenu"];
-type Key = "offers" | "about";
+type Key = "offers";
 type Entry = { label: string; href: string };
 
 const CLOSE_DELAY = 160;
@@ -30,9 +30,8 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
   const path = (href: string) => `/${lang}${href === "/" ? "" : href.startsWith("/#") ? href.slice(1) : href}`;
 
   // Lists built from the content files, so the menu follows the site.
-  const panels: Record<Key, { href: string; label: string; explore: string; main: Entry[]; sideTitle: string; side: Entry[] }> = {
+  const panels: Record<Key, { href: string; label: string; explore: string; main: Entry[] }> = {
     offers: { href: "/#offers", label: labels.offers, ...menu.offers },
-    about: { href: "/about", label: labels.about, ...menu.about },
   };
   const keys = Object.keys(panels) as Key[];
 
@@ -110,9 +109,15 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
                       {panels[key].label}
                     </Link>
                   </div>
-                  {/* "Articles" is a plain link (no panel), last in the bar. */}
+                  {/* About and Articles are direct links without a panel. */}
                   {i === keys.length - 1 && (
-                    <div className="nav__item" onPointerEnter={() => hide()}>
+                    <Fragment>
+                    <div className="nav__item" onPointerEnter={hide}>
+                      <Link href={path("/about")} className="nav__link" aria-current={isCurrent("/about") ? "page" : undefined} onClick={closeAll}>
+                        {labels.about}
+                      </Link>
+                    </div>
+                    <div className="nav__item" onPointerEnter={hide}>
                       <Link
                         href={path("/articles")}
                         className="nav__link"
@@ -122,6 +127,7 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
                         {labels.articles}
                       </Link>
                     </div>
+                    </Fragment>
                   )}
                 </Fragment>
               ))}
@@ -199,18 +205,7 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
                       ))}
                     </ul>
                   </div>
-                  <div>
-                    <p className="mega__eyebrow">{panel.sideTitle}</p>
-                    <ul className="mega__side">
-                      {panel.side.map((entry, i) => (
-                        <li key={entry.href} style={{ "--i": i + 2 } as CSSProperties}>
-                          <Link href={path(entry.href)} tabIndex={active ? 0 : -1} onClick={closeAll}>
-                            {entry.label} <span aria-hidden="true">↗</span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+
                 </div>
               </div>
             );
@@ -246,6 +241,9 @@ export function Header({ lang, labels, menu }: { lang: Locale; labels: Labels; m
               )}
             </Fragment>
           ))}
+          <Link href={path("/about")} aria-current={isCurrent("/about") ? "page" : undefined} onClick={closeAll}>
+            {labels.about}
+          </Link>
           <Link href={path("/articles")} aria-current={isCurrent("/articles") ? "page" : undefined} onClick={closeAll}>
             {labels.articles}
           </Link>

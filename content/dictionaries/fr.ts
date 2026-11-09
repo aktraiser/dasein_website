@@ -28,10 +28,6 @@ const fr: Dictionary = {
         { label: "Automatiser votre activité", href: "/offers/solutions" },
         { label: "Déployer l’IA à grande échelle", href: "/offers/engineering" },
       ],
-      sideTitle: "Vue d’ensemble",
-      side: [
-        { label: "Les trois offres", href: "/#offers" },
-      ],
     },
     about: {
       explore: "À propos de Dasein",
