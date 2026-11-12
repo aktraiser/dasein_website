@@ -840,12 +840,12 @@ const fr: Dictionary = {
   contact: {
     label: "Contact",
     title: "Parlons de votre projet.",
-    intro: "Quelques lignes suffisent : votre contexte, les systèmes concernés, ce que vous voulez accomplir. Nous revenons vers vous rapidement.",
+    intro: "Quelques lignes suffisent : votre activité, ce que vous aimeriez changer, ce qui compte pour vous.",
     name: "Nom",
     company: "Entreprise",
     email: "Email",
     topic: "Sujet",
-    topicNone: "Choisir un sujet (facultatif)",
+    optional: "facultatif",
     topics: {
       "ways-of-working": "Travailler avec l’IA",
       solutions: "Automatiser votre activité",
@@ -853,12 +853,21 @@ const fr: Dictionary = {
       other: "Autre chose",
     },
     project: "Votre projet",
-    projectPlaceholder: "Contexte, systèmes concernés, ce que vous voulez accomplir…",
+    projectPlaceholder: "Votre activité, la situation aujourd’hui, ce que vous aimeriez changer…",
     submit: "Envoyer",
     sending: "Envoi…",
-    success: "Merci, votre message a bien été envoyé. Nous revenons vers vous très vite.",
     error: "Une erreur est survenue. Merci de réessayer dans un instant.",
     invalid: "Merci de remplir tous les champs avec un email valide.",
+    errors: {
+      required: "Merci de remplir ce champ.",
+      email: "Merci de saisir une adresse email valide, par exemple nom@entreprise.fr.",
+    },
+    privacy: "Vos informations servent uniquement à répondre à votre demande.",
+    privacyLink: "Données personnelles",
+    privacyHref: "/legal#donnees",
+    nextLabel: "Ensuite",
+    next: "Votre message arrive directement à l’équipe Dasein. Nous revenons vers vous rapidement.",
+    directLabel: "Par email",
   },
 
   articlesPage: {

@@ -835,12 +835,12 @@ const en = {
   contact: {
     label: "Contact",
     title: "Let’s talk about your project.",
-    intro: "A few lines are enough: your context, the systems involved, what you want to achieve. We will get back to you quickly.",
+    intro: "A few lines are enough: your work, what you would like to change, what matters to you.",
     name: "Name",
     company: "Company",
     email: "Email",
     topic: "Subject",
-    topicNone: "Choose a subject (optional)",
+    optional: "optional",
     topics: {
       "ways-of-working": "Work with AI",
       solutions: "Automate your operations",
@@ -848,12 +848,21 @@ const en = {
       other: "Something else",
     },
     project: "Your project",
-    projectPlaceholder: "Context, systems involved, what you want to achieve…",
+    projectPlaceholder: "Your work, the situation today, what you would like to change…",
     submit: "Send",
     sending: "Sending…",
-    success: "Thank you, your message has been sent. We’ll be in touch shortly.",
     error: "Something went wrong. Please try again in a moment.",
     invalid: "Please fill in every field with a valid email.",
+    errors: {
+      required: "Please fill in this field.",
+      email: "Please enter a valid email address, for example name@company.com.",
+    },
+    privacy: "Your details are used only to answer your request.",
+    privacyLink: "Personal data",
+    privacyHref: "/legal#data",
+    nextLabel: "Next",
+    next: "Your message goes straight to the Dasein team. We will get back to you quickly.",
+    directLabel: "By email",
   },
 
   articlesPage: {

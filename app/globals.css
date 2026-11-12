@@ -4856,104 +4856,6 @@ button:hover .arrow {
   }
 }
 
-/* Contact ------------------------------------------------------------- */
-.contact {
-  display: grid;
-  gap: 48px;
-}
-
-.contact__card {
-  padding: clamp(20px, 3vw, 36px);
-  border: 1px solid var(--ink);
-  background: var(--paper-2);
-}
-
-@media (min-width: 960px) {
-  .contact {
-    grid-template-columns: 5fr 7fr;
-    gap: 72px;
-    align-items: start;
-  }
-}
-
-.form {
-  display: grid;
-  gap: 22px;
-}
-
-.form__row {
-  display: grid;
-  gap: 22px;
-}
-
-@media (min-width: 640px) {
-  .form__row {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.field {
-  display: grid;
-  gap: 6px;
-}
-
-.field label {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--ink-soft);
-}
-
-.field input,
-.field select,
-.field textarea {
-  width: 100%;
-  padding: 10px 12px;
-  border: 1px solid var(--line);
-  border-radius: 0;
-  background: #fff;
-  font-family: var(--font-sans);
-  font-size: 17px;
-}
-
-.field textarea {
-  min-height: 160px;
-  resize: vertical;
-  line-height: 1.5;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-  outline: none;
-  background: #fff;
-  box-shadow: 0 0 0 2px var(--accent), 0 0 0 3px var(--ink);
-}
-
-.field ::placeholder {
-  color: var(--muted);
-}
-
-.form__hp {
-  position: absolute;
-  left: -9999px;
-}
-
-.form__status {
-  min-height: 20px;
-  font-size: 13px;
-}
-
-.form__status[data-kind="success"] {
-  background: var(--accent);
-  padding: 4px 8px;
-}
-
-.form__status[data-kind="error"] {
-  color: #b3261e;
-}
-
 /* ==========================================================================
    CTA & footer
    ========================================================================== */
@@ -6225,35 +6127,59 @@ button:hover .arrow {
   margin-top: 16px;
 }
 
-/* Thank-you dialog shown on the home page after the contact form */
+/* Thank-you dialog shown on the home page after the contact form: a quiet
+   sheet of paper over the dimmed page, like the contact page itself */
 .sent {
   width: min(520px, calc(100vw - 32px));
   margin: auto;
   padding: clamp(28px, 5vw, 44px);
   color: var(--ink);
   background: var(--paper);
-  border: 1px solid var(--ink);
-  box-shadow: 6px 6px 0 var(--accent);
+  border: 0;
+  border-radius: 12px;
+  box-shadow: 0 30px 80px rgba(14, 15, 17, 0.28);
 }
 .sent::backdrop {
-  background: rgba(14, 15, 17, 0.55);
+  background: rgba(14, 15, 17, 0.45);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+.sent__label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.6;
+  color: var(--muted);
 }
 .sent__title {
-  margin-top: 12px;
-  font-family: var(--font-serif);
-  font-size: clamp(30px, 4.4vw, 44px);
-  font-weight: 400;
+  margin-top: 18px;
+  font-family: var(--font-serif), Georgia, serif;
+  font-size: clamp(30px, 4.4vw, 42px);
+  font-weight: 500;
   line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 .sent__text {
-  margin: 14px 0 26px;
+  margin: 16px 0 28px;
   color: var(--ink-soft);
-  line-height: 1.55;
+  line-height: 1.6;
 }
-.sent .pill {
+.sent__close {
+  padding: 13px 24px;
   border: 0;
+  border-radius: 100px;
+  background: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  color: var(--paper);
   cursor: pointer;
-  font-family: inherit;
+  transition: background-color 0.25s ease;
+}
+.sent__close:hover {
+  background: #573543;
+}
+.sent__close:focus-visible {
+  outline: 2px solid #986878;
+  outline-offset: 4px;
 }
 
 /* Legal notice */

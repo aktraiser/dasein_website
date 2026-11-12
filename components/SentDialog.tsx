@@ -51,13 +51,13 @@ export function SentDialog({ lang }: { lang: Locale }) {
       // A click on the backdrop lands on the dialog element itself.
       onClick={(event) => event.target === ref.current && ref.current?.close()}
     >
-      <p className="eyebrow">Dasein</p>
+      <p className="sent__label">Dasein</p>
       <h2 id="sent-title" className="sent__title">
         {title}
       </h2>
       <p className="sent__text">{text}</p>
       <form method="dialog">
-        <button type="submit" className="pill pill--ink" autoFocus>
+        <button type="submit" className="sent__close" autoFocus>
           {close}
         </button>
       </form>
