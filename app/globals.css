@@ -445,34 +445,54 @@ button:hover .arrow {
 }
 
 .nav__link {
+  position: relative;
   display: flex;
   align-items: center;
   height: 100%;
   padding: 0 12px;
   font-size: 15px;
   color: var(--ink-soft);
-  transition: color 0.2s, opacity 0.2s;
+  transition: color 0.2s, opacity 0.3s;
 }
 
 .nav__link:hover,
+.nav__link:focus-visible,
 .nav__link[data-on="true"],
 .nav__link[aria-current="page"] {
   color: var(--ink);
 }
 
-.nav__link:focus-visible {
-  outline-offset: -14px;
+/* A line drawn under the word on hover and keyboard focus (it stays under
+   the current page); it leaves towards the right. The bar is a full-height
+   flex box, so the line is placed from the middle of the text. */
+.nav__link::after {
+  content: "";
+  position: absolute;
+  top: calc(50% + 0.8em);
+  right: 12px;
+  left: 12px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.45s var(--ease);
 }
 
-/* When a menu is open, the other sections fade back */
+.nav__link:is(:hover, :focus-visible, [data-on="true"], [aria-current="page"])::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* The line is the focus mark: no box around the word */
+.nav__link:focus-visible {
+  outline: none;
+}
+
+/* The word under the pointer or the focus stays lit, the others fade back;
+   same when a menu is open */
+.nav:has(.nav__link:is(:hover, :focus-visible)) .nav__link:not(:hover, :focus-visible),
 .nav[data-active="true"] .nav__link:not([data-on="true"]) {
   opacity: 0.4;
-}
-
-.nav__link[aria-current="page"] {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
 }
 
 /* One shared panel whose height follows the active section */
@@ -550,10 +570,6 @@ button:hover .arrow {
   line-height: 1.2;
 }
 
-.mega__main a:hover {
-  background: var(--accent);
-}
-
 .mega__side {
   display: grid;
   gap: 10px;
@@ -564,9 +580,45 @@ button:hover .arrow {
   font-weight: 500;
 }
 
-.mega__side a:hover {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+/* Text links of the menu and the footer: the same line as the bar's, drawn
+   under the words (over several lines if they wrap) on hover and keyboard
+   focus, and leaving towards the right. */
+.mega__main a,
+.mega__side a,
+.footer__links a,
+.footer__small a {
+  padding-bottom: 2px;
+  background: linear-gradient(currentColor, currentColor) no-repeat right bottom / 0 1px;
+  transition:
+    background-size 0.45s var(--ease),
+    color 0.2s,
+    opacity 0.3s;
+}
+
+.mega__main a:is(:hover, :focus-visible),
+.mega__side a:is(:hover, :focus-visible),
+.footer__links a:is(:hover, :focus-visible),
+.footer__small a:is(:hover, :focus-visible, [aria-current="true"]) {
+  background-position: left bottom;
+  background-size: 100% 1px;
+  outline: none;
+}
+
+/* Within a list, the link under the pointer or the focus stays lit */
+.mega__main:has(a:is(:hover, :focus-visible)) a:not(:hover, :focus-visible),
+.mega__side:has(a:is(:hover, :focus-visible)) a:not(:hover, :focus-visible),
+.footer__links:has(a:is(:hover, :focus-visible)) a:not(:hover, :focus-visible) {
+  opacity: 0.35;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav__link::after,
+  .mega__main a,
+  .mega__side a,
+  .footer__links a,
+  .footer__small a {
+    transition-duration: 0s;
+  }
 }
 
 .mega__side span {
@@ -6305,10 +6357,6 @@ button:hover .arrow {
   letter-spacing: -0.01em;
 }
 
-.footer__links a:hover {
-  background: linear-gradient(transparent 62%, var(--accent) 62%);
-}
-
 /* The name, set as large as the page allows */
 .footer__name {
   margin: clamp(40px, 6vw, 96px) 0 0;
@@ -6345,6 +6393,7 @@ button:hover .arrow {
 }
 
 .footer__small a:hover,
+.footer__small a:focus-visible,
 .footer__small a[aria-current="true"] {
   color: var(--ink);
 }
